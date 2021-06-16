@@ -15,24 +15,6 @@
 
 > This is a **point-and-click platformer**!
 
-This game was created in 48-hours as a [submission](https://itch.io/jam/gmtk-2021/rate/1085910) for the [GMTK 2021 game jam](https://itch.io/jam/gmtk-2021). All design, code, images, sound effects, and music were created by [Levi](https://levi.dev).
-
-## The theme: "Joined together"
-
-You are a momma duck. Your precious ducklings follow closely behind you as you lead them to a safe pond.
-
-## What exactly existed before the start of the jam?
-
-If you think this looks polished and like way too much for a single person to have done in just two days, you're right! But most of the really impressive stuff is from a couple open-source Godot Asset Library packages: [Scaffolder](https://godotengine.org/asset-library/asset/969) and [Surfacer](https://godotengine.org/asset-library/asset/968).
-
--   The Scaffolder library:
-    -   This mostly adds the GUI and screen-layout you see before actually starting a level.
--   The Surfacer library:
-    -   This mostly adds pathfinding.
-        -   Parsing tile maps into platform graphs of navigable surfaces.
-        -   Calculating paths through the graph and executing movement through these paths.
-        -   Annotating stuff relating to these paths.
-
 ## Software used
 
 -   **[Godot](https://godotengine.org/)**: Game engine.

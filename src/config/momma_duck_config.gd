@@ -318,13 +318,13 @@ var app_manifest := {
     is_inspector_enabled_default = false or _debug or _playtest,
     inspector_panel_starts_open = false,
     are_beats_tracked_by_default = false,
-    debug_window_size = _screen_resolutions.default,
-#    debug_window_size = _screen_resolutions.full_screen,
+#    debug_window_size = _screen_resolutions.default,
+    debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
-    is_data_deletion_button_shown = false,
+    is_data_deletion_button_shown = true,
     is_arbitrary_music_speed_change_supported = false,
     is_music_speed_scaled_with_time_scale = false,
     is_music_speed_scaled_with_additional_debug_time_scale = false,
@@ -368,27 +368,27 @@ var app_manifest := {
     is_computer_prediction_shown = true,
     
     app_name = "Momma Duck",
-    app_id = "dev.levi.momma_duck",
+    app_id = "games.snoringcat.momma_duck",
     app_version = "0.0.1",
     score_version = "0.0.1",
     data_agreement_version = "0.0.1",
     
     # Must start with "UA-".
-    google_analytics_id = "",
-    privacy_policy_url = "",
-    terms_and_conditions_url = "",
+    google_analytics_id = "UA-186405125-3",
+    privacy_policy_url = \
+            "https://docs.google.com/document/d/1G90Hna_3ZlXYie3CDPne8vjdP7b3mq1Vqj8agbDsKJ8/preview",
+    terms_and_conditions_url = \
+            "https://docs.google.com/document/d/1qHZQiJnVJGHMWR0FzwBMCV_9NlMYWRhJKL-7I3hWlGk/preview",
     android_app_store_url = "",
     ios_app_store_url = "",
-    support_url = "",
-    log_gestures_url = "",
-    error_logs_url = "",
-    app_id_query_param = "",
+    support_url = "https://snoringcat.games/support",
+    log_gestures_url = \
+            "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
+    app_id_query_param = "momma-duck",
     
     theme = preload("res://src/config/default_theme.tres"),
     
     screen_path_exclusions = [
-        "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen.tscn",
-        "res://addons/scaffolder/src/gui/screens/data_agreement_screen.tscn",
         "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
     ],
     screen_path_inclusions = [
@@ -436,13 +436,13 @@ var app_manifest := {
     edge_movement_classes = _edge_movement_classes,
     player_param_classes = _player_param_classes,
     
-    pauses_level_music_on_pause = true,
+    pauses_level_music_on_pause = !_debug,
     main_menu_music = "momma_pause_music",
     game_over_music = "momma_pause_music",
     pause_menu_music = "momma_pause_music",
     default_level_music = "momma_music",
     godot_splash_sound = "quack_peep",
-    developer_splash_sound = "",
+    developer_splash_sound = "single_cat_snore",
     level_end_sound = "momma_cadence",
     
     third_party_license_text = \
@@ -456,11 +456,13 @@ var app_manifest := {
     app_logo_scale = 2.0,
     go_icon = preload("res://assets/images/go_icon.png"),
     go_icon_scale = 1.5,
-    developer_name = "Levi Lindsey",
-    developer_url = "https://levi.dev",
+    developer_name = "Snoring Cat LLC",
+    developer_url = "https://snoringcat.games",
     
-    developer_logo = preload("res://assets/images/levi_logo_about.png"),
-    developer_splash = null,
+    developer_logo = preload( \
+            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_about.png"),
+    developer_splash = preload( \
+            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
     
     godot_splash_screen_duration = 1.4,
     developer_splash_screen_duration = 1.0,
@@ -474,7 +476,7 @@ var app_manifest := {
     fade_out_transition_texture = \
             preload("res://addons/scaffolder/assets/images/transition_out.png"),
     
-    cell_size = Vector2(64.0, 64.0),
+    cell_size = Vector2(32.0, 32.0),
     
     # Should match Project Settings > Display > Window > Size > Width/Height
     default_game_area_size = Vector2(1024, 768),
