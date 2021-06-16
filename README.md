@@ -1,10 +1,10 @@
 # Momma Duck
 
-> _**[Play the game!](https://levi.dev/gmtk21)**_
+> _**[Play the game!](https://levi.dev/momma-duck)**_
 > 
-> _**[Watch the gameplay video!](https://www.youtube.com/watch?v=QYv0xNa0bO8)**__
+> _**[Watch the gameplay video!](https://www.youtube.com/watch?v=QYv0xNa0bO8)**_
 > 
-> _**[See how it was rated!](https://itch.io/jam/gmtk-2021/rate/1085910)**_
+> _**[Checkout the original version that was submitted to GMTK!](https://github.com/levilindsey/gmtk-2021)**_
 
 <p align="center">
   <a href="https://itch.io/jam/gmtk-2021/rate/1085910"><img src="assets/images/icon_1024x768.png"
