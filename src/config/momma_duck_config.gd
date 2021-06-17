@@ -412,6 +412,20 @@ var app_manifest := {
         FastestTimeLabeledControlItem,
     ],
     welcome_panel_items = welcome_panel_items,
+    hud_key_value_box_nine_patch_rect_path = \
+            ScaffolderConfig._DEFAULT_HUD_KEY_VALUE_BOX_NINE_PATCH_RECT_PATH,
+    hud_key_value_list_item_manifest = [
+        {
+            item_class = TimeLabeledControlItem,
+            settings_enablement_label = "Time",
+            enabled_by_default = true,
+        },
+        {
+            item_class = FollowersCountLabeledControlItem,
+            settings_enablement_label = "Ducklings in tow",
+            enabled_by_default = true,
+        },
+    ],
     
     colors_class = SurfacerColors,
     draw_utils_class = SurfacerDrawUtils,
@@ -485,6 +499,8 @@ var app_manifest := {
     camera_smoothing_speed = 10.0,
     default_camera_zoom = 0.4,
     uses_level_scores = false,
+    
+    hud_key_value_box_size = ScaffolderConfig.HUD_KEY_VALUE_BOX_DEFAULT_SIZE,
 }
 
 

@@ -9,7 +9,6 @@ const RUN_AWAY_DUCKLING_RESOURCE_PATH := \
 const FOX_RESOURCE_PATH := "res://src/players/fox/fox.tscn"
 const PORCUPINE_RESOURCE_PATH := "res://src/players/porcupine/porcupine.tscn"
 const SPIDER_RESOURCE_PATH := "res://src/players/spider/spider.tscn"
-const COUNT_DISPLAYS_RESOURCE_PATH := "res://src/gui/count_displays.tscn"
 
 const DUCKLING_SPAWN_POSITIONS_GROUP_NAME := "duckling_spawn_positions"
 const FOX_SPAWN_POSITIONS_GROUP_NAME := "fox_spawn_positions"
@@ -41,8 +40,6 @@ var is_momma_level_started := false
 var is_over := false
 
 var duckling_scare_count := 0
-
-var count_displays: CountDisplays
 
 
 #func _enter_tree() -> void:
@@ -96,12 +93,6 @@ func _start() -> void:
         var spider: Spider = add_spider(spawn_position.position)
         spiders.push_back(spider)
     
-    count_displays = Gs.utils.add_scene(
-            Gs.canvas_layers.layers.hud,
-            COUNT_DISPLAYS_RESOURCE_PATH,
-            true,
-            true)
-    
     call_deferred("_on_started")
 
 
@@ -128,8 +119,6 @@ func _destroy() -> void:
     
     if is_instance_valid(momma):
         remove_player(momma)
-    
-    Gs.canvas_layers.layers.hud.remove_child(count_displays)
     
     ._destroy()
 
