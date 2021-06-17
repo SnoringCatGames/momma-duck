@@ -92,8 +92,6 @@ func _start() -> void:
     for spawn_position in spider_spawn_positions:
         var spider: Spider = add_spider(spawn_position.position)
         spiders.push_back(spider)
-    
-    call_deferred("_on_started")
 
 
 func _on_started() -> void:
@@ -253,6 +251,9 @@ func get_slow_motion_music_name() -> String:
 
 
 func get_ducklings_in_tow_count() -> int:
+    if !is_momma_level_started:
+        return 0
+    
     var count := 0
     var next_follower := momma.follower
     while is_instance_valid(next_follower):

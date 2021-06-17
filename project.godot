@@ -964,6 +964,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/momma_duck_config.gd"
 }, {
+"base": "SurfacerHud",
+"class": "MommaDuckHud",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/momma_duck_hud.gd"
+}, {
 "base": "SurfacerLevel",
 "class": "MommaDuckLevel",
 "language": "GDScript",
@@ -1370,6 +1375,11 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/utils/geometry.gd"
 }, {
 "base": "Node2D",
+"class": "ScaffolderHud",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/hud/scaffolder_hud.gd"
+}, {
+"base": "Node2D",
 "class": "ScaffolderLevel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_level.gd"
@@ -1543,6 +1553,11 @@ _global_script_classes=[ {
 "class": "SurfacerDrawUtils",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/surfacer_draw_utils.gd"
+}, {
+"base": "ScaffolderHud",
+"class": "SurfacerHud",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/surfacer_hud.gd"
 }, {
 "base": "ScaffolderLevel",
 "class": "SurfacerLevel",
@@ -1926,6 +1941,7 @@ _global_script_class_icons={
 "Momma": "",
 "MommaAnimator": "",
 "MommaDuckConfig": "",
+"MommaDuckHud": "",
 "MommaDuckLevel": "",
 "MommaDuckLevelConfig": "",
 "MommaParams": "",
@@ -2007,6 +2023,7 @@ _global_script_class_icons={
 "ScaffolderColors": "",
 "ScaffolderConfig": "",
 "ScaffolderGeometry": "",
+"ScaffolderHud": "",
 "ScaffolderLevel": "",
 "ScaffolderLevelConfig": "",
 "ScaffolderLog": "",
@@ -2042,6 +2059,7 @@ _global_script_class_icons={
 "SurfacerColors": "",
 "SurfacerConfig": "",
 "SurfacerDrawUtils": "",
+"SurfacerHud": "",
 "SurfacerLevel": "",
 "SurfacerLevelConfig": "",
 "SurfacerThirdPartyLicenses": "",
