@@ -214,6 +214,55 @@ var _styles_manifest := {
     scroll_grabber_corner_detail = 3,
 }
 
+var _settings_item_manifest := {
+    groups = {
+        main = {
+            label = "",
+            is_collapsible = false,
+            item_classes = [
+                MusicSettingsLabeledControlItem,
+                SoundEffectsSettingsLabeledControlItem,
+                HapticFeedbackSettingsLabeledControlItem,
+            ],
+        },
+        annotations = {
+            label = "Rendering",
+            is_collapsible = true,
+            item_classes = [
+                RulerAnnotatorSettingsLabeledControlItem,
+                PreselectionTrajectoryAnnotatorSettingsLabeledControlItem,
+                ActiveTrajectoryAnnotatorSettingsLabeledControlItem,
+                PreviousTrajectoryAnnotatorSettingsLabeledControlItem,
+                NavigationDestinationAnnotatorSettingsLabeledControlItem,
+                RecentMovementAnnotatorSettingsLabeledControlItem,
+                SurfacesAnnotatorSettingsLabeledControlItem,
+                PlayerPositionAnnotatorSettingsLabeledControlItem,
+                PlayerAnnotatorSettingsLabeledControlItem,
+                LevelAnnotatorSettingsLabeledControlItem,
+            ],
+        },
+        hud = {
+            label = "HUD",
+            is_collapsible = true,
+            item_classes = [
+                DebugPanelSettingsLabeledControlItem,
+            ],
+        },
+        miscellaneous = {
+            label = "Miscellaneous",
+            is_collapsible = true,
+            item_classes = [
+                WelcomePanelSettingsLabeledControlItem,
+                IntroChoreographySettingsLabeledControlItem,
+                InspectorEnabledSettingsLabeledControlItem,
+                TimeScaleSettingsLabeledControlItem,
+                MetronomeSettingsLabeledControlItem,
+                LogSurfacerEventsSettingsLabeledControlItem,
+            ],
+        },
+    },
+}
+
 var _metric_keys := [
 ]
 
@@ -386,15 +435,13 @@ var app_manifest := {
     
     theme = preload("res://src/config/default_theme.tres"),
     
+    settings_item_manifest = _settings_item_manifest,
+    
     screen_path_exclusions = [
         "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
     ],
     screen_path_inclusions = [
     ],
-    settings_main_item_class_exclusions = [],
-    settings_main_item_class_inclusions = [],
-    settings_details_item_class_exclusions = [],
-    settings_details_item_class_inclusions = [],
     pause_item_class_exclusions = [],
     pause_item_class_inclusions = [
         FastestTimeLabeledControlItem,

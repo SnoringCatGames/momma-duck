@@ -1439,6 +1439,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/selection_description.gd"
 }, {
+"base": "VBoxContainer",
+"class": "SettingsGroup",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/settings_group.gd"
+}, {
 "base": "Screen",
 "class": "SettingsScreen",
 "language": "GDScript",
@@ -2036,6 +2041,7 @@ _global_script_class_icons={
 "ScareCountLabeledControlItem": "",
 "Screen": "",
 "SelectionDescription": "",
+"SettingsGroup": "",
 "SettingsScreen": "",
 "ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/shiny_button.png",
 "SliderLabeledControlItem": "",
