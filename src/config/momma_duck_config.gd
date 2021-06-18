@@ -365,6 +365,25 @@ var _settings_item_manifest := {
     },
 }
 
+var _pause_item_manifest := [
+    LevelLabeledControlItem,
+    TimeLabeledControlItem,
+    FastestTimeLabeledControlItem,
+    FollowersCountLabeledControlItem,
+    ScareCountLabeledControlItem,
+]
+
+var _game_over_item_manifest := [
+    LevelLabeledControlItem,
+    GameOverTimeLabeledControlItem,
+    FastestTimeLabeledControlItem,
+]
+
+var _level_select_item_manifest := [
+    TotalPlaysLabeledControlItem,
+    FastestTimeLabeledControlItem,
+]
+
 var _hud_manifest := {
     hud_class = MommaDuckHud,
     hud_key_value_box_size = \
@@ -389,12 +408,22 @@ var _hud_manifest := {
     inspector_panel_starts_open = false,
 }
 
-var _welcome_panel_items := [
-    HeaderLabeledControlItem.new("Lead your ducklings to the pond"),
-    StaticTextLabeledControlItem.new("*Auto nav*", "click"),
-    StaticTextLabeledControlItem.new("Walk/Climb", "arrow key / wasd"),
-    StaticTextLabeledControlItem.new("Jump", "space / x"),
-]
+var _welcome_panel_manifest := {
+    items = [
+        ["Lead your ducklings to the pond"],
+        ["*Auto nav*", "click"],
+        ["Walk/Climb", "arrow key / wasd"],
+        ["Jump", "space / x"],
+    ],
+}
+
+var _screen_manifest := {
+    path_exclusions = [
+        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
+    ],
+    path_inclusions = [
+    ],
+}
 
 var _gui_manifest := {
     debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen,
@@ -430,28 +459,12 @@ var _gui_manifest := {
     
     fonts = _fonts,
     settings_item_manifest = _settings_item_manifest,
+    pause_item_manifest = _pause_item_manifest,
+    game_over_item_manifest = _game_over_item_manifest,
+    level_select_item_manifest = _level_select_item_manifest,
     hud_manifest = _hud_manifest,
-    welcome_panel_items = _welcome_panel_items,
-    
-    screen_path_exclusions = [
-        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
-    ],
-    screen_path_inclusions = [
-    ],
-    pause_item_class_exclusions = [],
-    pause_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-        FollowersCountLabeledControlItem,
-        ScareCountLabeledControlItem,
-    ],
-    game_over_item_class_exclusions = [],
-    game_over_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-    ],
-    level_select_item_class_exclusions = [],
-    level_select_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-    ],
+    welcome_panel_manifest = _welcome_panel_manifest,
+    screen_manifest = _screen_manifest,
 }
 
 var _additional_metric_keys := [

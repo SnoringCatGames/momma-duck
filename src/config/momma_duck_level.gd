@@ -229,7 +229,7 @@ func _record_level_results() -> void:
     ._record_level_results()
     
     var level_fastest_time_settings_key := \
-            get_level_fastest_time_settings_key(_id)
+            SaveState.get_level_fastest_time_settings_key(_id)
     var time := _get_level_play_time_unscaled()
     var previous_fastest_time: float = Gs.save_state.get_setting(
             level_fastest_time_settings_key,
@@ -260,7 +260,3 @@ func get_ducklings_in_tow_count() -> int:
         count += 1
         next_follower = next_follower.follower
     return count
-
-
-static func get_level_fastest_time_settings_key(level_id: String) -> String:
-    return "level_%s_fastest_time" % level_id

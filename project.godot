@@ -217,7 +217,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "CurrentScoreLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/pause_items/current_score_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/current_score_labeled_control_item.gd"
 }, {
 "base": "Screen",
 "class": "DataAgreementScreen",
@@ -577,7 +577,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "FastestTimeLabeledControlItem",
 "language": "GDScript",
-"path": "res://src/gui/fastest_time_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/fastest_time_labeled_control_item.gd"
 }, {
 "base": "PlayerActionHandler",
 "class": "FloorDashAction",
@@ -652,7 +652,7 @@ _global_script_classes=[ {
 "base": "StaticTextLabeledControlItem",
 "class": "GameOverScoreLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/game_over_items/game_over_score_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/game_over_score_labeled_control_item.gd"
 }, {
 "base": "Screen",
 "class": "GameOverScreen",
@@ -662,7 +662,7 @@ _global_script_classes=[ {
 "base": "StaticTextLabeledControlItem",
 "class": "GameOverTimeLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/game_over_items/game_over_time_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/game_over_time_labeled_control_item.gd"
 }, {
 "base": "Screen",
 "class": "GameScreen",
@@ -707,7 +707,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "HighScoreLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/pause_items/high_score_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/high_score_labeled_control_item.gd"
 }, {
 "base": "Reference",
 "class": "HorizontalMovementUtils",
@@ -892,7 +892,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "LevelLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/pause_items/level_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/level_labeled_control_item.gd"
 }, {
 "base": "Control",
 "class": "LevelSelectItem",
@@ -1647,7 +1647,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "TimeLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/pause_items/time_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/time_labeled_control_item.gd"
 }, {
 "base": "SliderLabeledControlItem",
 "class": "TimeScaleSettingsLabeledControlItem",
@@ -1662,7 +1662,7 @@ _global_script_classes=[ {
 "base": "TextLabeledControlItem",
 "class": "TotalPlaysLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/level_select/total_plays_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/total_plays_labeled_control_item.gd"
 }, {
 "base": "Node2D",
 "class": "TransientAnnotator",
