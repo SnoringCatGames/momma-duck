@@ -15,31 +15,80 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
     
-    manifest.app_version = "0.0.1"
+    _app_metadata.app_version = "0.0.1"
     
-    manifest.debug = is_debug
-    manifest.playtest = is_playtest
-    manifest.pauses_on_focus_out = !is_debug
-    manifest.also_prints_to_stdout = true
-    manifest.are_all_levels_unlocked = true and is_debug
-    manifest.is_splash_skipped = false and is_debug
+    _app_metadata.debug = is_debug
+    _app_metadata.playtest = is_playtest
+    _app_metadata.pauses_on_focus_out = !is_debug
+    _app_metadata.also_prints_to_stdout = true
+    _app_metadata.are_all_levels_unlocked = true and is_debug
+    _app_metadata.is_splash_skipped = false and is_debug
     
-    manifest.surfacer_manifest.precompute_platform_graph_for_levels = [
+    _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
 #        "2",
 #        "3",
 #        "4",
 #        "5",
     ]
-    manifest.surfacer_manifest.ignores_platform_graph_save_files = false
+    _surfacer_manifest.ignores_platform_graph_save_files = false
     
-    manifest.gui_manifest.debug_window_size = debug_window_size
-    manifest.gui_manifest.hud_manifest.is_inspector_enabled_default = \
+    _gui_manifest.debug_window_size = debug_window_size
+    _gui_manifest.hud_manifest.is_inspector_enabled_default = \
             false or is_debug or is_playtest
 
 # ---
 
 var _uses_threads := false and OS.can_use_threads()
+
+var _app_metadata := {
+    debug = false,
+    playtest = false,
+    pauses_on_focus_out = true,
+    also_prints_to_stdout = true,
+    is_profiler_enabled = true,
+    are_all_levels_unlocked = true,
+    is_splash_skipped = false,
+    uses_threads = _uses_threads,
+    thread_count = OS.get_processor_count() if _uses_threads else 1,
+    is_mobile_supported = true,
+    uses_level_scores = false,
+    must_restart_level_to_change_settings = true,
+    
+    app_name = "Momma Duck",
+    app_id = "games.snoringcat.momma_duck",
+    app_version = "0.0.1",
+    score_version = "0.0.1",
+    data_agreement_version = "0.0.1",
+    
+    # Must start with "UA-".
+    google_analytics_id = "UA-186405125-3",
+    privacy_policy_url = \
+            "https://docs.google.com/document/d/1G90Hna_3ZlXYie3CDPne8vjdP7b3mq1Vqj8agbDsKJ8/preview",
+    terms_and_conditions_url = \
+            "https://docs.google.com/document/d/1qHZQiJnVJGHMWR0FzwBMCV_9NlMYWRhJKL-7I3hWlGk/preview",
+    android_app_store_url = "",
+    ios_app_store_url = "",
+    support_url = "https://snoringcat.games/support",
+    log_gestures_url = \
+            "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
+    app_id_query_param = "momma-duck",
+    
+    app_logo = preload("res://assets/images/logo.png"),
+    app_logo_scale = 2.0,
+    go_icon = preload("res://assets/images/go_icon.png"),
+    go_icon_scale = 1.5,
+    developer_name = "Snoring Cat LLC",
+    developer_url = "https://snoringcat.games",
+    
+    developer_logo = preload( \
+            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_about.png"),
+    developer_splash = preload( \
+            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
+    
+    godot_splash_screen_duration = 1.4,
+    developer_splash_screen_duration = 1.0,
+}
 
 var _fonts := {
     main_xs = preload( \
@@ -468,62 +517,21 @@ var _surfacer_manifest := {
 }
 
 var app_manifest := {
-    debug = false,
-    playtest = false,
-    pauses_on_focus_out = true,
-    also_prints_to_stdout = true,
-    is_profiler_enabled = true,
-    are_all_levels_unlocked = true,
-    is_splash_skipped = false,
-    uses_threads = _uses_threads,
-    thread_count = OS.get_processor_count() if _uses_threads else 1,
-    is_mobile_supported = true,
-    uses_level_scores = false,
-    
-    app_name = "Momma Duck",
-    app_id = "games.snoringcat.momma_duck",
-    app_version = "0.0.1",
-    score_version = "0.0.1",
-    data_agreement_version = "0.0.1",
-    
-    # Must start with "UA-".
-    google_analytics_id = "UA-186405125-3",
-    privacy_policy_url = \
-            "https://docs.google.com/document/d/1G90Hna_3ZlXYie3CDPne8vjdP7b3mq1Vqj8agbDsKJ8/preview",
-    terms_and_conditions_url = \
-            "https://docs.google.com/document/d/1qHZQiJnVJGHMWR0FzwBMCV_9NlMYWRhJKL-7I3hWlGk/preview",
-    android_app_store_url = "",
-    ios_app_store_url = "",
-    support_url = "https://snoringcat.games/support",
-    log_gestures_url = \
-            "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
-    app_id_query_param = "momma-duck",
-    
-    app_logo = preload("res://assets/images/logo.png"),
-    app_logo_scale = 2.0,
-    go_icon = preload("res://assets/images/go_icon.png"),
-    go_icon_scale = 1.5,
-    developer_name = "Snoring Cat LLC",
-    developer_url = "https://snoringcat.games",
-    
-    developer_logo = preload( \
-            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_about.png"),
-    developer_splash = preload( \
-            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
-    
-    godot_splash_screen_duration = 1.4,
-    developer_splash_screen_duration = 1.0,
-    
     colors_class = SurfacerColors,
     draw_utils_class = SurfacerDrawUtils,
     level_config_class = MommaDuckLevelConfig,
     
+    app_metadata = _app_metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
     styles_manifest = _styles_manifest,
     gui_manifest = _gui_manifest,
     surfacer_manifest = _surfacer_manifest,
 }
+
+
+func _ready() -> void:
+    Gs.logger.print("MommaDuckConfig._ready")
 
 
 func amend_app_manifest(manifest: Dictionary) -> void:

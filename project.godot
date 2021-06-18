@@ -1350,6 +1350,11 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/data/save_state.gd"
 }, {
 "base": "Node",
+"class": "ScaffolderAppMetadata",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/scaffolder_app_metadata.gd"
+}, {
+"base": "Node",
 "class": "ScaffolderAudioManifest",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_audio_manifest.gd"
@@ -2033,6 +2038,7 @@ _global_script_class_icons={
 "RunAwayDuckling": "",
 "RunAwayDucklingParams": "",
 "SaveState": "",
+"ScaffolderAppMetadata": "",
 "ScaffolderAudioManifest": "",
 "ScaffolderBootstrap": "",
 "ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
