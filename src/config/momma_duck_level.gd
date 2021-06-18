@@ -3,12 +3,12 @@ class_name MommaDuckLevel
 extends SurfacerLevel
 
 
-const DUCKLING_RESOURCE_PATH := "res://src/players/duckling/duckling.tscn"
-const RUN_AWAY_DUCKLING_RESOURCE_PATH := \
+const DUCKLING_PATH := "res://src/players/duckling/duckling.tscn"
+const RUN_AWAY_DUCKLING_PATH := \
         "res://src/players/run_away_duckling/run_away_duckling.tscn"
-const FOX_RESOURCE_PATH := "res://src/players/fox/fox.tscn"
-const PORCUPINE_RESOURCE_PATH := "res://src/players/porcupine/porcupine.tscn"
-const SPIDER_RESOURCE_PATH := "res://src/players/spider/spider.tscn"
+const FOX_PATH := "res://src/players/fox/fox.tscn"
+const PORCUPINE_PATH := "res://src/players/porcupine/porcupine.tscn"
+const SPIDER_PATH := "res://src/players/spider/spider.tscn"
 
 const DUCKLING_SPAWN_POSITIONS_GROUP_NAME := "duckling_spawn_positions"
 const FOX_SPAWN_POSITIONS_GROUP_NAME := "fox_spawn_positions"
@@ -69,7 +69,7 @@ func _start() -> void:
     
     for spawn_position in duckling_spawn_positions:
         var duckling: Duckling = add_player(
-                DUCKLING_RESOURCE_PATH,
+                DUCKLING_PATH,
                 spawn_position.position,
                 false)
         duckling.call_deferred("create_leash_annotator")
@@ -77,14 +77,14 @@ func _start() -> void:
     
     for spawn_position in fox_spawn_positions:
         var fox: Fox = add_player(
-                FOX_RESOURCE_PATH,
+                FOX_PATH,
                 spawn_position.position,
                 false)
         foxes.push_back(fox)
     
     for spawn_position in porcupine_spawn_positions:
         var porcupine: Porcupine = add_player(
-                PORCUPINE_RESOURCE_PATH,
+                PORCUPINE_PATH,
                 spawn_position.position,
                 false)
         porcupines.push_back(porcupine)
@@ -148,7 +148,7 @@ func _physics_process(_delta: float) -> void:
 func add_spider(position: Vector2) -> Spider:
     var player: Spider = Gs.utils.add_scene(
             self,
-            SPIDER_RESOURCE_PATH,
+            SPIDER_PATH,
             false,
             true)
     player.position = position
@@ -178,7 +178,7 @@ func swap_duckling_with_run_away(
     remove_player(duckling)
     
     var run_away_duckling: RunAwayDuckling = add_player(
-            RUN_AWAY_DUCKLING_RESOURCE_PATH,
+            RUN_AWAY_DUCKLING_PATH,
             run_away_origin,
             false)
     run_away_ducklings.push_back(run_away_duckling)
@@ -192,7 +192,7 @@ func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
     remove_player(run_away_duckling)
     
     var duckling: Duckling = add_player(
-            DUCKLING_RESOURCE_PATH,
+            DUCKLING_PATH,
             position,
             false)
     duckling.call_deferred("create_leash_annotator")

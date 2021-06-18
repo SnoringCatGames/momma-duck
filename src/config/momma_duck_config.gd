@@ -296,6 +296,91 @@ var _settings_item_manifest := {
     },
 }
 
+var _hud_manifest := {
+    hud_class = MommaDuckHud,
+    hud_key_value_box_size = \
+            ScaffolderGuiConfig.HUD_KEY_VALUE_BOX_DEFAULT_SIZE,
+    hud_key_value_box_nine_patch_rect_path = \
+            ScaffolderGuiConfig.DEFAULT_HUD_KEY_VALUE_BOX_NINE_PATCH_RECT_PATH,
+    hud_key_value_list_item_manifest = [
+        {
+            item_class = TimeLabeledControlItem,
+            settings_enablement_label = "Time",
+            enabled = true,
+        },
+        {
+            item_class = FollowersCountLabeledControlItem,
+            settings_enablement_label = "Ducklings in tow",
+            enabled = true,
+        },
+    ],
+    is_inspector_enabled_default = false or _debug or _playtest,
+    inspector_panel_starts_open = false,
+}
+
+var _welcome_panel_items := [
+    HeaderLabeledControlItem.new("Lead your ducklings to the pond"),
+    StaticTextLabeledControlItem.new("*Auto nav*", "click"),
+    StaticTextLabeledControlItem.new("Walk/Climb", "arrow key / wasd"),
+    StaticTextLabeledControlItem.new("Jump", "space / x"),
+]
+
+var _gui_manifest := {
+    cell_size = Vector2(32.0, 32.0),
+    
+    # Should match Project Settings > Display > Window > Size > Width/Height
+    default_game_area_size = Vector2(1024, 768),
+    aspect_ratio_max = 2.0 / 1.0,
+    aspect_ratio_min = 1.0 / 2.0,
+    camera_smoothing_speed = 10.0,
+    default_camera_zoom = 0.4,
+    
+    is_data_deletion_button_shown = true,
+    
+    third_party_license_text = \
+            ScaffolderThirdPartyLicenses.TEXT + \
+            SurfacerThirdPartyLicenses.TEXT + \
+            ThirdPartyLicenses.TEXT,
+    special_thanks_text = """
+""",
+    
+    main_menu_image_scene_path = "res://src/gui/loading_image.tscn",
+    loading_image_scene_path = "res://src/gui/loading_image.tscn",
+    welcome_panel_path = ScaffolderGuiConfig.WELCOME_PANEL_PATH,
+    
+    fade_in_transition_texture = \
+            preload("res://addons/scaffolder/assets/images/transition_in.png"),
+    fade_out_transition_texture = \
+            preload("res://addons/scaffolder/assets/images/transition_out.png"),
+    
+    theme = preload("res://src/config/default_theme.tres"),
+    
+    fonts = _fonts,
+    settings_item_manifest = _settings_item_manifest,
+    hud_manifest = _hud_manifest,
+    welcome_panel_items = _welcome_panel_items,
+    
+    screen_path_exclusions = [
+        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
+    ],
+    screen_path_inclusions = [
+    ],
+    pause_item_class_exclusions = [],
+    pause_item_class_inclusions = [
+        FastestTimeLabeledControlItem,
+        FollowersCountLabeledControlItem,
+        ScareCountLabeledControlItem,
+    ],
+    game_over_item_class_exclusions = [],
+    game_over_item_class_inclusions = [
+        FastestTimeLabeledControlItem,
+    ],
+    level_select_item_class_exclusions = [],
+    level_select_item_class_inclusions = [
+        FastestTimeLabeledControlItem,
+    ],
+}
+
 var _metric_keys := [
 ]
 
@@ -368,15 +453,7 @@ var _player_param_classes := [
     preload("res://src/players/run_away_duckling/run_away_duckling_params.gd"),
 ]
 
-var welcome_panel_items := [
-    HeaderLabeledControlItem.new("Lead your ducklings to the pond"),
-    StaticTextLabeledControlItem.new("*Auto nav*", "click"),
-    StaticTextLabeledControlItem.new("Walk/Climb", "arrow key / wasd"),
-    StaticTextLabeledControlItem.new("Jump", "space / x"),
-]
-
-var app_manifest := {
-    # TODO: Remember to reset these when creating releases.
+var _surfacer_manifest := {
     precompute_platform_graph_for_levels = [
 #        "1",
 #        "2",
@@ -387,23 +464,9 @@ var app_manifest := {
     ignores_platform_graph_save_files = false,
     ignores_platform_graph_save_file_trajectory_state = false,
     is_debug_only_platform_graph_state_included = false,
-    debug = _debug,
-#    debug = false
-    playtest = _playtest,
-    pauses_on_focus_out = true,
-#    pauses_on_focus_out = true,
-    also_prints_to_stdout = true and _debug,
-    is_profiler_enabled = true,
-    are_all_levels_unlocked = true,
-    is_splash_skipped = false and _debug,
     are_loaded_surfaces_deeply_validated = true,
-#    debug_window_size = _screen_resolutions.default,
-    debug_window_size = _screen_resolutions.full_screen,
-    uses_threads = _uses_threads,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
-    thread_count = OS.get_processor_count() if _uses_threads else 1,
-    is_mobile_supported = true,
-    is_data_deletion_button_shown = true,
+    
     default_player_name = 'momma',
     nav_selection_slow_mo_time_scale = 1.0,
     nav_selection_slow_mo_tick_tock_tempo_multiplier = 1,
@@ -440,6 +503,31 @@ var app_manifest := {
     is_human_prediction_shown = true,
     is_computer_prediction_shown = true,
     
+    debug_params = _debug_params,
+    player_action_classes = _player_action_classes,
+    edge_movement_classes = _edge_movement_classes,
+    player_param_classes = _player_param_classes,
+}
+
+var app_manifest := {
+    # TODO: Remember to reset these when creating releases.
+    
+    debug = _debug,
+#    debug = false
+    playtest = _playtest,
+    pauses_on_focus_out = true,
+#    pauses_on_focus_out = true,
+    also_prints_to_stdout = true and _debug,
+    is_profiler_enabled = true,
+    are_all_levels_unlocked = true,
+    is_splash_skipped = false and _debug,
+#    debug_window_size = _screen_resolutions.default,
+    debug_window_size = _screen_resolutions.full_screen,
+    uses_threads = _uses_threads,
+    thread_count = OS.get_processor_count() if _uses_threads else 1,
+    is_mobile_supported = true,
+    uses_level_scores = false,
+    
     app_name = "Momma Duck",
     app_id = "games.snoringcat.momma_duck",
     app_version = "0.0.1",
@@ -459,74 +547,6 @@ var app_manifest := {
             "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
     app_id_query_param = "momma-duck",
     
-    theme = preload("res://src/config/default_theme.tres"),
-    
-    settings_item_manifest = _settings_item_manifest,
-    
-    screen_path_exclusions = [
-        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
-    ],
-    screen_path_inclusions = [
-    ],
-    pause_item_class_exclusions = [],
-    pause_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-        FollowersCountLabeledControlItem,
-        ScareCountLabeledControlItem,
-    ],
-    game_over_item_class_exclusions = [],
-    game_over_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-    ],
-    level_select_item_class_exclusions = [],
-    level_select_item_class_inclusions = [
-        FastestTimeLabeledControlItem,
-    ],
-    welcome_panel_items = welcome_panel_items,
-    hud_manifest = {
-        hud_class = MommaDuckHud,
-        hud_key_value_box_size = \
-                ScaffolderConfig.HUD_KEY_VALUE_BOX_DEFAULT_SIZE,
-        hud_key_value_box_nine_patch_rect_path = \
-                ScaffolderConfig.DEFAULT_HUD_KEY_VALUE_BOX_NINE_PATCH_RECT_PATH,
-        hud_key_value_list_item_manifest = [
-            {
-                item_class = TimeLabeledControlItem,
-                settings_enablement_label = "Time",
-                enabled = true,
-            },
-            {
-                item_class = FollowersCountLabeledControlItem,
-                settings_enablement_label = "Ducklings in tow",
-                enabled = true,
-            },
-        ],
-        is_inspector_enabled_default = false or _debug or _playtest,
-        inspector_panel_starts_open = false,
-    },
-    
-    colors_class = SurfacerColors,
-    draw_utils_class = SurfacerDrawUtils,
-    level_config_class = MommaDuckLevelConfig,
-    
-    fonts = _fonts,
-    
-    audio_manifest = _audio_manifest,
-    colors_manifest = _colors_manifest,
-    styles_manifest = _styles_manifest,
-    
-    debug_params = _debug_params,
-    player_action_classes = _player_action_classes,
-    edge_movement_classes = _edge_movement_classes,
-    player_param_classes = _player_param_classes,
-    
-    third_party_license_text = \
-            ScaffolderThirdPartyLicenses.TEXT + \
-            SurfacerThirdPartyLicenses.TEXT + \
-            ThirdPartyLicenses.TEXT,
-    special_thanks_text = """
-""",
-    
     app_logo = preload("res://assets/images/logo.png"),
     app_logo_scale = 2.0,
     go_icon = preload("res://assets/images/go_icon.png"),
@@ -542,24 +562,15 @@ var app_manifest := {
     godot_splash_screen_duration = 1.4,
     developer_splash_screen_duration = 1.0,
     
-    main_menu_image_scene_path = "res://src/gui/loading_image.tscn",
-    loading_image_scene_path = "res://src/gui/loading_image.tscn",
-    welcome_panel_resource_path = ScaffolderConfig.WELCOME_PANEL_RESOURCE_PATH,
+    colors_class = SurfacerColors,
+    draw_utils_class = SurfacerDrawUtils,
+    level_config_class = MommaDuckLevelConfig,
     
-    fade_in_transition_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_in.png"),
-    fade_out_transition_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_out.png"),
-    
-    cell_size = Vector2(32.0, 32.0),
-    
-    # Should match Project Settings > Display > Window > Size > Width/Height
-    default_game_area_size = Vector2(1024, 768),
-    aspect_ratio_max = 2.0 / 1.0,
-    aspect_ratio_min = 1.0 / 2.0,
-    camera_smoothing_speed = 10.0,
-    default_camera_zoom = 0.4,
-    uses_level_scores = false,
+    audio_manifest = _audio_manifest,
+    colors_manifest = _colors_manifest,
+    styles_manifest = _styles_manifest,
+    gui_manifest = _gui_manifest,
+    surfacer_manifest = _surfacer_manifest,
 }
 
 

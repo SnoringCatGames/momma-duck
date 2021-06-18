@@ -6,7 +6,7 @@ func _init_params() -> void:
     ._init_params()
 
     name = "duckling"
-    player_resource_path = \
+    player_path = \
     "res://src/players/duckling/duckling.tscn"
     
     collider_shape.radius = 8.0

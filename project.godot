@@ -1379,6 +1379,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/geometry.gd"
 }, {
+"base": "Node",
+"class": "ScaffolderGuiConfig",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/scaffolder_gui_config.gd"
+}, {
 "base": "Node2D",
 "class": "ScaffolderHud",
 "language": "GDScript",
@@ -2034,6 +2039,7 @@ _global_script_class_icons={
 "ScaffolderColors": "",
 "ScaffolderConfig": "",
 "ScaffolderGeometry": "",
+"ScaffolderGuiConfig": "",
 "ScaffolderHud": "",
 "ScaffolderLevel": "",
 "ScaffolderLevelConfig": "",

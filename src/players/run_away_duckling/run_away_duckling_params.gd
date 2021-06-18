@@ -6,7 +6,7 @@ func _init_params() -> void:
     ._init_params()
     
     name = "run_away_duckling"
-    player_resource_path = \
+    player_path = \
             "res://src/players/run_away_duckling/run_away_duckling.tscn"
     
 #    gravity_fast_fall = Gs.geometry.GRAVITY * 1.0
