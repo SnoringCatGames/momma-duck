@@ -2,24 +2,44 @@ class_name MommaDuckConfig
 extends Node
 
 
-var _debug := OS.is_debug_build()
-#var _debug := false
-var _playtest := false
-#var _playtest := false
-var _uses_threads := false and OS.can_use_threads()
+# ---
 
-# Useful for getting screenshots at specific resolutions.
-var _screen_resolutions := {
-    # Should match Project Settings > Display > Window > Size > Width/Height
-    default = Vector2(1024, 768),
-    full_screen = Vector2.INF,
-    play_store = Vector2(3840, 2160),
-    iphone_6_5 = Vector2(2778, 1284),
-    iphone_5_5 = Vector2(2208, 1242),
-    ipad_12_9 = Vector2(2732, 2048),
-    google_ads_landscape = Vector2(1024, 768),
-    google_ads_portrait = Vector2(768, 1024),
-}
+# This method is useful for defining parameters that are likely to change
+# between builds or between development and production environments.
+func _override_configs_for_current_run(manifest: Dictionary) -> void:
+    # TODO: Remember to reset these when creating releases.
+    
+    var is_debug := true and OS.is_debug_build()
+    var is_playtest := false
+    
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+    
+    manifest.app_version = "0.0.1"
+    
+    manifest.debug = is_debug
+    manifest.playtest = is_playtest
+    manifest.pauses_on_focus_out = !is_debug
+    manifest.also_prints_to_stdout = true
+    manifest.are_all_levels_unlocked = true and is_debug
+    manifest.is_splash_skipped = false and is_debug
+    
+    manifest.surfacer_manifest.precompute_platform_graph_for_levels = [
+#        "1",
+#        "2",
+#        "3",
+#        "4",
+#        "5",
+    ]
+    manifest.surfacer_manifest.ignores_platform_graph_save_files = false
+    
+    manifest.gui_manifest.debug_window_size = debug_window_size
+    manifest.gui_manifest.hud_manifest.is_inspector_enabled_default = \
+            false or is_debug or is_playtest
+
+# ---
+
+var _uses_threads := false and OS.can_use_threads()
 
 var _fonts := {
     main_xs = preload( \
@@ -170,7 +190,7 @@ var _audio_manifest := {
     pause_menu_music = "momma_pause_music",
     default_level_music = "momma_music",
     
-    pauses_level_music_on_pause = !_debug,
+    pauses_level_music_on_pause = true,
     
     are_beats_tracked_by_default = false,
     
@@ -314,7 +334,7 @@ var _hud_manifest := {
             enabled = true,
         },
     ],
-    is_inspector_enabled_default = false or _debug or _playtest,
+    is_inspector_enabled_default = false,
     inspector_panel_starts_open = false,
 }
 
@@ -326,6 +346,8 @@ var _welcome_panel_items := [
 ]
 
 var _gui_manifest := {
+    debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen,
+    
     cell_size = Vector2(32.0, 32.0),
     
     # Should match Project Settings > Display > Window > Size > Width/Height
@@ -381,69 +403,11 @@ var _gui_manifest := {
     ],
 }
 
-var _metric_keys := [
+var _additional_metric_keys := [
 ]
 
-var _debug_params := {
-#    limit_parsing = {
-#        player_name = "momma",
-#
-#        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
-##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
-##        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
-##        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
-##        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
-##        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
-#
-#        edge = {
-#            origin = {
-#                surface_side = SurfaceSide.FLOOR,
-#                surface_start_vertex = Vector2(-64, 64),
-#                position = Vector2(64, 64),
-#                epsilon = 10,
-#            },
-#            destination = {
-#                surface_side = SurfaceSide.FLOOR,
-#                surface_start_vertex = Vector2(128, -128),
-#                position = Vector2(128, -128),
-#                epsilon = 10,
-#            },
-#            #velocity_start = Vector2(0, -1000),
-#        },
-#    },
-    extra_annotations = {},
+var _surfacer_debug_params := {
 }
-
-var _player_action_classes := [
-    preload("res://addons/surfacer/src/player/action/action_handlers/air_dash_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/air_default_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/air_jump_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/all_default_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/cap_velocity_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/floor_dash_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/floor_default_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/fall_through_floor_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/floor_friction_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/floor_jump_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/floor_walk_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/match_expected_edge_trajectory_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_climb_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_dash_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_default_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_fall_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_jump_action.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/wall_walk_action.gd"),
-]
-
-var _edge_movement_classes := [
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/from_air_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/climb_down_wall_to_floor_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/climb_over_wall_to_floor_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_floor_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_wall_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/jump_from_surface_calculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/walk_to_ascend_wall_from_floor_calculator.gd"),
-]
 
 var _player_param_classes := [
     preload("res://src/players/duckling/duckling_params.gd"),
@@ -454,13 +418,7 @@ var _player_param_classes := [
 ]
 
 var _surfacer_manifest := {
-    precompute_platform_graph_for_levels = [
-#        "1",
-#        "2",
-#        "3",
-#        "4",
-#        "5",
-    ],
+    precompute_platform_graph_for_levels = [],
     ignores_platform_graph_save_files = false,
     ignores_platform_graph_save_file_trajectory_state = false,
     is_debug_only_platform_graph_state_included = false,
@@ -503,26 +461,20 @@ var _surfacer_manifest := {
     is_human_prediction_shown = true,
     is_computer_prediction_shown = true,
     
-    debug_params = _debug_params,
-    player_action_classes = _player_action_classes,
-    edge_movement_classes = _edge_movement_classes,
+    debug_params = _surfacer_debug_params,
+    player_action_classes = SurfacerConfig.DEFAULT_PLAYER_ACTION_CLASSES,
+    edge_movement_classes = SurfacerConfig.DEFAULT_EDGE_MOVEMENT_CLASSES,
     player_param_classes = _player_param_classes,
 }
 
 var app_manifest := {
-    # TODO: Remember to reset these when creating releases.
-    
-    debug = _debug,
-#    debug = false
-    playtest = _playtest,
+    debug = false,
+    playtest = false,
     pauses_on_focus_out = true,
-#    pauses_on_focus_out = true,
-    also_prints_to_stdout = true and _debug,
+    also_prints_to_stdout = true,
     is_profiler_enabled = true,
     are_all_levels_unlocked = true,
-    is_splash_skipped = false and _debug,
-#    debug_window_size = _screen_resolutions.default,
-    debug_window_size = _screen_resolutions.full_screen,
+    is_splash_skipped = false,
     uses_threads = _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
@@ -574,5 +526,9 @@ var app_manifest := {
 }
 
 
+func amend_app_manifest(manifest: Dictionary) -> void:
+    _override_configs_for_current_run(manifest)
+
+
 func initialize() -> void:
-    Gs.profiler.preregister_metric_keys(_metric_keys)
+    Gs.profiler.preregister_metric_keys(_additional_metric_keys)

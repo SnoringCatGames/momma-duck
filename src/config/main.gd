@@ -6,8 +6,9 @@ func _ready() -> void:
     run(MommaDuck.app_manifest, self)
 
 
-#func _amend_app_manifest() -> void:
-#    ._amend_app_manifest()
+func _amend_app_manifest() -> void:
+    MommaDuck.amend_app_manifest(MommaDuck.app_manifest)
+    ._amend_app_manifest()
 
 
 #func _register_app_manifest() -> void:
