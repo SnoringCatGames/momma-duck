@@ -375,12 +375,14 @@ var _hud_manifest := {
         {
             item_class = TimeLabeledControlItem,
             settings_enablement_label = "Time",
-            enabled = true,
+            enabled_by_default = true,
+            settings_group_key = "hud",
         },
         {
             item_class = FollowersCountLabeledControlItem,
             settings_enablement_label = "Ducklings in tow",
-            enabled = true,
+            enabled_by_default = true,
+            settings_group_key = "hud",
         },
     ],
     is_inspector_enabled_default = false,
