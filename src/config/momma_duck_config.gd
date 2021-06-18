@@ -150,6 +150,39 @@ var _music_manifest := [
     },
 ]
 
+var _audio_manifest := {
+    sounds_manifest = _sounds_manifest,
+    default_sounds_path_prefix = "res://assets/sounds/",
+    default_sounds_file_suffix = ".wav",
+    default_sounds_bus_index = 1,
+    
+    music_manifest = _music_manifest,
+    default_music_path_prefix = "res://addons/scaffolder/assets/music/",
+    default_music_file_suffix = ".ogg",
+    default_music_bus_index = 2,
+    
+    godot_splash_sound = "quack_peep",
+    developer_splash_sound = "single_cat_snore",
+    level_end_sound = "momma_cadence",
+    
+    main_menu_music = "momma_pause_music",
+    game_over_music = "momma_pause_music",
+    pause_menu_music = "momma_pause_music",
+    default_level_music = "momma_music",
+    
+    pauses_level_music_on_pause = !_debug,
+    
+    are_beats_tracked_by_default = false,
+    
+    is_arbitrary_music_speed_change_supported = false,
+    is_music_speed_scaled_with_time_scale = false,
+    is_music_speed_scaled_with_additional_debug_time_scale = false,
+    
+    is_music_paused_in_slow_motion = false,
+    is_tick_tock_played_in_slow_motion = false,
+    is_slow_motion_start_stop_sound_effect_played = false,
+}
+
 var _colors_manifest := {
     # Scaffolder colors.
     
@@ -364,7 +397,6 @@ var app_manifest := {
     are_all_levels_unlocked = true,
     is_splash_skipped = false and _debug,
     are_loaded_surfaces_deeply_validated = true,
-    are_beats_tracked_by_default = false,
 #    debug_window_size = _screen_resolutions.default,
     debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
@@ -372,12 +404,6 @@ var app_manifest := {
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
     is_data_deletion_button_shown = true,
-    is_arbitrary_music_speed_change_supported = false,
-    is_music_speed_scaled_with_time_scale = false,
-    is_music_speed_scaled_with_additional_debug_time_scale = false,
-    is_music_paused_in_slow_motion = false,
-    is_tick_tock_played_in_slow_motion = false,
-    is_slow_motion_start_stop_sound_effect_played = false,
     default_player_name = 'momma',
     nav_selection_slow_mo_time_scale = 1.0,
     nav_selection_slow_mo_tick_tock_tempo_multiplier = 1,
@@ -485,15 +511,7 @@ var app_manifest := {
     
     fonts = _fonts,
     
-    sounds_manifest = _sounds_manifest,
-    default_sounds_path_prefix = "res://assets/sounds/",
-    default_sounds_file_suffix = ".wav",
-    default_sounds_bus_index = 1,
-    music_manifest = _music_manifest,
-    default_music_path_prefix = "res://addons/scaffolder/assets/music/",
-    default_music_file_suffix = ".ogg",
-    default_music_bus_index = 2,
-    
+    audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
     styles_manifest = _styles_manifest,
     
@@ -501,15 +519,6 @@ var app_manifest := {
     player_action_classes = _player_action_classes,
     edge_movement_classes = _edge_movement_classes,
     player_param_classes = _player_param_classes,
-    
-    pauses_level_music_on_pause = !_debug,
-    main_menu_music = "momma_pause_music",
-    game_over_music = "momma_pause_music",
-    pause_menu_music = "momma_pause_music",
-    default_level_music = "momma_music",
-    godot_splash_sound = "quack_peep",
-    developer_splash_sound = "single_cat_snore",
-    level_end_sound = "momma_cadence",
     
     third_party_license_text = \
             ScaffolderThirdPartyLicenses.TEXT + \
