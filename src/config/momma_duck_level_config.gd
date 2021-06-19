@@ -147,9 +147,7 @@ func get_unlock_hint(level_id: String) -> String:
         Utils.error("If this is the first level, it should be unlocked")
         return ""
     
-    var settings_key := SaveState.get_level_fastest_time_settings_key(
-            previous_level_id)
-    if Gs.save_state.get_setting(settings_key, INF) != INF:
+    if Gs.save_state.get_level_has_finished(previous_level_id):
         return ""
     
     return "Finish %s" % get_level_config(previous_level_id).name

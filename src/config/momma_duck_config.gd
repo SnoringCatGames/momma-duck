@@ -176,6 +176,11 @@ var _sounds_manifest := [
         path_prefix = "res://assets/sounds/",
     },
     {
+        name = "cadence_lose",
+        volume_db = 10.0,
+        path_prefix = "res://addons/scaffolder/assets/sounds/",
+    },
+    {
         name = "duckling_quack",
         volume_db = 2.0,
         path_prefix = "res://assets/sounds/",
@@ -232,7 +237,8 @@ var _audio_manifest := {
     
     godot_splash_sound = "quack_peep",
     developer_splash_sound = "single_cat_snore",
-    level_end_sound = "momma_cadence",
+    level_end_sound_win = "momma_cadence",
+    level_end_sound_lose = "cadence_lose",
     
     main_menu_music = "momma_pause_music",
     game_over_music = "momma_pause_music",

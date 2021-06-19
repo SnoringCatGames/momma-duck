@@ -125,8 +125,10 @@ func _destroy() -> void:
 #    ._on_initial_input()
 
 
-#func quit(immediately := true) -> void:
-#    .quit(immediately)
+#func quit(
+#        has_finished: bool,
+#        immediately: bool) -> void:
+#    .quit(has_finished, immediately)
 
 
 #func _on_intro_choreography_finished() -> void:
@@ -222,23 +224,7 @@ func trigger_level_victory() -> void:
                 0.0,
                 TimeType.PLAY_PHYSICS_SCALED)
         is_over = true
-        quit(false)
-
-
-func _record_level_results() -> void:
-    ._record_level_results()
-    
-    var level_fastest_time_settings_key := \
-            SaveState.get_level_fastest_time_settings_key(_id)
-    var time := _get_level_play_time_unscaled()
-    var previous_fastest_time: float = Gs.save_state.get_setting(
-            level_fastest_time_settings_key,
-            INF)
-    var reached_new_fastest_time := time < previous_fastest_time
-    if reached_new_fastest_time:
-        Gs.save_state.set_setting(
-                level_fastest_time_settings_key,
-                time)
+        quit(true, false)
 
 
 func get_music_name() -> String:
