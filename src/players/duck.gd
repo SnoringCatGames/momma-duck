@@ -173,7 +173,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
 func _on_PondDetectionArea_area_entered(area: Area2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     is_in_pond = true
@@ -184,7 +184,7 @@ func _on_PondDetectionArea_area_entered(area: Area2D) -> void:
 func _on_PondDetectionArea_area_exited(area: Area2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     is_in_pond = false

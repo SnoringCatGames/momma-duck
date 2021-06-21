@@ -143,7 +143,7 @@ func _create_animator_params() -> PlayerAnimatorParams:
 
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     if is_logging_events:
@@ -152,7 +152,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
 
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     if is_logging_events:

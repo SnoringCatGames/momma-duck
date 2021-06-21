@@ -381,7 +381,7 @@ var _pause_item_manifest := [
 
 var _game_over_item_manifest := [
     LevelLabeledControlItem,
-    GameOverTimeLabeledControlItem,
+    TimeLabeledControlItem,
     FastestTimeLabeledControlItem,
 ]
 
@@ -538,9 +538,8 @@ var _surfacer_manifest := {
 }
 
 var app_manifest := {
-    colors_class = SurfacerColors,
-    draw_utils_class = SurfacerDrawUtils,
     level_config_class = MommaDuckLevelConfig,
+    level_session_class = MommaDuckLevelSession,
     
     app_metadata = _app_metadata,
     audio_manifest = _audio_manifest,

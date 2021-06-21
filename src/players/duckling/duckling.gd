@@ -108,7 +108,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     
     _throttled_exclamation_mark.call_func()
     
-    Gs.level.duckling_scare_count += 1
+    Gs.level_session.duckling_scare_count += 1
     
     if is_logging_events:
         Gs.logger.print("Duckling touched an enemy")
@@ -137,7 +137,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
 func _on_EnemyDetectionArea_body_entered(enemy: KinematicBody2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     on_touched_enemy(enemy)

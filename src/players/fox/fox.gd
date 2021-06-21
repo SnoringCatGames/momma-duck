@@ -167,7 +167,7 @@ func _on_DucklingDetectionArea_body_entered(duckling: Duckling):
     if is_logging_events:
         Gs.logger.print("Fox is close to duckling")
     
-    if !Gs.level.is_momma_level_started or \
+    if !Gs.level_session.has_started or \
             is_running_from_momma or \
             is_pouncing_on_duckling:
         return
@@ -218,7 +218,7 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     if is_logging_events:
@@ -235,7 +235,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level.is_momma_level_started:
+            !Gs.level_session.has_started:
         return
     
     if is_logging_events:

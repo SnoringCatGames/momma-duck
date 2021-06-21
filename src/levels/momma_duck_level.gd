@@ -36,10 +36,6 @@ var porcupines := []
 var spiders := []
 
 var last_attached_duck: Duck
-var is_momma_level_started := false
-var is_over := false
-
-var duckling_scare_count := 0
 
 
 #func _enter_tree() -> void:
@@ -53,7 +49,7 @@ var duckling_scare_count := 0
 func _start() -> void:
     ._start()
     
-    duckling_scare_count = 0
+    Gs.level_session.duckling_scare_count = 0
     
     momma = Surfacer.human_player
     last_attached_duck = momma
@@ -94,8 +90,8 @@ func _start() -> void:
         spiders.push_back(spider)
 
 
-func _on_started() -> void:
-    is_momma_level_started = true
+#func _on_started() -> void:
+#    ._on_started()
 
 
 func _destroy() -> void:
@@ -136,9 +132,9 @@ func _destroy() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-    if !is_started or \
-            is_destroyed or \
-            !is_momma_level_started:
+    if !Gs.level_session.has_started or \
+            Gs.level_session.is_destroyed or \
+            !Gs.level_session.has_started:
         return
     
     # FIXME: ------- Check that this gets called before any Duck._physics_process for this frame.
@@ -213,7 +209,7 @@ func check_if_all_ducks_are_in_pond() -> void:
 
 
 func trigger_level_victory() -> void:
-    if !is_over:
+    if !Gs.level_session.is_ended:
         Gs.time.tween_property(
                 Gs.camera_controller,
                 "zoom_factor",
@@ -223,7 +219,6 @@ func trigger_level_victory() -> void:
                 "ease_in_out",
                 0.0,
                 TimeType.PLAY_PHYSICS_SCALED)
-        is_over = true
         quit(true, false)
 
 
@@ -237,7 +232,7 @@ func get_slow_motion_music_name() -> String:
 
 
 func get_ducklings_in_tow_count() -> int:
-    if !is_momma_level_started:
+    if !Gs.level_session.has_started:
         return 0
     
     var count := 0
