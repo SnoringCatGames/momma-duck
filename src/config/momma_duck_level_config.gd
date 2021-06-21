@@ -12,6 +12,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = true,
         priority = -100,
+        unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level0.tscn",
         platform_graph_player_names = [
             "momma",
@@ -44,6 +45,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = false,
         priority = 10,
+        unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
         platform_graph_player_names = [
             "momma",
@@ -76,6 +78,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = false,
         priority = 20,
+        unlock_conditions = "finish_previous_level",
         scene_path = LEVELS_PATH_PREFIX + "level2.tscn",
         platform_graph_player_names = [
             "momma",
@@ -88,6 +91,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = false,
         priority = 30,
+        unlock_conditions = "finish_previous_level",
         scene_path = LEVELS_PATH_PREFIX + "level3.tscn",
         platform_graph_player_names = [
             "momma",
@@ -101,6 +105,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = false,
         priority = 40,
+        unlock_conditions = "finish_previous_level",
         scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
         platform_graph_player_names = [
             "momma",
@@ -114,6 +119,7 @@ var level_manifest := {
         version = "0.0.1",
         is_test_level = false,
         priority = 50,
+        unlock_conditions = "finish_previous_level",
         scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
         platform_graph_player_names = [
             "momma",
@@ -130,49 +136,3 @@ func _init().(
         ARE_LEVELS_SCENE_BASED,
         level_manifest) -> void:
     pass
-
-
-func get_unlock_hint(level_id: String) -> String:
-    if Gs.save_state.get_level_is_unlocked(level_id):
-        return ""
-    
-    var previous_level_id := get_previous_level_id(level_id)
-    if previous_level_id == "":
-        Utils.error("If this is the first level, it should be unlocked")
-        return ""
-    
-    if Gs.save_state.get_level_has_finished(previous_level_id):
-        return ""
-    
-    return "Finish %s" % get_level_config(previous_level_id).name
-
-
-func get_previous_level_id(level_id: String) -> String:
-    var level_number: int = get_level_config(level_id).number
-    
-    var level_numbers := []
-    for level_id in get_level_ids():
-        var config := get_level_config(level_id)
-        level_numbers.push_back(config.number)
-    level_numbers.sort()
-    
-    for i in level_numbers.size():
-        if level_numbers[i] == level_number:
-            if i == 0:
-                return ""
-            else:
-                return _level_configs_by_number[level_numbers[i - 1]].id
-    
-    Utils.error("The given level_id is invalid: %s" % level_id)
-    
-    return ""
-
-
-func get_suggested_next_level() -> String:
-    # TODO
-    var last_level_played_id := Gs.save_state.get_last_level_played()
-    if last_level_played_id != "" and \
-            level_manifest.has(last_level_played_id):
-        return last_level_played_id
-    else:
-        return get_level_ids().front()
