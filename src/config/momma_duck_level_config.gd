@@ -7,42 +7,42 @@ const ARE_LEVELS_SCENE_BASED := true
 const LEVELS_PATH_PREFIX := "res://src/levels/"
 
 var level_manifest := {
-#    "1": {
-#        name = "Level 1",
-#        version = "0.0.1",
-#        priority = 100,
-#        scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
-#        platform_graph_player_names = [
-#            "momma",
-#            "duckling",
-#            "run_away_duckling",
-#            "porcupine",
-#            "fox",
-#        ],
-#        intro_choreography = [
-#            {
-#                is_user_interaction_enabled = false,
-#                zoom = 0.5,
-#            },
-#            {
-#                duration = 0.3,
-#            },
-#            {
-#                destination = SurfacerLevelConfig \
-#                        .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
-#            },
-#            {
-#                duration = 0.4,
-#                zoom = 1.0,
-#            },
-#            {
-#                is_user_interaction_enabled = true,
-#            },
-#        ],
-#    },
+    "1000": {
+        name = "Test",
+        version = "0.0.1",
+        is_test_level = true,
+        priority = -100,
+        scene_path = LEVELS_PATH_PREFIX + "level0.tscn",
+        platform_graph_player_names = [
+            "momma",
+            "duckling",
+            "run_away_duckling",
+        ],
+        intro_choreography = [
+            {
+                is_user_interaction_enabled = false,
+                zoom = 0.5,
+            },
+            {
+                duration = 0.3,
+            },
+            {
+                destination = SurfacerLevelConfig \
+                        .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
+            },
+            {
+                duration = 0.4,
+                zoom = 1.0,
+            },
+            {
+                is_user_interaction_enabled = true,
+            },
+        ],
+    },
     "1": {
         name = "Search",
         version = "0.0.1",
+        is_test_level = false,
         priority = 10,
         scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
         platform_graph_player_names = [
@@ -74,6 +74,7 @@ var level_manifest := {
     "2": {
         name = "Tend",
         version = "0.0.1",
+        is_test_level = false,
         priority = 20,
         scene_path = LEVELS_PATH_PREFIX + "level2.tscn",
         platform_graph_player_names = [
@@ -85,6 +86,7 @@ var level_manifest := {
     "3": {
         name = "Avoid",
         version = "0.0.1",
+        is_test_level = false,
         priority = 30,
         scene_path = LEVELS_PATH_PREFIX + "level3.tscn",
         platform_graph_player_names = [
@@ -97,6 +99,7 @@ var level_manifest := {
     "4": {
         name = "Flee",
         version = "0.0.1",
+        is_test_level = false,
         priority = 40,
         scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
         platform_graph_player_names = [
@@ -109,6 +112,7 @@ var level_manifest := {
     "5": {
         name = "Waddle",
         version = "0.0.1",
+        is_test_level = false,
         priority = 50,
         scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
         platform_graph_player_names = [
@@ -122,20 +126,10 @@ var level_manifest := {
 }
 
 
-func _init().(ARE_LEVELS_SCENE_BASED) -> void:
+func _init().(
+        ARE_LEVELS_SCENE_BASED,
+        level_manifest) -> void:
     pass
-
-
-#func _sanitize_level_config(config: Dictionary) -> void:
-#    ._sanitize_level_config(config)
-
-
-func get_level_config(level_id: String) -> Dictionary:
-    return level_manifest[level_id]
-
-
-func get_level_ids() -> Array:
-    return level_manifest.keys()
 
 
 func get_unlock_hint(level_id: String) -> String:
