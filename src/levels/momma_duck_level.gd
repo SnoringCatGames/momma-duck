@@ -137,7 +137,6 @@ func _physics_process(_delta: float) -> void:
             !Gs.level_session.has_started:
         return
     
-    # FIXME: ------- Check that this gets called before any Duck._physics_process for this frame.
     momma.clear_just_changed_attachment()
     for duckling in ducklings:
         duckling.clear_just_changed_attachment()
