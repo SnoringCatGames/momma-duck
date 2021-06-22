@@ -844,6 +844,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/leash_annotator.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "LeashIncludedSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://src/gui/leash_included_settings_labeled_control_item.gd"
+}, {
 "base": "SurfacesOfSideGroupItemController",
 "class": "LeftWallsItemController",
 "language": "GDScript",
@@ -1947,6 +1952,7 @@ _global_script_class_icons={
 "LabeledControlItem": "",
 "LabeledControlList": "res://addons/scaffolder/assets/images/editor_icons/labeled_control_list.png",
 "LeashAnnotator": "",
+"LeashIncludedSettingsLabeledControlItem": "",
 "LeftWallsItemController": "",
 "Legend": "",
 "LegendItem": "",

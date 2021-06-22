@@ -19,13 +19,10 @@ const DISTANCE_SQUARED_TO_START_STRETCHING_AT := \
 var duck
 var leash: Rope
 
-# FIXME: ---------------------
-var render_leash := true
-
 
 func _init(duck) -> void:
     self.duck = duck
-    if render_leash:
+    if MommaDuck.includes_leash:
         self.leash = Rope.new()
 
 
@@ -33,7 +30,7 @@ func _physics_process(_delta: float) -> void:
     if !is_instance_valid(duck):
         return
     
-    if !render_leash:
+    if !MommaDuck.includes_leash:
         return
     
     if duck.is_attached_to_leader:
@@ -69,7 +66,7 @@ func _draw() -> void:
     if !duck.is_attached_to_leader:
         return
     
-    if !render_leash:
+    if !MommaDuck.includes_leash:
         return
     
     var vertices := PoolVector2Array()

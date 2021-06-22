@@ -18,6 +18,7 @@ func _amend_app_manifest() -> void:
 func _initialize_framework() -> void:
     ._initialize_framework()
     MommaDuck.initialize()
+    MommaDuck.load_state()
 
 
 func _on_app_initialized() -> void:

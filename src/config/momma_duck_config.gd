@@ -41,6 +41,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 
 # ---
 
+const INCLUDES_LEASH_SETTINGS_KEY := "includes_leash"
+
 var _uses_threads := false and OS.can_use_threads()
 
 var _app_metadata := {
@@ -330,6 +332,7 @@ var _settings_item_manifest := {
             label = "",
             is_collapsible = false,
             item_classes = [
+                LeashIncludedSettingsLabeledControlItem,
                 MusicSettingsLabeledControlItem,
                 SoundEffectsSettingsLabeledControlItem,
                 HapticFeedbackSettingsLabeledControlItem,
@@ -551,6 +554,8 @@ var app_manifest := {
     surfacer_manifest = _surfacer_manifest,
 }
 
+var includes_leash := true
+
 
 func _ready() -> void:
     Gs.logger.print("MommaDuckConfig._ready")
@@ -562,3 +567,9 @@ func amend_app_manifest(manifest: Dictionary) -> void:
 
 func initialize() -> void:
     Gs.profiler.preregister_metric_keys(_additional_metric_keys)
+
+
+func load_state() -> void:
+    MommaDuck.includes_leash = Gs.save_state.get_setting(
+            INCLUDES_LEASH_SETTINGS_KEY,
+            false)
