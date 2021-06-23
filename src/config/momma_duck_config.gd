@@ -262,34 +262,48 @@ var _audio_manifest := {
     is_slow_motion_start_stop_sound_effect_played = false,
 }
 
+var COLOR_BACKGROUND := Color("2f4034")
+var COLOR_BACKGROUND_LIGHTER := Color("3c4d41")
+var COLOR_BACKGROUND_DARKER := Color("233327")
+
+var COLOR_TEXT := Color("eeeeee")
+var COLOR_HEADER := Color("fff12e")
+
+var COLOR_BUTTON := Color("24803b")
+var COLOR_BUTTON_LIGHTER := Color("47a65f")
+var COLOR_BUTTON_DARKER := Color("0c591f")
+
 var _colors_manifest := {
     # Scaffolder colors.
     
     # Should match Project Settings > Application > Boot Splash > Bg Color.
     # Should match
     #     Project Settings > Rendering > Environment > Default Clear Color.
-    background = Color("2f4034"),
-    font = Color("eeeeee"),
-    header_font = Color("fff12e"),
-    button = Color("24803b"),
-    shiny_button_highlight = Color("98cc70"),
-    button_disabled_hsv_delta = {h=0.0, s=-0.4, v=0.15, a=-0.2},
-    button_focused_hsv_delta = {h=-0.03, s=-0.15, v=0.15},
-    button_hover_hsv_delta = {h=-0.03, s=-0.15, v=0.15},
-    button_pressed_hsv_delta = {h=0.05, s=-0.05, v=-0.1},
-    dropdown = Color("2f4034"),
-    tooltip = Color("080808"),
-    tooltip_bg = Color("bbbbbb"),
-    dropdown_disabled_hsv_delta = {h=0.0, s=-0.4, v=0.15, a=-0.2},
-    dropdown_focused_hsv_delta = {h=0.05, s=-0.15, v=0.15},
-    dropdown_hover_hsv_delta = {h=0.05, s=-0.15, v=0.15},
-    dropdown_pressed_hsv_delta = {h=-0.05, s=-0.05, v=-0.1},
-    popup_background_hsv_delta = {h=0.0, s=-0.05, v=0.05},
-    scroll_bar_background_hsv_delta = {h=0.0, s=-0.2, v=-0.1},
-    scroll_bar_grabber_normal_hsv_delta = {h=0.05, s=-0.2, v=-0.1},
-    scroll_bar_grabber_hover_hsv_delta = {h=0.0, s=0.15, v=0.2},
-    scroll_bar_grabber_pressed_hsv_delta = {h=0.08, s=-0.15, v=-0.1},
-    zebra_stripe_even_row_hsv_delta = {h=0.01, s=-0.05, v=0.05},
+    background = COLOR_BACKGROUND,
+    font = COLOR_TEXT,
+    header_font = COLOR_HEADER,
+    link_normal = COLOR_BUTTON_LIGHTER,
+    link_hover = COLOR_BUTTON,
+    link_pressed = COLOR_BUTTON_DARKER,
+    button_normal = COLOR_BUTTON,
+    shiny_button_highlight = COLOR_BUTTON,
+    button_disabled = COLOR_BUTTON_LIGHTER,
+    button_focused = COLOR_BUTTON_LIGHTER,
+    button_hover = COLOR_BUTTON_LIGHTER,
+    button_pressed = COLOR_BUTTON_DARKER,
+    dropdown_normal = COLOR_BACKGROUND,
+    dropdown_disabled = COLOR_BACKGROUND_LIGHTER,
+    dropdown_focused = COLOR_BACKGROUND_LIGHTER,
+    dropdown_hover = COLOR_BACKGROUND_LIGHTER,
+    dropdown_pressed = COLOR_BACKGROUND_DARKER,
+    tooltip = COLOR_BACKGROUND,
+    tooltip_bg = COLOR_TEXT,
+    popup_background = COLOR_BACKGROUND_LIGHTER,
+    scroll_bar_background = COLOR_BACKGROUND_LIGHTER,
+    scroll_bar_grabber_normal = COLOR_BUTTON,
+    scroll_bar_grabber_hover = COLOR_BUTTON_LIGHTER,
+    scroll_bar_grabber_pressed = COLOR_BUTTON_DARKER,
+    zebra_stripe_even_row = COLOR_BACKGROUND_LIGHTER,
     
     # Surfacer colors.
     
