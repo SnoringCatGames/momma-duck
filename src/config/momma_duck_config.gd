@@ -96,30 +96,30 @@ var _app_metadata := {
 
 var _fonts := {
     main_xs = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_xs.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
     main_xs_italic = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_xs_italic.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
     main_s = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_s.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
     main_m = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_m.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
     main_m_bold = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_m_bold.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
     main_m_italic = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_m_italic.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
     main_l = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_l.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
     main_xl = preload( \
-            "res://addons/scaffolder/assets/fonts/main_font_xl.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
     
     header_s = preload( \
-            "res://addons/scaffolder/assets/fonts/header_font_s.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
     header_m = preload( \
-            "res://addons/scaffolder/assets/fonts/header_font_m.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
     header_l = preload( \
-            "res://addons/scaffolder/assets/fonts/header_font_l.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
     header_xl = preload( \
-            "res://addons/scaffolder/assets/fonts/header_font_xl.tres"),
+            "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
 }
 
 var _sounds_manifest := [
