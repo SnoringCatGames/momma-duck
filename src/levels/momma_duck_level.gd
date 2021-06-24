@@ -240,3 +240,7 @@ func get_ducklings_in_tow_count() -> int:
         count += 1
         next_follower = next_follower.follower
     return count
+
+
+func get_ducklings_count() -> int:
+    return ducklings.size()

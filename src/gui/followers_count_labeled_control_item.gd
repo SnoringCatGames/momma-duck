@@ -25,4 +25,7 @@ func get_text() -> String:
         return "—"
     else:
         assert(is_instance_valid(Gs.level))
-        return str(Gs.level.get_ducklings_in_tow_count())
+        return "%d / %d" % [
+            Gs.level.get_ducklings_in_tow_count(),
+            Gs.level.get_ducklings_count(),
+        ]
