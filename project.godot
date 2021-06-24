@@ -1364,6 +1364,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_bootstrap.gd"
 }, {
+"base": "Button",
+"class": "ScaffolderButton",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/scaffolder_button.gd"
+}, {
 "base": "Control",
 "class": "ScaffolderCheckBox",
 "language": "GDScript",
@@ -1473,11 +1478,6 @@ _global_script_classes=[ {
 "class": "SettingsScreen",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/settings_screen.gd"
-}, {
-"base": "Button",
-"class": "ShinyButton",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/shiny_button.gd"
 }, {
 "base": "LabeledControlItem",
 "class": "SliderLabeledControlItem",
@@ -2056,6 +2056,7 @@ _global_script_class_icons={
 "ScaffolderAppMetadata": "",
 "ScaffolderAudioManifest": "",
 "ScaffolderBootstrap": "",
+"ScaffolderButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_button.png",
 "ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
 "ScaffolderColors": "",
 "ScaffolderConfig": "",
@@ -2078,7 +2079,6 @@ _global_script_class_icons={
 "SelectionDescription": "",
 "SettingsGroup": "",
 "SettingsScreen": "",
-"ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/shiny_button.png",
 "SliderLabeledControlItem": "",
 "SlowMotionController": "",
 "SlowMotionMusic": "",
