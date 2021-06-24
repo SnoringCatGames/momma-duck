@@ -474,6 +474,7 @@ var _gui_manifest := {
 """,
     
     main_menu_image_scene_path = "res://src/gui/loading_image.tscn",
+    game_over_image_scene_path = "res://src/gui/loading_image.tscn",
     loading_image_scene_path = "res://src/gui/loading_image.tscn",
     welcome_panel_path = ScaffolderGuiConfig.WELCOME_PANEL_PATH,
     
