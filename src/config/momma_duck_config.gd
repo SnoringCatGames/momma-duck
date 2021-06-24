@@ -277,6 +277,8 @@ var _colors_manifest := {
     # Scaffolder colors.
     
     # Should match Project Settings > Application > Boot Splash > Bg Color.
+    boot_splash_background = \
+            ScaffolderColors.DEFAULT_BOOT_SPLASH_BACKGROUND_COLOR,
     # Should match
     #     Project Settings > Rendering > Environment > Default Clear Color.
     background = COLOR_BACKGROUND,
