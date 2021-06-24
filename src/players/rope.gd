@@ -105,6 +105,8 @@ func on_new_attachment(
 
 # Rope-simulation using Störmer–Verlet integration.
 class RopeNode extends Reference:
+    
+    
     var NODE_TIME_STEP := \
             Gs.time.PHYSICS_TIME_STEP * \
             NUMBER_OF_PHYSICS_FRAMES_BETWEEN_NODE_PHYSICS_FRAMES
