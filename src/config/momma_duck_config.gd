@@ -463,6 +463,9 @@ var _gui_manifest := {
     aspect_ratio_min = 1.0 / 2.0,
     camera_smoothing_speed = 10.0,
     default_camera_zoom = 0.4,
+    button_height = 56.0,
+    button_width = 230.0,
+    screen_body_width = 460.0,
     
     is_data_deletion_button_shown = true,
     
