@@ -280,8 +280,8 @@ var _colors_manifest := {
     # Should match
     #     Project Settings > Rendering > Environment > Default Clear Color.
     background = COLOR_BACKGROUND,
-    font = COLOR_TEXT,
-    header_font = COLOR_HEADER,
+    text = COLOR_TEXT,
+    header = COLOR_HEADER,
     link_normal = COLOR_BUTTON_LIGHTER,
     link_hover = COLOR_BUTTON,
     link_pressed = COLOR_BUTTON_DARKER,
