@@ -445,11 +445,12 @@ var _welcome_panel_manifest := {
 }
 
 var _screen_manifest := {
-    path_exclusions = [
-        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
+    exclusions = [
+        preload("res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn"),
     ],
-    path_inclusions = [
+    inclusions = [
     ],
+    fade_transition = ScaffolderGuiConfig.FADE_TRANSITION_SCREEN_SCENE,
 }
 
 var _gui_manifest := {
