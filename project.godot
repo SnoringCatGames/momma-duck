@@ -1399,6 +1399,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/scaffolder_hud.gd"
 }, {
+"base": "LinkButton",
+"class": "ScaffolderLabelLink",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/scaffolder_label_link.gd"
+}, {
 "base": "Node2D",
 "class": "ScaffolderLevel",
 "language": "GDScript",
@@ -1433,6 +1438,11 @@ _global_script_classes=[ {
 "class": "ScaffolderTextureButton",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_texture_button.gd"
+}, {
+"base": "LinkButton",
+"class": "ScaffolderTextureLink",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/scaffolder_texture_link.gd"
 }, {
 "base": "Control",
 "class": "ScaffolderTextureRect",
@@ -1498,6 +1508,11 @@ _global_script_classes=[ {
 "class": "SoundEffectsSettingsLabeledControlItem",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/settings_items/sound_effects_settings_labeled_control_item.gd"
+}, {
+"base": "Control",
+"class": "Spacer",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/spacer.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Spider",
@@ -2063,6 +2078,7 @@ _global_script_class_icons={
 "ScaffolderGeometry": "",
 "ScaffolderGuiConfig": "",
 "ScaffolderHud": "",
+"ScaffolderLabelLink": "",
 "ScaffolderLevel": "",
 "ScaffolderLevelConfig": "",
 "ScaffolderLevelSession": "",
@@ -2070,6 +2086,7 @@ _global_script_class_icons={
 "ScaffolderNavigation": "",
 "ScaffolderStyles": "",
 "ScaffolderTextureButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_button.png",
+"ScaffolderTextureLink": "",
 "ScaffolderTextureRect": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_rect.png",
 "ScaffolderThirdPartyLicenses": "",
 "ScaffolderTween": "",
@@ -2083,6 +2100,7 @@ _global_script_class_icons={
 "SlowMotionController": "",
 "SlowMotionMusic": "",
 "SoundEffectsSettingsLabeledControlItem": "",
+"Spacer": "",
 "Spider": "",
 "SpiderAnimator": "",
 "StaticTextLabeledControlItem": "",
