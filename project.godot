@@ -1409,7 +1409,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/scaffolder_hud.gd"
 }, {
-"base": "Reference",
+"base": "LinkButton",
 "class": "ScaffolderLabelLink",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_label_link.gd"
@@ -2100,7 +2100,7 @@ _global_script_class_icons={
 "ScaffolderGeometry": "",
 "ScaffolderGuiConfig": "",
 "ScaffolderHud": "",
-"ScaffolderLabelLink": "",
+"ScaffolderLabelLink": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label_link.png",
 "ScaffolderLevel": "",
 "ScaffolderLevelConfig": "",
 "ScaffolderLevelSession": "",
