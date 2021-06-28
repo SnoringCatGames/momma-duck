@@ -14,6 +14,9 @@ const RADIUS := 24.0
 
 const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
 
+const ANIMATOR_SCENE := \
+        preload("res://src/players/spider/spider_animator.tscn")
+
 export var range_y := 196.0
 export var speed := 50.0
 export var pause_at_end_duration := 3.0
@@ -125,8 +128,7 @@ func _update_animator() -> void:
 func _create_animator_params() -> PlayerAnimatorParams:
     var animator_params := PlayerAnimatorParams.new()
     
-    animator_params.player_animator_scene_path = \
-            "res://src/players/spider/spider_animator.tscn"
+    animator_params.player_animator_path_or_scene = ANIMATOR_SCENE
     
     animator_params.faces_right_by_default = true
     

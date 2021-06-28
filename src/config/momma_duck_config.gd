@@ -415,8 +415,12 @@ var _hud_manifest := {
     hud_class = MommaDuckHud,
     hud_key_value_box_size = \
             ScaffolderGuiConfig.HUD_KEY_VALUE_BOX_DEFAULT_SIZE,
-    hud_key_value_box_nine_patch_rect_path = \
-            ScaffolderGuiConfig.DEFAULT_HUD_KEY_VALUE_BOX_NINE_PATCH_RECT_PATH,
+    hud_key_value_box_scene = \
+            preload("res://addons/scaffolder/src/gui/hud/hud_key_value_box.tscn"),
+    hud_key_value_list_scene = \
+            preload("res://addons/scaffolder/src/gui/hud/hud_key_value_list.tscn"),
+    hud_key_value_box_nine_patch_rect_scene = \
+            preload("res://addons/scaffolder/src/gui/hud/hud_key_value_box_nine_patch_rect.tscn"),
     hud_key_value_list_item_manifest = [
         {
             item_class = TimeLabeledControlItem,
@@ -477,10 +481,16 @@ var _gui_manifest := {
     special_thanks_text = """
 """,
     
-    main_menu_image_scene_path = "res://src/gui/loading_image.tscn",
-    game_over_image_scene_path = "res://src/gui/loading_image.tscn",
-    loading_image_scene_path = "res://src/gui/loading_image.tscn",
-    welcome_panel_path = ScaffolderGuiConfig.WELCOME_PANEL_PATH,
+    main_menu_image_scene = \
+            preload("res://src/gui/loading_image.tscn"),
+    game_over_image_scene = \
+            preload("res://src/gui/loading_image.tscn"),
+    loading_image_scene = \
+            preload("res://src/gui/loading_image.tscn"),
+    welcome_panel_scene = \
+            preload("res://addons/scaffolder/src/gui/welcome_panel.tscn"),
+    debug_panel_scene = \
+            preload("res://addons/scaffolder/src/gui/debug_panel.tscn"),
     
     fade_in_transition_texture = \
             preload("res://addons/scaffolder/assets/images/transition_in.png"),

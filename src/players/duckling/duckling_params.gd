@@ -2,12 +2,17 @@ class_name DucklingParams
 extends MommaParams
 
 
+const DUCKLING_PLAYER_SCENE := \
+        preload("res://src/players/duckling/duckling.tscn")
+const DUCKLING_ANIMATOR_SCENE := \
+        preload("res://src/players/duckling/duckling_animator.tscn")
+
+
 func _init_params() -> void:
     ._init_params()
 
     name = "duckling"
-    player_path = \
-    "res://src/players/duckling/duckling.tscn"
+    player_path_or_scene = DUCKLING_PLAYER_SCENE
     
     collider_shape.radius = 8.0
     
@@ -33,8 +38,7 @@ func _init_params() -> void:
 func _init_animator_params() -> void:
     animator_params = DuckAnimatorParams.new()
     
-    animator_params.player_animator_scene_path = \
-            "res://src/players/duckling/duckling_animator.tscn"
+    animator_params.player_animator_path_or_scene = DUCKLING_ANIMATOR_SCENE
     
     animator_params.faces_right_by_default = false
     

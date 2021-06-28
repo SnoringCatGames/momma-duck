@@ -2,12 +2,15 @@ class_name RunAwayDucklingParams
 extends DucklingParams
 
 
+const RUN_AWAY_DUCKLING_PLAYER_SCENE := \
+        preload("res://src/players/run_away_duckling/run_away_duckling.tscn")
+
+
 func _init_params() -> void:
     ._init_params()
     
     name = "run_away_duckling"
-    player_path = \
-            "res://src/players/run_away_duckling/run_away_duckling.tscn"
+    player_path_or_scene = RUN_AWAY_DUCKLING_PLAYER_SCENE
     
 #    gravity_fast_fall = Gs.geometry.GRAVITY * 1.0
     

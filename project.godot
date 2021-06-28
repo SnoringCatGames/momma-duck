@@ -1242,7 +1242,7 @@ _global_script_classes=[ {
 "base": "Player",
 "class": "Porcupine",
 "language": "GDScript",
-"path": "res://src/players/spider/porcupine.gd"
+"path": "res://src/players/porcupine/porcupine.gd"
 }, {
 "base": "PlayerAnimator",
 "class": "PorcupineAnimator",
@@ -1434,7 +1434,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_progress_bar.gd"
 }, {
-"base": "Slider",
+"base": "HSlider",
 "class": "ScaffolderSlider",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_slider.gd"
