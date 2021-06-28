@@ -481,6 +481,10 @@ var _gui_manifest := {
     special_thanks_text = """
 """,
     
+    main_menu_image_scale = 1.0,
+    game_over_image_scale = 0.5,
+    loading_image_scale = 0.5,
+    
     main_menu_image_scene = \
             preload("res://src/gui/loading_image.tscn"),
     game_over_image_scene = \
