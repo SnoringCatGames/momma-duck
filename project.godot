@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Screen",
+"class": "AboutScreen",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/screens/about_screen.gd"
+}, {
 "base": "Control",
 "class": "AccordionPanel",
 "language": "GDScript",
@@ -114,7 +119,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/ceilings_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "PanelContainer",
 "class": "CenteredPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/centered_panel.gd"
@@ -213,11 +218,6 @@ _global_script_classes=[ {
 "class": "CrashReporter",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/crash_reporter.gd"
-}, {
-"base": "Screen",
-"class": "CreditsScreen",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/screens/credits_screen.gd"
 }, {
 "base": "Screen",
 "class": "DataAgreementScreen",
@@ -644,7 +644,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/from_air_edge.gd"
 }, {
-"base": "Reference",
+"base": "PanelContainer",
 "class": "FullScreenPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/full_screen_panel.gd"
@@ -1489,10 +1489,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_items/score_labeled_control_item.gd"
 }, {
-"base": "Node2D",
+"base": "Control",
 "class": "Screen",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen.gd"
+}, {
+"base": "Node2D",
+"class": "ScreenContainer",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/screen_container.gd"
 }, {
 "base": "MarginContainer",
 "class": "SelectionDescription",
@@ -1820,6 +1825,7 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/settings_items/welcome_panel_settings_labeled_control_item.gd"
 } ]
 _global_script_class_icons={
+"AboutScreen": "",
 "AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/accordion_panel.png",
 "ActiveTrajectoryAnnotatorSettingsLabeledControlItem": "",
 "AirDashAction": "",
@@ -1841,7 +1847,7 @@ _global_script_class_icons={
 "CanvasLayers": "",
 "CapVelocityAction": "",
 "CeilingsItemController": "",
-"CenteredPanel": "",
+"CenteredPanel": "res://addons/scaffolder/assets/images/editor_icons/centered_panel.png",
 "CheckboxLabeledControlItem": "",
 "Choreographer": "",
 "CircularBuffer": "",
@@ -1861,7 +1867,6 @@ _global_script_class_icons={
 "ConfirmDataDeletionScreen": "",
 "ContinuousEdgeTrajectoryLegendItem": "",
 "CrashReporter": "",
-"CreditsScreen": "",
 "DataAgreementScreen": "",
 "DebugLevel": "",
 "DebugPanel": "res://addons/scaffolder/assets/images/editor_icons/debug_panel.png",
@@ -1947,7 +1952,7 @@ _global_script_class_icons={
 "FoxParams": "",
 "FromAirCalculator": "",
 "FromAirEdge": "",
-"FullScreenPanel": "",
+"FullScreenPanel": "res://addons/scaffolder/assets/images/editor_icons/full_screen_panel.png",
 "GameOverScreen": "",
 "GameScreen": "",
 "GestureRecord": "",
@@ -2117,6 +2122,7 @@ _global_script_class_icons={
 "ScareCountLabeledControlItem": "",
 "ScoreLabeledControlItem": "",
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/screen.png",
+"ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "SelectionDescription": "",
 "SettingsGroup": "",
 "SettingsScreen": "",
