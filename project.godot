@@ -1374,7 +1374,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_button.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "ScaffolderCheckBox",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_check_box.gd"
@@ -1459,7 +1459,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_texture_button.gd"
 }, {
-"base": "Reference",
+"base": "LinkButton",
 "class": "ScaffolderTextureLink",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_texture_link.gd"
@@ -1534,7 +1534,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/settings_items/sound_effects_settings_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "Spacer",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/spacer.gd"
@@ -2098,7 +2098,7 @@ _global_script_class_icons={
 "ScaffolderAudioManifest": "",
 "ScaffolderBootstrap": "",
 "ScaffolderButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_button.png",
-"ScaffolderCheckBox": "",
+"ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
 "ScaffolderColors": "",
 "ScaffolderConfig": "",
 "ScaffolderConfiguredImage": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
@@ -2115,7 +2115,7 @@ _global_script_class_icons={
 "ScaffolderSlider": "res://addons/scaffolder/assets/images/editor_icons/slider.png",
 "ScaffolderStyles": "",
 "ScaffolderTextureButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_button.png",
-"ScaffolderTextureLink": "",
+"ScaffolderTextureLink": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_link.png",
 "ScaffolderTextureRect": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_rect.png",
 "ScaffolderThirdPartyLicenses": "",
 "ScaffolderTween": "",
@@ -2130,7 +2130,7 @@ _global_script_class_icons={
 "SlowMotionController": "",
 "SlowMotionMusic": "",
 "SoundEffectsSettingsLabeledControlItem": "",
-"Spacer": "",
+"Spacer": "res://addons/scaffolder/assets/images/editor_icons/spacer.png",
 "Spider": "",
 "SpiderAnimator": "",
 "StaticTextLabeledControlItem": "",
