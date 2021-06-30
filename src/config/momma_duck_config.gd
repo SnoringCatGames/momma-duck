@@ -23,7 +23,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _app_metadata.also_prints_to_stdout = true
     _app_metadata.are_all_levels_unlocked = false and is_debug
     _app_metadata.are_test_levels_included = true
-    _app_metadata.is_save_state_cleared_for_debugging = true
+    _app_metadata.is_save_state_cleared_for_debugging = false
     _app_metadata.is_splash_skipped = true and is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
