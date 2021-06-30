@@ -104,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/camera_shake.gd"
 }, {
+"base": "SliderLabeledControlItem",
+"class": "CameraZoomSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/labeled_control_list/camera_zoom_settings_labeled_control_item.gd"
+}, {
 "base": "Node2D",
 "class": "CanvasLayers",
 "language": "GDScript",
@@ -1712,7 +1717,7 @@ _global_script_classes=[ {
 "base": "SliderLabeledControlItem",
 "class": "TimeScaleSettingsLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/gui/settings_items/time_scale_settings_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/labeled_control_list/time_scale_settings_labeled_control_item.gd"
 }, {
 "base": "Reference",
 "class": "TimeType",
@@ -1854,6 +1859,7 @@ _global_script_class_icons={
 "CameraController": "",
 "CameraPanController": "",
 "CameraShake": "",
+"CameraZoomSettingsLabeledControlItem": "",
 "CanvasLayers": "",
 "CapVelocityAction": "",
 "CeilingsItemController": "",

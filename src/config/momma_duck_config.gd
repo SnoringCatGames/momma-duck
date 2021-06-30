@@ -384,6 +384,7 @@ var _settings_item_manifest := {
                 WelcomePanelSettingsLabeledControlItem,
                 IntroChoreographySettingsLabeledControlItem,
                 InspectorEnabledSettingsLabeledControlItem,
+                CameraZoomSettingsLabeledControlItem,
                 TimeScaleSettingsLabeledControlItem,
                 MetronomeSettingsLabeledControlItem,
                 LogSurfacerEventsSettingsLabeledControlItem,

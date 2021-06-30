@@ -33,7 +33,7 @@ var level_manifest := {
             },
             {
                 duration = 0.4,
-                zoom = 1.0,
+                zoom = INF,
             },
             {
                 is_user_interaction_enabled = true,
