@@ -8,6 +8,6 @@ extends SurfacerLevelSession
 var duckling_scare_count := 0
 
 
-func reset() -> void:
-    .reset()
+func reset(id: String) -> void:
+    .reset(id)
     duckling_scare_count = 0
