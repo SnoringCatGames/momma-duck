@@ -1,4 +1,3 @@
-tool
 class_name MommaDuckLevel
 extends SurfacerLevel
 
@@ -151,7 +150,6 @@ func add_spider(position: Vector2) -> Spider:
 
 func remove_spider(spider: Spider) -> void:
     spider._destroy()
-    remove_child(spider)
 
 
 func swap_duckling_with_run_away(

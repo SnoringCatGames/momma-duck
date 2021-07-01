@@ -49,6 +49,7 @@ func _ready() -> void:
 
 func _destroy() -> void:
     _is_destroyed = true
+    queue_free()
 
 
 func _physics_process(delta: float) -> void:
