@@ -32,3 +32,7 @@ func _on_app_initialized() -> void:
 
 #func _on_splash_finished() -> void:
 #    ._on_splash_finished()
+
+
+#func _on_app_quit() -> void:
+#    ._on_app_quit()
