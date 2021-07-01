@@ -79,7 +79,7 @@ var _app_metadata := {
     app_id_query_param = "momma-duck",
     
     app_logo = preload("res://assets/images/logo.png"),
-    app_logo_scale = 2.0,
+    app_logo_scale = 1.0,
     go_icon = preload("res://assets/images/go_icon.png"),
     go_icon_scale = 1.5,
     developer_name = "Snoring Cat LLC",
@@ -463,8 +463,8 @@ var _gui_manifest := {
     
     cell_size = Vector2(32.0, 32.0),
     
-    # Should match Project Settings > Display > Window > Size > Width/Height
-    default_game_area_size = Vector2(1024, 768),
+    default_pc_game_area_size = Vector2(1024, 768),
+    default_mobile_game_area_size = Vector2(500, 600),
     aspect_ratio_max = 2.0 / 1.0,
     aspect_ratio_min = 1.0 / 2.0,
     camera_smoothing_speed = 10.0,
