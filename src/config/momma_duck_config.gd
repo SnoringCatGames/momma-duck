@@ -74,7 +74,7 @@ var _app_metadata := {
     android_app_store_url = "",
     ios_app_store_url = "",
     support_url = "https://snoringcat.games/support",
-    log_gestures_url = \
+    error_logs_url = \
             "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
     app_id_query_param = "momma-duck",
     
