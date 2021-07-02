@@ -24,7 +24,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _app_metadata.are_all_levels_unlocked = false and is_debug
     _app_metadata.are_test_levels_included = true
     _app_metadata.is_save_state_cleared_for_debugging = false
-    _app_metadata.is_splash_skipped = true and is_debug
+    _app_metadata.is_splash_skipped = false and is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
@@ -500,7 +500,6 @@ var _gui_manifest := {
     debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen,
     
     cell_size = Vector2(32.0, 32.0),
-    
     default_pc_game_area_size = Vector2(1024, 768),
     default_mobile_game_area_size = Vector2(500, 600),
     aspect_ratio_max = 2.0 / 1.0,
@@ -550,6 +549,9 @@ var _gui_manifest := {
     hud_manifest = _hud_manifest,
     welcome_panel_manifest = _welcome_panel_manifest,
     screen_manifest = _screen_manifest,
+    
+    splash_scale_pc = 1.0,
+    splash_scale_mobile = 0.77,
 }
 
 var _additional_metric_keys := [
