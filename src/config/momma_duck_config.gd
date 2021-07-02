@@ -94,32 +94,70 @@ var _app_metadata := {
     developer_splash_screen_duration = 1.0,
 }
 
-var _fonts := {
-    main_xs = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
-    main_xs_italic = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
-    main_s = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-    main_m = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-    main_m_bold = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-    main_m_italic = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-    main_l = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-    main_xl = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
-    
-    header_s = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-    header_m = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-    header_l = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-    header_xl = preload( \
-            "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
+var _fonts_manifest := {
+    fonts = {
+        main_xs = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
+        main_xs_bold = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
+        main_xs_italic = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
+        main_s = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
+        main_s_bold = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
+        main_s_italic = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
+        main_m = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
+        main_m_bold = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
+        main_m_italic = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
+        main_l = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
+        main_l_bold = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
+        main_l_italic = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
+        main_xl = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
+        main_xl_bold = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
+        main_xl_italic = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
+        
+        header_s = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
+        header_m = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
+        header_l = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
+        header_xl = preload( \
+                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
+    },
+    sizes = {
+        pc = {
+            main_xs = 15,
+            main_s = 18,
+            main_m = 30,
+            main_l = 42,
+            main_xl = 48,
+#            _bold = ,
+#            _italic = ,
+#            header_s = ,
+#            header_m = ,
+#            header_l = ,
+#            header_xl = ,
+        },
+        mobile = {
+            main_xs = 16,
+            main_s = 18,
+            main_m = 28,
+            main_l = 32,
+            main_xl = 36,
+        },
+    },
 }
 
 var _sounds_manifest := [
@@ -504,7 +542,7 @@ var _gui_manifest := {
     
     theme = preload("res://src/config/default_theme.tres"),
     
-    fonts = _fonts,
+    fonts_manifest = _fonts_manifest,
     settings_item_manifest = _settings_item_manifest,
     pause_item_manifest = _pause_item_manifest,
     game_over_item_manifest = _game_over_item_manifest,
