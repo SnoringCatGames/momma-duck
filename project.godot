@@ -624,6 +624,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/gui/followers_count_labeled_control_item.gd"
 }, {
+"base": "Reference",
+"class": "FontSize",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/font_size.gd"
+}, {
 "base": "Player",
 "class": "Fox",
 "language": "GDScript",
@@ -1419,6 +1424,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/scaffolder_hud.gd"
 }, {
+"base": "Label",
+"class": "ScaffolderLabel",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/scaffolder_label.gd"
+}, {
 "base": "LinkButton",
 "class": "ScaffolderLabelLink",
 "language": "GDScript",
@@ -1963,6 +1973,7 @@ _global_script_class_icons={
 "FloorWalkAction": "",
 "FloorsItemController": "",
 "FollowersCountLabeledControlItem": "",
+"FontSize": "",
 "Fox": "",
 "FoxAnimator": "",
 "FoxParams": "",
@@ -2122,6 +2133,7 @@ _global_script_class_icons={
 "ScaffolderGeometry": "",
 "ScaffolderGuiConfig": "",
 "ScaffolderHud": "",
+"ScaffolderLabel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label.png",
 "ScaffolderLabelLink": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label_link.png",
 "ScaffolderLevel": "",
 "ScaffolderLevelConfig": "",
