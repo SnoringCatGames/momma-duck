@@ -1839,7 +1839,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/models/waypoint_validity.gd"
 }, {
-"base": "VBoxContainer",
+"base": "PanelContainer",
 "class": "WelcomePanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/welcome_panel.gd"

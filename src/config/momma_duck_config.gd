@@ -24,7 +24,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _app_metadata.are_all_levels_unlocked = false and is_debug
     _app_metadata.are_test_levels_included = true
     _app_metadata.is_save_state_cleared_for_debugging = false
-    _app_metadata.is_splash_skipped = false and is_debug
+    _app_metadata.is_splash_skipped = true and is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
@@ -344,6 +344,9 @@ var _colors_manifest := {
     scroll_bar_grabber_hover = COLOR_BUTTON_LIGHTER,
     scroll_bar_grabber_pressed = COLOR_BUTTON_DARKER,
     zebra_stripe_even_row = COLOR_BACKGROUND_LIGHTER,
+    overlay_panel_body_background = COLOR_BACKGROUND_DARKER,
+    overlay_panel_header_background = COLOR_BACKGROUND,
+    overlay_panel_border = COLOR_TEXT,
     
     # Surfacer colors.
     
@@ -378,6 +381,14 @@ var _styles_manifest := {
     
     scroll_grabber_corner_radius = 8,
     scroll_grabber_corner_detail = 3,
+    
+    overlay_panel_border_width = 2,
+    
+    # FIXME: ----------------- Implement these
+#    button_border_width = 0,
+#    dropdown_shadow_size = 0,
+#    dropdown_border_width = 0,
+#    screen_border_width = 0,
 }
 
 var _settings_item_manifest := {
@@ -412,6 +423,7 @@ var _settings_item_manifest := {
             label = "HUD",
             is_collapsible = true,
             item_classes = [
+                InspectorEnabledSettingsLabeledControlItem,
                 DebugPanelSettingsLabeledControlItem,
             ],
         },
@@ -421,7 +433,6 @@ var _settings_item_manifest := {
             item_classes = [
                 WelcomePanelSettingsLabeledControlItem,
                 IntroChoreographySettingsLabeledControlItem,
-                InspectorEnabledSettingsLabeledControlItem,
                 CameraZoomSettingsLabeledControlItem,
                 TimeScaleSettingsLabeledControlItem,
                 MetronomeSettingsLabeledControlItem,
@@ -484,6 +495,10 @@ var _welcome_panel_manifest := {
         ["*Auto nav*", "click"],
         ["Walk/Climb", "arrow key / wasd"],
         ["Jump", "space / x"],
+    ],
+    header_color = [
+    ],
+    body_color = [
     ],
 }
 
