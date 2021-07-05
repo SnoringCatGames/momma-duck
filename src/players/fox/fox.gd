@@ -135,9 +135,9 @@ func _trigger_wander() -> void:
         Gs.logger.print("Fox wander start")
     
     is_wandering = true
-    var left_most_point := Gs.geometry.project_point_onto_surface(
+    var left_most_point: Vector2 = Gs.geometry.project_point_onto_surface(
             Vector2(start_position.x - wander_radius, 0.0), start_surface)
-    var right_most_point := Gs.geometry.project_point_onto_surface(
+    var right_most_point: Vector2 = Gs.geometry.project_point_onto_surface(
             Vector2(start_position.x + wander_radius, 0.0), start_surface)
     var target_x := \
             randf() * (right_most_point.x - left_most_point.x) + \

@@ -14,6 +14,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     _app_metadata.app_version = "0.0.1"
     
@@ -569,6 +570,12 @@ var _gui_manifest := {
     splash_scale_mobile = 0.77,
 }
 
+var _slow_motion_manifest := {
+    time_scale = 1.0,
+    tick_tock_tempo_multiplier = 1,
+    saturation = 0.5,
+}
+
 var _additional_metric_keys := [
 ]
 
@@ -592,9 +599,6 @@ var _surfacer_manifest := {
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
     default_player_name = 'momma',
-    nav_selection_slow_mo_time_scale = 1.0,
-    nav_selection_slow_mo_tick_tock_tempo_multiplier = 1,
-    nav_selection_slow_mo_saturation = 0.5,
     nav_selection_prediction_opacity = 0.5,
     nav_selection_prediction_tween_duration = 0.15,
     new_path_pulse_duration = 0.7,
@@ -642,6 +646,7 @@ var app_manifest := {
     colors_manifest = _colors_manifest,
     styles_manifest = _styles_manifest,
     gui_manifest = _gui_manifest,
+    slow_motion_manifest = _slow_motion_manifest,
     surfacer_manifest = _surfacer_manifest,
 }
 
