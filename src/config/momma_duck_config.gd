@@ -511,7 +511,7 @@ var _screen_manifest := {
     ],
     overlay_mask_transition = \
             ScaffolderGuiConfig.OVERLAY_MASK_TRANSITION_SCREEN_SCENE,
-    default_transition_type = ScreenTransition.SLIDE,
+    default_transition_type = ScreenTransition.FADE,
     fancy_transition_type = ScreenTransition.OVERLAY_MASK,
 }
 
