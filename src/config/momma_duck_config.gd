@@ -509,7 +509,10 @@ var _screen_manifest := {
     ],
     inclusions = [
     ],
-    fade_transition = ScaffolderGuiConfig.FADE_TRANSITION_SCREEN_SCENE,
+    overlay_mask_transition = \
+            ScaffolderGuiConfig.OVERLAY_MASK_TRANSITION_SCREEN_SCENE,
+    default_transition_type = ScreenTransition.SLIDE,
+    fancy_transition_type = ScreenTransition.OVERLAY_MASK,
 }
 
 var _gui_manifest := {
@@ -550,10 +553,10 @@ var _gui_manifest := {
     debug_panel_scene = \
             preload("res://addons/scaffolder/src/gui/debug_panel.tscn"),
     
-    fade_in_transition_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_in.png"),
-    fade_out_transition_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_out.png"),
+    overlay_mask_transition_fade_in_texture = \
+            preload("res://addons/scaffolder/assets/images/mask_transition_in.png"),
+    overlay_mask_transition_fade_out_texture = \
+            preload("res://addons/scaffolder/assets/images/mask_transition_out.png"),
     
     theme = preload("res://src/config/default_theme.tres"),
     

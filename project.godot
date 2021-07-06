@@ -504,11 +504,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/transient_annotators/exclamation_mark_annotator.gd"
 }, {
-"base": "ColorRect",
-"class": "FadeTransition",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/screens/fade_transition.gd"
-}, {
 "base": "EdgeAttempt",
 "class": "FailedEdgeAttempt",
 "language": "GDScript",
@@ -1069,6 +1064,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/origin_surface_legend_item.gd"
 }, {
+"base": "ColorRect",
+"class": "OverlayMaskTransition",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/overlay_mask_transition.gd"
+}, {
 "base": "Reference",
 "class": "PathBeatPrediction",
 "language": "GDScript",
@@ -1529,6 +1529,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/screen_transition.gd"
 }, {
+"base": "Node",
+"class": "ScreenTransitionHandler",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/screen_transition_handler.gd"
+}, {
 "base": "MarginContainer",
 "class": "SelectionDescription",
 "language": "GDScript",
@@ -1969,7 +1974,6 @@ _global_script_class_icons={
 "EdgesWithoutIncreasingJumpHeightGroupItemController": "",
 "ElementAnnotator": "",
 "ExclamationMarkAnnotator": "",
-"FadeTransition": "",
 "FailedEdgeAttempt": "",
 "FailedEdgeAttemptAnnotationElement": "",
 "FailedEdgeItemController": "",
@@ -2082,6 +2086,7 @@ _global_script_class_icons={
 "OriginSurfaceAnnotationElement": "",
 "OriginSurfaceItemController": "",
 "OriginSurfaceLegendItem": "",
+"OverlayMaskTransition": "",
 "PathBeatPrediction": "",
 "PathPreselectionAnnotator": "",
 "PauseButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
@@ -2174,6 +2179,7 @@ _global_script_class_icons={
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/screen.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScreenTransition": "",
+"ScreenTransitionHandler": "",
 "SelectionDescription": "",
 "SettingsGroup": "",
 "SettingsScreen": "",
