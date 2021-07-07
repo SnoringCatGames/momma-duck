@@ -510,9 +510,9 @@ var _screen_manifest := {
     inclusions = [
     ],
     overlay_mask_transition_fade_in_texture = \
-            preload("res://addons/scaffolder/assets/images/swipes_mask_transition_in.png"),
+            preload("res://addons/scaffolder/assets/images/radial_mask_transition_in.png"),
     overlay_mask_transition_fade_out_texture = \
-            preload("res://addons/scaffolder/assets/images/swipes_mask_transition_out.png"),
+            preload("res://addons/scaffolder/assets/images/radial_mask_transition_in.png"),
     screen_mask_transition_fade_texture = \
             preload("res://addons/scaffolder/assets/images/checkers_mask_transition.png"),
     overlay_mask_transition_class = OverlayMaskTransition,
@@ -521,11 +521,16 @@ var _screen_manifest := {
     fade_transition_duration = 0.3,
     overlay_mask_transition_duration = 1.2,
     screen_mask_transition_duration = 1.2,
+    slide_transition_easing = "ease_in_out",
+    fade_transition_easing = "ease_in_out",
+    overlay_mask_transition_fade_in_easing = "ease_out",
+    overlay_mask_transition_fade_out_easing = "ease_in",
+    screen_mask_transition_easing = "ease_in",
     default_transition_type = ScreenTransition.FADE,
     fancy_transition_type = ScreenTransition.SCREEN_MASK,
     overlay_mask_transition_color = Color("#111111"),
     overlay_mask_transition_uses_pixel_snap = false,
-    overlay_mask_transition_smooth_size = 0.2,
+    overlay_mask_transition_smooth_size = 0.02,
     screen_mask_transition_uses_pixel_snap = true,
     screen_mask_transition_smooth_size = 0.0,
 }
