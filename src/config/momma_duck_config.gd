@@ -509,10 +509,25 @@ var _screen_manifest := {
     ],
     inclusions = [
     ],
-    overlay_mask_transition = \
-            ScaffolderGuiConfig.OVERLAY_MASK_TRANSITION_SCREEN_SCENE,
+    overlay_mask_transition_fade_in_texture = \
+            preload("res://addons/scaffolder/assets/images/swipes_mask_transition_in.png"),
+    overlay_mask_transition_fade_out_texture = \
+            preload("res://addons/scaffolder/assets/images/swipes_mask_transition_out.png"),
+    screen_mask_transition_fade_texture = \
+            preload("res://addons/scaffolder/assets/images/checkers_mask_transition.png"),
+    overlay_mask_transition_class = OverlayMaskTransition,
+    screen_mask_transition_class = ScreenMaskTransition,
+    slide_transition_duration = 0.3,
+    fade_transition_duration = 0.3,
+    overlay_mask_transition_duration = 1.2,
+    screen_mask_transition_duration = 1.2,
     default_transition_type = ScreenTransition.FADE,
-    fancy_transition_type = ScreenTransition.OVERLAY_MASK,
+    fancy_transition_type = ScreenTransition.SCREEN_MASK,
+    overlay_mask_transition_color = Color("#111111"),
+    overlay_mask_transition_uses_pixel_snap = false,
+    overlay_mask_transition_smooth_size = 0.2,
+    screen_mask_transition_uses_pixel_snap = true,
+    screen_mask_transition_smooth_size = 0.0,
 }
 
 var _gui_manifest := {
@@ -552,11 +567,6 @@ var _gui_manifest := {
             preload("res://addons/scaffolder/src/gui/welcome_panel.tscn"),
     debug_panel_scene = \
             preload("res://addons/scaffolder/src/gui/debug_panel.tscn"),
-    
-    overlay_mask_transition_fade_in_texture = \
-            preload("res://addons/scaffolder/assets/images/mask_transition_in.png"),
-    overlay_mask_transition_fade_out_texture = \
-            preload("res://addons/scaffolder/assets/images/mask_transition_out.png"),
     
     theme = preload("res://src/config/default_theme.tres"),
     

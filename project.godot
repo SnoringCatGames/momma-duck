@@ -1064,7 +1064,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/origin_surface_legend_item.gd"
 }, {
-"base": "ColorRect",
+"base": "Node",
 "class": "OverlayMaskTransition",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/overlay_mask_transition.gd"
@@ -1523,6 +1523,11 @@ _global_script_classes=[ {
 "class": "ScreenContainer",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen_container.gd"
+}, {
+"base": "Node",
+"class": "ScreenMaskTransition",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/screen_mask_transition.gd"
 }, {
 "base": "Reference",
 "class": "ScreenTransition",
@@ -2178,6 +2183,7 @@ _global_script_class_icons={
 "ScoreLabeledControlItem": "",
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/screen.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"ScreenMaskTransition": "",
 "ScreenTransition": "",
 "ScreenTransitionHandler": "",
 "SelectionDescription": "",
