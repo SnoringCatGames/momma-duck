@@ -441,6 +441,56 @@ var _icons_manifest_normal := {
     
     go_normal = preload("res://assets/images/go_icon.png"),
     go_scale = 1.5,
+    
+    about_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_active.png"),
+    about_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_hover.png"),
+    about_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_normal.png"),
+    
+    alert_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/alert_normal.png"),
+    
+    close_active = \
+            preload("res://addons/scaffolder/assets/images/gui/close_active.png"),
+    close_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/close_hover.png"),
+    close_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/close_normal.png"),
+    
+    gear_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_active.png"),
+    gear_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_hover.png"),
+    gear_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_normal.png"),
+    
+    home_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/home_normal.png"),
+    
+    left_caret_active = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_active.png"),
+    left_caret_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_hover.png"),
+    left_caret_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_normal.png"),
+    
+    pause_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_active.png"),
+    pause_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_hover.png"),
+    pause_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_normal.png"),
+    
+    pause_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_normal.png"),
+    play_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/play_normal.png"),
+    retry_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/retry_normal.png"),
+    stop_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/stop_normal.png"),
 }
 
 var _icons_manifest_pixel := {
@@ -460,6 +510,56 @@ var _icons_manifest_pixel := {
     
     go_normal = preload("res://assets/images/go_icon.png"),
     go_scale = 1.5,
+    
+    about_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_active.png"),
+    about_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_hover.png"),
+    about_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/about_circle_normal.png"),
+    
+    alert_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/alert_normal.png"),
+    
+    close_active = \
+            preload("res://addons/scaffolder/assets/images/gui/close_active.png"),
+    close_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/close_hover.png"),
+    close_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/close_normal.png"),
+    
+    gear_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_active.png"),
+    gear_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_hover.png"),
+    gear_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/gear_circle_normal.png"),
+    
+    home_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/home_normal.png"),
+    
+    left_caret_active = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_active.png"),
+    left_caret_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_hover.png"),
+    left_caret_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/left_caret_normal.png"),
+    
+    pause_circle_active = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_active.png"),
+    pause_circle_hover = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_hover.png"),
+    pause_circle_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_circle_normal.png"),
+    
+    pause_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/pause_normal.png"),
+    play_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/play_normal.png"),
+    retry_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/retry_normal.png"),
+    stop_normal = \
+            preload("res://addons/scaffolder/assets/images/gui/stop_normal.png"),
 }
 
 var _settings_item_manifest := {
