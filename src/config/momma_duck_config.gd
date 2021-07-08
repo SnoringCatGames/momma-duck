@@ -87,9 +87,9 @@ var _app_metadata := {
     developer_url = "https://snoringcat.games",
     
     developer_logo = preload( \
-            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_about.png"),
+            "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_about.png"),
     developer_splash = preload( \
-            "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
+            "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_splash.png"),
     
     godot_splash_screen_duration = 1.4,
     developer_splash_screen_duration = 1.0,
@@ -510,11 +510,11 @@ var _screen_manifest := {
     inclusions = [
     ],
     overlay_mask_transition_fade_in_texture = \
-            preload("res://addons/scaffolder/assets/images/radial_mask_transition_in.png"),
+            preload("res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
     overlay_mask_transition_fade_out_texture = \
-            preload("res://addons/scaffolder/assets/images/radial_mask_transition_in.png"),
+            preload("res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
     screen_mask_transition_fade_texture = \
-            preload("res://addons/scaffolder/assets/images/checkers_mask_transition.png"),
+            preload("res://addons/scaffolder/assets/images/transition_masks/checkers_mask_transition.png"),
     overlay_mask_transition_class = OverlayMaskTransition,
     screen_mask_transition_class = ScreenMaskTransition,
     slide_transition_duration = 0.3,
