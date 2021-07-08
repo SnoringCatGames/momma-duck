@@ -59,7 +59,7 @@ func animation_type_to_name(animation_type: int) -> String:
             QUACK_ANIMATION_TYPE:
                 return animator_params.quack_name
             _:
-                Utils.error()
+                Gs.logger.error()
                 return ""
     else:
         return .animation_type_to_name(animation_type)
@@ -75,7 +75,7 @@ func animation_type_to_playback_rate(animation_type: int) -> float:
             QUACK_ANIMATION_TYPE:
                 return animator_params.quack_playback_rate
             _:
-                Utils.error()
+                Gs.logger.error()
                 return INF
     else:
         return .animation_type_to_playback_rate(animation_type)
