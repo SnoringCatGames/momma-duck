@@ -44,6 +44,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 
 const INCLUDES_LEASH_SETTINGS_KEY := "includes_leash"
 
+var _is_using_pixel_style := true
+
 var _uses_threads := false and OS.can_use_threads()
 
 var _app_metadata := {
@@ -312,6 +314,8 @@ var COLOR_BUTTON := Color("24803b")
 var COLOR_BUTTON_LIGHTER := Color("47a65f")
 var COLOR_BUTTON_DARKER := Color("0c591f")
 
+var COLOR_SHADOW := Color("22000000")
+
 var _colors_manifest := {
     # Scaffolder colors.
     
@@ -332,11 +336,13 @@ var _colors_manifest := {
     button_focused = COLOR_BUTTON_LIGHTER,
     button_hover = COLOR_BUTTON_LIGHTER,
     button_pressed = COLOR_BUTTON_DARKER,
+    button_border = COLOR_TEXT,
     dropdown_normal = COLOR_BACKGROUND,
     dropdown_disabled = COLOR_BACKGROUND_LIGHTER,
     dropdown_focused = COLOR_BACKGROUND_LIGHTER,
     dropdown_hover = COLOR_BACKGROUND_LIGHTER,
     dropdown_pressed = COLOR_BACKGROUND_DARKER,
+    dropdown_border = COLOR_BACKGROUND_DARKER,
     tooltip = COLOR_BACKGROUND,
     tooltip_bg = COLOR_TEXT,
     popup_background = COLOR_BACKGROUND_LIGHTER,
@@ -348,6 +354,7 @@ var _colors_manifest := {
     overlay_panel_body_background = COLOR_BACKGROUND_DARKER,
     overlay_panel_header_background = COLOR_BACKGROUND,
     overlay_panel_border = COLOR_TEXT,
+    screen_border = COLOR_TEXT,
     
     # Surfacer colors.
     
@@ -367,13 +374,16 @@ var _colors_manifest := {
             SurfacerColors.ORANGE, ScaffolderColors.ALPHA_FAINT),
 }
 
-var _styles_manifest := {
+var _styles_manifest_normal := {
     button_corner_radius = 4,
     button_corner_detail = 3,
     button_shadow_size = 3,
+    button_border_width = 0,
     
     dropdown_corner_radius = 4,
     dropdown_corner_detail = 3,
+    dropdown_shadow_size = 0,
+    dropdown_border_width = 0,
     
     scroll_corner_radius = 6,
     scroll_corner_detail = 3,
@@ -385,11 +395,67 @@ var _styles_manifest := {
     
     overlay_panel_border_width = 2,
     
-    # FIXME: ----------------- Implement these
-#    button_border_width = 0,
-#    dropdown_shadow_size = 0,
-#    dropdown_border_width = 0,
-#    screen_border_width = 0,
+    screen_shadow_size = 8,
+    screen_shadow_offset = Vector2(-4.0, 4.0),
+    screen_border_width = 0,
+}
+
+var _styles_manifest_pixel := {
+    button_corner_radius = 0,
+    button_corner_detail = 1,
+    button_shadow_size = 0,
+    button_border_width = 2,
+    
+    dropdown_corner_radius = 0,
+    dropdown_corner_detail = 1,
+    dropdown_shadow_size = 0,
+    dropdown_border_width = 0,
+    
+    scroll_corner_radius = 0,
+    scroll_corner_detail = 1,
+    # Width of the scrollbar.
+    scroll_content_margin = 7,
+    
+    scroll_grabber_corner_radius = 0,
+    scroll_grabber_corner_detail = 1,
+    
+    overlay_panel_border_width = 2,
+    
+    screen_shadow_size = 0,
+    screen_shadow_offset = Vector2.ZERO,
+    screen_border_width = 0,
+}
+
+var _icons_manifest_normal := {
+    checkbox_icon_path_prefix = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_PATH_PREFIX,
+    default_checkbox_icon_size = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_SIZE,
+    checkbox_icon_sizes = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_SIZES,
+    
+    tree_arrow_icon_path_prefix = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_PATH_PREFIX,
+    default_tree_arrow_icon_size = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_SIZE,
+    tree_arrow_icon_sizes = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_SIZES,
+}
+
+var _icons_manifest_pixel := {
+    checkbox_icon_path_prefix = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_PATH_PREFIX,
+    default_checkbox_icon_size = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_SIZE,
+    checkbox_icon_sizes = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_SIZES,
+    
+    tree_arrow_icon_path_prefix = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_PATH_PREFIX,
+    default_tree_arrow_icon_size = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_SIZE,
+    tree_arrow_icon_sizes = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_SIZES,
 }
 
 var _settings_item_manifest := {
@@ -549,8 +615,6 @@ var _gui_manifest := {
     button_width = 230.0,
     screen_body_width = 460.0,
     
-    is_using_pixel_icons = true,
-    
     is_data_deletion_button_shown = true,
     
     third_party_license_text = \
@@ -664,7 +728,8 @@ var app_manifest := {
     app_metadata = _app_metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
-    styles_manifest = _styles_manifest,
+    styles_manifest = _styles_manifest_normal,
+    icons_manifest = _icons_manifest_normal,
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     surfacer_manifest = _surfacer_manifest,
@@ -678,7 +743,17 @@ func _ready() -> void:
 
 
 func amend_app_manifest(manifest: Dictionary) -> void:
+    _override_configs_for_is_using_pixel_style(manifest)
     _override_configs_for_current_run(manifest)
+
+
+func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
+    if _is_using_pixel_style:
+        app_manifest.styles_manifest = _styles_manifest_pixel
+        app_manifest.icons_manifest = _icons_manifest_pixel
+    else:
+        app_manifest.styles_manifest = _styles_manifest_normal
+        app_manifest.icons_manifest = _icons_manifest_normal
 
 
 func initialize() -> void:
