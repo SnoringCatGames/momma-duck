@@ -549,6 +549,8 @@ var _gui_manifest := {
     button_width = 230.0,
     screen_body_width = 460.0,
     
+    is_using_pixel_icons = true,
+    
     is_data_deletion_button_shown = true,
     
     third_party_license_text = \
