@@ -83,8 +83,6 @@ var _app_metadata := {
     
     app_logo = preload("res://assets/images/logo.png"),
     app_logo_scale = 1.0,
-    go_icon = preload("res://assets/images/go_icon.png"),
-    go_icon_scale = 1.5,
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
     
@@ -427,35 +425,41 @@ var _styles_manifest_pixel := {
 }
 
 var _icons_manifest_normal := {
-    checkbox_icon_path_prefix = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_PATH_PREFIX,
-    default_checkbox_icon_size = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_SIZE,
-    checkbox_icon_sizes = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_ICON_SIZES,
+    checkbox_path_prefix = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
+    default_checkbox_size = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
+    checkbox_sizes = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
     
-    tree_arrow_icon_path_prefix = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_PATH_PREFIX,
-    default_tree_arrow_icon_size = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_SIZE,
-    tree_arrow_icon_sizes = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_ICON_SIZES,
+    tree_arrow_path_prefix = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
+    default_tree_arrow_size = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
+    tree_arrow_sizes = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
+    
+    go_normal = preload("res://assets/images/go_icon.png"),
+    go_scale = 1.5,
 }
 
 var _icons_manifest_pixel := {
-    checkbox_icon_path_prefix = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_PATH_PREFIX,
-    default_checkbox_icon_size = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_SIZE,
-    checkbox_icon_sizes = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_ICON_SIZES,
+    checkbox_path_prefix = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_PATH_PREFIX,
+    default_checkbox_size = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_SIZE,
+    checkbox_sizes = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_SIZES,
     
-    tree_arrow_icon_path_prefix = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_PATH_PREFIX,
-    default_tree_arrow_icon_size = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_SIZE,
-    tree_arrow_icon_sizes = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_ICON_SIZES,
+    tree_arrow_path_prefix = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_PATH_PREFIX,
+    default_tree_arrow_size = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZE,
+    tree_arrow_sizes = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZES,
+    
+    go_normal = preload("res://assets/images/go_icon.png"),
+    go_scale = 1.5,
 }
 
 var _settings_item_manifest := {
