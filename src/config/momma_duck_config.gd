@@ -411,8 +411,8 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/button_hover.png"),
     button_normal_nine_patch = \
             preload("res://assets/images/button_normal.png"),
+    button_nine_patch_margin = 4.0,
     button_nine_patch_scale = 3.0,
-    button_nine_patch_margin = 6.0,
     button_shine_margin = 6.0,
     
     dropdown_corner_radius = 0,
@@ -420,13 +420,19 @@ var _styles_manifest_pixel := {
     dropdown_shadow_size = 0,
     dropdown_border_width = 0,
     
-    scroll_corner_radius = 0,
-    scroll_corner_detail = 1,
-    # Width of the scrollbar.
-    scroll_content_margin = 7,
+    scroll_track_nine_patch = \
+            preload("res://assets/images/scroll_track.png"),
+    scroll_track_nine_patch_margin = 3.0,
+    scroll_track_nine_patch_scale = 3.0,
     
-    scroll_grabber_corner_radius = 0,
-    scroll_grabber_corner_detail = 1,
+    scroll_grabber_active_nine_patch = \
+            preload("res://assets/images/scroll_grabber_active.png"),
+    scroll_grabber_hover_nine_patch = \
+            preload("res://assets/images/scroll_grabber_hover.png"),
+    scroll_grabber_normal_nine_patch = \
+            preload("res://assets/images/scroll_grabber_normal.png"),
+    scroll_grabber_nine_patch_margin = 4.0,
+    scroll_grabber_nine_patch_scale = 3.0,
     
     overlay_panel_border_width = 2,
     
