@@ -349,6 +349,7 @@ var _colors_manifest := {
     scroll_bar_grabber_normal = COLOR_BUTTON,
     scroll_bar_grabber_hover = COLOR_BUTTON_LIGHTER,
     scroll_bar_grabber_pressed = COLOR_BUTTON_DARKER,
+    slider_background = COLOR_BACKGROUND_DARKER,
     zebra_stripe_even_row = COLOR_BACKGROUND_LIGHTER,
     overlay_panel_body_background = COLOR_BACKGROUND_DARKER,
     overlay_panel_header_background = COLOR_BACKGROUND,
@@ -411,7 +412,7 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/button_hover.png"),
     button_normal_nine_patch = \
             preload("res://assets/images/button_normal.png"),
-    button_nine_patch_margin = 4.0,
+    button_nine_patch_margin = 3.5,
     button_nine_patch_scale = 3.0,
     button_shine_margin = 6.0,
     
@@ -425,13 +426,13 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/dropdown_hover.png"),
     dropdown_normal_nine_patch = \
             preload("res://assets/images/dropdown_normal.png"),
-    dropdown_nine_patch_margin = 4.0,
+    dropdown_nine_patch_margin = 3.5,
     dropdown_nine_patch_scale = 3.0,
     dropdown_shine_margin = 6.0,
     
     scroll_track_nine_patch = \
             preload("res://assets/images/scroll_track.png"),
-    scroll_track_nine_patch_margin = 3.0,
+    scroll_track_nine_patch_margin = 3.5,
     scroll_track_nine_patch_scale = 3.0,
     
     scroll_grabber_active_nine_patch = \
@@ -440,8 +441,13 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/scroll_grabber_hover.png"),
     scroll_grabber_normal_nine_patch = \
             preload("res://assets/images/scroll_grabber_normal.png"),
-    scroll_grabber_nine_patch_margin = 4.0,
+    scroll_grabber_nine_patch_margin = 3.5,
     scroll_grabber_nine_patch_scale = 3.0,
+    
+    slider_track_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/slider_track.png"),
+    slider_track_nine_patch_margin = 1.5,
+    slider_track_nine_patch_scale = 3.0,
     
     overlay_panel_border_width = 2,
     
@@ -451,19 +457,47 @@ var _styles_manifest_pixel := {
 }
 
 var _icons_manifest_normal := {
-    checkbox_path_prefix = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
-    default_checkbox_size = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
-    checkbox_sizes = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
-    
-    tree_arrow_path_prefix = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
-    default_tree_arrow_size = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
-    tree_arrow_sizes = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
+        checkbox_path_prefix = \
+                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
+        default_checkbox_size = \
+                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
+        checkbox_sizes = \
+                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
+        
+        radio_button_path_prefix = \
+                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_PATH_PREFIX,
+        default_radio_button_size = \
+                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZE,
+        radio_button_sizes = \
+                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZES,
+        
+        tree_arrow_path_prefix = \
+                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
+        default_tree_arrow_size = \
+                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
+        tree_arrow_sizes = \
+                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
+        
+        dropdown_arrow_path_prefix = \
+                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_PATH_PREFIX,
+        default_dropdown_arrow_size = \
+                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZE,
+        dropdown_arrow_sizes = \
+                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZES,
+        
+        slider_grabber_path_prefix = \
+                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_PATH_PREFIX,
+        default_slider_grabber_size = \
+                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZE,
+        slider_grabber_sizes = \
+                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZES,
+        
+        slider_tick_path_prefix = \
+                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_PATH_PREFIX,
+        default_slider_tick_size = \
+                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZE,
+        slider_tick_sizes = \
+                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZES,
     
     go_normal = preload("res://assets/images/go_icon.png"),
     go_scale = 1.5,
@@ -527,12 +561,40 @@ var _icons_manifest_pixel := {
     checkbox_sizes = \
             ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_SIZES,
     
+    radio_button_path_prefix = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_PATH_PREFIX,
+    default_radio_button_size = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_SIZE,
+    radio_button_sizes = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_SIZES,
+    
     tree_arrow_path_prefix = \
             ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_PATH_PREFIX,
     default_tree_arrow_size = \
             ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZE,
     tree_arrow_sizes = \
             ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZES,
+    
+    dropdown_arrow_path_prefix = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_PATH_PREFIX,
+    default_dropdown_arrow_size = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_SIZE,
+    dropdown_arrow_sizes = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_SIZES,
+    
+    slider_grabber_path_prefix = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_PATH_PREFIX,
+    default_slider_grabber_size = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_SIZE,
+    slider_grabber_sizes = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_SIZES,
+    
+    slider_tick_path_prefix = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_PATH_PREFIX,
+    default_slider_tick_size = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_SIZE,
+    slider_tick_sizes = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_SIZES,
     
     go_normal = preload("res://assets/images/go_icon.png"),
     go_scale = 1.5,
