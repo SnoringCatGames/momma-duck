@@ -411,9 +411,9 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/button_hover.png"),
     button_normal_nine_patch = \
             preload("res://assets/images/button_normal.png"),
-    button_nine_patch_scale = 4.0,
-    button_nine_patch_margin = 5.0,
-    button_shine_margin = 8.0,
+    button_nine_patch_scale = 3.0,
+    button_nine_patch_margin = 6.0,
+    button_shine_margin = 6.0,
     
     dropdown_corner_radius = 0,
     dropdown_corner_detail = 1,
