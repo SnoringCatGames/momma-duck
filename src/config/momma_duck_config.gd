@@ -732,6 +732,9 @@ var _gui_manifest := {
     
     is_data_deletion_button_shown = true,
     
+    is_suggested_button_shine_line_shown = true,
+    is_suggested_button_color_pulse_shown = true,
+    
     third_party_license_text = \
             ScaffolderThirdPartyLicenses.TEXT + \
             SurfacerThirdPartyLicenses.TEXT + \
