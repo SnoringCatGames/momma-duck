@@ -415,10 +415,19 @@ var _styles_manifest_pixel := {
     button_nine_patch_scale = 3.0,
     button_shine_margin = 6.0,
     
-    dropdown_corner_radius = 0,
-    dropdown_corner_detail = 1,
-    dropdown_shadow_size = 0,
-    dropdown_border_width = 0,
+    dropdown_active_nine_patch = \
+            preload("res://assets/images/dropdown_active.png"),
+    dropdown_disabled_nine_patch = \
+            preload("res://assets/images/dropdown_hover.png"),
+    dropdown_focused_nine_patch = \
+            preload("res://assets/images/dropdown_hover.png"),
+    dropdown_hover_nine_patch = \
+            preload("res://assets/images/dropdown_hover.png"),
+    dropdown_normal_nine_patch = \
+            preload("res://assets/images/dropdown_normal.png"),
+    dropdown_nine_patch_margin = 4.0,
+    dropdown_nine_patch_scale = 3.0,
+    dropdown_shine_margin = 6.0,
     
     scroll_track_nine_patch = \
             preload("res://assets/images/scroll_track.png"),
