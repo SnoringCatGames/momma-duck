@@ -329,7 +329,8 @@ var _colors_manifest := {
     link_hover = COLOR_BUTTON,
     link_pressed = COLOR_BUTTON_DARKER,
     button_normal = COLOR_BUTTON,
-    scaffolder_button_highlight = COLOR_BUTTON,
+    button_flat_pulse = COLOR_BUTTON,
+    button_texture_modulate = Color(2, 2, 2, 1),
     button_disabled = COLOR_BUTTON_LIGHTER,
     button_focused = COLOR_BUTTON_LIGHTER,
     button_hover = COLOR_BUTTON_LIGHTER,
@@ -377,6 +378,7 @@ var _styles_manifest_normal := {
     button_corner_detail = 3,
     button_shadow_size = 3,
     button_border_width = 0,
+    button_shine_margin = 0.0,
     
     dropdown_corner_radius = 4,
     dropdown_corner_detail = 3,
@@ -399,10 +401,19 @@ var _styles_manifest_normal := {
 }
 
 var _styles_manifest_pixel := {
-    button_corner_radius = 0,
-    button_corner_detail = 1,
-    button_shadow_size = 0,
-    button_border_width = 2,
+    button_active_nine_patch = \
+            preload("res://assets/images/button_active.png"),
+    button_disabled_nine_patch = \
+            preload("res://assets/images/button_hover.png"),
+    button_focused_nine_patch = \
+            preload("res://assets/images/button_hover.png"),
+    button_hover_nine_patch = \
+            preload("res://assets/images/button_hover.png"),
+    button_normal_nine_patch = \
+            preload("res://assets/images/button_normal.png"),
+    button_nine_patch_scale = 4.0,
+    button_nine_patch_margin = 5.0,
+    button_shine_margin = 8.0,
     
     dropdown_corner_radius = 0,
     dropdown_corner_detail = 1,

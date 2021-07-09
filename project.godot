@@ -1614,6 +1614,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/style_box_flat_scalable.gd"
 }, {
+"base": "StyleBoxTexture",
+"class": "StyleBoxTextureScalable",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/style_box_texture_scalable.gd"
+}, {
 "base": "Reference",
 "class": "Surface",
 "language": "GDScript",
@@ -2206,6 +2211,7 @@ _global_script_class_icons={
 "StaticTextLabeledControlItem": "",
 "Stopwatch": "",
 "StyleBoxFlatScalable": "",
+"StyleBoxTextureScalable": "",
 "Surface": "",
 "SurfaceAnnotationElement": "",
 "SurfaceCollision": "",
