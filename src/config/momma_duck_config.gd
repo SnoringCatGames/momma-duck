@@ -375,11 +375,13 @@ var _colors_manifest := {
 }
 
 var _styles_manifest_normal := {
+    button_content_margin = 12.0,
+    button_shine_margin = 0.0,
+    
     button_corner_radius = 4,
     button_corner_detail = 3,
     button_shadow_size = 3,
     button_border_width = 0,
-    button_shine_margin = 0.0,
     
     dropdown_corner_radius = 4,
     dropdown_corner_detail = 3,
@@ -402,6 +404,9 @@ var _styles_manifest_normal := {
 }
 
 var _styles_manifest_pixel := {
+    button_content_margin = 12.0,
+    button_shine_margin = 6.0,
+    
     button_active_nine_patch = \
             preload("res://assets/images/button_active.png"),
     button_disabled_nine_patch = \
@@ -414,7 +419,6 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/button_normal.png"),
     button_nine_patch_margin = 3.5,
     button_nine_patch_scale = 3.0,
-    button_shine_margin = 6.0,
     
     dropdown_active_nine_patch = \
             preload("res://assets/images/dropdown_active.png"),
