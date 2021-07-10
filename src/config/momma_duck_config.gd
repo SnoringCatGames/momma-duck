@@ -375,10 +375,10 @@ var _colors_manifest := {
 }
 
 var _styles_manifest_normal := {
-    button_content_margin_left = 12.0,
-    button_content_margin_top = 12.0,
-    button_content_margin_right = 12.0,
-    button_content_margin_bottom = 12.0,
+    button_content_margin_left = 16.0,
+    button_content_margin_top = 8.0,
+    button_content_margin_right = 16.0,
+    button_content_margin_bottom = 8.0,
     
     button_shine_margin_left = 0.0,
     button_shine_margin_top = 0.0,
@@ -414,10 +414,11 @@ var _styles_manifest_normal := {
 }
 
 var _styles_manifest_pixel := {
-    button_content_margin_left = 12.0,
-    button_content_margin_top = 12.0,
-    button_content_margin_right = 12.0,
-    button_content_margin_bottom = 12.0,
+    button_content_margin_left = 16.0,
+    button_content_margin_top = 8.0,
+    button_content_margin_right = 16.0,
+    button_content_margin_bottom = 8.0,
+    
     button_shine_margin_left = 6.0,
     button_shine_margin_top = 6.0,
     button_shine_margin_right = 6.0,
@@ -454,10 +455,6 @@ var _styles_manifest_pixel := {
     dropdown_nine_patch_margin_right = 3.5,
     dropdown_nine_patch_margin_bottom = 3.5,
     dropdown_nine_patch_scale = 3.0,
-    dropdown_shine_margin_left = 6.0,
-    dropdown_shine_margin_top = 6.0,
-    dropdown_shine_margin_right = 6.0,
-    dropdown_shine_margin_bottom = 6.0,
     
     scroll_track_nine_patch = \
             preload("res://assets/images/scroll_track.png"),
