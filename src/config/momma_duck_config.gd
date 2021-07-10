@@ -375,8 +375,15 @@ var _colors_manifest := {
 }
 
 var _styles_manifest_normal := {
-    button_content_margin = 12.0,
-    button_shine_margin = 0.0,
+    button_content_margin_left = 12.0,
+    button_content_margin_top = 12.0,
+    button_content_margin_right = 12.0,
+    button_content_margin_bottom = 12.0,
+    
+    button_shine_margin_left = 0.0,
+    button_shine_margin_top = 0.0,
+    button_shine_margin_right = 0.0,
+    button_shine_margin_bottom = 0.0,
     
     button_corner_radius = 4,
     button_corner_detail = 3,
@@ -391,7 +398,10 @@ var _styles_manifest_normal := {
     scroll_corner_radius = 6,
     scroll_corner_detail = 3,
     # Width of the scrollbar.
-    scroll_content_margin = 7,
+    scroll_content_margin_left = 7,
+    scroll_content_margin_top = 7,
+    scroll_content_margin_right = 7,
+    scroll_content_margin_bottom = 7,
     
     scroll_grabber_corner_radius = 8,
     scroll_grabber_corner_detail = 3,
@@ -404,8 +414,14 @@ var _styles_manifest_normal := {
 }
 
 var _styles_manifest_pixel := {
-    button_content_margin = 12.0,
-    button_shine_margin = 6.0,
+    button_content_margin_left = 12.0,
+    button_content_margin_top = 12.0,
+    button_content_margin_right = 12.0,
+    button_content_margin_bottom = 12.0,
+    button_shine_margin_left = 6.0,
+    button_shine_margin_top = 6.0,
+    button_shine_margin_right = 6.0,
+    button_shine_margin_bottom = 6.0,
     
     button_active_nine_patch = \
             preload("res://assets/images/button_active.png"),
@@ -417,7 +433,10 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/button_hover.png"),
     button_normal_nine_patch = \
             preload("res://assets/images/button_normal.png"),
-    button_nine_patch_margin = 3.5,
+    button_nine_patch_margin_left = 3.5,
+    button_nine_patch_margin_top = 3.5,
+    button_nine_patch_margin_right = 3.5,
+    button_nine_patch_margin_bottom = 3.5,
     button_nine_patch_scale = 3.0,
     
     dropdown_active_nine_patch = \
@@ -430,13 +449,22 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/dropdown_hover.png"),
     dropdown_normal_nine_patch = \
             preload("res://assets/images/dropdown_normal.png"),
-    dropdown_nine_patch_margin = 3.5,
+    dropdown_nine_patch_margin_left = 3.5,
+    dropdown_nine_patch_margin_top = 3.5,
+    dropdown_nine_patch_margin_right = 3.5,
+    dropdown_nine_patch_margin_bottom = 3.5,
     dropdown_nine_patch_scale = 3.0,
-    dropdown_shine_margin = 6.0,
+    dropdown_shine_margin_left = 6.0,
+    dropdown_shine_margin_top = 6.0,
+    dropdown_shine_margin_right = 6.0,
+    dropdown_shine_margin_bottom = 6.0,
     
     scroll_track_nine_patch = \
             preload("res://assets/images/scroll_track.png"),
-    scroll_track_nine_patch_margin = 3.5,
+    scroll_track_nine_patch_margin_left = 3.5,
+    scroll_track_nine_patch_margin_top = 3.5,
+    scroll_track_nine_patch_margin_right = 3.5,
+    scroll_track_nine_patch_margin_bottom = 3.5,
     scroll_track_nine_patch_scale = 3.0,
     
     scroll_grabber_active_nine_patch = \
@@ -445,12 +473,18 @@ var _styles_manifest_pixel := {
             preload("res://assets/images/scroll_grabber_hover.png"),
     scroll_grabber_normal_nine_patch = \
             preload("res://assets/images/scroll_grabber_normal.png"),
-    scroll_grabber_nine_patch_margin = 3.5,
+    scroll_grabber_nine_patch_margin_left = 3.5,
+    scroll_grabber_nine_patch_margin_top = 3.5,
+    scroll_grabber_nine_patch_margin_right = 3.5,
+    scroll_grabber_nine_patch_margin_bottom = 3.5,
     scroll_grabber_nine_patch_scale = 3.0,
     
     slider_track_nine_patch = \
             preload("res://addons/scaffolder/assets/images/gui/slider_track.png"),
-    slider_track_nine_patch_margin = 1.5,
+    slider_track_nine_patch_margin_left = 1.5,
+    slider_track_nine_patch_margin_top = 1.5,
+    slider_track_nine_patch_margin_right = 1.5,
+    slider_track_nine_patch_margin_bottom = 1.5,
     slider_track_nine_patch_scale = 3.0,
     
     overlay_panel_border_width = 2,
