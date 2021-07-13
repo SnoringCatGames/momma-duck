@@ -719,7 +719,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/color_params/hsv_range_color_params.gd"
 }, {
-"base": "Control",
+"base": "ScaffolderPanelContainer",
 "class": "HudKeyValueBox",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/hud_key_value_box.gd"
@@ -1474,6 +1474,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/scaffolder_option_button.gd"
 }, {
+"base": "PanelContainer",
+"class": "ScaffolderPanelContainer",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/scaffolder_panel_container.gd"
+}, {
 "base": "ProgressBar",
 "class": "ScaffolderProgressBar",
 "language": "GDScript",
@@ -1884,7 +1889,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/models/waypoint_validity.gd"
 }, {
-"base": "PanelContainer",
+"base": "ScaffolderPanelContainer",
 "class": "WelcomePanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/welcome_panel.gd"
@@ -2188,6 +2193,7 @@ _global_script_class_icons={
 "ScaffolderLog": "",
 "ScaffolderNavigation": "",
 "ScaffolderOptionButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_option_button.png",
+"ScaffolderPanelContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScaffolderProgressBar": "res://addons/scaffolder/assets/images/editor_icons/progress_bar.png",
 "ScaffolderSlider": "res://addons/scaffolder/assets/images/editor_icons/slider.png",
 "ScaffolderStyles": "",
@@ -2198,7 +2204,7 @@ _global_script_class_icons={
 "ScaffolderTween": "",
 "ScareCountLabeledControlItem": "",
 "ScoreLabeledControlItem": "",
-"Screen": "res://addons/scaffolder/assets/images/editor_icons/screen.png",
+"Screen": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScreenMaskTransition": "",
 "ScreenTransition": "",

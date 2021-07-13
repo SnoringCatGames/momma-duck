@@ -312,7 +312,7 @@ var COLOR_BUTTON := Color("24803b")
 var COLOR_BUTTON_LIGHTER := Color("47a65f")
 var COLOR_BUTTON_DARKER := Color("0c591f")
 
-var COLOR_SHADOW := Color("22000000")
+var COLOR_SHADOW := Color("88000000")
 
 var _colors_manifest := {
     # Scaffolder colors.
@@ -351,10 +351,11 @@ var _colors_manifest := {
     scroll_bar_grabber_pressed = COLOR_BUTTON_DARKER,
     slider_background = COLOR_BACKGROUND_DARKER,
     zebra_stripe_even_row = COLOR_BACKGROUND_LIGHTER,
-    overlay_panel_body_background = COLOR_BACKGROUND_DARKER,
-    overlay_panel_header_background = COLOR_BACKGROUND,
+    overlay_panel_background = COLOR_BACKGROUND_DARKER,
     overlay_panel_border = COLOR_TEXT,
+    header_panel_background = COLOR_BACKGROUND,
     screen_border = COLOR_TEXT,
+    shadow = COLOR_SHADOW,
     
     # Surfacer colors.
     
@@ -406,7 +407,40 @@ var _styles_manifest_normal := {
     scroll_grabber_corner_radius = 8,
     scroll_grabber_corner_detail = 3,
     
+    slider_corner_radius = 6,
+    slider_corner_detail = 3,
+    slider_content_margin_left = 5,
+    slider_content_margin_top = 5,
+    slider_content_margin_right = 5,
+    slider_content_margin_bottom = 5,
+    
     overlay_panel_border_width = 2,
+    
+    overlay_panel_corner_radius = 4,
+    overlay_panel_corner_detail = 3,
+    overlay_panel_content_margin_left = 0.0,
+    overlay_panel_content_margin_top = 0.0,
+    overlay_panel_content_margin_right = 0.0,
+    overlay_panel_content_margin_bottom = 0.0,
+    overlay_panel_shadow_size = 8,
+    overlay_panel_shadow_offset = Vector2(-4.0, 4.0),
+    
+    header_panel_content_margin_left = 0.0,
+    header_panel_content_margin_top = 0.0,
+    header_panel_content_margin_right = 0.0,
+    header_panel_content_margin_bottom = 0.0,
+    
+    hud_panel_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/overlay_panel.png"),
+    hud_panel_nine_patch_margin_left = 3.5,
+    hud_panel_nine_patch_margin_top = 3.5,
+    hud_panel_nine_patch_margin_right = 3.5,
+    hud_panel_nine_patch_margin_bottom = 3.5,
+    hud_panel_nine_patch_scale = 3.0,
+    hud_panel_content_margin_left = 8.0,
+    hud_panel_content_margin_top = 2.0,
+    hud_panel_content_margin_right = 8.0,
+    hud_panel_content_margin_bottom = 2.0,
     
     screen_shadow_size = 8,
     screen_shadow_offset = Vector2(-4.0, 4.0),
@@ -486,53 +520,82 @@ var _styles_manifest_pixel := {
     
     overlay_panel_border_width = 2,
     
+    overlay_panel_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/overlay_panel.png"),
+    overlay_panel_nine_patch_margin_left = 3.5,
+    overlay_panel_nine_patch_margin_top = 3.5,
+    overlay_panel_nine_patch_margin_right = 3.5,
+    overlay_panel_nine_patch_margin_bottom = 3.5,
+    overlay_panel_nine_patch_scale = 3.0,
+    overlay_panel_content_margin_left = 3.0,
+    overlay_panel_content_margin_top = 3.0,
+    overlay_panel_content_margin_right = 3.0,
+    overlay_panel_content_margin_bottom = 3.0,
+    
+    header_panel_content_margin_left = 0.0,
+    header_panel_content_margin_top = 0.0,
+    header_panel_content_margin_right = 0.0,
+    header_panel_content_margin_bottom = 0.0,
+    
+    hud_panel_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/overlay_panel.png"),
+    hud_panel_nine_patch_margin_left = 3.5,
+    hud_panel_nine_patch_margin_top = 3.5,
+    hud_panel_nine_patch_margin_right = 3.5,
+    hud_panel_nine_patch_margin_bottom = 3.5,
+    hud_panel_nine_patch_scale = 3.0,
+    hud_panel_content_margin_left = 8.0,
+    hud_panel_content_margin_top = 2.0,
+    hud_panel_content_margin_right = 8.0,
+    hud_panel_content_margin_bottom = 2.0,
+    
     screen_shadow_size = 0,
     screen_shadow_offset = Vector2.ZERO,
     screen_border_width = 0,
 }
 
 var _icons_manifest_normal := {
-        checkbox_path_prefix = \
-                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
-        default_checkbox_size = \
-                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
-        checkbox_sizes = \
-                ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
-        
-        radio_button_path_prefix = \
-                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_PATH_PREFIX,
-        default_radio_button_size = \
-                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZE,
-        radio_button_sizes = \
-                ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZES,
-        
-        tree_arrow_path_prefix = \
-                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
-        default_tree_arrow_size = \
-                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
-        tree_arrow_sizes = \
-                ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
-        
-        dropdown_arrow_path_prefix = \
-                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_PATH_PREFIX,
-        default_dropdown_arrow_size = \
-                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZE,
-        dropdown_arrow_sizes = \
-                ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZES,
-        
-        slider_grabber_path_prefix = \
-                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_PATH_PREFIX,
-        default_slider_grabber_size = \
-                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZE,
-        slider_grabber_sizes = \
-                ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZES,
-        
-        slider_tick_path_prefix = \
-                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_PATH_PREFIX,
-        default_slider_tick_size = \
-                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZE,
-        slider_tick_sizes = \
-                ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZES,
+    checkbox_path_prefix = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
+    default_checkbox_size = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
+    checkbox_sizes = \
+            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
+    
+    radio_button_path_prefix = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_PATH_PREFIX,
+    default_radio_button_size = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZE,
+    radio_button_sizes = \
+            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZES,
+    
+    tree_arrow_path_prefix = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
+    default_tree_arrow_size = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
+    tree_arrow_sizes = \
+            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
+    
+    dropdown_arrow_path_prefix = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_PATH_PREFIX,
+    default_dropdown_arrow_size = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZE,
+    dropdown_arrow_sizes = \
+            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZES,
+    
+    slider_grabber_path_prefix = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_PATH_PREFIX,
+    default_slider_grabber_size = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZE,
+    slider_grabber_sizes = \
+            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZES,
+    
+    slider_tick_path_prefix = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_PATH_PREFIX,
+    default_slider_tick_size = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZE,
+    slider_tick_sizes = \
+            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZES,
     
     go_normal = preload("res://assets/images/go_icon.png"),
     go_scale = 1.5,
@@ -763,8 +826,6 @@ var _hud_manifest := {
             preload("res://addons/scaffolder/src/gui/hud/hud_key_value_box.tscn"),
     hud_key_value_list_scene = \
             preload("res://addons/scaffolder/src/gui/hud/hud_key_value_list.tscn"),
-    hud_key_value_box_nine_patch_rect_scene = \
-            preload("res://addons/scaffolder/src/gui/hud/hud_key_value_box_nine_patch_rect.tscn"),
     hud_key_value_list_item_manifest = [
         {
             item_class = TimeLabeledControlItem,
