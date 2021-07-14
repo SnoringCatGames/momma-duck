@@ -17,16 +17,16 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
-    _app_metadata.app_version = "0.0.1"
+    _metadata.app_version = "0.0.1"
     
-    _app_metadata.debug = is_debug
-    _app_metadata.playtest = is_playtest
-    _app_metadata.pauses_on_focus_out = !is_debug
-    _app_metadata.also_prints_to_stdout = true
-    _app_metadata.are_all_levels_unlocked = false and is_debug
-    _app_metadata.are_test_levels_included = true
-    _app_metadata.is_save_state_cleared_for_debugging = false
-    _app_metadata.is_splash_skipped = true and is_debug
+    _metadata.debug = is_debug
+    _metadata.playtest = is_playtest
+    _metadata.pauses_on_focus_out = !is_debug
+    _metadata.also_prints_to_stdout = true
+    _metadata.are_all_levels_unlocked = false and is_debug
+    _metadata.are_test_levels_included = true
+    _metadata.is_save_state_cleared_for_debugging = false
+    _metadata.is_splash_skipped = true and is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
@@ -49,7 +49,7 @@ var _is_using_pixel_style := true
 
 var _uses_threads := false and OS.can_use_threads()
 
-var _app_metadata := {
+var _metadata := {
     debug = false,
     playtest = false,
     pauses_on_focus_out = true,
@@ -1017,7 +1017,7 @@ var app_manifest := {
     level_config_class = MommaDuckLevelConfig,
     level_session_class = MommaDuckLevelSession,
     
-    app_metadata = _app_metadata,
+    metadata = _metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
     styles_manifest = _styles_manifest_normal,
