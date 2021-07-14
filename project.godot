@@ -639,6 +639,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/fox/fox_params.gd"
 }, {
+"base": "Node",
+"class": "FrameworkConfig",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/framework_config.gd"
+}, {
 "base": "EdgeCalculator",
 "class": "FromAirCalculator",
 "language": "GDScript",
@@ -934,7 +939,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/log_surfacer_events_settings_labeled_control_item.gd"
 }, {
-"base": "SurfacerBootstrap",
+"base": "Node",
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/config/main.gd"
@@ -964,7 +969,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/momma/momma_animator.gd"
 }, {
-"base": "Node",
+"base": "FrameworkConfig",
 "class": "MommaDuckConfig",
 "language": "GDScript",
 "path": "res://src/config/momma_duck_config.gd"
@@ -1394,7 +1399,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_colors.gd"
 }, {
-"base": "Node",
+"base": "FrameworkConfig",
 "class": "ScaffolderConfig",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_config.gd"
@@ -1679,7 +1684,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_colors.gd"
 }, {
-"base": "Node",
+"base": "FrameworkConfig",
 "class": "SurfacerConfig",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_config.gd"
@@ -2026,6 +2031,7 @@ _global_script_class_icons={
 "Fox": "",
 "FoxAnimator": "",
 "FoxParams": "",
+"FrameworkConfig": "",
 "FromAirCalculator": "",
 "FromAirEdge": "",
 "FullScreenPanel": "res://addons/scaffolder/assets/images/editor_icons/full_screen_panel.png",

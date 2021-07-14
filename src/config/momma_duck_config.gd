@@ -1,5 +1,6 @@
+tool
 class_name MommaDuckConfig
-extends Node
+extends FrameworkConfig
 
 
 # ---
@@ -1029,8 +1030,17 @@ var app_manifest := {
 var includes_leash := true
 
 
+func _enter_tree() -> void:
+    assert(is_instance_valid(Gs) and \
+            is_instance_valid(Surfacer),
+            "The Scaffolder and Surfacer AutoLoads must be declared first.")
+    
+    Gs.logger.on_global_init(self, "MommaDuckConfig")
+    Gs.register_framework_config(self)
+
+
 func _ready() -> void:
-    Gs.logger.print("MommaDuckConfig._ready")
+    Gs.run(app_manifest)
 
 
 func amend_app_manifest(manifest: Dictionary) -> void:
