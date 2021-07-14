@@ -729,10 +729,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/hud_key_value_box.gd"
 }, {
-"base": "CheckboxLabeledControlItem",
+"base": "Reference",
 "class": "HudKeyValueItemSettingsLabeledControlItem",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/hud_key_value_item_settings_labeled_control_item.gd"
+"path": "res://addons/scaffolder/src/gui/settings_items/hud_key_value_item_settings_labeled_control_item.gd"
 }, {
 "base": "VBoxContainer",
 "class": "HudKeyValueList",
