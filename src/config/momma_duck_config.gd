@@ -1055,7 +1055,7 @@ func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
         app_manifest.icons_manifest = _icons_manifest_normal
 
 
-func initialize() -> void:
+func set_up() -> void:
     Gs.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
