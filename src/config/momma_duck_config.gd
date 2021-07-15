@@ -1030,16 +1030,14 @@ var app_manifest := {
 var includes_leash := true
 
 
-func _enter_tree() -> void:
+func _ready() -> void:
     assert(is_instance_valid(Gs) and \
             is_instance_valid(Surfacer),
             "The Scaffolder and Surfacer AutoLoads must be declared first.")
     
     Gs.logger.on_global_init(self, "MommaDuckConfig")
     Gs.register_framework_config(self)
-
-
-func _ready() -> void:
+    
     Gs.run(app_manifest)
 
 

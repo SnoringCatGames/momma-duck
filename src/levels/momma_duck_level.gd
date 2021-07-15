@@ -33,10 +33,6 @@ var spiders := []
 var last_attached_duck: Duck
 
 
-#func _enter_tree() -> void:
-#    pass
-
-
 #func _load() -> void:
 #    ._load()
 
