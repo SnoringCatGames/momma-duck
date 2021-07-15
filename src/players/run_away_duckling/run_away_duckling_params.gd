@@ -12,7 +12,7 @@ func _init_params() -> void:
     name = "run_away_duckling"
     player_path_or_scene = RUN_AWAY_DUCKLING_PLAYER_SCENE
     
-#    gravity_fast_fall = Gs.geometry.GRAVITY * 1.0
+#    gravity_fast_fall = Sc.geometry.GRAVITY * 1.0
     
 #    jump_boost *= 1.15
     in_air_horizontal_acceleration *= 2.0

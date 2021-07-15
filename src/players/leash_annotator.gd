@@ -22,7 +22,7 @@ var leash: Rope
 
 func _init(duck) -> void:
     self.duck = duck
-    if MommaDuck.includes_leash:
+    if App.includes_leash:
         self.leash = Rope.new()
 
 
@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
     if !is_instance_valid(duck):
         return
     
-    if !MommaDuck.includes_leash:
+    if !App.includes_leash:
         return
     
     if duck.is_attached_to_leader:
@@ -66,7 +66,7 @@ func _draw() -> void:
     if !duck.is_attached_to_leader:
         return
     
-    if !MommaDuck.includes_leash:
+    if !App.includes_leash:
         return
     
     var vertices := PoolVector2Array()
@@ -84,7 +84,7 @@ func _draw() -> void:
                 Duck.LEASH_DETACH_DISTANCE - DISTANCE_TO_START_STRETCHING_AT
         var stretch_progress := \
                 (distance - DISTANCE_TO_START_STRETCHING_AT) / stretch_distance
-        stretch_progress = Gs.utils.ease_by_name(stretch_progress, "ease_in")
+        stretch_progress = Sc.utils.ease_by_name(stretch_progress, "ease_in")
         color = lerp(LEASH_COLOR, LEASH_MAX_STRETCHED_COLOR, stretch_progress)
         width = lerp(LEASH_WIDTH, LEASH_MAX_STRETCHED_WIDTH, stretch_progress)
     else:

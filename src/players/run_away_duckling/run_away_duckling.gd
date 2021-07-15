@@ -30,28 +30,28 @@ func run_away(
     navigator.connect("destination_reached", self, "_on_destination_reached")
     var did_navigation_succeed := navigator.navigate_to_position(destination)
     if !did_navigation_succeed:
-        Gs.logger.print("Run-away navigation path-finding was not successful")
-        Gs.level.swap_run_away_with_duckling(self)
+        Sc.logger.print("Run-away navigation path-finding was not successful")
+        Sc.level.swap_run_away_with_duckling(self)
     
     _show_exclamation_mark()
 
 
 func _on_destination_reached() -> void:
     if is_logging_events:
-        Gs.logger.print("Run-away reached spawn position")
-    Gs.level.swap_run_away_with_duckling(self)
+        Sc.logger.print("Run-away reached spawn position")
+    Sc.level.swap_run_away_with_duckling(self)
 
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("duck_jump")
+        Sc.audio.play_sound("duck_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("duck_land")
+        Sc.audio.play_sound("duck_land")
 
 
 func _show_exclamation_mark() -> void:
-    Surfacer.annotators.add_transient(ExclamationMarkAnnotator.new(
+    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             movement_params.collider_half_width_height.y,
             Duckling.EXCLAMATION_MARK_COLOR,

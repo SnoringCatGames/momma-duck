@@ -24,8 +24,8 @@ func get_text() -> String:
     if level_id == "":
         return "—"
     else:
-        assert(is_instance_valid(Gs.level))
+        assert(is_instance_valid(Sc.level))
         return "%d / %d" % [
-            Gs.level.get_ducklings_in_tow_count(),
-            Gs.level.get_ducklings_count(),
+            Sc.level.get_ducklings_in_tow_count(),
+            Sc.level.get_ducklings_count(),
         ]

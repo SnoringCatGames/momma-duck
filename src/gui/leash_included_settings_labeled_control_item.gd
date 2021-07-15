@@ -14,14 +14,14 @@ func _init(__ = null).(
 
 
 func on_pressed(pressed: bool) -> void:
-    MommaDuck.includes_leash = pressed
-    Gs.save_state.set_setting(
-            MommaDuck.INCLUDES_LEASH_SETTINGS_KEY,
-            MommaDuck.includes_leash)
+    App.includes_leash = pressed
+    Sc.save_state.set_setting(
+            App.INCLUDES_LEASH_SETTINGS_KEY,
+            App.includes_leash)
 
 
 func get_is_pressed() -> bool:
-    return MommaDuck.includes_leash
+    return App.includes_leash
 
 
 func get_is_enabled() -> bool:

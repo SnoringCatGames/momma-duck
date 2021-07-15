@@ -40,4 +40,4 @@ func _show_sprite(animation_type: int) -> void:
             else:
                 $RestUp.visible = true
         _:
-            Gs.logger.error()
+            Sc.logger.error()

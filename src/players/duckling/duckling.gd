@@ -14,7 +14,7 @@ var leash_annotator: LeashAnnotator
 
 var is_logging_events := false
 
-var _throttled_exclamation_mark: FuncRef = Gs.time.throttle(
+var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
@@ -25,7 +25,7 @@ func _init().("duckling") -> void:
 
 func create_leash_annotator() -> void:
     leash_annotator = LeashAnnotator.new(self)
-    Surfacer.annotators.get_player_annotator(self).add_child(leash_annotator)
+    Su.annotators.get_player_annotator(self).add_child(leash_annotator)
 
 
 func get_leash_attachment_offset() -> Vector2:
@@ -76,15 +76,15 @@ func _trigger_new_navigation() -> void:
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("duck_jump")
+        Sc.audio.play_sound("duck_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("duck_land")
+        Sc.audio.play_sound("duck_land")
 
 
 func _show_exclamation_mark() -> void:
-    Gs.audio.play_sound("duckling_quack")
-    Surfacer.annotators.add_transient(ExclamationMarkAnnotator.new(
+    Sc.audio.play_sound("duckling_quack")
+    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             movement_params.collider_half_width_height.y,
             EXCLAMATION_MARK_COLOR,
@@ -108,13 +108,13 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     
     _throttled_exclamation_mark.call_func()
     
-    Gs.level_session.duckling_scare_count += 1
+    Sc.level_session.duckling_scare_count += 1
     
     if is_logging_events:
-        Gs.logger.print("Duckling touched an enemy")
+        Sc.logger.print("Duckling touched an enemy")
     
     if is_attached_to_leader:
-        Gs.level.last_attached_duck = leader
+        Sc.level.last_attached_duck = leader
         leader.is_attached_to_follower = false
         leader.just_attached_to_follower = false
         leader.just_detached_from_follower = true
@@ -131,13 +131,13 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     is_attached_to_follower = false
     follower = null
     
-    Gs.level.swap_duckling_with_run_away(self, enemy)
+    Sc.level.swap_duckling_with_run_away(self, enemy)
 
 
 func _on_EnemyDetectionArea_body_entered(enemy: KinematicBody2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     on_touched_enemy(enemy)

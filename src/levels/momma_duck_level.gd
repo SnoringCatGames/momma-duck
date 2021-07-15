@@ -40,18 +40,18 @@ var last_attached_duck: Duck
 func _start() -> void:
     ._start()
     
-    Gs.level_session.duckling_scare_count = 0
+    Sc.level_session.duckling_scare_count = 0
     
-    momma = Surfacer.human_player
+    momma = Su.human_player
     last_attached_duck = momma
     
-    duckling_spawn_positions = Gs.utils.get_all_nodes_in_group(
+    duckling_spawn_positions = Sc.utils.get_all_nodes_in_group(
             DUCKLING_SPAWN_POSITIONS_GROUP_NAME)
-    fox_spawn_positions = Gs.utils.get_all_nodes_in_group(
+    fox_spawn_positions = Sc.utils.get_all_nodes_in_group(
             FOX_SPAWN_POSITIONS_GROUP_NAME)
-    porcupine_spawn_positions = Gs.utils.get_all_nodes_in_group(
+    porcupine_spawn_positions = Sc.utils.get_all_nodes_in_group(
             PORCUPINE_SPAWN_POSITIONS_GROUP_NAME)
-    spider_spawn_positions = Gs.utils.get_all_nodes_in_group(
+    spider_spawn_positions = Sc.utils.get_all_nodes_in_group(
             SPIDER_SPAWN_POSITIONS_GROUP_NAME)
     
     for spawn_position in duckling_spawn_positions:
@@ -123,9 +123,9 @@ func _destroy() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-    if !Gs.level_session.has_started or \
-            Gs.level_session.is_destroyed or \
-            !Gs.level_session.has_started:
+    if !Sc.level_session.has_started or \
+            Sc.level_session.is_destroyed or \
+            !Sc.level_session.has_started:
         return
     
     momma.clear_just_changed_attachment()
@@ -134,7 +134,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func add_spider(position: Vector2) -> Spider:
-    var player: Spider = Gs.utils.add_scene(
+    var player: Spider = Sc.utils.add_scene(
             self,
             SPIDER_PLAYER_SCENE,
             false,
@@ -198,11 +198,11 @@ func check_if_all_ducks_are_in_pond() -> void:
 
 
 func trigger_level_victory() -> void:
-    if !Gs.level_session.is_ended:
-        Gs.time.tween_property(
-                Gs.camera_controller,
+    if !Sc.level_session.is_ended:
+        Sc.time.tween_property(
+                Sc.camera_controller,
                 "zoom_factor",
-                Gs.camera_controller.zoom_factor,
+                Sc.camera_controller.zoom_factor,
                 LEVEL_END_ZOOM_OUT_FACTOR,
                 LEVEL_END_ZOOM_OUT_DURATION,
                 "ease_in_out",
@@ -221,7 +221,7 @@ func get_slow_motion_music_name() -> String:
 
 
 func get_ducklings_in_tow_count() -> int:
-    if !Gs.level_session.has_started:
+    if !Sc.level_session.has_started:
         return 0
     
     var count := 0

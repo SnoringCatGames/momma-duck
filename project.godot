@@ -729,7 +729,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/hud/hud_key_value_box.gd"
 }, {
-"base": "Reference",
+"base": "CheckboxLabeledControlItem",
 "class": "HudKeyValueItemSettingsLabeledControlItem",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/settings_items/hud_key_value_item_settings_labeled_control_item.gd"
@@ -968,11 +968,6 @@ _global_script_classes=[ {
 "class": "MommaAnimator",
 "language": "GDScript",
 "path": "res://src/players/momma/momma_animator.gd"
-}, {
-"base": "FrameworkConfig",
-"class": "MommaDuckConfig",
-"language": "GDScript",
-"path": "res://src/config/momma_duck_config.gd"
 }, {
 "base": "SurfacerHud",
 "class": "MommaDuckHud",
@@ -1399,11 +1394,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_colors.gd"
 }, {
-"base": "FrameworkConfig",
-"class": "ScaffolderConfig",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/scaffolder_config.gd"
-}, {
 "base": "Control",
 "class": "ScaffolderConfiguredImage",
 "language": "GDScript",
@@ -1529,7 +1519,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/gui/scare_count_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "TextLabeledControlItem",
 "class": "ScoreLabeledControlItem",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_items/score_labeled_control_item.gd"
@@ -1683,11 +1673,6 @@ _global_script_classes=[ {
 "class": "SurfacerColors",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_colors.gd"
-}, {
-"base": "FrameworkConfig",
-"class": "SurfacerConfig",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/config/surfacer_config.gd"
 }, {
 "base": "ScaffolderDrawUtils",
 "class": "SurfacerDrawUtils",
@@ -2097,7 +2082,6 @@ _global_script_class_icons={
 "MetronomeSettingsLabeledControlItem": "",
 "Momma": "",
 "MommaAnimator": "",
-"MommaDuckConfig": "",
 "MommaDuckHud": "",
 "MommaDuckLevel": "",
 "MommaDuckLevelConfig": "",
@@ -2183,7 +2167,6 @@ _global_script_class_icons={
 "ScaffolderButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_button.png",
 "ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
 "ScaffolderColors": "",
-"ScaffolderConfig": "",
 "ScaffolderConfiguredImage": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScaffolderDrawUtils": "",
 "ScaffolderGeometry": "",
@@ -2240,7 +2223,6 @@ _global_script_class_icons={
 "SurfaceType": "",
 "SurfacerBootstrap": "",
 "SurfacerColors": "",
-"SurfacerConfig": "",
 "SurfacerDrawUtils": "",
 "SurfacerGeometry": "",
 "SurfacerHud": "",
@@ -2297,9 +2279,9 @@ config/quit_on_go_back=false
 
 [autoload]
 
-Gs="*res://addons/scaffolder/src/config/scaffolder_config.gd"
-Surfacer="*res://addons/surfacer/src/config/surfacer_config.gd"
-MommaDuck="*res://src/config/momma_duck_config.gd"
+Sc="*res://addons/scaffolder/src/config/sc.gd"
+Su="*res://addons/surfacer/src/config/su.gd"
+App="*res://src/config/app.gd"
 
 [display]
 

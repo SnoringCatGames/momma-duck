@@ -22,10 +22,10 @@ func get_leash_attachment_offset() -> Vector2:
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("duck_jump")
+        Sc.audio.play_sound("duck_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("duck_land")
+        Sc.audio.play_sound("duck_land")
 
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
@@ -35,7 +35,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
 func _on_EnemyDetectionArea_body_entered(enemy: KinematicBody2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     on_touched_enemy(enemy)

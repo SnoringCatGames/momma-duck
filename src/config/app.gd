@@ -1,5 +1,4 @@
 tool
-class_name MommaDuckConfig
 extends FrameworkConfig
 
 
@@ -1008,8 +1007,8 @@ var _surfacer_manifest := {
     is_computer_prediction_shown = true,
     
     debug_params = _surfacer_debug_params,
-    player_action_classes = SurfacerConfig.DEFAULT_PLAYER_ACTION_CLASSES,
-    edge_movement_classes = SurfacerConfig.DEFAULT_EDGE_MOVEMENT_CLASSES,
+    player_action_classes = Su.DEFAULT_PLAYER_ACTION_CLASSES,
+    edge_movement_classes = Su.DEFAULT_EDGE_MOVEMENT_CLASSES,
     player_param_classes = _player_param_classes,
 }
 
@@ -1031,14 +1030,14 @@ var includes_leash := true
 
 
 func _ready() -> void:
-    assert(is_instance_valid(Gs) and \
-            is_instance_valid(Surfacer),
-            "The Scaffolder and Surfacer AutoLoads must be declared first.")
+    assert(is_instance_valid(Sc) and \
+            is_instance_valid(Su),
+            "The Sc (Scaffolder) and Su (Surfacer) AutoLoads must be declared first.")
     
-    Gs.logger.on_global_init(self, "MommaDuckConfig")
-    Gs.register_framework_config(self)
+    Sc.logger.on_global_init(self, "App")
+    Sc.register_framework_config(self)
     
-    Gs.run(app_manifest)
+    Sc.run(app_manifest)
 
 
 func amend_app_manifest(manifest: Dictionary) -> void:
@@ -1056,10 +1055,10 @@ func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
 
 
 func set_up() -> void:
-    Gs.profiler.preregister_metric_keys(_additional_metric_keys)
+    Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
 func load_state() -> void:
-    MommaDuck.includes_leash = Gs.save_state.get_setting(
+    App.includes_leash = Sc.save_state.get_setting(
             INCLUDES_LEASH_SETTINGS_KEY,
             false)

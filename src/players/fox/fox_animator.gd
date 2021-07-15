@@ -45,4 +45,4 @@ func _show_sprite(animation_type: int) -> void:
         PlayerAnimationType.JUMP_RISE:
             $JumpRise.visible = true
         _:
-            Gs.logger.error()
+            Sc.logger.error()

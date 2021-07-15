@@ -19,7 +19,7 @@ func _init_params() -> void:
     fall_from_floor_corner_calc_shape.extents = \
             Vector2(collider_shape.radius, collider_shape.radius)
     
-    gravity_fast_fall = Gs.geometry.GRAVITY * 0.8
+    gravity_fast_fall = Sc.geometry.GRAVITY * 0.8
     
     jump_boost *= 0.8
     in_air_horizontal_acceleration *= 0.8

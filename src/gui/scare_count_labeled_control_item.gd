@@ -24,5 +24,5 @@ func get_text() -> String:
     if level_id == "":
         return "—"
     else:
-        assert(is_instance_valid(Gs.level))
-        return str(Gs.level_session.duckling_scare_count)
+        assert(is_instance_valid(Sc.level))
+        return str(Sc.level_session.duckling_scare_count)

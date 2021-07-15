@@ -108,7 +108,7 @@ class RopeNode extends Reference:
     
     
     var NODE_TIME_STEP := \
-            Gs.time.PHYSICS_TIME_STEP * \
+            Sc.time.PHYSICS_TIME_STEP * \
             NUMBER_OF_PHYSICS_FRAMES_BETWEEN_NODE_PHYSICS_FRAMES
     
     var is_fixed := false
@@ -128,7 +128,7 @@ class RopeNode extends Reference:
         position.x += displacement.x * NODE_DAMPING
         position.y += \
                 displacement.y * NODE_DAMPING + \
-                Gs.geometry.GRAVITY * NODE_MASS * \
+                Sc.geometry.GRAVITY * NODE_MASS * \
                 NODE_TIME_STEP * NODE_TIME_STEP
     
     

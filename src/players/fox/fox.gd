@@ -31,7 +31,7 @@ var target_duckling: Duckling
 
 var is_logging_events := false
 
-var _throttled_exclamation_mark: FuncRef = Gs.time.throttle(
+var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
@@ -58,10 +58,10 @@ func _update_navigator(delta_scaled: float) -> void:
     if start_surface == null:
         return
     
-    var current_time := Gs.time.get_scaled_play_time()
+    var current_time := Sc.time.get_scaled_play_time()
     
     var distance_squared_to_momma := \
-            position.distance_squared_to(Gs.level.momma.position)
+            position.distance_squared_to(Sc.level.momma.position)
     if distance_squared_to_momma <= RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
         # Run from momma.
         _run_from_momma()
@@ -100,12 +100,12 @@ func _run_from_momma() -> void:
 
 func _navigate_to_new_position_away_from_momma() -> void:
     if is_logging_events:
-        Gs.logger.print("Fox run-from-momma start")
+        Sc.logger.print("Fox run-from-momma start")
     
     _throttled_exclamation_mark.call_func()
     
     var direction_away_from_momma: Vector2 = \
-            Gs.level.momma.position.direction_to(position)
+            Sc.level.momma.position.direction_to(position)
     var naive_target := \
             direction_away_from_momma * RUN_FROM_MOMMA_DESTINATION_DISTANCE
     var graph_destination_for_in_air_destination := SurfaceParser \
@@ -132,12 +132,12 @@ func _trigger_wander() -> void:
         return
     
     if is_logging_events:
-        Gs.logger.print("Fox wander start")
+        Sc.logger.print("Fox wander start")
     
     is_wandering = true
-    var left_most_point: Vector2 = Gs.geometry.project_point_onto_surface(
+    var left_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
             Vector2(start_position.x - wander_radius, 0.0), start_surface)
-    var right_most_point: Vector2 = Gs.geometry.project_point_onto_surface(
+    var right_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
             Vector2(start_position.x + wander_radius, 0.0), start_surface)
     var target_x := \
             randf() * (right_most_point.x - left_most_point.x) + \
@@ -153,10 +153,10 @@ func _trigger_wander() -> void:
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("duck_jump")
+        Sc.audio.play_sound("duck_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("duck_land")
+        Sc.audio.play_sound("duck_land")
 
 
 func _on_DucklingDetectionArea_body_entered(duckling: Duckling):
@@ -165,21 +165,21 @@ func _on_DucklingDetectionArea_body_entered(duckling: Duckling):
         return
     
     if is_logging_events:
-        Gs.logger.print("Fox is close to duckling")
+        Sc.logger.print("Fox is close to duckling")
     
-    if !Gs.level_session.has_started or \
+    if !Sc.level_session.has_started or \
             is_running_from_momma or \
             is_pouncing_on_duckling:
         return
     
     var fox_distance_squared_to_momma := \
-            self.position.distance_squared_to(Gs.level.momma.position)
+            self.position.distance_squared_to(Sc.level.momma.position)
     if fox_distance_squared_to_momma <= \
             RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
         return
     
     var duckling_distance_squared_to_momma := \
-            duckling.position.distance_squared_to(Gs.level.momma.position)
+            duckling.position.distance_squared_to(Sc.level.momma.position)
     if duckling_distance_squared_to_momma <= \
             RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
         return
@@ -189,7 +189,7 @@ func _on_DucklingDetectionArea_body_entered(duckling: Duckling):
 
 func _pounce_on_duckling(duckling: Duckling) -> void:
     if is_logging_events:
-        Gs.logger.print("Fox pounce-on-duckling start")
+        Sc.logger.print("Fox pounce-on-duckling start")
     
     _throttled_exclamation_mark.call_func()
     
@@ -218,11 +218,11 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Fox collided with duckling")
+        Sc.logger.print("Fox collided with duckling")
     
     if is_pouncing_on_duckling and \
             duckling == target_duckling:
@@ -235,17 +235,17 @@ func on_touched_duckling(duckling: Duckling) -> void:
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Fox collided with momma")
+        Sc.logger.print("Fox collided with momma")
     
         _run_from_momma()
 
 
 func _show_exclamation_mark() -> void:
-    Surfacer.annotators.add_transient(ExclamationMarkAnnotator.new(
+    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             movement_params.collider_half_width_height.y,
             EXCLAMATION_MARK_COLOR,

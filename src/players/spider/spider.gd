@@ -34,7 +34,7 @@ var is_logging_events := false
 
 var _is_destroyed := false
 
-var _throttled_exclamation_mark: FuncRef = Gs.time.throttle(
+var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
@@ -53,7 +53,7 @@ func _destroy() -> void:
 
 
 func _physics_process(delta: float) -> void:
-    var current_time := Gs.time.get_scaled_play_time()
+    var current_time := Sc.time.get_scaled_play_time()
     
     just_reached_end = false
     just_started_moving = false
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
     if is_moving:
         var displacement := Vector2(
                 0.0, 
-                speed * delta * Gs.time.get_combined_scale())
+                speed * delta * Sc.time.get_combined_scale())
         if !is_moving_down:
             displacement *= -1
         position += displacement
@@ -87,15 +87,15 @@ func _physics_process(delta: float) -> void:
     
     if is_logging_events:
         if just_reached_end:
-            Gs.logger.print("Spider just reached end")
+            Sc.logger.print("Spider just reached end")
         if just_started_moving:
-            Gs.logger.print("Spider just started moving")
+            Sc.logger.print("Spider just started moving")
     
     _update_animator()
 
 
 func _climb_away_from_momma() -> void:
-    var is_momma_below: bool = Gs.level.momma.position.y > position.y
+    var is_momma_below: bool = Sc.level.momma.position.y > position.y
     
     _throttled_exclamation_mark.call_func()
     
@@ -105,7 +105,7 @@ func _climb_away_from_momma() -> void:
         return
     
     if is_logging_events:
-        Gs.logger.print("Spider climb-away-from-momma start")
+        Sc.logger.print("Spider climb-away-from-momma start")
     
     is_moving = true
     just_started_moving = true
@@ -146,26 +146,26 @@ func _create_animator_params() -> PlayerAnimatorParams:
 
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Spider collided with duckling")
+        Sc.logger.print("Spider collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Spider collided with momma")
+        Sc.logger.print("Spider collided with momma")
     
     _climb_away_from_momma()
 
 
 func _show_exclamation_mark() -> void:
-    Surfacer.annotators.add_transient(ExclamationMarkAnnotator.new(
+    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             RADIUS,
             EXCLAMATION_MARK_COLOR,

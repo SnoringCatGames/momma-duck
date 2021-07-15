@@ -26,7 +26,7 @@ var surface: Surface
 
 var is_logging_events := false
 
-var _throttled_exclamation_mark: FuncRef = Gs.time.throttle(
+var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
@@ -91,7 +91,7 @@ func _update_navigator(delta_scaled: float) -> void:
     
     if new_destination != null:
         if is_logging_events:
-            Gs.logger.print(
+            Sc.logger.print(
                     ("Porcupine just turned: " +
                     "is_walking_left=%s, " +
                     "was_navigating=%s") % \
@@ -102,7 +102,7 @@ func _update_navigator(delta_scaled: float) -> void:
     
     if !just_turned:
         var distance_squared_to_momma := \
-                position.distance_squared_to(Gs.level.momma.position)
+                position.distance_squared_to(Sc.level.momma.position)
         if distance_squared_to_momma <= \
                 RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
             # Run from momma.
@@ -115,10 +115,10 @@ func _walk_away_from_momma() -> void:
     
     _throttled_exclamation_mark.call_func()
     
-    var is_momma_to_the_left: bool = Gs.level.momma.position.x < position.x
+    var is_momma_to_the_left: bool = Sc.level.momma.position.x < position.x
     if is_momma_to_the_left == is_walking_left:
         if is_logging_events:
-            Gs.logger.print("Porcupine walk-away-from-momma start")
+            Sc.logger.print("Porcupine walk-away-from-momma start")
         
         is_walking_left = !is_walking_left
         just_turned = true
@@ -139,27 +139,27 @@ func _walk_away_from_momma() -> void:
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Porcupine collided with duckling")
+        Sc.logger.print("Porcupine collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     if is_logging_events:
-        Gs.logger.print("Porcupine collided with momma")
+        Sc.logger.print("Porcupine collided with momma")
     
     _walk_away_from_momma()
 
 
 func _show_exclamation_mark() -> void:
-    Surfacer.annotators.add_transient(ExclamationMarkAnnotator.new(
+    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             movement_params.collider_half_width_height.y,
             EXCLAMATION_MARK_COLOR,

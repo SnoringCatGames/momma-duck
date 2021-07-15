@@ -84,7 +84,7 @@ func _update_attachment() -> void:
                 LEASH_DETACH_DISTANCE_SQUARED
     else:
         # Check whether this duck is close to any ducks in the chain.
-        var next_duck: Duck = Gs.level.last_attached_duck
+        var next_duck: Duck = Sc.level.last_attached_duck
         while true:
             is_attached_to_leader = \
                     position.distance_squared_to(next_duck.position) < \
@@ -102,8 +102,8 @@ func _update_attachment() -> void:
             !is_attached_to_leader
     
     if just_attached_to_leader:
-        leader = Gs.level.last_attached_duck
-        Gs.level.last_attached_duck = self
+        leader = Sc.level.last_attached_duck
+        Sc.level.last_attached_duck = self
         leader.is_attached_to_follower = true
         leader.just_attached_to_follower = true
         leader.just_detached_from_follower = false
@@ -113,7 +113,7 @@ func _update_attachment() -> void:
         leader.just_attached_to_follower = false
         leader.just_detached_from_follower = true
         leader.follower = null
-        Gs.level.last_attached_duck = leader
+        Sc.level.last_attached_duck = leader
         leader = null
         if is_attached_to_follower:
             follower.on_leader_detached()
@@ -137,7 +137,7 @@ func _update_attachment() -> void:
     if just_detached_from_leader:
         on_detached_from_leader()
         
-        Gs.audio.play_sound("lost_duck")
+        Sc.audio.play_sound("lost_duck")
 
 
 func on_leader_detached() -> void:
@@ -173,18 +173,18 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
 func _on_PondDetectionArea_area_entered(area: Area2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     is_in_pond = true
-    Gs.audio.play_sound("splash")
-    Gs.level.check_if_all_ducks_are_in_pond()
+    Sc.audio.play_sound("splash")
+    Sc.level.check_if_all_ducks_are_in_pond()
 
 
 func _on_PondDetectionArea_area_exited(area: Area2D) -> void:
     if _is_destroyed or \
             is_fake or \
-            !Gs.level_session.has_started:
+            !Sc.level_session.has_started:
         return
     
     is_in_pond = false
@@ -195,11 +195,11 @@ func _quack() -> void:
     var duration: float = \
             QUACK_DURATION_DEFAULT / \
             movement_params.animator_params.quack_playback_rate
-    Gs.time.clear_timeout(quack_timeout_id)
-    quack_timeout_id = Gs.time.set_timeout(
+    Sc.time.clear_timeout(quack_timeout_id)
+    quack_timeout_id = Sc.time.set_timeout(
                 funcref(self, "_on_quack_completed"), duration)
     
-    Gs.audio.play_sound("quack")
+    Sc.audio.play_sound("quack")
 
 
 func _on_quack_completed() -> void:

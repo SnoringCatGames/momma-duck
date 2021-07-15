@@ -39,7 +39,7 @@ func _show_sprite(animation_type: int) -> void:
         MommaAnimator.SWIM_ANIMATION_TYPE:
             $Swim.visible = true
         _:
-            Gs.logger.error()
+            Sc.logger.error()
 
 
 func animation_type_to_name(animation_type: int) -> String:
@@ -50,7 +50,7 @@ func animation_type_to_name(animation_type: int) -> String:
             MommaAnimator.SWIM_ANIMATION_TYPE:
                 return animator_params.swim_name
             _:
-                Gs.logger.error()
+                Sc.logger.error()
                 return ""
     else:
         return .animation_type_to_name(animation_type)
@@ -64,7 +64,7 @@ func animation_type_to_playback_rate(animation_type: int) -> float:
             MommaAnimator.SWIM_ANIMATION_TYPE:
                 return animator_params.swim_playback_rate
             _:
-                Gs.logger.error()
+                Sc.logger.error()
                 return INF
     else:
         return .animation_type_to_playback_rate(animation_type)
