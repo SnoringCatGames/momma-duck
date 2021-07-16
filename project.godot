@@ -1414,6 +1414,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_gui_config.gd"
 }, {
+"base": "HSeparator",
+"class": "ScaffolderHSeparator",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/scaffolder_h_separator.gd"
+}, {
 "base": "Node2D",
 "class": "ScaffolderHud",
 "language": "GDScript",
@@ -1513,6 +1518,11 @@ _global_script_classes=[ {
 "class": "ScaffolderTween",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/time/scaffolder_tween.gd"
+}, {
+"base": "VSeparator",
+"class": "ScaffolderVSeparator",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/scaffolder_v_separator.gd"
 }, {
 "base": "TextLabeledControlItem",
 "class": "ScareCountLabeledControlItem",
@@ -2171,6 +2181,7 @@ _global_script_class_icons={
 "ScaffolderDrawUtils": "",
 "ScaffolderGeometry": "",
 "ScaffolderGuiConfig": "",
+"ScaffolderHSeparator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_h_separator.png",
 "ScaffolderHud": "",
 "ScaffolderIcons": "",
 "ScaffolderLabel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label.png",
@@ -2191,6 +2202,7 @@ _global_script_class_icons={
 "ScaffolderTextureRect": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_rect.png",
 "ScaffolderThirdPartyLicenses": "",
 "ScaffolderTween": "",
+"ScaffolderVSeparator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_v_separator.png",
 "ScareCountLabeledControlItem": "",
 "ScoreLabeledControlItem": "",
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
