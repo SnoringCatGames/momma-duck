@@ -307,6 +307,7 @@ var COLOR_BACKGROUND_DARKER := Color("233327")
 
 var COLOR_TEXT := Color("eeeeee")
 var COLOR_HEADER := Color("fff12e")
+var COLOR_FOCUS := Color("47a65f")
 
 var COLOR_BUTTON := Color("24803b")
 var COLOR_BUTTON_LIGHTER := Color("47a65f")
@@ -325,6 +326,7 @@ var _colors_manifest := {
     background = COLOR_BACKGROUND,
     text = COLOR_TEXT,
     header = COLOR_HEADER,
+    focus_border = COLOR_FOCUS,
     link_normal = COLOR_BUTTON_LIGHTER,
     link_hover = COLOR_BUTTON,
     link_pressed = COLOR_BUTTON_DARKER,
@@ -376,6 +378,15 @@ var _colors_manifest := {
 }
 
 var _styles_manifest_normal := {
+    focus_border_corner_radius = 5,
+    focus_border_corner_detail = 3,
+    focus_border_shadow_size = 0,
+    focus_border_border_width = 1,
+    focus_border_expand_margin_left = 2.0,
+    focus_border_expand_margin_top = 2.0,
+    focus_border_expand_margin_right = 2.0,
+    focus_border_expand_margin_bottom = 2.0,
+    
     button_content_margin_left = 16.0,
     button_content_margin_top = 8.0,
     button_content_margin_right = 16.0,
@@ -458,11 +469,21 @@ var _styles_manifest_pixel := {
     button_shine_margin_right = 6.0,
     button_shine_margin_bottom = 6.0,
     
+    focus_border_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/focus_border.png"),
+    focus_border_nine_patch_margin_left = 3.5,
+    focus_border_nine_patch_margin_top = 3.5,
+    focus_border_nine_patch_margin_right = 3.5,
+    focus_border_nine_patch_margin_bottom = 3.5,
+    focus_border_nine_patch_scale = 3.0,
+    focus_border_expand_margin_left = 3.0,
+    focus_border_expand_margin_top = 3.0,
+    focus_border_expand_margin_right = 3.0,
+    focus_border_expand_margin_bottom = 3.0,
+    
     button_active_nine_patch = \
             preload("res://assets/images/button_active.png"),
     button_disabled_nine_patch = \
-            preload("res://assets/images/button_hover.png"),
-    button_focused_nine_patch = \
             preload("res://assets/images/button_hover.png"),
     button_hover_nine_patch = \
             preload("res://assets/images/button_hover.png"),
@@ -477,8 +498,6 @@ var _styles_manifest_pixel := {
     dropdown_active_nine_patch = \
             preload("res://assets/images/dropdown_active.png"),
     dropdown_disabled_nine_patch = \
-            preload("res://assets/images/dropdown_hover.png"),
-    dropdown_focused_nine_patch = \
             preload("res://assets/images/dropdown_hover.png"),
     dropdown_hover_nine_patch = \
             preload("res://assets/images/dropdown_hover.png"),
@@ -1028,6 +1047,8 @@ var app_manifest := {
 
 var includes_leash := true
 
+# ---
+
 
 func _ready() -> void:
     assert(is_instance_valid(Sc) and \
@@ -1040,7 +1061,7 @@ func _ready() -> void:
     Sc.run(app_manifest)
 
 
-func amend_app_manifest(manifest: Dictionary) -> void:
+func _amend_app_manifest(manifest: Dictionary) -> void:
     _override_configs_for_is_using_pixel_style(manifest)
     _override_configs_for_current_run(manifest)
 
@@ -1054,11 +1075,11 @@ func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
         app_manifest.icons_manifest = _icons_manifest_normal
 
 
-func set_up() -> void:
+func _set_up() -> void:
     Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
-func load_state() -> void:
+func _load_state() -> void:
     App.includes_leash = Sc.save_state.get_setting(
             INCLUDES_LEASH_SETTINGS_KEY,
             false)
