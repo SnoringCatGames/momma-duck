@@ -61,6 +61,8 @@ var _metadata := {
     is_mobile_supported = true,
     uses_level_scores = false,
     must_restart_level_to_change_settings = true,
+    overrides_project_settings = true,
+    overrides_input_map = true,
     
     app_name = "Momma Duck",
     app_id = "games.snoringcat.momma_duck",
@@ -969,6 +971,8 @@ var _slow_motion_manifest := {
     saturation = 0.5,
 }
 
+var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
+
 var _additional_metric_keys := [
 ]
 
@@ -1041,6 +1045,7 @@ var app_manifest := {
     icons_manifest = _icons_manifest_normal,
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
+    input_map = _input_map,
     surfacer_manifest = _surfacer_manifest,
 }
 
