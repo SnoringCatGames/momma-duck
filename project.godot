@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/about_screen.gd"
 }, {
+"base": "Button",
+"class": "AccordionHeader",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/accordion_header.gd"
+}, {
 "base": "Control",
 "class": "AccordionPanel",
 "language": "GDScript",
@@ -1901,6 +1906,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AboutScreen": "",
+"AccordionHeader": "res://addons/scaffolder/assets/images/editor_icons/accordion_header.png",
 "AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/accordion_panel.png",
 "ActiveTrajectoryAnnotatorSettingsLabeledControlItem": "",
 "AirDashAction": "",
