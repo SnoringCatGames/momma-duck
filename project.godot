@@ -14,12 +14,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/about_screen.gd"
 }, {
+"base": "Control",
+"class": "AccordionBody",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/widgets/accordion_body.gd"
+}, {
 "base": "Button",
 "class": "AccordionHeader",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/accordion_header.gd"
 }, {
-"base": "Control",
+"base": "VBoxContainer",
 "class": "AccordionPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/widgets/accordion_panel.gd"
@@ -1911,6 +1916,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AboutScreen": "",
+"AccordionBody": "res://addons/scaffolder/assets/images/editor_icons/accordion_body.png",
 "AccordionHeader": "res://addons/scaffolder/assets/images/editor_icons/accordion_header.png",
 "AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/accordion_panel.png",
 "ActiveTrajectoryAnnotatorSettingsLabeledControlItem": "",
@@ -2089,13 +2095,13 @@ _global_script_class_icons={
 "LevelAnnotatorSettingsLabeledControlItem": "",
 "LevelInput": "",
 "LevelLabeledControlItem": "",
-"LevelSelectItem": "",
+"LevelSelectItem": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "LevelSelectItemBody": "",
-"LevelSelectItemLockedHeader": "",
-"LevelSelectItemUnlockedHeader": "",
+"LevelSelectItemLockedHeader": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"LevelSelectItemUnlockedHeader": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "LevelSelectScreen": "",
 "LoadingImage": "",
-"LockAnimation": "",
+"LockAnimation": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "LogSurfacerEventsSettingsLabeledControlItem": "",
 "Main": "",
 "MainMenuScreen": "",
@@ -2223,7 +2229,7 @@ _global_script_class_icons={
 "ScreenTransition": "",
 "ScreenTransitionHandler": "",
 "SelectionDescription": "",
-"SettingsGroup": "",
+"SettingsGroup": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "SettingsScreen": "",
 "SliderLabeledControlItem": "",
 "SlowMotionController": "",
@@ -2299,6 +2305,8 @@ run/main_scene="res://src/config/main.tscn"
 boot_splash/image="res://addons/scaffolder/assets/images/logos/godot_logo_splash.png"
 boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://assets/images/icon_128.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 
 [autoload]
 
