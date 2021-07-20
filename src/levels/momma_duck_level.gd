@@ -233,4 +233,4 @@ func get_ducklings_in_tow_count() -> int:
 
 
 func get_ducklings_count() -> int:
-    return ducklings.size()
+    return ducklings.size() + run_away_ducklings.size()
