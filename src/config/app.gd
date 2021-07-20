@@ -24,7 +24,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.also_prints_to_stdout = true
     _metadata.are_all_levels_unlocked = false and is_debug
     _metadata.are_test_levels_included = true
-    _metadata.is_save_state_cleared_for_debugging = true
+    _metadata.is_save_state_cleared_for_debugging = false
     _metadata.is_splash_skipped = true and is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
@@ -264,7 +264,7 @@ var _music_manifest := [
         name = "momma_pause_music",
         path_prefix = "res://assets/music/",
         volume_db = 0.0,
-        bpm = 112.5,
+        bpm = 50,
         meter = 4,
     },
 ]
