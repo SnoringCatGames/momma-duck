@@ -331,6 +331,9 @@ var COLOR_BUTTON_DARKER := Color("0c591f")
 
 var COLOR_SHADOW := Color("88000000")
 
+var HUD_KEY_VALUE_BOX_MODULATE_COLOR := Color(0.1, 0.7, 1.2, 1.0)
+var BUTTON_PULSE_MODULATE_COLOR := Color(2.0, 2.0, 2.0, 1.0)
+
 var _colors_manifest := {
     # Scaffolder colors.
     
@@ -347,7 +350,7 @@ var _colors_manifest := {
     link_hover = COLOR_BUTTON,
     link_pressed = COLOR_BUTTON_DARKER,
     button_normal = COLOR_BUTTON,
-    button_pulse_modulate = Color(2, 2, 2, 1),
+    button_pulse_modulate = BUTTON_PULSE_MODULATE_COLOR,
     button_disabled = COLOR_BUTTON_LIGHTER,
     button_focused = COLOR_BUTTON_LIGHTER,
     button_hover = COLOR_BUTTON_LIGHTER,
@@ -872,6 +875,10 @@ var _hud_manifest := {
             settings_enablement_label = "Ducklings in tow",
             enabled_by_default = true,
             settings_group_key = "hud",
+            animation = {
+                modulate_color = HUD_KEY_VALUE_BOX_MODULATE_COLOR,
+                duration = 0.5,
+            },
         },
     ],
     is_inspector_enabled_default = false,
