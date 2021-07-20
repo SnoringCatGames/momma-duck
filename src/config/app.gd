@@ -267,6 +267,20 @@ var _music_manifest := [
         bpm = 50,
         meter = 4,
     },
+#    {
+#        name = "on_a_quest",
+#        path_prefix = "res://addons/scaffolder/assets/music/",
+#        volume_db = 0.0,
+#        bpm = 75,
+#        meter = 4,
+#    },
+#    {
+#        name = "pause_menu",
+#        path_prefix = "res://addons/scaffolder/assets/music/",
+#        volume_db = 0.0,
+#        bpm = 56.25,
+#        meter = 4,
+#    },
 ]
 
 var _audio_manifest := {
