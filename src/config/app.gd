@@ -26,6 +26,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
     _metadata.is_splash_skipped = true and is_debug
+    _metadata.are_button_controls_enabled_by_default = is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
@@ -63,6 +64,7 @@ var _metadata := {
     must_restart_level_to_change_settings = true,
     overrides_project_settings = true,
     overrides_input_map = true,
+    are_button_controls_enabled_by_default = false,
     
     app_name = "Momma Duck",
     app_id = "games.snoringcat.momma_duck",
@@ -825,6 +827,7 @@ var _settings_item_manifest := {
             label = "Miscellaneous",
             is_collapsible = true,
             item_classes = [
+                ButtonControlsSettingsLabeledControlItem,
                 WelcomePanelSettingsLabeledControlItem,
                 IntroChoreographySettingsLabeledControlItem,
                 CameraZoomSettingsLabeledControlItem,
