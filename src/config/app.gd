@@ -12,8 +12,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     var is_debug := true and OS.is_debug_build()
     var is_playtest := false
     
-    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
-#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     _metadata.app_version = "0.0.1"

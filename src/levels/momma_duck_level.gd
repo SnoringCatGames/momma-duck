@@ -190,6 +190,9 @@ func check_if_all_ducks_are_in_pond() -> void:
     if !momma.is_in_pond:
         return
     
+    if !run_away_ducklings.empty():
+        return
+    
     for duckling in ducklings:
         if !duckling.is_in_pond:
             return

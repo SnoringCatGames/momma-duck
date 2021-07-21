@@ -805,6 +805,11 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/player/action/instructions_playback.gd"
 }, {
 "base": "Reference",
+"class": "IntendedPositionType",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/intended_position_type.gd"
+}, {
+"base": "Reference",
 "class": "InterSurfaceEdgesResult",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/models/inter_surface_edges_result.gd"
@@ -2079,6 +2084,7 @@ _global_script_class_icons={
 "InstructionStartLegendItem": "",
 "InstructionsActionSource": "",
 "InstructionsPlayback": "",
+"IntendedPositionType": "",
 "InterSurfaceEdgesResult": "",
 "IntraSurfaceEdge": "",
 "IntroChoreographySettingsLabeledControlItem": "",
