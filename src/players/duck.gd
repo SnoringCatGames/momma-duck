@@ -170,24 +170,26 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     pass
 
 
-func _on_PondDetectionArea_area_entered(area: Area2D) -> void:
-    if _is_destroyed or \
-            is_fake or \
-            !Sc.level_session.has_started:
-        return
-    
-    is_in_pond = true
-    Sc.audio.play_sound("splash")
-    Sc.level.check_if_all_ducks_are_in_pond()
+func _on_target_started_colliding(
+        target: Node2D,
+        layer_name: String) -> void:
+    match layer_name:
+        "pond":
+            is_in_pond = true
+            Sc.audio.play_sound("splash")
+            Sc.level.check_if_all_ducks_are_in_pond()
+        _:
+            Sc.logger.error()
 
 
-func _on_PondDetectionArea_area_exited(area: Area2D) -> void:
-    if _is_destroyed or \
-            is_fake or \
-            !Sc.level_session.has_started:
-        return
-    
-    is_in_pond = false
+func _on_target_stopped_colliding(
+        target: Node2D,
+        layer_name: String) -> void:
+    match layer_name:
+        "pond":
+            is_in_pond = false
+        _:
+            Sc.logger.error()
 
 
 func _quack() -> void:

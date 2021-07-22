@@ -164,6 +164,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/transient_annotators/click_annotator.gd"
 }, {
+"base": "Player",
+"class": "ClimbAdjacentSurfacesPlayer",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/climb_adjacent_surfaces_player.gd"
+}, {
 "base": "EdgeCalculator",
 "class": "ClimbDownWallToFloorCalculator",
 "language": "GDScript",
@@ -838,6 +843,11 @@ _global_script_classes=[ {
 "class": "JsonUtils",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/json_utils.gd"
+}, {
+"base": "Player",
+"class": "JumpBackAndForthPlayer",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/jump_back_and_forth_player.gd"
 }, {
 "base": "EdgeCalculator",
 "class": "JumpFromSurfaceCalculator",
@@ -1859,6 +1869,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/utils/vertical_movement_utils.gd"
 }, {
+"base": "Player",
+"class": "WalkBackAndForthPlayer",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/walk_back_and_forth_player.gd"
+}, {
 "base": "EdgeCalculator",
 "class": "WalkToAscendWallFromFloorCalculator",
 "language": "GDScript",
@@ -1956,6 +1971,7 @@ _global_script_class_icons={
 "Choreographer": "",
 "CircularBuffer": "",
 "ClickAnnotator": "",
+"ClimbAdjacentSurfacesPlayer": "",
 "ClimbDownWallToFloorCalculator": "",
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
@@ -2091,6 +2107,7 @@ _global_script_class_icons={
 "IosModelNames": "",
 "IosResolutions": "",
 "JsonUtils": "",
+"JumpBackAndForthPlayer": "",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
@@ -2295,6 +2312,7 @@ _global_script_class_icons={
 "ValidEdgeTrajectoryLegendItem": "",
 "VerticalEdgeStep": "",
 "VerticalMovementUtils": "",
+"WalkBackAndForthPlayer": "",
 "WalkToAscendWallFromFloorCalculator": "",
 "WalkToAscendWallFromFloorEdge": "",
 "WallClimbAction": "",

@@ -66,15 +66,15 @@ func _update_navigator(delta_scaled: float) -> void:
 
 func _trigger_new_navigation() -> bool:
     var position_type: int
-    if leader.navigator.is_currently_navigating:
+    if leader.surface_state.is_grabbing_a_surface:
+        position_type = IntendedPositionType.CENTER_POSITION_ALONG_SURFACE
+    elif leader.navigator.is_currently_navigating:
         if leader.navigator.edge.get_end_surface() != null:
             position_type = IntendedPositionType.EDGE_DESTINATION
         elif leader.navigator.edge.get_start_surface() != null:
             position_type = IntendedPositionType.EDGE_ORIGIN
         else:
             return false
-    elif leader.surface_state.is_grabbing_a_surface:
-        position_type = IntendedPositionType.CENTER_POSITION_ALONG_SURFACE
     elif leader.surface_state.last_position_along_surface.surface != null:
         position_type = IntendedPositionType.LAST_POSITION_ALONG_SURFACE
     else:

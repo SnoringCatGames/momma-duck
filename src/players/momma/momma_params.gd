@@ -23,6 +23,10 @@ func _init_params() -> void:
     collider_shape = shape
     collider_rotation = 0.0
     
+    collision_detection_layers = [
+        "pond",
+    ]
+    
     var fall_from_floor_shape := RectangleShape2D.new()
     fall_from_floor_shape.extents = Vector2(shape.radius, shape.radius)
     fall_from_floor_corner_calc_shape = fall_from_floor_shape
