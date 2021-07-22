@@ -107,6 +107,7 @@ func _navigate_to_new_position_away_from_momma() -> void:
     var direction_away_from_momma: Vector2 = \
             Sc.level.momma.position.direction_to(position)
     var naive_target := \
+            position + \
             direction_away_from_momma * RUN_FROM_MOMMA_DESTINATION_DISTANCE
     var graph_destination_for_in_air_destination := SurfaceParser \
             .find_closest_position_on_a_surface(naive_target, self)
