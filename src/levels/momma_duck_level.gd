@@ -173,6 +173,9 @@ func swap_duckling_with_run_away(
 
 
 func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
+    if run_away_duckling._is_destroyed:
+        return
+    
     var position := run_away_duckling.position
     
     run_away_ducklings.erase(run_away_duckling)
