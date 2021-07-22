@@ -23,6 +23,25 @@ func _init_params() -> void:
     collider_shape = shape
     collider_rotation = 0.0
     
+    var duckling_detection_shape := CapsuleShape2D.new()
+    duckling_detection_shape.radius = 48.0
+    duckling_detection_shape.height = 128.0
+    var duckling_detection_shape_rotation := PI / 2.0
+    
+    collision_detection_layers = []
+    proximity_entered_detection_layers = [
+        {
+            layer_name = "momma",
+            radius = Fox.RUN_FROM_MOMMA_DISTANCE_THRESHOLD,
+        },
+        {
+            layer_name = "duckling",
+            shape = duckling_detection_shape,
+            rotation = duckling_detection_shape_rotation,
+        },
+    ]
+    proximity_exited_detection_layers = []
+    
     var fall_from_floor_shape := RectangleShape2D.new()
     fall_from_floor_shape.extents = shape.extents
     fall_from_floor_corner_calc_shape = fall_from_floor_shape

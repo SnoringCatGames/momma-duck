@@ -170,10 +170,10 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     pass
 
 
-func _on_target_started_colliding(
+func _on_started_colliding(
         target: Node2D,
-        layer_name: String) -> void:
-    match layer_name:
+        layer_names: Array) -> void:
+    match layer_names[0]:
         "pond":
             is_in_pond = true
             Sc.audio.play_sound("splash")
@@ -182,10 +182,10 @@ func _on_target_started_colliding(
             Sc.logger.error()
 
 
-func _on_target_stopped_colliding(
+func _on_stopped_colliding(
         target: Node2D,
-        layer_name: String) -> void:
-    match layer_name:
+        layer_names: Array) -> void:
+    match layer_names[0]:
         "pond":
             is_in_pond = false
         _:

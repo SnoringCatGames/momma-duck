@@ -60,12 +60,7 @@ func _update_navigator(delta_scaled: float) -> void:
     
     var current_time := Sc.time.get_scaled_play_time()
     
-    var distance_squared_to_momma := \
-            position.distance_squared_to(Sc.level.momma.position)
-    if distance_squared_to_momma <= RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
-        # Run from momma.
-        _run_from_momma()
-    elif is_pouncing_on_duckling:
+    if is_pouncing_on_duckling:
         assert(target_duckling != null)
         if navigator.navigation_state.just_reached_end_of_edge and \
                 surface_state.just_left_air:
@@ -160,7 +155,19 @@ func _process_sounds() -> void:
         Sc.audio.play_sound("duck_land")
 
 
-func _on_DucklingDetectionArea_body_entered(duckling: Duckling):
+func _on_entered_proximity(
+        target: Node2D,
+        layer_names: Array) -> void:
+    match layer_names[0]:
+        "duckling":
+            _on_duckling_entered_proximity(target)
+        "momma":
+            _run_from_momma()
+        _:
+            Sc.logger.error()
+
+
+func _on_duckling_entered_proximity(duckling: Duckling) -> void:
     if _is_destroyed or \
             is_fake:
         return

@@ -26,6 +26,13 @@ func _init_params() -> void:
     collision_detection_layers = [
         "pond",
     ]
+    proximity_entered_detection_layers = [
+        {
+            layer_name = "enemy",
+            radius = 38,
+        },
+    ]
+    proximity_exited_detection_layers = []
     
     var fall_from_floor_shape := RectangleShape2D.new()
     fall_from_floor_shape.extents = Vector2(shape.radius, shape.radius)

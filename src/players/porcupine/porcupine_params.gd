@@ -23,6 +23,15 @@ func _init_params() -> void:
     collider_shape = shape
     collider_rotation = 0.0
     
+    collision_detection_layers = []
+    proximity_entered_detection_layers = [
+        {
+            layer_name = "momma",
+            radius = Porcupine.RUN_FROM_MOMMA_DISTANCE_THRESHOLD,
+        },
+    ]
+    proximity_exited_detection_layers = []
+    
     var fall_from_floor_shape := RectangleShape2D.new()
     fall_from_floor_shape.extents = shape.extents
     fall_from_floor_corner_calc_shape = fall_from_floor_shape

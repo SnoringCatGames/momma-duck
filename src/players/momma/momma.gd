@@ -11,6 +11,17 @@ func _update_attachment() -> void:
     leader = self
 
 
+func _on_entered_proximity(
+        target: Node2D,
+        layer_names: Array) -> void:
+    match layer_names[0]:
+        "enemy":
+            on_touched_enemy(target)
+            target.on_touched_momma(self)
+        _:
+            Sc.logger.error()
+
+
 func get_leash_attachment_offset() -> Vector2:
     if is_in_pond:
         return Vector2(18.0, 11.0)
@@ -30,13 +41,3 @@ func _process_sounds() -> void:
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
     _quack()
-
-
-func _on_EnemyDetectionArea_body_entered(enemy: KinematicBody2D) -> void:
-    if _is_destroyed or \
-            is_fake or \
-            !Sc.level_session.has_started:
-        return
-    
-    on_touched_enemy(enemy)
-    enemy.on_touched_momma(self)

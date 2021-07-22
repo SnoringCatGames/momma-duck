@@ -8,8 +8,6 @@ extends Player
 const DISTANCE_FROM_END_FOR_TURN_AROUND := 25.0
 
 const RUN_FROM_MOMMA_DISTANCE_THRESHOLD := 128.0
-const RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD := \
-        RUN_FROM_MOMMA_DISTANCE_THRESHOLD * RUN_FROM_MOMMA_DISTANCE_THRESHOLD
 
 const EXCLAMATION_MARK_COLOR := Color("262626")
 const EXCLAMATION_MARK_WIDTH_START := 4.0
@@ -99,14 +97,17 @@ func _update_navigator(delta_scaled: float) -> void:
         
         just_turned = true
         navigator.navigate_to_position(new_destination)
-    
-    if !just_turned:
-        var distance_squared_to_momma := \
-                position.distance_squared_to(Sc.level.momma.position)
-        if distance_squared_to_momma <= \
-                RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD:
-            # Run from momma.
-            _walk_away_from_momma()
+
+
+func _on_entered_proximity(
+        target: Node2D,
+        layer_names: Array) -> void:
+    match layer_names[0]:
+        "momma":
+            if !just_turned:
+                _walk_away_from_momma()
+        _:
+            Sc.logger.error()
 
 
 func _walk_away_from_momma() -> void:
