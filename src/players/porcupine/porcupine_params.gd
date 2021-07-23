@@ -8,38 +8,8 @@ const ANIMATOR_SCENE := \
         preload("res://src/players/porcupine/porcupine_animator.tscn")
 
 
+# FIXME: ----------------- Pull these out into the in-scene MovementParams node.
 func _init_params() -> void:
-    name = "porcupine"
-    player_path_or_scene = PLAYER_SCENE
-    
-    can_grab_walls = false
-    can_grab_ceilings = false
-    can_grab_floors = true
-    can_jump = false
-    can_dash = false
-    
-    var shape := RectangleShape2D.new()
-    shape.extents = Vector2(22.0, 16.0)
-    collider_shape = shape
-    collider_rotation = 0.0
-    
-    collision_detection_layers = []
-    proximity_entered_detection_layers = [
-        {
-            layer_name = "momma",
-            radius = Porcupine.RUN_FROM_MOMMA_DISTANCE_THRESHOLD,
-        },
-    ]
-    proximity_exited_detection_layers = []
-    
-    var fall_from_floor_shape := RectangleShape2D.new()
-    fall_from_floor_shape.extents = shape.extents
-    fall_from_floor_corner_calc_shape = fall_from_floor_shape
-    fall_from_floor_corner_calc_shape_rotation = 0.0
-    
-    climb_over_wall_corner_calc_shape = collider_shape
-    climb_over_wall_corner_calc_shape_rotation = collider_rotation
-    
     gravity_fast_fall = Sc.geometry.GRAVITY * 1.0
     slow_rise_gravity_multiplier = 0.38
     rise_double_jump_gravity_multiplier = 0.68
@@ -113,20 +83,6 @@ func _init_params() -> void:
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     reached_in_air_destination_distance_squared_threshold = 16.0 * 16.0
     max_edges_to_remove_from_end_of_path_for_optimization_to_in_air_destination = 2
-    
-    action_handler_names = [
-        AirDashAction.NAME,
-        AirDefaultAction.NAME,
-        AllDefaultAction.NAME,
-        CapVelocityAction.NAME,
-        FloorDashAction.NAME,
-        FloorDefaultAction.NAME,
-        FloorWalkAction.NAME,
-        FloorFrictionAction.NAME,
-    ]
-    
-    edge_calculator_names = [
-    ]
 
 
 func _init_animator_params() -> void:

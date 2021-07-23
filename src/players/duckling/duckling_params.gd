@@ -8,27 +8,9 @@ const DUCKLING_ANIMATOR_SCENE := \
         preload("res://src/players/duckling/duckling_animator.tscn")
 
 
+# FIXME: ----------------- Pull these out into the in-scene MovementParams node.
 func _init_params() -> void:
     ._init_params()
-
-    name = "duckling"
-    player_path_or_scene = DUCKLING_PLAYER_SCENE
-    
-    collider_shape.radius = 8.0
-    
-    collision_detection_layers = [
-        "pond",
-    ]
-    proximity_entered_detection_layers = [
-        {
-            layer_name = "enemy",
-            radius = 8,
-        },
-    ]
-    proximity_exited_detection_layers = []
-    
-    fall_from_floor_corner_calc_shape.extents = \
-            Vector2(collider_shape.radius, collider_shape.radius)
     
     gravity_fast_fall = Sc.geometry.GRAVITY * 0.8
     

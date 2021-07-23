@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/players/run_away_duckling/run_away_duckling.gd" type="Script" id=1]
 [ext_resource path="res://src/players/duckling/duckling_animator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -9,6 +10,9 @@ radius = 8.0
 [node name="RunAwayDuckling" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 1 )
+player_name = "run_away_duckling"
+
+[node name="MovementParams" parent="." instance=ExtResource( 3 )]
 
 [node name="RunAwayDucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )

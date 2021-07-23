@@ -1,5 +1,5 @@
 tool
-extends FrameworkConfig
+extends DefaultAppManifest
 
 
 # ---
@@ -97,72 +97,6 @@ var _metadata := {
     
     godot_splash_screen_duration = 1.4,
     developer_splash_screen_duration = 1.0,
-}
-
-var _fonts_manifest := {
-    fonts = {
-        main_xs = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
-        main_xs_bold = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
-        main_xs_italic = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xs.tres"),
-        main_s = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-        main_s_bold = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-        main_s_italic = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-        main_m = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-        main_m_bold = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-        main_m_italic = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-        main_l = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-        main_l_bold = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-        main_l_italic = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-        main_xl = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
-        main_xl_bold = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
-        main_xl_italic = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
-        
-        header_s = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_s.tres"),
-        header_m = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_m.tres"),
-        header_l = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_l.tres"),
-        header_xl = preload( \
-                "res://addons/scaffolder/assets/fonts/pxlzr_font_xl.tres"),
-    },
-    sizes = {
-        pc = {
-            main_xs = 15,
-            main_s = 18,
-            main_m = 30,
-            main_l = 42,
-            main_xl = 48,
-#            _bold = ,
-#            _italic = ,
-#            header_s = ,
-#            header_m = ,
-#            header_l = ,
-#            header_xl = ,
-        },
-        mobile = {
-            main_xs = 16,
-            main_s = 18,
-            main_m = 28,
-            main_l = 32,
-            main_xl = 36,
-        },
-    },
 }
 
 var _sounds_manifest := [
@@ -397,87 +331,6 @@ var _colors_manifest := {
             SurfacerColors.ORANGE, ScaffolderColors.ALPHA_FAINT),
 }
 
-var _styles_manifest_normal := {
-    focus_border_corner_radius = 5,
-    focus_border_corner_detail = 3,
-    focus_border_shadow_size = 0,
-    focus_border_border_width = 1,
-    focus_border_expand_margin_left = 2.0,
-    focus_border_expand_margin_top = 2.0,
-    focus_border_expand_margin_right = 2.0,
-    focus_border_expand_margin_bottom = 2.0,
-    
-    button_content_margin_left = 16.0,
-    button_content_margin_top = 8.0,
-    button_content_margin_right = 16.0,
-    button_content_margin_bottom = 8.0,
-    
-    button_shine_margin_left = 0.0,
-    button_shine_margin_top = 0.0,
-    button_shine_margin_right = 0.0,
-    button_shine_margin_bottom = 0.0,
-    
-    button_corner_radius = 4,
-    button_corner_detail = 3,
-    button_shadow_size = 3,
-    button_border_width = 0,
-    
-    dropdown_corner_radius = 4,
-    dropdown_corner_detail = 3,
-    dropdown_shadow_size = 0,
-    dropdown_border_width = 0,
-    
-    scroll_corner_radius = 6,
-    scroll_corner_detail = 3,
-    # Width of the scrollbar.
-    scroll_content_margin_left = 7,
-    scroll_content_margin_top = 7,
-    scroll_content_margin_right = 7,
-    scroll_content_margin_bottom = 7,
-    
-    scroll_grabber_corner_radius = 8,
-    scroll_grabber_corner_detail = 3,
-    
-    slider_corner_radius = 6,
-    slider_corner_detail = 3,
-    slider_content_margin_left = 5,
-    slider_content_margin_top = 5,
-    slider_content_margin_right = 5,
-    slider_content_margin_bottom = 5,
-    
-    overlay_panel_border_width = 2,
-    
-    overlay_panel_corner_radius = 4,
-    overlay_panel_corner_detail = 3,
-    overlay_panel_content_margin_left = 0.0,
-    overlay_panel_content_margin_top = 0.0,
-    overlay_panel_content_margin_right = 0.0,
-    overlay_panel_content_margin_bottom = 0.0,
-    overlay_panel_shadow_size = 8,
-    overlay_panel_shadow_offset = Vector2(-4.0, 4.0),
-    
-    header_panel_content_margin_left = 0.0,
-    header_panel_content_margin_top = 0.0,
-    header_panel_content_margin_right = 0.0,
-    header_panel_content_margin_bottom = 0.0,
-    
-    hud_panel_nine_patch = \
-            preload("res://addons/scaffolder/assets/images/gui/overlay_panel.png"),
-    hud_panel_nine_patch_margin_left = 3.5,
-    hud_panel_nine_patch_margin_top = 3.5,
-    hud_panel_nine_patch_margin_right = 3.5,
-    hud_panel_nine_patch_margin_bottom = 3.5,
-    hud_panel_nine_patch_scale = 3.0,
-    hud_panel_content_margin_left = 8.0,
-    hud_panel_content_margin_top = 2.0,
-    hud_panel_content_margin_right = 8.0,
-    hud_panel_content_margin_bottom = 2.0,
-    
-    screen_shadow_size = 8,
-    screen_shadow_offset = Vector2(-4.0, 4.0),
-    screen_border_width = 0,
-}
-
 var _styles_manifest_pixel := {
     button_content_margin_left = 16.0,
     button_content_margin_top = 8.0,
@@ -591,200 +444,6 @@ var _styles_manifest_pixel := {
     screen_shadow_size = 0,
     screen_shadow_offset = Vector2.ZERO,
     screen_border_width = 0,
-}
-
-var _icons_manifest_normal := {
-    checkbox_path_prefix = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_PATH_PREFIX,
-    default_checkbox_size = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZE,
-    checkbox_sizes = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_NORMAL_SIZES,
-    
-    radio_button_path_prefix = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_PATH_PREFIX,
-    default_radio_button_size = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZE,
-    radio_button_sizes = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_NORMAL_SIZES,
-    
-    tree_arrow_path_prefix = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_PATH_PREFIX,
-    default_tree_arrow_size = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZE,
-    tree_arrow_sizes = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_NORMAL_SIZES,
-    
-    dropdown_arrow_path_prefix = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_PATH_PREFIX,
-    default_dropdown_arrow_size = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZE,
-    dropdown_arrow_sizes = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_NORMAL_SIZES,
-    
-    slider_grabber_path_prefix = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_PATH_PREFIX,
-    default_slider_grabber_size = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZE,
-    slider_grabber_sizes = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_NORMAL_SIZES,
-    
-    slider_tick_path_prefix = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_PATH_PREFIX,
-    default_slider_tick_size = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZE,
-    slider_tick_sizes = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_NORMAL_SIZES,
-    
-    go_normal = preload("res://assets/images/go_icon.png"),
-    go_scale = 1.5,
-    
-    about_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_active.png"),
-    about_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_hover.png"),
-    about_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_normal.png"),
-    
-    alert_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/alert_normal.png"),
-    
-    close_active = \
-            preload("res://addons/scaffolder/assets/images/gui/close_active.png"),
-    close_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/close_hover.png"),
-    close_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/close_normal.png"),
-    
-    gear_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_active.png"),
-    gear_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_hover.png"),
-    gear_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_normal.png"),
-    
-    home_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/home_normal.png"),
-    
-    left_caret_active = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_active.png"),
-    left_caret_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_hover.png"),
-    left_caret_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_normal.png"),
-    
-    pause_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_active.png"),
-    pause_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_hover.png"),
-    pause_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_normal.png"),
-    
-    pause_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_normal.png"),
-    play_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/play_normal.png"),
-    retry_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/retry_normal.png"),
-    stop_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/stop_normal.png"),
-}
-
-var _icons_manifest_pixel := {
-    checkbox_path_prefix = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_PATH_PREFIX,
-    default_checkbox_size = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_SIZE,
-    checkbox_sizes = \
-            ScaffolderIcons.DEFAULT_CHECKBOX_PIXEL_SIZES,
-    
-    radio_button_path_prefix = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_PATH_PREFIX,
-    default_radio_button_size = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_SIZE,
-    radio_button_sizes = \
-            ScaffolderIcons.DEFAULT_RADIO_BUTTON_PIXEL_SIZES,
-    
-    tree_arrow_path_prefix = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_PATH_PREFIX,
-    default_tree_arrow_size = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZE,
-    tree_arrow_sizes = \
-            ScaffolderIcons.DEFAULT_TREE_ARROW_PIXEL_SIZES,
-    
-    dropdown_arrow_path_prefix = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_PATH_PREFIX,
-    default_dropdown_arrow_size = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_SIZE,
-    dropdown_arrow_sizes = \
-            ScaffolderIcons.DEFAULT_DROPDOWN_ARROW_PIXEL_SIZES,
-    
-    slider_grabber_path_prefix = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_PATH_PREFIX,
-    default_slider_grabber_size = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_SIZE,
-    slider_grabber_sizes = \
-            ScaffolderIcons.DEFAULT_SLIDER_GRABBER_PIXEL_SIZES,
-    
-    slider_tick_path_prefix = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_PATH_PREFIX,
-    default_slider_tick_size = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_SIZE,
-    slider_tick_sizes = \
-            ScaffolderIcons.DEFAULT_SLIDER_TICK_PIXEL_SIZES,
-    
-    go_normal = preload("res://assets/images/go_icon.png"),
-    go_scale = 1.5,
-    
-    about_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_active.png"),
-    about_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_hover.png"),
-    about_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/about_circle_normal.png"),
-    
-    alert_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/alert_normal.png"),
-    
-    close_active = \
-            preload("res://addons/scaffolder/assets/images/gui/close_active.png"),
-    close_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/close_hover.png"),
-    close_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/close_normal.png"),
-    
-    gear_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_active.png"),
-    gear_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_hover.png"),
-    gear_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/gear_circle_normal.png"),
-    
-    home_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/home_normal.png"),
-    
-    left_caret_active = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_active.png"),
-    left_caret_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_hover.png"),
-    left_caret_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/left_caret_normal.png"),
-    
-    pause_circle_active = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_active.png"),
-    pause_circle_hover = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_hover.png"),
-    pause_circle_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_circle_normal.png"),
-    
-    pause_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/pause_normal.png"),
-    play_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/play_normal.png"),
-    retry_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/retry_normal.png"),
-    stop_normal = \
-            preload("res://addons/scaffolder/assets/images/gui/stop_normal.png"),
 }
 
 var _settings_item_manifest := {
@@ -976,7 +635,7 @@ var _gui_manifest := {
     
     theme = preload("res://src/config/default_theme.tres"),
     
-    fonts_manifest = _fonts_manifest,
+    fonts_manifest = _default_fonts_manifest_normal,
     settings_item_manifest = _settings_item_manifest,
     pause_item_manifest = _pause_item_manifest,
     game_over_item_manifest = _game_over_item_manifest,
@@ -1065,8 +724,8 @@ var app_manifest := {
     metadata = _metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
-    styles_manifest = _styles_manifest_normal,
-    icons_manifest = _icons_manifest_normal,
+    styles_manifest = _default_styles_manifest_normal,
+    icons_manifest = _default_icons_manifest_normal,
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
@@ -1078,36 +737,32 @@ var includes_leash := true
 # ---
 
 
+func _init().(_is_using_pixel_style) -> void:
+    pass
+
+
 func _ready() -> void:
-    assert(is_instance_valid(Sc) and \
-            is_instance_valid(Su),
-            "The Sc (Scaffolder) and Su (Surfacer) AutoLoads must be declared first.")
-    
-    Sc.logger.on_global_init(self, "App")
-    Sc.register_framework_config(self)
-    
-    Sc.run(app_manifest)
-
-
-func _amend_app_manifest(manifest: Dictionary) -> void:
-    _override_configs_for_is_using_pixel_style(manifest)
-    _override_configs_for_current_run(manifest)
+    Sc.call_deferred("run", app_manifest)
 
 
 func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
     if _is_using_pixel_style:
-        app_manifest.styles_manifest = _styles_manifest_pixel
-        app_manifest.icons_manifest = _icons_manifest_pixel
+        manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
+        manifest.styles_manifest = _styles_manifest_pixel
+        manifest.icons_manifest = _default_icons_manifest_pixel
     else:
-        app_manifest.styles_manifest = _styles_manifest_normal
-        app_manifest.icons_manifest = _icons_manifest_normal
+        manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_normal
+        manifest.styles_manifest = _default_styles_manifest_normal
+        manifest.icons_manifest = _default_icons_manifest_normal
 
 
 func _set_up() -> void:
+    ._set_up()
     Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
 func _load_state() -> void:
+    ._load_state()
     App.includes_leash = Sc.save_state.get_setting(
             INCLUDES_LEASH_SETTINGS_KEY,
             false)

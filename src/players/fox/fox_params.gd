@@ -8,47 +8,8 @@ const ANIMATOR_SCENE := \
         preload("res://src/players/fox/fox_animator.tscn")
 
 
+# FIXME: ----------------- Pull these out into the in-scene MovementParams node.
 func _init_params() -> void:
-    name = "fox"
-    player_path_or_scene = PLAYER_SCENE
-    
-    can_grab_walls = false
-    can_grab_ceilings = false
-    can_grab_floors = true
-    can_jump = true
-    can_dash = false
-    
-    var shape := RectangleShape2D.new()
-    shape.extents = Vector2(22.0, 16.0)
-    collider_shape = shape
-    collider_rotation = 0.0
-    
-    var duckling_detection_shape := CapsuleShape2D.new()
-    duckling_detection_shape.radius = 48.0
-    duckling_detection_shape.height = 128.0
-    var duckling_detection_shape_rotation := PI / 2.0
-    
-    collision_detection_layers = []
-    proximity_entered_detection_layers = [
-        {
-            layer_name = "momma",
-            radius = Fox.RUN_FROM_MOMMA_DISTANCE_THRESHOLD,
-        },
-        {
-            layer_name = "duckling",
-            shape = duckling_detection_shape,
-            rotation = duckling_detection_shape_rotation,
-        },
-    ]
-    proximity_exited_detection_layers = []
-    
-    var fall_from_floor_shape := RectangleShape2D.new()
-    fall_from_floor_shape.extents = shape.extents
-    fall_from_floor_corner_calc_shape = fall_from_floor_shape
-    fall_from_floor_corner_calc_shape_rotation = 0.0
-    
-    climb_over_wall_corner_calc_shape = collider_shape
-    climb_over_wall_corner_calc_shape_rotation = collider_rotation
     
     gravity_fast_fall = Sc.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.38
@@ -122,25 +83,6 @@ func _init_params() -> void:
     walking_edge_weight_multiplier = 1.2
     climbing_edge_weight_multiplier = 1.8
     air_edge_weight_multiplier = 1.0
-    
-    action_handler_names = [
-        AirDashAction.NAME,
-        AirDefaultAction.NAME,
-        AirJumpAction.NAME,
-        AllDefaultAction.NAME,
-        CapVelocityAction.NAME,
-        FloorDashAction.NAME,
-        FloorDefaultAction.NAME,
-        FloorFallThroughAction.NAME,
-        FloorJumpAction.NAME,
-        FloorWalkAction.NAME,
-        FloorFrictionAction.NAME,
-    ]
-    
-    edge_calculator_names = [
-        FallFromFloorCalculator.NAME,
-        JumpFromSurfaceCalculator.NAME,
-    ]
 
 
 func _init_animator_params() -> void:
