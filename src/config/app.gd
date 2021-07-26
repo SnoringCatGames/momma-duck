@@ -710,6 +710,8 @@ var _surfacer_manifest := {
     
     max_horizontal_speed_default_default = 320.0,
     max_vertical_speed_default = 2800.0,
+    min_horizontal_speed = 5.0,
+    min_vertical_speed = 0.0,
     
     dash_speed_multiplier_default = 3.0,
     dash_vertical_boost_default = -300.0,
