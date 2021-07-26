@@ -128,7 +128,7 @@ class RopeNode extends Reference:
         position.x += displacement.x * NODE_DAMPING
         position.y += \
                 displacement.y * NODE_DAMPING + \
-                Su.gravity_default * NODE_MASS * \
+                Su.movement.gravity_default * NODE_MASS * \
                 NODE_TIME_STEP * NODE_TIME_STEP
     
     
