@@ -662,40 +662,29 @@ var _additional_metric_keys := [
 var _surfacer_debug_params := {
 }
 
-var _player_param_classes := [
-    preload("res://src/players/duckling/duckling_params.gd"),
-    preload("res://src/players/fox/fox_params.gd"),
-    preload("res://src/players/momma/momma_params.gd"),
-    preload("res://src/players/porcupine/porcupine_params.gd"),
-    preload("res://src/players/run_away_duckling/run_away_duckling_params.gd"),
-]
-
-var _surfacer_manifest := {
-    precompute_platform_graph_for_levels = [],
-    ignores_platform_graph_save_files = false,
-    ignores_platform_graph_save_file_trajectory_state = false,
-    is_debug_only_platform_graph_state_included = false,
-    are_loaded_surfaces_deeply_validated = true,
-    uses_threads_for_platform_graph_calculation = false and _uses_threads,
+var _annotations_manifest := {
+    is_human_current_nav_trajectory_shown_with_slow_mo = false,
+    is_computer_current_nav_trajectory_shown_with_slow_mo = true,
+    is_human_current_nav_trajectory_shown_without_slow_mo = true,
+    is_computer_current_nav_trajectory_shown_without_slow_mo = false,
+    is_human_nav_pulse_shown_with_slow_mo = false,
+    is_computer_nav_pulse_shown_with_slow_mo = true,
+    is_human_nav_pulse_shown_without_slow_mo = true,
+    is_computer_nav_pulse_shown_without_slow_mo = false,
+    is_human_new_nav_exclamation_mark_shown = false,
+    is_computer_new_nav_exclamation_mark_shown = false,
+    does_human_nav_pulse_grow = false,
+    does_computer_nav_pulse_grow = true,
+    is_human_prediction_shown = true,
+    is_computer_prediction_shown = true,
     
-    default_player_name = 'momma',
     nav_selection_prediction_opacity = 0.5,
     nav_selection_prediction_tween_duration = 0.15,
     new_path_pulse_duration = 0.7,
     new_path_pulse_time_length = 1.0,
-    path_drag_update_throttle_interval = 0.2,
-    path_beat_update_throttle_interval = 0.2,
-    
-    # Params for CameraPanController.
-    snaps_camera_back_to_player = true,
-    max_zoom_multiplier_from_pointer = 1.5,
-    max_pan_distance_from_pointer = 512.0,
-    duration_to_max_pan_from_pointer_at_max_control = 0.67,
-    duration_to_max_zoom_from_pointer_at_max_control = 3.0,
-    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.3,
-    
-    skip_choreography_framerate_multiplier = 4.0,
-    
+}
+
+var _movement_manifest := {
     gravity_default = 5000.0,
     gravity_slow_rise_multiplier_default = 0.38,
     gravity_double_jump_slow_rise_multiplier_default = 0.68,
@@ -724,25 +713,45 @@ var _surfacer_manifest := {
     climbing_edge_weight_multiplier_default = 1.8,
     air_edge_weight_multiplier_default = 1.0,
     
-    is_human_current_nav_trajectory_shown_with_slow_mo = false,
-    is_computer_current_nav_trajectory_shown_with_slow_mo = true,
-    is_human_current_nav_trajectory_shown_without_slow_mo = true,
-    is_computer_current_nav_trajectory_shown_without_slow_mo = false,
-    is_human_nav_pulse_shown_with_slow_mo = false,
-    is_computer_nav_pulse_shown_with_slow_mo = true,
-    is_human_nav_pulse_shown_without_slow_mo = true,
-    is_computer_nav_pulse_shown_without_slow_mo = false,
-    is_human_new_nav_exclamation_mark_shown = false,
-    is_computer_new_nav_exclamation_mark_shown = false,
-    does_human_nav_pulse_grow = false,
-    does_computer_nav_pulse_grow = true,
-    is_human_prediction_shown = true,
-    is_computer_prediction_shown = true,
+    action_handler_classes = Su.DEFAULT_ACTION_HANDLER_CLASSES,
+    edge_calculator_classes = Su.DEFAULT_EDGE_CALCULATOR_CLASSES,
+}
+
+var _player_scenes := [
+    preload("res://src/players/duckling/duckling.gd"),
+    preload("res://src/players/fox/fox.gd"),
+    preload("res://src/players/momma/momma.gd"),
+    preload("res://src/players/porcupine/porcupine.gd"),
+    preload("res://src/players/run_away_duckling/run_away_duckling.gd"),
+]
+
+var _surfacer_manifest := {
+    precompute_platform_graph_for_levels = [],
+    ignores_platform_graph_save_files = false,
+    ignores_platform_graph_save_file_trajectory_state = false,
+    is_debug_only_platform_graph_state_included = false,
+    are_loaded_surfaces_deeply_validated = true,
+    uses_threads_for_platform_graph_calculation = false and _uses_threads,
+    
+    default_player_name = 'momma',
+    path_drag_update_throttle_interval = 0.2,
+    path_beat_update_throttle_interval = 0.2,
+    
+    # Params for CameraPanController.
+    snaps_camera_back_to_player = true,
+    max_zoom_multiplier_from_pointer = 1.5,
+    max_pan_distance_from_pointer = 512.0,
+    duration_to_max_pan_from_pointer_at_max_control = 0.67,
+    duration_to_max_zoom_from_pointer_at_max_control = 3.0,
+    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.3,
+    
+    skip_choreography_framerate_multiplier = 4.0,
     
     debug_params = _surfacer_debug_params,
-    player_action_classes = Su.DEFAULT_PLAYER_ACTION_CLASSES,
-    edge_movement_classes = Su.DEFAULT_EDGE_MOVEMENT_CLASSES,
-    player_param_classes = _player_param_classes,
+    player_scenes = _player_scenes,
+    
+    movement_manifest = _movement_manifest,
+    annotations_manifest = _annotations_manifest,
 }
 
 var app_manifest := {
