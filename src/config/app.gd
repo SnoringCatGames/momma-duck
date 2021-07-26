@@ -518,7 +518,7 @@ var _level_select_item_manifest := [
 ]
 
 var _hud_manifest := {
-    hud_class = MommaDuckHud,
+    hud_class = SurfacerHud,
     hud_key_value_box_size = \
             ScaffolderGuiConfig.HUD_KEY_VALUE_BOX_DEFAULT_SIZE,
     hud_key_value_box_scene = \
@@ -713,16 +713,18 @@ var _movement_manifest := {
     climbing_edge_weight_multiplier_default = 1.8,
     air_edge_weight_multiplier_default = 1.0,
     
-    action_handler_classes = Su.DEFAULT_ACTION_HANDLER_CLASSES,
-    edge_calculator_classes = Su.DEFAULT_EDGE_CALCULATOR_CLASSES,
+    action_handler_classes = \
+            SurfacerMovementManifest.DEFAULT_ACTION_HANDLER_CLASSES,
+    edge_calculator_classes = \
+            SurfacerMovementManifest.DEFAULT_EDGE_CALCULATOR_CLASSES,
 }
 
 var _player_scenes := [
-    preload("res://src/players/duckling/duckling.gd"),
-    preload("res://src/players/fox/fox.gd"),
-    preload("res://src/players/momma/momma.gd"),
-    preload("res://src/players/porcupine/porcupine.gd"),
-    preload("res://src/players/run_away_duckling/run_away_duckling.gd"),
+    preload("res://src/players/duckling/duckling.tscn"),
+    preload("res://src/players/fox/fox.tscn"),
+    preload("res://src/players/momma/momma.tscn"),
+    preload("res://src/players/porcupine/porcupine.tscn"),
+    preload("res://src/players/run_away_duckling/run_away_duckling.tscn"),
 ]
 
 var _surfacer_manifest := {
