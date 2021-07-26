@@ -8,22 +8,8 @@ const ANIMATOR_SCENE := \
         preload("res://src/players/fox/fox_animator.tscn")
 
 
-# FIXME: ----------------- Pull these out into the in-scene MovementParams node.
+# FIXME: ---------------- Pull these out into the in-scene MovementParams node.
 func _init_params() -> void:
-    
-    gravity_fast_fall = Sc.geometry.GRAVITY
-    slow_rise_gravity_multiplier = 0.38
-    rise_double_jump_gravity_multiplier = 0.68
-    
-    jump_boost = -1000.0
-    in_air_horizontal_acceleration = 3200.0
-    max_jump_chain = 2
-    wall_jump_horizontal_boost = 280.0
-    wall_fall_horizontal_boost = 20.0
-    
-    walk_acceleration = 7000.0
-    climb_up_speed = -230.0
-    climb_down_speed = 120.0
     
     minimizes_velocity_change_when_jumping = false
     optimizes_edge_jump_positions_at_run_time = true
@@ -62,27 +48,6 @@ func _init_params() -> void:
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     reached_in_air_destination_distance_squared_threshold = 16.0 * 16.0
     max_edges_to_remove_from_end_of_path_for_optimization_to_in_air_destination = 2
-    
-    max_horizontal_speed_default = 400.0
-    min_horizontal_speed = 5.0
-    max_vertical_speed = 2800.0
-    min_vertical_speed = 0.0
-    
-    fall_through_floor_velocity_boost = 100.0
-    
-    dash_speed_multiplier = 2.8
-    dash_vertical_boost = -280.0
-    dash_duration = 0.3
-    dash_fade_duration = 0.1
-    dash_cooldown = 1.0
-    
-    friction_coefficient = 1.25
-    
-    uses_duration_instead_of_distance_for_edge_weight = true
-    additional_edge_weight_offset = 128.0
-    walking_edge_weight_multiplier = 1.2
-    climbing_edge_weight_multiplier = 1.8
-    air_edge_weight_multiplier = 1.0
 
 
 func _init_animator_params() -> void:

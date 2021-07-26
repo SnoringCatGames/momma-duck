@@ -8,26 +8,6 @@ const DUCKLING_ANIMATOR_SCENE := \
         preload("res://src/players/duckling/duckling_animator.tscn")
 
 
-# FIXME: ----------------- Pull these out into the in-scene MovementParams node.
-func _init_params() -> void:
-    ._init_params()
-    
-    gravity_fast_fall = Sc.geometry.GRAVITY * 0.8
-    
-    jump_boost *= 0.8
-    in_air_horizontal_acceleration *= 0.8
-    walk_acceleration *= 0.7
-    
-    max_horizontal_speed_default *= 0.7
-    max_vertical_speed *= 0.8
-    
-    uses_duration_instead_of_distance_for_edge_weight = true
-    additional_edge_weight_offset = 128.0
-    walking_edge_weight_multiplier = 1.2
-    climbing_edge_weight_multiplier = 1.8
-    air_edge_weight_multiplier = 1.0
-
-
 func _init_animator_params() -> void:
     animator_params = DuckAnimatorParams.new()
     

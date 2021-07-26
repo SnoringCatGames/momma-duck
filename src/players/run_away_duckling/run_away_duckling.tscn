@@ -13,6 +13,11 @@ script = ExtResource( 1 )
 player_name = "run_away_duckling"
 
 [node name="MovementParams" parent="." instance=ExtResource( 3 )]
+gravity_multiplier = 0.8
+walk_acceleration_multiplier = 2.4
+in_air_horizontal_acceleration_multiplier = 1.34
+jump_boost_multiplier = 0.7
+max_horizontal_speed_default_multiplier = 1.4
 
 [node name="RunAwayDucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )

@@ -18,6 +18,10 @@ player_name = "momma"
 collision_detection_layers = 2
 
 [node name="MovementParams" parent="." instance=ExtResource( 3 )]
+walk_acceleration_multiplier = 1.125
+in_air_horizontal_acceleration_multiplier = 0.84
+jump_boost_multiplier = 0.88
+max_vertical_speed_multiplier = 0.64
 
 [node name="MommaAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )

@@ -18,6 +18,10 @@ player_name = "porcupine"
 
 [node name="MovementParams" parent="." instance=ExtResource( 4 )]
 can_jump = false
+walk_acceleration_multiplier = 0.01
+in_air_horizontal_acceleration_multiplier = 0.84
+max_horizontal_speed_default_multiplier = 0.125
+max_vertical_speed_multiplier = 0.64
 
 [node name="PorcupineAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -5 )

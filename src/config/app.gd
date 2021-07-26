@@ -696,6 +696,32 @@ var _surfacer_manifest := {
     
     skip_choreography_framerate_multiplier = 4.0,
     
+    gravity_default = 5000.0,
+    gravity_slow_rise_multiplier_default = 0.38,
+    gravity_double_jump_slow_rise_multiplier_default = 0.68,
+    walk_acceleration_default = 8000.0,
+    in_air_horizontal_acceleration_default = 2500.0,
+    climb_up_speed_default = -230.0,
+    climb_down_speed_default = 120.0,
+    friction_coefficient_default = 1.25,
+    jump_boost_default = -900.0,
+    wall_jump_horizontal_boost_default = 200.0,
+    wall_fall_horizontal_boost_default = 20.0,
+    
+    max_horizontal_speed_default_default = 320.0,
+    max_vertical_speed_default = 2800.0,
+    
+    dash_speed_multiplier_default = 3.0,
+    dash_vertical_boost_default = -300.0,
+    dash_duration_default = 0.3,
+    dash_fade_duration_default = 0.1,
+    dash_cooldown_default = 1.0,
+    
+    additional_edge_weight_offset_default = 128.0,
+    walking_edge_weight_multiplier_default = 1.2,
+    climbing_edge_weight_multiplier_default = 1.8,
+    air_edge_weight_multiplier_default = 1.0,
+    
     is_human_current_nav_trajectory_shown_with_slow_mo = false,
     is_computer_current_nav_trajectory_shown_with_slow_mo = true,
     is_human_current_nav_trajectory_shown_without_slow_mo = true,

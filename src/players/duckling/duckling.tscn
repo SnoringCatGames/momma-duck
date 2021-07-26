@@ -18,6 +18,12 @@ player_name = "duckling"
 collision_detection_layers = 2
 
 [node name="MovementParams" parent="." instance=ExtResource( 4 )]
+gravity_multiplier = 0.8
+walk_acceleration_multiplier = 0.8
+in_air_horizontal_acceleration_multiplier = 0.67
+jump_boost_multiplier = 0.7
+max_horizontal_speed_default_multiplier = 0.7
+max_vertical_speed_multiplier = 0.51
 
 [node name="DucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )

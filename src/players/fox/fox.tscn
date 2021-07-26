@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22, 16 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 radius = 128.0
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -23,6 +23,11 @@ collision_detection_layers = null
 wander_pause_duration = 2.0
 
 [node name="MovementParams" parent="." instance=ExtResource( 4 )]
+walk_acceleration_multiplier = 0.88
+in_air_horizontal_acceleration_multiplier = 1.28
+jump_boost_multiplier = 1.11
+max_horizontal_speed_default_multiplier = 1.25
+collider_shape = SubResource( 1 )
 
 [node name="FoxAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -5 )
@@ -34,7 +39,7 @@ __meta__ = {
 }
 
 [node name="MommaDetector" parent="." instance=ExtResource( 3 )]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 radius = 128.0
 layer = 8
 
