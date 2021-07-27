@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "A",
+"language": "GDScript",
+"path": "res://a.gd"
+}, {
 "base": "Screen",
 "class": "AboutScreen",
 "language": "GDScript",
@@ -94,6 +99,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/audio.gd"
 }, {
+"base": "A",
+"class": "B",
+"language": "GDScript",
+"path": "res://b.gd"
+}, {
 "base": "Node",
 "class": "BeatTracker",
 "language": "GDScript",
@@ -103,6 +113,11 @@ _global_script_classes=[ {
 "class": "ButtonControlsSettingsLabeledControlItem",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_items/button_controls_settings_labeled_control_item.gd"
+}, {
+"base": "B",
+"class": "C",
+"language": "GDScript",
+"path": "res://c.gd"
 }, {
 "base": "Node2D",
 "class": "CameraController",
@@ -1945,6 +1960,7 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/settings_items/welcome_panel_settings_labeled_control_item.gd"
 } ]
 _global_script_class_icons={
+"A": "",
 "AboutScreen": "",
 "AccordionBody": "res://addons/scaffolder/assets/images/editor_icons/accordion_body.png",
 "AccordionHeader": "res://addons/scaffolder/assets/images/editor_icons/accordion_header.png",
@@ -1962,8 +1978,10 @@ _global_script_class_icons={
 "AnnotatorType": "",
 "Annotators": "",
 "Audio": "",
+"B": "",
 "BeatTracker": "",
 "ButtonControlsSettingsLabeledControlItem": "",
+"C": "",
 "CameraController": "",
 "CameraPanController": "",
 "CameraShake": "",
