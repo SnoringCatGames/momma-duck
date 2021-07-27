@@ -3,69 +3,54 @@ class_name DucklingAnimator
 extends PlayerAnimator
 
 
+const DEFAULT_ANIMATION_NAMES := [
+    "Walk",
+    "Rest",
+    "JumpFall",
+    "JumpRise",
+    "Swim",
+]
+
+
 func set_static_frame(animation_state: PlayerAnimationState) -> void:
-    _show_sprite(animation_state.animation_type)
+    _show_sprite(animation_state.animation_name)
     .set_static_frame(animation_state)
 
 
 func _play_animation(
-        animation_type: int,
+        animation_name: String,
         blend := 0.1) -> bool:
-    _show_sprite(animation_type)
-    return ._play_animation(animation_type, blend)
+    _show_sprite(animation_name)
+    return ._play_animation(animation_name, blend)
 
 
-func _show_sprite(animation_type: int) -> void:
+func _show_sprite(animation_name: String) -> void:
     # Hide the other sprites.
-    var sprites := [
-        $Walk,
-        $Rest,
-        $JumpFall,
-        $JumpRise,
-        $Swim,
-    ]
-    for sprite in sprites:
+    for sprite_name in DEFAULT_ANIMATION_NAMES:
+        var sprite := animation_name_to_sprite(sprite_name)
         sprite.visible = false
     
     # Show the current sprite.
-    match animation_type:
-        PlayerAnimationType.WALK:
-            $Walk.visible = true
-        PlayerAnimationType.REST:
-            $Rest.visible = true
-        PlayerAnimationType.JUMP_FALL:
-            $JumpFall.visible = true
-        PlayerAnimationType.JUMP_RISE:
-            $JumpRise.visible = true
-        MommaAnimator.SWIM_ANIMATION_TYPE:
-            $Swim.visible = true
+    var sprite := animation_name_to_sprite(animation_name)
+    sprite.visible = true
+
+
+func animation_name_to_sprite(name: String) -> Sprite:
+    return get_node(name)
+
+
+func animation_type_to_playback_rate(animation_name: String) -> float:
+    match animation_name:
+        "Rest":
+            return 0.8
+        "JumpRise":
+            return 1.0
+        "JumpFall":
+            return 1.0
+        "Walk":
+            return 20.0
+        "Swim":
+            return 1.0
         _:
-            Sc.logger.error()
-
-
-func animation_type_to_name(animation_type: int) -> String:
-    if animation_type >= 8:
-        # TODO: This is a terrible hack. Fix the underlying framework to use
-        #       strings.
-        match animation_type:
-            MommaAnimator.SWIM_ANIMATION_TYPE:
-                return animator_params.swim_name
-            _:
-                Sc.logger.error()
-                return ""
-    else:
-        return .animation_type_to_name(animation_type)
-
-
-func animation_type_to_playback_rate(animation_type: int) -> float:
-    if animation_type >= 8:
-        # TODO: This is a terrible hack. Fix the underlying framework to use
-        #       strings.
-        match animation_type:
-            MommaAnimator.SWIM_ANIMATION_TYPE:
-                return animator_params.swim_playback_rate
-            _:
-                Sc.logger.error()
-                return INF
-    else:
-        return .animation_type_to_playback_rate(animation_type)
+            Sc.logger.error("Unrecognized animation name: %s" % animation_name)
+            return 0.0

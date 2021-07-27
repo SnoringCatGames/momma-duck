@@ -324,11 +324,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/dropdown_labeled_control_item.gd"
 }, {
-"base": "Player",
-"class": "Duck",
-"language": "GDScript",
-"path": "res://src/players/duck.gd"
-}, {
 "base": "PlayerAnimatorParams",
 "class": "DuckAnimatorParams",
 "language": "GDScript",
@@ -1179,11 +1174,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player_animation_state.gd"
 }, {
-"base": "Reference",
-"class": "PlayerAnimationType",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/animator/player_animation_type.gd"
-}, {
 "base": "Node2D",
 "class": "PlayerAnimator",
 "language": "GDScript",
@@ -2008,7 +1998,6 @@ _global_script_class_icons={
 "DeviceUtils": "",
 "DiscreteEdgeTrajectoryLegendItem": "",
 "DropdownLabeledControlItem": "",
-"Duck": "",
 "DuckAnimatorParams": "",
 "Duckling": "",
 "DucklingAnimator": "",
@@ -2179,7 +2168,6 @@ _global_script_class_icons={
 "PlayerActionState": "",
 "PlayerActionType": "",
 "PlayerAnimationState": "",
-"PlayerAnimationType": "",
 "PlayerAnimator": "",
 "PlayerAnimatorParams": "",
 "PlayerAnnotator": "",

@@ -208,8 +208,8 @@ func _on_quack_completed() -> void:
 
 func _process_animation() -> void:
     if is_in_pond:
-        animator.play(MommaAnimator.SWIM_ANIMATION_TYPE)
+        animator.play("Swim")
     elif is_quacking:
-        animator.play(MommaAnimator.QUACK_ANIMATION_TYPE)
+        animator.play("Quack")
     else:
         ._process_animation()

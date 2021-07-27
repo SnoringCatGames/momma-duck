@@ -119,11 +119,11 @@ func _update_animator() -> void:
     
     if just_started_moving:
         if is_moving_down:
-            animator.play(PlayerAnimationType.CLIMB_DOWN)
+            animator.play("ClimbDown")
         else:
-            animator.play(PlayerAnimationType.CLIMB_UP)
+            animator.play("ClimbUp")
     elif just_reached_end:
-        animator.play(PlayerAnimationType.REST)
+        animator.play("Rest")
 
 
 func _create_animator_params() -> PlayerAnimatorParams:
