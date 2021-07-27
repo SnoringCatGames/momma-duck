@@ -1,3 +1,4 @@
+tool
 class_name RunAwayDuckling
 extends Player
 
@@ -5,10 +6,6 @@ extends Player
 var destination: PositionAlongSurface
 
 var is_logging_events := false
-
-
-func _init().("run_away_duckling") -> void:
-    pass
 
 
 func run_away(

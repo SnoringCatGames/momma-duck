@@ -1,3 +1,4 @@
+tool
 class_name Porcupine
 extends Player
 # This is a hazard that moves side-to-side along a surface.
@@ -27,9 +28,6 @@ var is_logging_events := false
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
-
-func _init().("porcupine") -> void:
-    pass
 
 
 func _ready() -> void:

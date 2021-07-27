@@ -36,10 +36,6 @@ var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
 
-func _init().("fox") -> void:
-    pass
-
-
 func _ready() -> void:
     start_position = position
 

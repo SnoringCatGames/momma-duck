@@ -1,9 +1,6 @@
+tool
 class_name Momma
 extends Duck
-
-
-func _init().("momma") -> void:
-    pass
 
 
 func _update_attachment() -> void:

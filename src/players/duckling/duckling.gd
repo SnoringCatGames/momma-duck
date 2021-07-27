@@ -1,3 +1,4 @@
+tool
 class_name Duckling
 extends Duck
 
@@ -17,10 +18,6 @@ var is_logging_events := false
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
-
-
-func _init().("duckling") -> void:
-    pass
 
 
 func create_leash_annotator() -> void:

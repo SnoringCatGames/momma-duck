@@ -1,3 +1,4 @@
+tool
 class_name Duck
 extends Player
 
@@ -41,10 +42,6 @@ var is_far_enough_from_leader_to_start_moving := false
 var is_attached_to_follower := false
 var just_attached_to_follower := false
 var just_detached_from_follower := false
-
-
-func _init(player_name: String).(player_name) -> void:
-    pass
 
 
 func _ready() -> void:
