@@ -38,7 +38,7 @@ func _show_sprite(animation_name: String) -> void:
 
 
 func animation_name_to_sprite(name: String) -> Sprite:
-    return get_node(name)
+    return get_node(name) as Sprite
 
 
 func animation_type_to_playback_rate(animation_name: String) -> float:

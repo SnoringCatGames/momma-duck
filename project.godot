@@ -324,6 +324,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/dropdown_labeled_control_item.gd"
 }, {
+"base": "Player",
+"class": "Duck",
+"language": "GDScript",
+"path": "res://src/players/duck.gd"
+}, {
 "base": "PlayerAnimatorParams",
 "class": "DuckAnimatorParams",
 "language": "GDScript",
@@ -1998,6 +2003,7 @@ _global_script_class_icons={
 "DeviceUtils": "",
 "DiscreteEdgeTrajectoryLegendItem": "",
 "DropdownLabeledControlItem": "",
+"Duck": "",
 "DuckAnimatorParams": "",
 "Duckling": "",
 "DucklingAnimator": "",

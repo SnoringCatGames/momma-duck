@@ -27,6 +27,8 @@ collider_rotation = 0.0
 
 [node name="MommaAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )
+animations = [  ]
+_player_animator_scene_path = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

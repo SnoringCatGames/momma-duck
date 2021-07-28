@@ -14,9 +14,6 @@ const RADIUS := 24.0
 
 const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
 
-const ANIMATOR_SCENE := \
-        preload("res://src/players/spider/spider_animator.tscn")
-
 export var range_y := 196.0
 export var speed := 50.0
 export var pause_at_end_duration := 3.0
@@ -44,7 +41,7 @@ func _ready() -> void:
     position.y += randf() * range_y * 0.9 - range_y / 2.0
     is_moving_down = randf() > 0.5
     animator = $SpiderAnimator
-    animator.set_up(_create_animator_params(), true)
+    animator.is_desaturatable = true
 
 
 func _destroy() -> void:
@@ -124,24 +121,6 @@ func _update_animator() -> void:
             animator.play("ClimbUp")
     elif just_reached_end:
         animator.play("Rest")
-
-
-func _create_animator_params() -> PlayerAnimatorParams:
-    var animator_params := PlayerAnimatorParams.new()
-    
-    animator_params.player_animator_path_or_scene = ANIMATOR_SCENE
-    
-    animator_params.faces_right_by_default = true
-    
-    animator_params.rest_name = "Rest"
-    animator_params.climb_up_name = "ClimbUp"
-    animator_params.climb_down_name = "ClimbDown"
-
-    animator_params.rest_playback_rate = 1.0
-    animator_params.climb_up_playback_rate = 1.0
-    animator_params.climb_down_playback_rate = 1.0
-    
-    return animator_params
 
 
 func on_touched_duckling(duckling: Duckling) -> void:

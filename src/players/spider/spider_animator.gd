@@ -36,17 +36,17 @@ func _show_sprite(animation_name: String) -> void:
     sprite.visible = true
 
 
-func animation_name_to_sprite(name: String) -> Sprite:
+func animation_name_to_sprite(animation_name: String) -> Sprite:
     match animation_name:
         "ClimbUp":
-            return $ClimbUp
+            return $ClimbUp as Sprite
         "ClimbDown":
-            return $ClimbDown
+            return $ClimbDown as Sprite
         "Rest":
             if is_facing_down:
-                return $RestDown
+                return $RestDown as Sprite
             else:
-                return $RestUp
+                return $RestUp as Sprite
         _:
             Sc.logger.error()
             return null
