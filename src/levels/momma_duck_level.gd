@@ -56,7 +56,7 @@ func _start() -> void:
     
     for spawn_position in duckling_spawn_positions:
         var duckling: Duckling = add_player(
-                DucklingParams.DUCKLING_PLAYER_SCENE,
+                Su.player_scenes["duckling"],
                 spawn_position.position,
                 false)
         duckling.call_deferred("create_leash_annotator")
@@ -64,14 +64,14 @@ func _start() -> void:
     
     for spawn_position in fox_spawn_positions:
         var fox: Fox = add_player(
-                FoxParams.PLAYER_SCENE,
+                Su.player_scenes["fox"],
                 spawn_position.position,
                 false)
         foxes.push_back(fox)
     
     for spawn_position in porcupine_spawn_positions:
         var porcupine: Porcupine = add_player(
-                PorcupineParams.PLAYER_SCENE,
+                Su.player_scenes["porcupine"],
                 spawn_position.position,
                 false)
         porcupines.push_back(porcupine)
@@ -165,7 +165,7 @@ func swap_duckling_with_run_away(
     remove_player(duckling)
     
     var run_away_duckling: RunAwayDuckling = add_player(
-            RunAwayDucklingParams.RUN_AWAY_DUCKLING_PLAYER_SCENE,
+            Su.player_scenes["run_away_duckling"],
             run_away_origin,
             false)
     run_away_ducklings.push_back(run_away_duckling)
@@ -182,7 +182,7 @@ func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
     remove_player(run_away_duckling)
     
     var duckling: Duckling = add_player(
-            DucklingParams.DUCKLING_PLAYER_SCENE,
+            Su.player_scenes["duckling"],
             position,
             false)
     duckling.call_deferred("create_leash_annotator")

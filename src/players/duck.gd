@@ -193,7 +193,7 @@ func _quack() -> void:
     is_quacking = true
     var duration: float = \
             QUACK_DURATION_DEFAULT / \
-            movement_params.animator_params.quack_playback_rate
+            animator.animation_name_to_playback_rate("Quack")
     Sc.time.clear_timeout(quack_timeout_id)
     quack_timeout_id = Sc.time.set_timeout(
                 funcref(self, "_on_quack_completed"), duration)

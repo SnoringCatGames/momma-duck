@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/players/porcupine/porcupine_animator.gd" type="Script" id=1]
+[ext_resource path="res://addons/surfacer/src/player/animator/player_animator.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/porcupine.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -122,6 +122,7 @@ tracks/0/keys = {
 
 [node name="PorcupineAnimator" type="Node2D"]
 script = ExtResource( 1 )
+faces_right_by_default = false
 animations = [ {
 "name": "ClimbDown",
 "speed": -4.03,
