@@ -20,6 +20,7 @@ jump_boost_multiplier = 0.7
 max_horizontal_speed_default_multiplier = 1.4
 collider_shape = SubResource( 1 )
 collider_rotation = 0.0
+player_name = "run_away_duckling"
 
 [node name="RunAwayDucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )

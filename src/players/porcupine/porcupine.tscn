@@ -22,9 +22,42 @@ walk_acceleration_multiplier = 0.01
 in_air_horizontal_acceleration_multiplier = 0.84
 max_horizontal_speed_default_multiplier = 0.125
 max_vertical_speed_multiplier = 0.64
+collider_shape = SubResource( 1 )
+collider_rotation = 0.0
+player_name = "porcupine"
 
 [node name="PorcupineAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -5 )
+scale = Vector2( -1, 1 )
+animations = [ {
+"name": "ClimbDown",
+"speed": -4.03,
+"sprite_name": "ClimbDown"
+}, {
+"name": "ClimbUp",
+"speed": 9.4,
+"sprite_name": "ClimbUp"
+}, {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+}, {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+}, {
+"name": "Rest",
+"speed": 0.8,
+"sprite_name": "Rest"
+}, {
+"name": "RestOnWall",
+"speed": 0.8,
+"sprite_name": "RestOnWall"
+}, {
+"name": "Walk",
+"speed": 20.0,
+"sprite_name": "Walk"
+} ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

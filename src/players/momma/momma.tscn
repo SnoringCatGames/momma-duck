@@ -24,11 +24,36 @@ jump_boost_multiplier = 0.88
 max_vertical_speed_multiplier = 0.64
 collider_shape = SubResource( 1 )
 collider_rotation = 0.0
+player_name = "momma"
 
 [node name="MommaAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )
-animations = [  ]
-_player_animator_scene_path = ""
+scale = Vector2( -1, 1 )
+animations = [ {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+}, {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+}, {
+"name": "Quack",
+"speed": 1.6,
+"sprite_name": "Quack"
+}, {
+"name": "Rest",
+"speed": 0.8,
+"sprite_name": "Rest"
+}, {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": "Swim"
+}, {
+"name": "Walk",
+"speed": 20.0,
+"sprite_name": "Walk"
+} ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

@@ -26,10 +26,32 @@ max_horizontal_speed_default_multiplier = 0.7
 max_vertical_speed_multiplier = 0.51
 collider_shape = SubResource( 1 )
 collider_rotation = 0.0
+player_name = "duckling"
 
 [node name="DucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )
 scale = Vector2( -1, 1 )
+animations = [ {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+}, {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+}, {
+"name": "Rest",
+"speed": 0.8,
+"sprite_name": "Rest"
+}, {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": "Swim"
+}, {
+"name": "Walk",
+"speed": 20.0,
+"sprite_name": "Walk"
+} ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
