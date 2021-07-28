@@ -20,3 +20,14 @@ func animation_name_to_sprite(animation_name: String) -> Sprite:
         _:
             Sc.logger.error()
             return null
+
+
+func animation_name_to_playback_rate(animation_name: String) -> float:
+    match animation_name:
+        "Rest":
+            if is_facing_down:
+                return _animations_by_name["RestDown"].speed
+            else:
+                return _animations_by_name["RestUp"].speed
+        _:
+            return _animations_by_name[animation_name].speed
