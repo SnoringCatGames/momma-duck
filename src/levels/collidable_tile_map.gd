@@ -1,5 +1,6 @@
 tool
-class_name CollidableTileMap
+class_name CollidableTileMap, \
+"res://addons/surfacer/assets/images/editor_icons/collidable_tile_map.png"
 extends SurfacesTileMap
 
 

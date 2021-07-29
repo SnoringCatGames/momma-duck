@@ -1707,7 +1707,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "SurfacerPlayer",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/player.gd"
+"path": "res://addons/surfacer/src/player/surfacer_player.gd"
 }, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
@@ -1931,7 +1931,7 @@ _global_script_class_icons={
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
-"CollidableTileMap": "",
+"CollidableTileMap": "res://addons/surfacer/assets/images/editor_icons/collidable_tile_map.png",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -2175,7 +2175,7 @@ _global_script_class_icons={
 "ScaffolderIcons": "",
 "ScaffolderLabel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label.png",
 "ScaffolderLabelLink": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label_link.png",
-"ScaffolderLevel": "",
+"ScaffolderLevel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_level.png",
 "ScaffolderLevelConfig": "",
 "ScaffolderLevelSession": "",
 "ScaffolderLoadingScreen": "",

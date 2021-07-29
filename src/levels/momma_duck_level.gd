@@ -1,3 +1,4 @@
+tool
 class_name MommaDuckLevel
 extends SurfacerLevel
 
@@ -118,11 +119,18 @@ func _destroy() -> void:
 #    .quit(has_finished, immediately)
 
 
+#func _update_editor_configuration() -> void
+#    ._update_editor_configuration()
+
+
 #func _on_intro_choreography_finished() -> void:
 #    ._on_intro_choreography_finished()
 
 
 func _physics_process(_delta: float) -> void:
+    if Engine.editor_hint:
+        return
+    
     if !Sc.level_session.has_started or \
             Sc.level_session.is_destroyed or \
             !Sc.level_session.has_started:
