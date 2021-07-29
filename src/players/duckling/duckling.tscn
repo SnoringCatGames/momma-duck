@@ -35,27 +35,27 @@ animations = {
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
-"sprite_name": ""
+"sprite_name": "JumpFall"
 },
 "JumpRise": {
 "name": "JumpRise",
 "speed": 1.0,
-"sprite_name": ""
+"sprite_name": "JumpRise"
 },
 "Rest": {
 "name": "Rest",
 "speed": 0.8,
-"sprite_name": ""
+"sprite_name": "Rest"
 },
 "Swim": {
 "name": "Swim",
 "speed": 1.0,
-"sprite_name": ""
+"sprite_name": "Swim"
 },
 "Walk": {
 "name": "Walk",
 "speed": 20.0,
-"sprite_name": ""
+"sprite_name": "Walk"
 }
 }
 
