@@ -105,7 +105,7 @@ animations = {
 },
 "Rest": {
 "name": "Rest",
-"speed": 1.0,
+"speed": 0.8,
 "sprite_name": "Rest"
 },
 "Swim": {
@@ -115,7 +115,7 @@ animations = {
 },
 "Walk": {
 "name": "Walk",
-"speed": 1.0,
+"speed": 20.0,
 "sprite_name": "Walk"
 }
 }

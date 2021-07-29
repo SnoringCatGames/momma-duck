@@ -124,6 +124,16 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 faces_right_by_default = false
 animations = {
+"ClimbDown": {
+"name": "ClimbDown",
+"speed": -4.03,
+"sprite_name": ""
+},
+"ClimbUp": {
+"name": "ClimbUp",
+"speed": 9.4,
+"sprite_name": ""
+},
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
@@ -136,17 +146,17 @@ animations = {
 },
 "Rest": {
 "name": "Rest",
-"speed": 1.0,
+"speed": 0.8,
 "sprite_name": ""
 },
-"Swim": {
-"name": "Swim",
-"speed": 1.0,
+"RestOnWall": {
+"name": "RestOnWall",
+"speed": 0.8,
 "sprite_name": ""
 },
 "Walk": {
 "name": "Walk",
-"speed": 1.0,
+"speed": 20.0,
 "sprite_name": ""
 }
 }
