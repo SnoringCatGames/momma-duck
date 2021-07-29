@@ -164,7 +164,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/transient_annotators/click_annotator.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "ClimbAdjacentSurfacesPlayer",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/climb_adjacent_surfaces_player.gd"
@@ -324,7 +324,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/dropdown_labeled_control_item.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "Duck",
 "language": "GDScript",
 "path": "res://src/players/duck.gd"
@@ -639,7 +639,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/font_size.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "Fox",
 "language": "GDScript",
 "path": "res://src/players/fox/fox.gd"
@@ -829,7 +829,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/json_utils.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "JumpBackAndForthPlayer",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/jump_back_and_forth_player.gd"
@@ -1119,11 +1119,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/platform_graph_path.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/player.gd"
-}, {
 "base": "Reference",
 "class": "PlayerActionHandler",
 "language": "GDScript",
@@ -1239,7 +1234,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/levels/pond.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "Porcupine",
 "language": "GDScript",
 "path": "res://src/players/porcupine/porcupine.gd"
@@ -1329,7 +1324,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/ruler_annotator_settings_labeled_control_item.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "RunAwayDuckling",
 "language": "GDScript",
 "path": "res://src/players/run_away_duckling/run_away_duckling.gd"
@@ -1709,6 +1704,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_movement_manifest.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "SurfacerPlayer",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/player.gd"
+}, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
 "language": "GDScript",
@@ -1824,7 +1824,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/utils/vertical_movement_utils.gd"
 }, {
-"base": "Player",
+"base": "SurfacerPlayer",
 "class": "WalkBackAndForthPlayer",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/walk_back_and_forth_player.gd"
@@ -2117,7 +2117,6 @@ _global_script_class_icons={
 "PlatformGraphItemController": "",
 "PlatformGraphParser": "",
 "PlatformGraphPath": "",
-"Player": "res://addons/surfacer/assets/images/editor_icons/surfacer_player.png",
 "PlayerActionHandler": "",
 "PlayerActionSource": "",
 "PlayerActionState": "",
@@ -2235,6 +2234,7 @@ _global_script_class_icons={
 "SurfacerLevelSession": "",
 "SurfacerLoadingScreen": "",
 "SurfacerMovementManifest": "",
+"SurfacerPlayer": "res://addons/surfacer/assets/images/editor_icons/surfacer_player.png",
 "SurfacerThirdPartyLicenses": "",
 "SurfacesAnnotator": "",
 "SurfacesAnnotatorSettingsLabeledControlItem": "",

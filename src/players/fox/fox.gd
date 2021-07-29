@@ -1,6 +1,6 @@
 tool
 class_name Fox
-extends Player
+extends SurfacerPlayer
 # This is a hazard that jumps at nearby ducklings, if momma isn't nearby.
 
 

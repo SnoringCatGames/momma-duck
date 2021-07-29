@@ -1,6 +1,6 @@
 tool
 class_name Porcupine
-extends Player
+extends SurfacerPlayer
 # This is a hazard that moves side-to-side along a surface.
 
 

@@ -1,6 +1,6 @@
 tool
 class_name Duck
-extends Player
+extends SurfacerPlayer
 
 
 const LEASH_ATTACH_DISTANCE := 128.0

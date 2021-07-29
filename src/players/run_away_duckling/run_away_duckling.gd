@@ -1,6 +1,6 @@
 tool
 class_name RunAwayDuckling
-extends Player
+extends SurfacerPlayer
 
 
 var destination: PositionAlongSurface
