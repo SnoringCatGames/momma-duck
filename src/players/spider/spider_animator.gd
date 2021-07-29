@@ -26,8 +26,8 @@ func animation_name_to_playback_rate(animation_name: String) -> float:
     match animation_name:
         "Rest":
             if is_facing_down:
-                return _animations_by_name["RestDown"].speed
+                return animations["RestDown"].speed
             else:
-                return _animations_by_name["RestUp"].speed
+                return animations["RestUp"].speed
         _:
-            return _animations_by_name[animation_name].speed
+            return animations[animation_name].speed

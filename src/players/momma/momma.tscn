@@ -29,31 +29,38 @@ player_name = "momma"
 [node name="MommaAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )
 scale = Vector2( -1, 1 )
-animations = [ {
+animations = {
+"JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
 "sprite_name": "JumpFall"
-}, {
+},
+"JumpRise": {
 "name": "JumpRise",
 "speed": 1.0,
 "sprite_name": "JumpRise"
-}, {
+},
+"Quack": {
 "name": "Quack",
 "speed": 1.6,
 "sprite_name": "Quack"
-}, {
+},
+"Rest": {
 "name": "Rest",
 "speed": 0.8,
 "sprite_name": "Rest"
-}, {
+},
+"Swim": {
 "name": "Swim",
 "speed": 1.0,
 "sprite_name": "Swim"
-}, {
+},
+"Walk": {
 "name": "Walk",
 "speed": 20.0,
 "sprite_name": "Walk"
-} ]
+}
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

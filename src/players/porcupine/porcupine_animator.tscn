@@ -123,35 +123,33 @@ tracks/0/keys = {
 [node name="PorcupineAnimator" type="Node2D"]
 script = ExtResource( 1 )
 faces_right_by_default = false
-animations = [ {
-"name": "ClimbDown",
-"speed": -4.03,
-"sprite_name": "ClimbDown"
-}, {
-"name": "ClimbUp",
-"speed": 9.4,
-"sprite_name": "ClimbUp"
-}, {
+animations = {
+"JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
-"sprite_name": "JumpFall"
-}, {
+"sprite_name": ""
+},
+"JumpRise": {
 "name": "JumpRise",
 "speed": 1.0,
-"sprite_name": "JumpRise"
-}, {
+"sprite_name": ""
+},
+"Rest": {
 "name": "Rest",
-"speed": 0.8,
-"sprite_name": "Rest"
-}, {
-"name": "RestOnWall",
-"speed": 0.8,
-"sprite_name": "RestOnWall"
-}, {
+"speed": 1.0,
+"sprite_name": ""
+},
+"Swim": {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": ""
+},
+"Walk": {
 "name": "Walk",
-"speed": 20.0,
-"sprite_name": "Walk"
-} ]
+"speed": 1.0,
+"sprite_name": ""
+}
+}
 
 [node name="Walk" type="Sprite" parent="."]
 visible = false
