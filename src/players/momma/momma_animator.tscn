@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/surfacer/src/player/surfacer_player_animator.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/momma_swim.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/momma_standing.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/momma_jump_rise.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/momma_quacking.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/momma_walking.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/player/momma_swim.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player/momma_standing.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/player/momma_jump_rise.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/player/momma_quacking.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/player/momma_walking.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "JumpFall"

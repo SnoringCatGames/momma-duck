@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/surfacer/src/player/surfacer_player_animator.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/duckling_swim.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/duckling_standing.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/duckling_jump_rise.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/duckling_walking.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/player/duckling_swim.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player/duckling_standing.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/player/duckling_jump_rise.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/player/duckling_walking.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "JumpFall"
