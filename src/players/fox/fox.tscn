@@ -37,37 +37,37 @@ animations = {
 "ClimbDown": {
 "name": "ClimbDown",
 "speed": -4.03,
-"sprite_name": ""
+"sprite_name": "ClimbDown"
 },
 "ClimbUp": {
 "name": "ClimbUp",
 "speed": 9.4,
-"sprite_name": ""
+"sprite_name": "ClimbUp"
 },
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
-"sprite_name": ""
+"sprite_name": "JumpFall"
 },
 "JumpRise": {
 "name": "JumpRise",
 "speed": 1.0,
-"sprite_name": ""
+"sprite_name": "JumpRise"
 },
 "Rest": {
 "name": "Rest",
 "speed": 0.8,
-"sprite_name": ""
+"sprite_name": "Rest"
 },
 "RestOnWall": {
 "name": "RestOnWall",
 "speed": 0.8,
-"sprite_name": ""
+"sprite_name": "RestOnWall"
 },
 "Walk": {
 "name": "Walk",
 "speed": 20.0,
-"sprite_name": ""
+"sprite_name": "Walk"
 }
 }
 

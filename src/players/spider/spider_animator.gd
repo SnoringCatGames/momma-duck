@@ -1,6 +1,6 @@
 tool
 class_name SpiderAnimator
-extends PlayerAnimator
+extends SurfacerPlayerAnimator
 
 
 var is_facing_down := true

@@ -324,11 +324,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/duck.gd"
 }, {
-"base": "PlayerAnimatorParams",
-"class": "DuckAnimatorParams",
-"language": "GDScript",
-"path": "res://src/players/duck_animator_params.gd"
-}, {
 "base": "Duck",
 "class": "Duckling",
 "language": "GDScript",
@@ -1140,16 +1135,6 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/player/player_animation_state.gd"
 }, {
 "base": "Node2D",
-"class": "PlayerAnimator",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/animator/player_animator.gd"
-}, {
-"base": "Reference",
-"class": "PlayerAnimatorParams",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/animator/player_animator_params.gd"
-}, {
-"base": "Node2D",
 "class": "PlayerAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/player_annotator.gd"
@@ -1574,7 +1559,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/spider/spider.gd"
 }, {
-"base": "PlayerAnimator",
+"base": "SurfacerPlayerAnimator",
 "class": "SpiderAnimator",
 "language": "GDScript",
 "path": "res://src/players/spider/spider_animator.gd"
@@ -1703,6 +1688,11 @@ _global_script_classes=[ {
 "class": "SurfacerPlayer",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/surfacer_player.gd"
+}, {
+"base": "Node2D",
+"class": "SurfacerPlayerAnimator",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/surfacer_player_animator.gd"
 }, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
@@ -1953,7 +1943,6 @@ _global_script_class_icons={
 "DiscreteEdgeTrajectoryLegendItem": "",
 "DropdownLabeledControlItem": "",
 "Duck": "",
-"DuckAnimatorParams": "",
 "Duckling": "",
 "DummyItemController": "",
 "Edge": "",
@@ -2116,8 +2105,6 @@ _global_script_class_icons={
 "PlayerActionState": "",
 "PlayerActionType": "",
 "PlayerAnimationState": "",
-"PlayerAnimator": "res://addons/surfacer/assets/images/editor_icons/player_animator.png",
-"PlayerAnimatorParams": "",
 "PlayerAnnotator": "",
 "PlayerAnnotatorSettingsLabeledControlItem": "",
 "PlayerNavigationState": "",
@@ -2229,6 +2216,7 @@ _global_script_class_icons={
 "SurfacerLoadingScreen": "",
 "SurfacerMovementManifest": "",
 "SurfacerPlayer": "res://addons/surfacer/assets/images/editor_icons/surfacer_player.png",
+"SurfacerPlayerAnimator": "res://addons/surfacer/assets/images/editor_icons/surfacer_player_animator.png",
 "SurfacerThirdPartyLicenses": "",
 "SurfacesAnnotator": "",
 "SurfacesAnnotatorSettingsLabeledControlItem": "",

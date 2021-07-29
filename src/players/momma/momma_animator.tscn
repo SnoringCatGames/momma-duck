@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://addons/surfacer/src/player/animator/player_animator.gd" type="Script" id=1]
+[ext_resource path="res://addons/surfacer/src/player/surfacer_player_animator.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/momma_swim.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/momma_standing.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/momma_jump_rise.png" type="Texture" id=4]
