@@ -189,11 +189,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/climb_over_wall_to_floor_edge.gd"
 }, {
-"base": "SurfacesTileMap",
-"class": "CollidableTileMap",
-"language": "GDScript",
-"path": "res://src/levels/collidable_tile_map.gd"
-}, {
 "base": "Reference",
 "class": "CollisionCalcParams",
 "language": "GDScript",
@@ -1931,7 +1926,6 @@ _global_script_class_icons={
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
-"CollidableTileMap": "res://addons/surfacer/assets/images/editor_icons/collidable_tile_map.png",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -2240,7 +2234,7 @@ _global_script_class_icons={
 "SurfacesAnnotatorSettingsLabeledControlItem": "",
 "SurfacesGroupItemController": "",
 "SurfacesOfSideGroupItemController": "",
-"SurfacesTileMap": "",
+"SurfacesTileMap": "res://addons/surfacer/assets/images/editor_icons/surfaces_tile_map.png",
 "TextLabeledControlItem": "",
 "ThirdPartyLicenses": "",
 "ThirdPartyLicensesScreen": "",
@@ -2334,7 +2328,7 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
-2d_physics/layer_1="collidable_tilemaps"
+2d_physics/layer_1="surfaces_tilemaps"
 2d_render/layer_2="player"
 2d_physics/layer_2="pond"
 2d_render/layer_3="tiles"
