@@ -1354,10 +1354,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_configured_image.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "ScaffolderDrawUtils",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/draw_utils.gd"
+"path": "res://addons/scaffolder/src/utils/scaffolder_draw_utils.gd"
 }, {
 "base": "Node",
 "class": "ScaffolderGeometry",
