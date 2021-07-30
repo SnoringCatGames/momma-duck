@@ -2270,7 +2270,7 @@ config/quit_on_go_back=false
 
 Sc="*res://addons/scaffolder/src/config/sc.gd"
 Su="*res://addons/surfacer/src/config/su.gd"
-App="*res://src/config/app.gd"
+MommaDuck="*res://src/config/momma_duck.gd"
 
 [display]
 

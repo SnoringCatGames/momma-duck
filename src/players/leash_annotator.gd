@@ -22,7 +22,7 @@ var leash: Rope
 
 func _init(duck) -> void:
     self.duck = duck
-    if App.includes_leash:
+    if MommaDuck.includes_leash:
         self.leash = Rope.new()
 
 
@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
     if !is_instance_valid(duck):
         return
     
-    if !App.includes_leash:
+    if !MommaDuck.includes_leash:
         return
     
     if duck.is_attached_to_leader:
@@ -66,7 +66,7 @@ func _draw() -> void:
     if !duck.is_attached_to_leader:
         return
     
-    if !App.includes_leash:
+    if !MommaDuck.includes_leash:
         return
     
     var vertices := PoolVector2Array()

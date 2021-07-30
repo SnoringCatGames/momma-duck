@@ -803,6 +803,6 @@ func _set_up() -> void:
 
 func _load_state() -> void:
     ._load_state()
-    App.includes_leash = Sc.save_state.get_setting(
+    MommaDuck.includes_leash = Sc.save_state.get_setting(
             INCLUDES_LEASH_SETTINGS_KEY,
             false)
