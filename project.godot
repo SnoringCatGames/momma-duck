@@ -1079,6 +1079,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/pause_screen.gd"
 }, {
+"base": "ScaffolderConfiguredImage",
+"class": "PlaceholderLoadingImage",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/placeholder_loading_image.gd"
+}, {
 "base": "Reference",
 "class": "PlatformGraph",
 "language": "GDScript",
@@ -1375,9 +1380,9 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/hud/scaffolder_hud.gd"
 }, {
 "base": "Node",
-"class": "ScaffolderIcons",
+"class": "ScaffolderImages",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/config/scaffolder_icons.gd"
+"path": "res://addons/scaffolder/src/config/scaffolder_images.gd"
 }, {
 "base": "Label",
 "class": "ScaffolderLabel",
@@ -2094,6 +2099,7 @@ _global_script_class_icons={
 "PathPreselectionAnnotator": "",
 "PauseButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "PauseScreen": "",
+"PlaceholderLoadingImage": "",
 "PlatformGraph": "",
 "PlatformGraphInspector": "",
 "PlatformGraphInspectorSelector": "",
@@ -2153,7 +2159,7 @@ _global_script_class_icons={
 "ScaffolderGuiConfig": "",
 "ScaffolderHSeparator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_h_separator.png",
 "ScaffolderHud": "",
-"ScaffolderIcons": "",
+"ScaffolderImages": "",
 "ScaffolderLabel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label.png",
 "ScaffolderLabelLink": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_label_link.png",
 "ScaffolderLevel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_level.png",

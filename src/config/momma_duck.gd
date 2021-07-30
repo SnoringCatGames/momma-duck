@@ -85,18 +85,27 @@ var _metadata := {
             "https://storage.googleapis.com/upload/storage/v1/b/momma-duck-logs/o",
     app_id_query_param = "momma-duck",
     
-    app_logo = preload("res://assets/images/logo.png"),
-    app_logo_scale = 1.0,
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
+    
+    godot_splash_screen_duration = 1.4,
+    developer_splash_screen_duration = 1.0,
+}
+
+# FIXME: --------------
+# - Move these properties into scaffolder_images.
+# - Set up different defalut placeholders for these in Scaffolder.
+var _images_overrides := {
+    app_logo = preload("res://assets/images/logo.png"),
+    app_logo_scale = 1.0,
     
     developer_logo = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_about.png"),
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_splash.png"),
     
-    godot_splash_screen_duration = 1.4,
-    developer_splash_screen_duration = 1.0,
+    go_normal = preload("res://assets/images/go_icon.png"),
+    go_scale = 1.5,
 }
 
 var _sounds_manifest := [
@@ -619,7 +628,7 @@ var _gui_manifest := {
 """,
     
     main_menu_image_scale = 1.0,
-    game_over_image_scale = 0.5,
+    game_over_image_scale = 1.0,
     loading_image_scale = 0.5,
     
     main_menu_image_scene = \
@@ -633,7 +642,7 @@ var _gui_manifest := {
     debug_panel_scene = \
             preload("res://addons/scaffolder/src/gui/debug_panel.tscn"),
     
-    theme = preload("res://src/config/default_theme.tres"),
+    theme = preload("res://addons/scaffolder/src/config/scaffolder_default_theme.tres"),
     
     fonts_manifest = _default_fonts_manifest_normal,
     settings_item_manifest = _settings_item_manifest,
@@ -765,11 +774,15 @@ var app_manifest := {
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
     styles_manifest = _default_styles_manifest_normal,
-    icons_manifest = _default_icons_manifest_normal,
+    images_manifest = _default_images_manifest_normal,
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
     surfacer_manifest = _surfacer_manifest,
+}
+
+var _overrides := {
+    images_manifest = _images_overrides,
 }
 
 var includes_leash := true
@@ -777,23 +790,23 @@ var includes_leash := true
 # ---
 
 
-func _init().(_is_using_pixel_style) -> void:
-    pass
-
-
 func _ready() -> void:
     Sc.call_deferred("run", app_manifest)
 
 
-func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
+func _override_configs_for_app(manifest: Dictionary) -> void:
+    ._override_configs_for_app(manifest)
+    
     if _is_using_pixel_style:
         manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
         manifest.styles_manifest = _styles_manifest_pixel
-        manifest.icons_manifest = _default_icons_manifest_pixel
+        manifest.images_manifest = _default_images_manifest_pixel
     else:
         manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_normal
         manifest.styles_manifest = _default_styles_manifest_normal
-        manifest.icons_manifest = _default_icons_manifest_normal
+        manifest.images_manifest = _default_images_manifest_normal
+    
+    _override_manifest(manifest, _overrides)
 
 
 func _set_up() -> void:
