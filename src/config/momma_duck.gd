@@ -363,8 +363,8 @@ var _styles_manifest_pixel := {
     focus_border_expand_margin_right = 3.0,
     focus_border_expand_margin_bottom = 3.0,
     
-    button_active_nine_patch = \
-            preload("res://assets/images/nine_patch/button_active.png"),
+    button_pressed_nine_patch = \
+            preload("res://assets/images/nine_patch/button_pressed.png"),
     button_disabled_nine_patch = \
             preload("res://assets/images/nine_patch/button_hover.png"),
     button_hover_nine_patch = \
@@ -377,8 +377,8 @@ var _styles_manifest_pixel := {
     button_nine_patch_margin_bottom = 3.5,
     button_nine_patch_scale = 3.0,
     
-    dropdown_active_nine_patch = \
-            preload("res://assets/images/nine_patch/dropdown_active.png"),
+    dropdown_pressed_nine_patch = \
+            preload("res://assets/images/nine_patch/dropdown_pressed.png"),
     dropdown_disabled_nine_patch = \
             preload("res://assets/images/nine_patch/dropdown_hover.png"),
     dropdown_hover_nine_patch = \
@@ -399,8 +399,8 @@ var _styles_manifest_pixel := {
     scroll_track_nine_patch_margin_bottom = 3.5,
     scroll_track_nine_patch_scale = 3.0,
     
-    scroll_grabber_active_nine_patch = \
-            preload("res://assets/images/nine_patch/scroll_grabber_active.png"),
+    scroll_grabber_pressed_nine_patch = \
+            preload("res://assets/images/nine_patch/scroll_grabber_pressed.png"),
     scroll_grabber_hover_nine_patch = \
             preload("res://assets/images/nine_patch/scroll_grabber_hover.png"),
     scroll_grabber_normal_nine_patch = \
