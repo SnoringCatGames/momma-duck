@@ -92,9 +92,6 @@ var _metadata := {
     developer_splash_screen_duration = 1.0,
 }
 
-# FIXME: --------------
-# - Move these properties into scaffolder_images.
-# - Set up different defalut placeholders for these in Scaffolder.
 var _images_overrides := {
     app_logo = preload("res://assets/images/logo.png"),
     app_logo_scale = 1.0,
