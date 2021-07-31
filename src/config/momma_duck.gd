@@ -349,7 +349,7 @@ var _styles_manifest_pixel := {
     button_shine_margin_bottom = 6.0,
     
     focus_border_nine_patch = \
-            preload("res://addons/scaffolder/assets/images/gui/nine_patch/focus_border.png"),
+            preload("res://assets/images/nine_patch/focus_border.png"),
     focus_border_nine_patch_margin_left = 3.5,
     focus_border_nine_patch_margin_top = 3.5,
     focus_border_nine_patch_margin_right = 3.5,
