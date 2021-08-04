@@ -18,15 +18,16 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     
     _metadata.app_version = "0.0.1"
     
-    _metadata.debug = is_debug
-    _metadata.playtest = is_playtest
-    _metadata.pauses_on_focus_out = !is_debug
+    _metadata.debug = true and OS.is_debug_build()
+    _metadata.playtest = false
+    _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
-    _metadata.are_all_levels_unlocked = false and is_debug
+    _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.is_splash_skipped = true and is_debug
-    _metadata.are_button_controls_enabled_by_default = is_debug
+    _metadata.opens_directly_to_level_id = ""
+    _metadata.is_splash_skipped = true
+    _metadata.are_button_controls_enabled_by_default = false
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "1",
@@ -38,8 +39,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
     _gui_manifest.debug_window_size = debug_window_size
-    _gui_manifest.hud_manifest.is_inspector_enabled_default = \
-            false or is_debug or is_playtest
+    _gui_manifest.hud_manifest.is_inspector_enabled_default = false
+    
+    _derive_overrides_according_to_debug_or_playtest(manifest)
 
 # ---
 
@@ -567,10 +569,26 @@ var _welcome_panel_manifest := {
 }
 
 var _screen_manifest := {
-    exclusions = [
-        preload("res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn"),
-    ],
-    inclusions = [
+    screens = [
+        preload("res://addons/scaffolder/src/gui/screens/about_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/data_agreement_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/developer_splash_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/game_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/game_over_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/godot_splash_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/level_select_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/main_menu_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/notification_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/pause_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/scaffolder_loading_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/settings_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/third_party_licenses_screen.tscn"),
+        preload("res://addons/surfacer/src/gui/screens/precompute_platform_graphs_screen.tscn"),
+        preload("res://addons/surfacer/src/gui/screens/surfacer_loading_screen.tscn"),
+        preload("res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_local.tscn"),
+#        preload("res://addons/scaffolder/src/gui/screens/scaffolder_loading_screen.tscn"),
+#        preload("res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_with_analytics.tscn"),
+#        preload("res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn"),
     ],
     overlay_mask_transition_fade_in_texture = \
             preload("res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
@@ -753,7 +771,7 @@ var _surfacer_manifest := {
     max_pan_distance_from_pointer = 512.0,
     duration_to_max_pan_from_pointer_at_max_control = 0.67,
     duration_to_max_zoom_from_pointer_at_max_control = 3.0,
-    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.3,
+    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.16,
     
     skip_choreography_framerate_multiplier = 4.0,
     

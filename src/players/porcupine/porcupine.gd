@@ -137,7 +137,6 @@ func _walk_away_from_momma() -> void:
 
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
-            is_fake or \
             !Sc.level_session.has_started:
         return
     
@@ -147,7 +146,6 @@ func on_touched_duckling(duckling: Duckling) -> void:
 
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
-            is_fake or \
             !Sc.level_session.has_started:
         return
     

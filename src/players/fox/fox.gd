@@ -164,8 +164,7 @@ func _on_entered_proximity(
 
 
 func _on_duckling_entered_proximity(duckling: Duckling) -> void:
-    if _is_destroyed or \
-            is_fake:
+    if _is_destroyed:
         return
     
     if is_logging_events:
@@ -221,7 +220,6 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
 
 func on_touched_duckling(duckling: Duckling) -> void:
     if _is_destroyed or \
-            is_fake or \
             !Sc.level_session.has_started:
         return
     
@@ -238,7 +236,6 @@ func on_touched_duckling(duckling: Duckling) -> void:
 
 func on_touched_momma(momma: Momma) -> void:
     if _is_destroyed or \
-            is_fake or \
             !Sc.level_session.has_started:
         return
     

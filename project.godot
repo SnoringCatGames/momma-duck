@@ -225,9 +225,14 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/annotators/color_params/color_params_type.gd"
 }, {
 "base": "Screen",
-"class": "ConfirmDataDeletionScreen",
+"class": "ConfirmDataDeletionScreenLocal",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen.gd"
+"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_local.gd"
+}, {
+"base": "Screen",
+"class": "ConfirmDataDeletionScreenWithAnalytics",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_with_analytics.gd"
 }, {
 "base": "ValidEdgeTrajectoryLegendItem",
 "class": "ContinuousEdgeTrajectoryLegendItem",
@@ -238,6 +243,11 @@ _global_script_classes=[ {
 "class": "CrashReporter",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/crash_reporter.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "CrashTestDummy",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/crash_test_dummy.gd"
 }, {
 "base": "Screen",
 "class": "DataAgreementScreen",
@@ -1014,11 +1024,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/navigation_pulse_annotator.gd"
 }, {
-"base": "Reference",
-"class": "Navigator",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/navigator.gd"
-}, {
 "base": "Node2D",
 "class": "NavigatorAnnotator",
 "language": "GDScript",
@@ -1419,11 +1424,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/scaffolder_log.gd"
 }, {
-"base": "Node",
-"class": "ScaffolderNavigation",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/navigation.gd"
-}, {
 "base": "OptionButton",
 "class": "ScaffolderOptionButton",
 "language": "GDScript",
@@ -1508,6 +1508,11 @@ _global_script_classes=[ {
 "class": "ScreenMaskTransition",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen_mask_transition.gd"
+}, {
+"base": "Node",
+"class": "ScreenNavigator",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/screen_navigator.gd"
 }, {
 "base": "Reference",
 "class": "ScreenTransition",
@@ -1615,6 +1620,11 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/gui/legend/legend_items/surface_legend_item.gd"
 }, {
 "base": "Reference",
+"class": "SurfaceNavigator",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/platform_graph/surface_navigator.gd"
+}, {
+"base": "Reference",
 "class": "SurfaceParser",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/surface_parser.gd"
@@ -1628,6 +1638,11 @@ _global_script_classes=[ {
 "class": "SurfaceSide",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/surface_side.gd"
+}, {
+"base": "Reference",
+"class": "SurfaceTouch",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/surface_touch.gd"
 }, {
 "base": "Reference",
 "class": "SurfaceType",
@@ -1928,9 +1943,11 @@ _global_script_class_icons={
 "ColorParams": "",
 "ColorParamsFactory": "",
 "ColorParamsType": "",
-"ConfirmDataDeletionScreen": "",
+"ConfirmDataDeletionScreenLocal": "",
+"ConfirmDataDeletionScreenWithAnalytics": "",
 "ContinuousEdgeTrajectoryLegendItem": "",
 "CrashReporter": "",
+"CrashTestDummy": "",
 "DataAgreementScreen": "",
 "DebugLevel": "",
 "DebugPanel": "res://addons/scaffolder/assets/images/editor_icons/debug_panel.png",
@@ -2086,7 +2103,6 @@ _global_script_class_icons={
 "NavBar": "res://addons/scaffolder/assets/images/editor_icons/nav_bar.png",
 "NavigationDestinationAnnotatorSettingsLabeledControlItem": "",
 "NavigationPulseAnnotator": "",
-"Navigator": "",
 "NavigatorAnnotator": "",
 "NotificationScreen": "",
 "OnBeatHashAnnotator": "",
@@ -2167,7 +2183,6 @@ _global_script_class_icons={
 "ScaffolderLevelSession": "",
 "ScaffolderLoadingScreen": "",
 "ScaffolderLog": "",
-"ScaffolderNavigation": "",
 "ScaffolderOptionButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_option_button.png",
 "ScaffolderPanelContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScaffolderProgressBar": "res://addons/scaffolder/assets/images/editor_icons/progress_bar.png",
@@ -2185,6 +2200,7 @@ _global_script_class_icons={
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScreenMaskTransition": "",
+"ScreenNavigator": "",
 "ScreenTransition": "",
 "ScreenTransitionHandler": "",
 "SelectionDescription": "",
@@ -2206,9 +2222,11 @@ _global_script_class_icons={
 "SurfaceAnnotationElement": "",
 "SurfaceCollision": "",
 "SurfaceLegendItem": "",
+"SurfaceNavigator": "",
 "SurfaceParser": "",
 "SurfaceParserGroupItemController": "",
 "SurfaceSide": "",
+"SurfaceTouch": "",
 "SurfaceType": "",
 "SurfacerAnnotationsManifest": "",
 "SurfacerBootstrap": "",
@@ -2288,30 +2306,30 @@ window/stretch/aspect="expand"
 
 ui_left={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 ui_right={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 ui_up={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 ui_down={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
