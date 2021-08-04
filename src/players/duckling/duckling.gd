@@ -13,8 +13,6 @@ const EXCLAMATION_MARK_THROTTLE_INTERVAL := 0.6
 
 var leash_annotator: LeashAnnotator
 
-var is_logging_events := false
-
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
@@ -130,8 +128,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     
     Sc.level_session.duckling_scare_count += 1
     
-    if is_logging_events:
-        Sc.logger.print("Duckling touched an enemy")
+    _print("Duckling touched an enemy")
     
     if is_attached_to_leader:
         Sc.level.last_attached_duck = leader

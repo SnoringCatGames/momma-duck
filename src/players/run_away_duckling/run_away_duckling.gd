@@ -5,8 +5,6 @@ extends SurfacerPlayer
 
 var destination: PositionAlongSurface
 
-var is_logging_events := false
-
 
 func run_away(
         destination: PositionAlongSurface,
@@ -34,8 +32,7 @@ func run_away(
 
 
 func _on_destination_reached() -> void:
-    if is_logging_events:
-        Sc.logger.print("Run-away reached spawn position")
+    _print("Run-away reached spawn position")
     Sc.level.swap_run_away_with_duckling(self)
 
 

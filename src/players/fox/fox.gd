@@ -27,8 +27,6 @@ var is_wandering := false
 var last_navigation_end_time := 0
 var target_duckling: Duckling
 
-var is_logging_events := false
-
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
@@ -76,8 +74,7 @@ func _run_from_momma() -> void:
 
 
 func _navigate_to_new_position_away_from_momma() -> void:
-    if is_logging_events:
-        Sc.logger.print("Fox run-from-momma start")
+    _print("Fox run-from-momma start")
     
     _throttled_exclamation_mark.call_func()
     
@@ -109,8 +106,7 @@ func _trigger_wander() -> void:
     if start_surface == null:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Fox wander start")
+    _print("Fox wander start")
     
     is_wandering = true
     var left_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
@@ -153,8 +149,7 @@ func _on_duckling_entered_proximity(duckling: Duckling) -> void:
     if _is_destroyed:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Fox is close to duckling")
+    _print("Fox is close to duckling")
     
     if !Sc.level_session.has_started or \
             is_running_from_momma or \
@@ -177,8 +172,7 @@ func _on_duckling_entered_proximity(duckling: Duckling) -> void:
 
 
 func _pounce_on_duckling(duckling: Duckling) -> void:
-    if is_logging_events:
-        Sc.logger.print("Fox pounce-on-duckling start")
+    _print("Fox pounce-on-duckling start")
     
     _throttled_exclamation_mark.call_func()
     
@@ -209,8 +203,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
             !Sc.level_session.has_started:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Fox collided with duckling")
+    _print("Fox collided with duckling")
     
     if is_pouncing_on_duckling and \
             duckling == target_duckling:
@@ -225,8 +218,7 @@ func on_touched_momma(momma: Momma) -> void:
             !Sc.level_session.has_started:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Fox collided with momma")
+        _print("Fox collided with momma")
     
         _run_from_momma()
 

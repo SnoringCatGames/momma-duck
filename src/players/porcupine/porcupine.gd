@@ -4,10 +4,6 @@ extends MoveBackAndForthPlayer
 # This is a hazard that moves side-to-side along a surface.
 
 
-# NOTE: This should be slightly wider than half the porcupine width, to prevent
-#       a problem with the edge case of concave neigbor walls.
-const DISTANCE_FROM_END_FOR_TURN_AROUND := 25.0
-
 const RUN_FROM_MOMMA_DISTANCE_THRESHOLD := 128.0
 
 const RUN_FROM_MOMMA_DESTINATION_DISTANCE := 256.0
@@ -19,8 +15,6 @@ const EXCLAMATION_MARK_STROKE_WIDTH_START := 1.2
 const EXCLAMATION_MARK_DURATION := 1.8
 
 const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
-
-var is_logging_events := false
 
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
@@ -45,8 +39,7 @@ func _walk_away_from_momma() -> void:
     
     var is_momma_to_the_left: bool = Sc.level.momma.position.x < position.x
     
-    if is_logging_events:
-        Sc.logger.print("Porcupine walk-away-from-momma start")
+    _print("Porcupine walk-away-from-momma start")
     
     _trigger_move(!is_momma_to_the_left, RUN_FROM_MOMMA_DESTINATION_DISTANCE)
 
@@ -56,8 +49,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
             !Sc.level_session.has_started:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Porcupine collided with duckling")
+    _print("Porcupine collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
@@ -65,8 +57,7 @@ func on_touched_momma(momma: Momma) -> void:
             !Sc.level_session.has_started:
         return
     
-    if is_logging_events:
-        Sc.logger.print("Porcupine collided with momma")
+    _print("Porcupine collided with momma")
     
     _walk_away_from_momma()
 
