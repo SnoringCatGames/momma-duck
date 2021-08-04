@@ -994,6 +994,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/levels/momma_duck_level_session.gd"
 }, {
+"base": "SurfacerPlayer",
+"class": "MoveBackAndForthPlayer",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/move_back_and_forth_player.gd"
+}, {
 "base": "Node2D",
 "class": "MovementParams",
 "language": "GDScript",
@@ -1224,7 +1229,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/levels/pond.gd"
 }, {
-"base": "SurfacerPlayer",
+"base": "MoveBackAndForthPlayer",
 "class": "Porcupine",
 "language": "GDScript",
 "path": "res://src/players/porcupine/porcupine.gd"
@@ -1829,11 +1834,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/utils/vertical_movement_utils.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "WalkBackAndForthPlayer",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/walk_back_and_forth_player.gd"
-}, {
 "base": "EdgeCalculator",
 "class": "WalkToAscendWallFromFloorCalculator",
 "language": "GDScript",
@@ -2097,6 +2097,7 @@ _global_script_class_icons={
 "MommaDuckLevel": "",
 "MommaDuckLevelConfig": "",
 "MommaDuckLevelSession": "",
+"MoveBackAndForthPlayer": "",
 "MovementParams": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
 "MovementUtils": "",
 "MusicSettingsLabeledControlItem": "",
@@ -2234,7 +2235,7 @@ _global_script_class_icons={
 "SurfacerDrawUtils": "",
 "SurfacerGeometry": "",
 "SurfacerHud": "",
-"SurfacerLevel": "",
+"SurfacerLevel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_level.png",
 "SurfacerLevelConfig": "",
 "SurfacerLevelSession": "",
 "SurfacerLoadingScreen": "",
@@ -2264,7 +2265,6 @@ _global_script_class_icons={
 "ValidEdgeTrajectoryLegendItem": "",
 "VerticalEdgeStep": "",
 "VerticalMovementUtils": "",
-"WalkBackAndForthPlayer": "",
 "WalkToAscendWallFromFloorCalculator": "",
 "WalkToAscendWallFromFloorEdge": "",
 "WallClimbAction": "",

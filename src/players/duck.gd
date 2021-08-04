@@ -26,9 +26,6 @@ const QUACK_DURATION_DEFAULT := 0.4
 var leader: Duck
 var follower: Duck
 
-var start_position := Vector2.INF
-var start_surface: Surface
-
 var is_in_pond := false
 var is_quacking := false
 var quack_timeout_id := -1
@@ -50,10 +47,6 @@ func _ready() -> void:
 
 func _update_surface_state(preserves_just_changed_state := false) -> void:
     ._update_surface_state(preserves_just_changed_state)
-    
-    if surface_state.just_grabbed_floor and \
-            start_surface == null:
-        start_surface = surface_state.grabbed_surface
     
     _update_attachment()
 

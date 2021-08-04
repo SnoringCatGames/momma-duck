@@ -21,8 +21,6 @@ const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
 export var wander_radius := 256.0
 export var wander_pause_duration := 4.0
 
-var start_position := Vector2.INF
-var start_surface: Surface = null
 var is_running_from_momma := false
 var is_pouncing_on_duckling := false
 var is_wandering := false
@@ -34,18 +32,6 @@ var is_logging_events := false
 var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
         funcref(self, "_show_exclamation_mark"),
         EXCLAMATION_MARK_THROTTLE_INTERVAL)
-
-
-func _ready() -> void:
-    start_position = position
-
-
-func _update_surface_state(preserves_just_changed_state := false) -> void:
-    ._update_surface_state(preserves_just_changed_state)
-    
-    if surface_state.just_grabbed_floor and \
-            start_surface == null:
-        start_surface = surface_state.grabbed_surface
 
 
 func _update_navigator(delta_scaled: float) -> void:
