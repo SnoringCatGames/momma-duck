@@ -128,7 +128,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     
     Sc.level_session.duckling_scare_count += 1
     
-    _print("Duckling touched an enemy")
+    _log_player_event("Duckling touched an enemy")
     
     if is_attached_to_leader:
         Sc.level.last_attached_duck = leader

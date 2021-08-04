@@ -39,7 +39,7 @@ func _walk_away_from_momma() -> void:
     
     var is_momma_to_the_left: bool = Sc.level.momma.position.x < position.x
     
-    _print("Porcupine walk-away-from-momma start")
+    _log_player_event("Porcupine walk-away-from-momma start")
     
     _trigger_move(!is_momma_to_the_left, RUN_FROM_MOMMA_DESTINATION_DISTANCE)
 
@@ -49,7 +49,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
             !Sc.level_session.has_started:
         return
     
-    _print("Porcupine collided with duckling")
+    _log_player_event("Porcupine collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
@@ -57,7 +57,7 @@ func on_touched_momma(momma: Momma) -> void:
             !Sc.level_session.has_started:
         return
     
-    _print("Porcupine collided with momma")
+    _log_player_event("Porcupine collided with momma")
     
     _walk_away_from_momma()
 

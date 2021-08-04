@@ -83,9 +83,9 @@ func _physics_process(delta: float) -> void:
             is_moving_down = !is_moving_down
     
     if just_reached_end:
-        _print("Spider just reached end")
+        _log_player_event("Spider just reached end")
     if just_started_moving:
-        _print("Spider just started moving")
+        _log_player_event("Spider just started moving")
     
     _update_animator()
 
@@ -100,7 +100,7 @@ func _climb_away_from_momma() -> void:
         # Already moving away.
         return
     
-    _print("Spider climb-away-from-momma start")
+    _log_player_event("Spider climb-away-from-momma start")
     
     is_moving = true
     just_started_moving = true
@@ -126,7 +126,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
             !Sc.level_session.has_started:
         return
     
-    _print("Spider collided with duckling")
+    _log_player_event("Spider collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
@@ -134,7 +134,7 @@ func on_touched_momma(momma: Momma) -> void:
             !Sc.level_session.has_started:
         return
     
-    _print("Spider collided with momma")
+    _log_player_event("Spider collided with momma")
     
     _climb_away_from_momma()
 
@@ -150,6 +150,6 @@ func _show_exclamation_mark() -> void:
             EXCLAMATION_MARK_DURATION))
 
 
-func _print(message: String) -> void:
+func _log_player_event(message: String) -> void:
     if is_logging_events:
         Sc.logger.print(message)

@@ -74,7 +74,7 @@ func _run_from_momma() -> void:
 
 
 func _navigate_to_new_position_away_from_momma() -> void:
-    _print("Fox run-from-momma start")
+    _log_player_event("Fox run-from-momma start")
     
     _throttled_exclamation_mark.call_func()
     
@@ -106,7 +106,7 @@ func _trigger_wander() -> void:
     if start_surface == null:
         return
     
-    _print("Fox wander start")
+    _log_player_event("Fox wander start")
     
     is_wandering = true
     var left_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
@@ -149,7 +149,7 @@ func _on_duckling_entered_proximity(duckling: Duckling) -> void:
     if _is_destroyed:
         return
     
-    _print("Fox is close to duckling")
+    _log_player_event("Fox is close to duckling")
     
     if !Sc.level_session.has_started or \
             is_running_from_momma or \
@@ -172,7 +172,7 @@ func _on_duckling_entered_proximity(duckling: Duckling) -> void:
 
 
 func _pounce_on_duckling(duckling: Duckling) -> void:
-    _print("Fox pounce-on-duckling start")
+    _log_player_event("Fox pounce-on-duckling start")
     
     _throttled_exclamation_mark.call_func()
     
@@ -203,7 +203,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
             !Sc.level_session.has_started:
         return
     
-    _print("Fox collided with duckling")
+    _log_player_event("Fox collided with duckling")
     
     if is_pouncing_on_duckling and \
             duckling == target_duckling:
@@ -218,7 +218,7 @@ func on_touched_momma(momma: Momma) -> void:
             !Sc.level_session.has_started:
         return
     
-        _print("Fox collided with momma")
+        _log_player_event("Fox collided with momma")
     
         _run_from_momma()
 
