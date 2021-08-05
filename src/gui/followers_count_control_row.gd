@@ -1,5 +1,5 @@
-class_name FollowersCountLabeledControlItem
-extends TextLabeledControlItem
+class_name FollowersCountControlRow
+extends TextControlRow
 
 
 const LABEL := "Ducklings in tow:"

@@ -1,5 +1,5 @@
-class_name ScareCountLabeledControlItem
-extends TextLabeledControlItem
+class_name ScareCountControlRow
+extends TextControlRow
 
 
 const LABEL := "Duckling scares:"

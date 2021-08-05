@@ -1,5 +1,5 @@
-class_name LeashIncludedSettingsLabeledControlItem
-extends CheckboxLabeledControlItem
+class_name LeashIncludedControlRow
+extends CheckboxControlRow
 
 
 const LABEL := "Leash shown"
