@@ -824,6 +824,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/ios_resolutions.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "IsLoggingLowLevelPlayerFrameworkEventsSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/labeled_control_items/is_logging_low_level_player_framework_events_labeled_control_item.gd"
+}, {
 "base": "Node",
 "class": "JsonUtils",
 "language": "GDScript",
@@ -948,11 +953,6 @@ _global_script_classes=[ {
 "class": "LockAnimation",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/level_select/lock_animation.gd"
-}, {
-"base": "CheckboxLabeledControlItem",
-"class": "LogSurfacerEventsSettingsLabeledControlItem",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/gui/settings_items/log_surfacer_events_settings_labeled_control_item.gd"
 }, {
 "base": "Node",
 "class": "Main",
@@ -1584,7 +1584,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/spider/spider.gd"
 }, {
-"base": "ScaffolderPlayerAnimator",
+"base": "SurfacerPlayerAnimator",
 "class": "SpiderAnimator",
 "language": "GDScript",
 "path": "res://src/players/spider/spider_animator.gd"
@@ -2068,6 +2068,7 @@ _global_script_class_icons={
 "IntroChoreographySettingsLabeledControlItem": "",
 "IosModelNames": "",
 "IosResolutions": "",
+"IsLoggingLowLevelPlayerFrameworkEventsSettingsLabeledControlItem": "",
 "JsonUtils": "",
 "JumpBackAndForthPlayer": "",
 "JumpFromSurfaceCalculator": "",
@@ -2093,7 +2094,6 @@ _global_script_class_icons={
 "LevelSelectScreen": "",
 "LoadingImage": "",
 "LockAnimation": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
-"LogSurfacerEventsSettingsLabeledControlItem": "",
 "Main": "res://addons/scaffolder/assets/images/editor_icons/star.png",
 "MainMenuScreen": "",
 "MatchExpectedEdgeTrajectoryAction": "",
