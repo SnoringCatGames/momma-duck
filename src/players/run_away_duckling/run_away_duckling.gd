@@ -28,7 +28,7 @@ func run_away(
         Sc.logger.print("Run-away navigation path-finding was not successful")
         Sc.level.swap_run_away_with_duckling(self)
     
-    _show_exclamation_mark()
+    show_exclamation_mark()
 
 
 func _on_destination_reached() -> void:
@@ -42,14 +42,3 @@ func _process_sounds() -> void:
     
     if surface_state.just_left_air:
         Sc.audio.play_sound("duck_land")
-
-
-func _show_exclamation_mark() -> void:
-    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
-            self,
-            movement_params.collider_half_width_height.y,
-            Duckling.EXCLAMATION_MARK_COLOR,
-            Duckling.EXCLAMATION_MARK_WIDTH_START,
-            Duckling.EXCLAMATION_MARK_LENGTH_START,
-            Duckling.EXCLAMATION_MARK_STROKE_WIDTH_START,
-            Duckling.EXCLAMATION_MARK_DURATION))

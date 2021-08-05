@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22, 16 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=4]
 radius = 128.0
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -19,6 +19,7 @@ height = 128.0
 collision_layer = 32
 script = ExtResource( 1 )
 player_name = "fox"
+primary_annotation_color = Color( 1, 0.376471, 0.32549, 1 )
 wander_pause_duration = 2.0
 
 [node name="MovementParams" parent="." instance=ExtResource( 4 )]
@@ -77,7 +78,7 @@ __meta__ = {
 }
 
 [node name="MommaDetector" parent="." instance=ExtResource( 3 )]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 radius = 128.0
 layer = 8
 

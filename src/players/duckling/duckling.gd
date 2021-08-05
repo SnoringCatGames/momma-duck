@@ -3,19 +3,7 @@ class_name Duckling
 extends Duck
 
 
-const EXCLAMATION_MARK_COLOR := Color("dec535")
-const EXCLAMATION_MARK_WIDTH_START := 4.0
-const EXCLAMATION_MARK_LENGTH_START := 24.0
-const EXCLAMATION_MARK_STROKE_WIDTH_START := 1.2
-const EXCLAMATION_MARK_DURATION := 1.8
-
-const EXCLAMATION_MARK_THROTTLE_INTERVAL := 0.6
-
 var leash_annotator: LeashAnnotator
-
-var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
-        funcref(self, "_show_exclamation_mark"),
-        EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
 
 func create_leash_annotator() -> void:
@@ -100,31 +88,19 @@ func _process_sounds() -> void:
         Sc.audio.play_sound("duck_land")
 
 
-func _show_exclamation_mark() -> void:
-    Sc.audio.play_sound("duckling_quack")
-    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
-            self,
-            movement_params.collider_half_width_height.y,
-            EXCLAMATION_MARK_COLOR,
-            EXCLAMATION_MARK_WIDTH_START,
-            EXCLAMATION_MARK_LENGTH_START,
-            EXCLAMATION_MARK_STROKE_WIDTH_START,
-            EXCLAMATION_MARK_DURATION))
-
-
 func on_attached_to_leader() -> void:
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
 
 
 func on_detached_from_leader() -> void:
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
 
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
     if start_surface == null:
         return
     
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
     
     Sc.level_session.duckling_scare_count += 1
     

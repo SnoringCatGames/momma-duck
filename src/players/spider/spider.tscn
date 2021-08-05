@@ -7,7 +7,7 @@
 radius = 24.0
 
 [node name="Spider" type="KinematicBody2D"]
-position = Vector2( 0, 170.386 )
+position = Vector2( 0, 284.042 )
 collision_layer = 32
 collision_mask = 0
 script = ExtResource( 1 )

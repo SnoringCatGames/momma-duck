@@ -11,6 +11,7 @@ radius = 8.0
 collision_layer = 0
 script = ExtResource( 1 )
 player_name = "run_away_duckling"
+primary_annotation_color = Color( 0.870588, 0.772549, 0.207843, 1 )
 
 [node name="MovementParams" parent="." instance=ExtResource( 3 )]
 collider_shape = SubResource( 1 )

@@ -16,6 +16,7 @@ collision_layer = 8
 script = ExtResource( 1 )
 player_name = "momma"
 collision_detection_layers = 2
+primary_annotation_color = Color( 0.654902, 0.690196, 0.709804, 1 )
 
 [node name="MovementParams" parent="." instance=ExtResource( 3 )]
 collider_shape = SubResource( 1 )

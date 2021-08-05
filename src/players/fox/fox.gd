@@ -10,14 +10,6 @@ const RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD := \
 
 const RUN_FROM_MOMMA_DESTINATION_DISTANCE := 256.0
 
-const EXCLAMATION_MARK_COLOR := Color("ff6053")
-const EXCLAMATION_MARK_WIDTH_START := 4.0
-const EXCLAMATION_MARK_LENGTH_START := 24.0
-const EXCLAMATION_MARK_STROKE_WIDTH_START := 1.2
-const EXCLAMATION_MARK_DURATION := 1.8
-
-const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
-
 export var wander_radius := 256.0
 export var wander_pause_duration := 4.0
 
@@ -26,10 +18,6 @@ var is_pouncing_on_duckling := false
 var is_wandering := false
 var last_navigation_end_time := 0
 var target_duckling: Duckling
-
-var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
-        funcref(self, "_show_exclamation_mark"),
-        EXCLAMATION_MARK_THROTTLE_INTERVAL)
 
 
 func _update_navigator(delta_scaled: float) -> void:
@@ -76,7 +64,7 @@ func _run_from_momma() -> void:
 func _navigate_to_new_position_away_from_momma() -> void:
     _log_player_event("Fox run-from-momma start")
     
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
     
     var direction_away_from_momma: Vector2 = \
             Sc.level.momma.position.direction_to(position)
@@ -174,7 +162,7 @@ func _on_duckling_entered_proximity(duckling: Duckling) -> void:
 func _pounce_on_duckling(duckling: Duckling) -> void:
     _log_player_event("Fox pounce-on-duckling start")
     
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
     
     is_pouncing_on_duckling = true
     target_duckling = duckling
@@ -221,14 +209,3 @@ func on_touched_momma(momma: Momma) -> void:
         _log_player_event("Fox collided with momma")
     
         _run_from_momma()
-
-
-func _show_exclamation_mark() -> void:
-    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
-            self,
-            movement_params.collider_half_width_height.y,
-            EXCLAMATION_MARK_COLOR,
-            EXCLAMATION_MARK_WIDTH_START,
-            EXCLAMATION_MARK_LENGTH_START,
-            EXCLAMATION_MARK_STROKE_WIDTH_START,
-            EXCLAMATION_MARK_DURATION))

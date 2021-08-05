@@ -4,7 +4,8 @@ extends KinematicBody2D
 # This a hazard that moves up-and-down.
 
 
-const EXCLAMATION_MARK_COLOR := Color("783628")
+const EXCLAMATION_MARK_FILL_COLOR := Color("783628")
+const EXCLAMATION_MARK_BORDER_COLOR := Color("fefefe")
 const EXCLAMATION_MARK_WIDTH_START := 4.0
 const EXCLAMATION_MARK_LENGTH_START := 24.0
 const EXCLAMATION_MARK_STROKE_WIDTH_START := 1.2
@@ -143,7 +144,8 @@ func _show_exclamation_mark() -> void:
     Su.annotators.add_transient(ExclamationMarkAnnotator.new(
             self,
             RADIUS,
-            EXCLAMATION_MARK_COLOR,
+            EXCLAMATION_MARK_FILL_COLOR,
+            EXCLAMATION_MARK_BORDER_COLOR,
             EXCLAMATION_MARK_WIDTH_START,
             EXCLAMATION_MARK_LENGTH_START,
             EXCLAMATION_MARK_STROKE_WIDTH_START,
