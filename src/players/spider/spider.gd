@@ -1,56 +1,26 @@
 tool
 class_name Spider
-extends KinematicBody2D
+extends ScaffolderPlayer
 # This a hazard that moves up-and-down.
 
-
-const EXCLAMATION_MARK_FILL_COLOR := Color("783628")
-const EXCLAMATION_MARK_BORDER_COLOR := Color("fefefe")
-const EXCLAMATION_MARK_WIDTH_START := 4.0
-const EXCLAMATION_MARK_LENGTH_START := 24.0
-const EXCLAMATION_MARK_STROKE_WIDTH_START := 1.2
-const EXCLAMATION_MARK_DURATION := 1.8
-
-const RADIUS := 24.0
-
-const EXCLAMATION_MARK_THROTTLE_INTERVAL := 1.0
 
 export var range_y := 196.0
 export var speed := 50.0
 export var pause_at_end_duration := 3.0
 
-var animator: SpiderAnimator
-
-var start_position: Vector2
 var is_moving := true
 var is_moving_down := true
 var just_reached_end := false
 var just_started_moving := false
 var reached_end_time := -pause_at_end_duration
 
-var is_logging_events := false
-
-var _is_destroyed := false
-
-var _throttled_exclamation_mark: FuncRef = Sc.time.throttle(
-        funcref(self, "_show_exclamation_mark"),
-        EXCLAMATION_MARK_THROTTLE_INTERVAL)
-
 
 func _ready() -> void:
-    start_position = position
     position.y += randf() * range_y * 0.9 - range_y / 2.0
     is_moving_down = randf() > 0.5
-    animator = $SpiderAnimator
-    animator.is_desaturatable = true
 
 
-func _destroy() -> void:
-    _is_destroyed = true
-    queue_free()
-
-
-func _physics_process(delta: float) -> void:
+func _process_physics_frame(delta: float) -> void:
     var current_time := Sc.time.get_scaled_play_time()
     
     just_reached_end = false
@@ -88,13 +58,13 @@ func _physics_process(delta: float) -> void:
     if just_started_moving:
         _log_player_event("Spider just started moving")
     
-    _update_animator()
+    _process_animation()
 
 
 func _climb_away_from_momma() -> void:
     var is_momma_below: bool = Sc.level.momma.position.y > position.y
     
-    _throttled_exclamation_mark.call_func()
+    show_exclamation_mark()
     
     if is_moving and \
             is_moving_down != is_momma_below:
@@ -107,10 +77,10 @@ func _climb_away_from_momma() -> void:
     just_started_moving = true
     is_moving_down = !is_momma_below
     
-    _update_animator()
+    _process_animation()
 
 
-func _update_animator() -> void:
+func _process_animation() -> void:
     animator.is_facing_down = is_moving_down
     
     if just_started_moving:
@@ -138,20 +108,3 @@ func on_touched_momma(momma: Momma) -> void:
     _log_player_event("Spider collided with momma")
     
     _climb_away_from_momma()
-
-
-func _show_exclamation_mark() -> void:
-    Su.annotators.add_transient(ExclamationMarkAnnotator.new(
-            self,
-            RADIUS,
-            EXCLAMATION_MARK_FILL_COLOR,
-            EXCLAMATION_MARK_BORDER_COLOR,
-            EXCLAMATION_MARK_WIDTH_START,
-            EXCLAMATION_MARK_LENGTH_START,
-            EXCLAMATION_MARK_STROKE_WIDTH_START,
-            EXCLAMATION_MARK_DURATION))
-
-
-func _log_player_event(message: String) -> void:
-    if is_logging_events:
-        Sc.logger.print(message)

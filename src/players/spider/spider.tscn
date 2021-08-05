@@ -7,10 +7,12 @@
 radius = 24.0
 
 [node name="Spider" type="KinematicBody2D"]
-position = Vector2( 0, 284.042 )
+position = Vector2( 0, 241.702 )
 collision_layer = 32
 collision_mask = 0
 script = ExtResource( 1 )
+player_name = "spider"
+primary_annotation_color = Color( 0.470588, 0.211765, 0.156863, 1 )
 
 [node name="SpiderAnimator" parent="." instance=ExtResource( 2 )]
 animations = {

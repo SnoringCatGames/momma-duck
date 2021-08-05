@@ -1,21 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/players/momma/momma.gd" type="Script" id=1]
 [ext_resource path="res://src/players/momma/momma_animator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/scaffolder/src/player/proximity_detector.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 38.0
 
 [node name="Momma" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 1 )
 player_name = "momma"
-collision_detection_layers = 2
+collision_detection_layers = 34
 primary_annotation_color = Color( 0.654902, 0.690196, 0.709804, 1 )
 
 [node name="MovementParams" parent="." instance=ExtResource( 3 )]
@@ -67,8 +63,3 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="EnemyDetector" parent="." instance=ExtResource( 4 )]
-shape = SubResource( 2 )
-radius = 38.0
-layer = 32

@@ -168,6 +168,12 @@ func _on_started_colliding(
             is_in_pond = true
             Sc.audio.play_sound("splash")
             Sc.level.check_if_all_ducks_are_in_pond()
+        "enemy":
+            on_touched_enemy(target)
+            if player_name == "momma":
+                target.on_touched_momma(self)
+            else:
+                target.on_touched_duckling(self)
         _:
             Sc.logger.error()
 

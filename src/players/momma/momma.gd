@@ -8,17 +8,6 @@ func _update_attachment() -> void:
     leader = self
 
 
-func _on_entered_proximity(
-        target: Node2D,
-        layer_names: Array) -> void:
-    match layer_names[0]:
-        "enemy":
-            on_touched_enemy(target)
-            target.on_touched_momma(self)
-        _:
-            Sc.logger.error()
-
-
 func get_leash_attachment_offset() -> Vector2:
     if is_in_pond:
         return Vector2(18.0, 11.0)

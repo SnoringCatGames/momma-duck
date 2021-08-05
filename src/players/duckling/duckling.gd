@@ -47,17 +47,6 @@ func _update_navigator(delta_scaled: float) -> void:
             _trigger_new_navigation()
 
 
-func _on_entered_proximity(
-        target: Node2D,
-        layer_names: Array) -> void:
-    match layer_names[0]:
-        "enemy":
-            on_touched_enemy(target)
-            target.on_touched_duckling(self)
-        _:
-            Sc.logger.error()
-
-
 func _trigger_new_navigation() -> bool:
     var position_type: int
     if leader.surface_state.is_grabbing_a_surface:
