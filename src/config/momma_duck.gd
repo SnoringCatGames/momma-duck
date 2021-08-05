@@ -682,6 +682,20 @@ var _slow_motion_manifest := {
 
 var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
 
+var _player_scenes := [
+    preload("res://src/players/duckling/duckling.tscn"),
+    preload("res://src/players/fox/fox.tscn"),
+    preload("res://src/players/momma/momma.tscn"),
+    preload("res://src/players/porcupine/porcupine.tscn"),
+    preload("res://src/players/run_away_duckling/run_away_duckling.tscn"),
+    preload("res://src/players/spider/spider.tscn"),
+]
+
+var _player_manifest := {
+    default_player_name = 'momma',
+    player_scenes = _player_scenes,
+}
+
 var _additional_metric_keys := [
 ]
 
@@ -745,14 +759,6 @@ var _movement_manifest := {
             SurfacerMovementManifest.DEFAULT_EDGE_CALCULATOR_CLASSES,
 }
 
-var _player_scenes := [
-    preload("res://src/players/duckling/duckling.tscn"),
-    preload("res://src/players/fox/fox.tscn"),
-    preload("res://src/players/momma/momma.tscn"),
-    preload("res://src/players/porcupine/porcupine.tscn"),
-    preload("res://src/players/run_away_duckling/run_away_duckling.tscn"),
-]
-
 var _surfacer_manifest := {
     precompute_platform_graph_for_levels = [],
     ignores_platform_graph_save_files = false,
@@ -761,7 +767,6 @@ var _surfacer_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
-    default_player_name = 'momma',
     default_tile_set = \
             preload("res://src/levels/momma_duck_surfaces_tile_set.tres"),
     path_drag_update_throttle_interval = 0.2,
@@ -778,16 +783,12 @@ var _surfacer_manifest := {
     skip_choreography_framerate_multiplier = 4.0,
     
     debug_params = _surfacer_debug_params,
-    player_scenes = _player_scenes,
     
     movement_manifest = _movement_manifest,
     annotations_manifest = _annotations_manifest,
 }
 
 var app_manifest := {
-    level_config_class = MommaDuckLevelConfig,
-    level_session_class = MommaDuckLevelSession,
-    
     metadata = _metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
@@ -796,7 +797,11 @@ var app_manifest := {
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
+    player_manifest = _player_manifest,
     surfacer_manifest = _surfacer_manifest,
+    
+    level_config_class = MommaDuckLevelConfig,
+    level_session_class = MommaDuckLevelSession,
 }
 
 var _overrides := {
@@ -813,8 +818,6 @@ func _ready() -> void:
 
 
 func _override_configs_for_app(manifest: Dictionary) -> void:
-    ._override_configs_for_app(manifest)
-    
     if _is_using_pixel_style:
         manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
         manifest.styles_manifest = _styles_manifest_pixel
@@ -827,13 +830,15 @@ func _override_configs_for_app(manifest: Dictionary) -> void:
     _override_manifest(manifest, _overrides)
 
 
-func _set_up() -> void:
-    ._set_up()
+#func _instantiate_sub_modules() -> void:
+#    pass
+
+
+func _configure_sub_modules() -> void:
     Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
 func _load_state() -> void:
-    ._load_state()
     MommaDuck.includes_leash = Sc.save_state.get_setting(
             INCLUDES_LEASH_SETTINGS_KEY,
             false)

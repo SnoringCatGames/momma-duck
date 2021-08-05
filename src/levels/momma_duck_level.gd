@@ -43,7 +43,7 @@ func _start() -> void:
     
     Sc.level_session.duckling_scare_count = 0
     
-    momma = Su.human_player
+    momma = Sc.level.human_player
     last_attached_duck = momma
     
     duckling_spawn_positions = Sc.utils.get_all_nodes_in_group(
@@ -57,7 +57,7 @@ func _start() -> void:
     
     for spawn_position in duckling_spawn_positions:
         var duckling: Duckling = add_player(
-                Su.player_scenes["duckling"],
+                Sc.players.player_scenes["duckling"],
                 spawn_position.position,
                 false)
         duckling.call_deferred("create_leash_annotator")
@@ -65,20 +65,23 @@ func _start() -> void:
     
     for spawn_position in fox_spawn_positions:
         var fox: Fox = add_player(
-                Su.player_scenes["fox"],
+                Sc.players.player_scenes["fox"],
                 spawn_position.position,
                 false)
         foxes.push_back(fox)
     
     for spawn_position in porcupine_spawn_positions:
         var porcupine: Porcupine = add_player(
-                Su.player_scenes["porcupine"],
+                Sc.players.player_scenes["porcupine"],
                 spawn_position.position,
                 false)
         porcupines.push_back(porcupine)
     
     for spawn_position in spider_spawn_positions:
-        var spider: Spider = add_spider(spawn_position.position)
+        var spider: Spider = add_player(
+                Sc.players.player_scenes["spider"],
+                spawn_position.position,
+                false)
         spiders.push_back(spider)
 
 
@@ -96,7 +99,7 @@ func _destroy() -> void:
     foxes.clear()
     
     for spider in spiders:
-        remove_spider(spider)
+        remove_player(spider)
     spiders.clear()
     
     for porcupine in porcupines:
@@ -141,21 +144,6 @@ func _physics_process(_delta: float) -> void:
         duckling.clear_just_changed_attachment()
 
 
-func add_spider(position: Vector2) -> Spider:
-    var player: Spider = Sc.utils.add_scene(
-            self,
-            SPIDER_PLAYER_SCENE,
-            false,
-            true)
-    player.position = position
-    add_child(player)
-    return player
-
-
-func remove_spider(spider: Spider) -> void:
-    spider._destroy()
-
-
 func swap_duckling_with_run_away(
         duckling: Duckling,
         enemy: KinematicBody2D) -> void:
@@ -173,7 +161,7 @@ func swap_duckling_with_run_away(
     remove_player(duckling)
     
     var run_away_duckling: RunAwayDuckling = add_player(
-            Su.player_scenes["run_away_duckling"],
+            Sc.players.player_scenes["run_away_duckling"],
             run_away_origin,
             false)
     run_away_ducklings.push_back(run_away_duckling)
@@ -190,7 +178,7 @@ func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
     remove_player(run_away_duckling)
     
     var duckling: Duckling = add_player(
-            Su.player_scenes["duckling"],
+            Sc.players.player_scenes["duckling"],
             position,
             false)
     duckling.call_deferred("create_leash_annotator")

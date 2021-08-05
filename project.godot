@@ -1449,6 +1449,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/player/scaffolder_player_animator.gd"
 }, {
+"base": "Node",
+"class": "ScaffolderPlayerManifest",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/scaffolder_player_manifest.gd"
+}, {
 "base": "ProgressBar",
 "class": "ScaffolderProgressBar",
 "language": "GDScript",
@@ -2193,6 +2198,7 @@ _global_script_class_icons={
 "ScaffolderPanelContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScaffolderPlayer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_player.png",
 "ScaffolderPlayerAnimator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_player_animator.png",
+"ScaffolderPlayerManifest": "",
 "ScaffolderProgressBar": "res://addons/scaffolder/assets/images/editor_icons/progress_bar.png",
 "ScaffolderProjectSettings": "",
 "ScaffolderSlider": "res://addons/scaffolder/assets/images/editor_icons/slider.png",
