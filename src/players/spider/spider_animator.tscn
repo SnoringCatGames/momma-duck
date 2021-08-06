@@ -74,7 +74,6 @@ tracks/0/keys = {
 
 [node name="SpiderAnimator" type="Node2D"]
 script = ExtResource( 1 )
-uses_standard_sprite_frame_animations = false
 animations = {
 "JumpFall": {
 "name": "JumpFall",
