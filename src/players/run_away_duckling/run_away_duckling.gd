@@ -9,6 +9,8 @@ var destination: PositionAlongSurface
 func run_away(
         destination: PositionAlongSurface,
         enemy: KinematicBody2D) -> void:
+    behavior = PlayerBehaviorType.RUN_AWAY
+    
     self.destination = destination
     
     # The newly-created surface-state thinks we're in-air anyway, so let's make

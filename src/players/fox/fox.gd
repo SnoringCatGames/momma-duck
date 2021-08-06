@@ -26,8 +26,6 @@ func _update_navigator(delta_scaled: float) -> void:
     if start_surface == null:
         return
     
-    var current_time := Sc.time.get_scaled_play_time()
-    
     if is_pouncing_on_duckling:
         assert(target_duckling != null)
         if navigator.navigation_state.just_reached_end_of_edge and \
@@ -38,12 +36,11 @@ func _update_navigator(delta_scaled: float) -> void:
             #     position.
             _pounce_on_duckling(target_duckling)
     elif navigator.just_reached_destination:
-        is_running_from_momma = false
-        is_wandering = false
-        last_navigation_end_time = current_time
+        _trigger_rest()
     
     if !navigator.is_currently_navigating and \
-            current_time >= last_navigation_end_time + wander_pause_duration:
+            Sc.time.get_scaled_play_time() >= \
+            last_navigation_end_time + wander_pause_duration:
         _trigger_wander()
 
 
@@ -56,6 +53,7 @@ func _run_from_momma() -> void:
     else:
         _navigate_to_new_position_away_from_momma()
     
+    behavior = PlayerBehaviorType.RUN_AWAY
     is_running_from_momma = true
     is_pouncing_on_duckling = false
     target_duckling = null
@@ -97,6 +95,7 @@ func _trigger_wander() -> void:
     _log_player_event("Fox wander start")
     
     is_wandering = true
+    behavior = PlayerBehaviorType.CUSTOM
     var left_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
             Vector2(start_position.x - wander_radius, 0.0), start_surface)
     var right_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
@@ -111,6 +110,16 @@ func _trigger_wander() -> void:
                     movement_params.collider_half_width_height,
                     true)
     navigator.navigate_to_position(destination)
+
+
+func _trigger_rest() -> void:
+    is_running_from_momma = false
+    is_pouncing_on_duckling = false
+    is_wandering = false
+    target_duckling = null
+    behavior = PlayerBehaviorType.REST
+    last_navigation_end_time = Sc.time.get_scaled_play_time()
+    navigator.stop()
 
 
 func _process_sounds() -> void:
@@ -164,6 +173,7 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
     
     show_exclamation_mark()
     
+    behavior = PlayerBehaviorType.COLLIDE
     is_pouncing_on_duckling = true
     target_duckling = duckling
     
@@ -195,9 +205,7 @@ func on_touched_duckling(duckling: Duckling) -> void:
     
     if is_pouncing_on_duckling and \
             duckling == target_duckling:
-        is_pouncing_on_duckling = false
-        target_duckling = null
-        navigator.stop()
+        _trigger_rest()
         duckling.on_touched_enemy(self)
 
 

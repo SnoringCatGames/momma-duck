@@ -29,7 +29,10 @@ func _walk_away_from_momma() -> void:
     
     _log_player_event("Porcupine walk-away-from-momma start")
     
-    _trigger_move(!is_momma_to_the_left, RUN_FROM_MOMMA_DESTINATION_DISTANCE)
+    _trigger_move(
+            !is_momma_to_the_left,
+            RUN_FROM_MOMMA_DESTINATION_DISTANCE,
+            PlayerBehaviorType.RUN_AWAY)
 
 
 func on_touched_duckling(duckling: Duckling) -> void:

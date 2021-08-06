@@ -1145,6 +1145,11 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/gui/control_rows/player_annotator_control_row.gd"
 }, {
 "base": "Reference",
+"class": "PlayerBehaviorType",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/player/player_behavior_type.gd"
+}, {
+"base": "Reference",
 "class": "PlayerNavigationState",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player_navigation_state.gd"
@@ -2162,6 +2167,7 @@ _global_script_class_icons={
 "PlayerActionType": "",
 "PlayerAnimationState": "",
 "PlayerAnnotatorControlRow": "",
+"PlayerBehaviorType": "",
 "PlayerNavigationState": "",
 "PlayerPointerListener": "",
 "PlayerPositionAnnotatorControlRow": "",

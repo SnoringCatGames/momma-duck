@@ -692,7 +692,7 @@ var _player_scenes := [
 ]
 
 var _player_manifest := {
-    default_player_name = 'momma',
+    default_player_name = "momma",
     player_scenes = _player_scenes,
 }
 
