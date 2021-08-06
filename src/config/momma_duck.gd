@@ -802,6 +802,7 @@ var app_manifest := {
     
     level_config_class = MommaDuckLevelConfig,
     level_session_class = MommaDuckLevelSession,
+    annotators_class = SurfacerAnnotators,
 }
 
 var _overrides := {

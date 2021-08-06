@@ -8,7 +8,7 @@ var leash_annotator: LeashAnnotator
 
 func create_leash_annotator() -> void:
     leash_annotator = LeashAnnotator.new(self)
-    Su.annotators.get_player_annotator(self).add_child(leash_annotator)
+    Sc.annotators.get_player_annotator(self).add_child(leash_annotator)
 
 
 func get_leash_attachment_offset() -> Vector2:
