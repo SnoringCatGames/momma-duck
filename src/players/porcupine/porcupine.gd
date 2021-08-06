@@ -1,12 +1,19 @@
 tool
 class_name Porcupine
-extends MoveBackAndForthPlayer
+extends SurfacerPlayer
 # This is a hazard that moves side-to-side along a surface.
 
 
 const RUN_FROM_MOMMA_DISTANCE_THRESHOLD := 128.0
 
 const RUN_FROM_MOMMA_DESTINATION_DISTANCE := 256.0
+
+var move_back_and_forth_controller: MoveBackAndForthBehaviorController
+
+
+func _ready() -> void:
+    move_back_and_forth_controller = \
+            get_behavior_controller("MoveBackAndForthBehaviorController")
 
 
 func _on_entered_proximity(
@@ -29,7 +36,7 @@ func _walk_away_from_momma() -> void:
     
     _log_player_event("Porcupine walk-away-from-momma start")
     
-    _trigger_move(
+    move_back_and_forth_controller.trigger_move(
             !is_momma_to_the_left,
             RUN_FROM_MOMMA_DESTINATION_DISTANCE,
             PlayerBehaviorType.RUN_AWAY)

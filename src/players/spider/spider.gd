@@ -21,7 +21,7 @@ func _ready() -> void:
     is_moving_down = randf() > 0.5
 
 
-func _process_physics_frame(delta: float) -> void:
+func _on_physics_process(delta: float) -> void:
     var current_time := Sc.time.get_scaled_play_time()
     
     just_reached_end = false

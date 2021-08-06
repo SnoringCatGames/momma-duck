@@ -94,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/time/beat_tracker.gd"
 }, {
+"base": "Node2D",
+"class": "BehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controller.gd"
+}, {
 "base": "CheckboxControlRow",
 "class": "ButtonControlsControlRow",
 "language": "GDScript",
@@ -984,10 +989,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/levels/momma_duck_level_session.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "MoveBackAndForthPlayer",
+"base": "BehaviorController",
+"class": "MoveBackAndForthBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/move_back_and_forth_player.gd"
+"path": "res://addons/surfacer/src/player/move_back_and_forth_behavior_controller.gd"
 }, {
 "base": "Node2D",
 "class": "MovementParams",
@@ -1209,7 +1214,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/levels/pond.gd"
 }, {
-"base": "MoveBackAndForthPlayer",
+"base": "SurfacerPlayer",
 "class": "Porcupine",
 "language": "GDScript",
 "path": "res://src/players/porcupine/porcupine.gd"
@@ -1278,6 +1283,11 @@ _global_script_classes=[ {
 "class": "RecentMovementAnnotatorControlRow",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/control_rows/recent_movement_annotator_control_row.gd"
+}, {
+"base": "BehaviorController",
+"class": "RestBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/rest_behavior_controller.gd"
 }, {
 "base": "SurfacesOfSideGroupItemController",
 "class": "RightWallsItemController",
@@ -1849,6 +1859,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/user_action_source.gd"
 }, {
+"base": "BehaviorController",
+"class": "UserNavigationBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/user_navigation_behavior_controller.gd"
+}, {
 "base": "Node",
 "class": "Utils",
 "language": "GDScript",
@@ -1957,6 +1972,7 @@ _global_script_class_icons={
 "AnnotatorType": "",
 "Audio": "",
 "BeatTracker": "",
+"BehaviorController": "",
 "ButtonControlsControlRow": "",
 "CameraController": "",
 "CameraPanController": "",
@@ -2135,7 +2151,7 @@ _global_script_class_icons={
 "MommaDuckLevel": "",
 "MommaDuckLevelConfig": "",
 "MommaDuckLevelSession": "",
-"MoveBackAndForthPlayer": "",
+"MoveBackAndForthBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "MovementParams": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
 "MovementUtils": "",
 "MusicControlRow": "",
@@ -2194,6 +2210,7 @@ _global_script_class_icons={
 "ProximityDetector": "res://addons/scaffolder/assets/images/editor_icons/proximity_detector.png",
 "RateAppScreen": "",
 "RecentMovementAnnotatorControlRow": "",
+"RestBehaviorController": "",
 "RightWallsItemController": "",
 "Rope": "",
 "RulerAnnotator": "",
@@ -2308,6 +2325,7 @@ _global_script_class_icons={
 "TransientAnnotatorRegistry": "",
 "UUID": "",
 "UserActionSource": "",
+"UserNavigationBehaviorController": "",
 "Utils": "",
 "ValidEdgeItemController": "",
 "ValidEdgeTrajectoryLegendItem": "",
