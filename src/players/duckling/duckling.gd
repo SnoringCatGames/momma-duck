@@ -79,10 +79,12 @@ func _process_sounds() -> void:
 
 func on_attached_to_leader() -> void:
     show_exclamation_mark()
+    Sc.audio.play_sound("duckling_quack")
 
 
 func on_detached_from_leader() -> void:
     show_exclamation_mark()
+    Sc.audio.play_sound("duckling_quack")
 
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
@@ -90,6 +92,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
         return
     
     show_exclamation_mark()
+    Sc.audio.play_sound("duckling_quack")
     
     Sc.level_session.duckling_scare_count += 1
     
