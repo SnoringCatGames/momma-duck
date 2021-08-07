@@ -159,10 +159,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/structures/CircularBuffer.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "ClimbAdjacentSurfacesPlayer",
+"base": "BehaviorController",
+"class": "ClimbAdjacentSurfacesBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/climb_adjacent_surfaces_player.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/climb_adjacent_surfaces_behavior_controller.gd"
 }, {
 "base": "EdgeCalculator",
 "class": "ClimbDownWallToFloorCalculator",
@@ -844,10 +844,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/json_utils.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "JumpBackAndForthPlayer",
+"base": "BehaviorController",
+"class": "JumpBackAndForthBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/jump_back_and_forth_player.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/jump_back_and_forth_behavior_controller.gd"
 }, {
 "base": "EdgeCalculator",
 "class": "JumpFromSurfaceCalculator",
@@ -2010,7 +2010,7 @@ _global_script_class_icons={
 "CheckboxControlRow": "",
 "Choreographer": "",
 "CircularBuffer": "",
-"ClimbAdjacentSurfacesPlayer": "",
+"ClimbAdjacentSurfacesBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ClimbDownWallToFloorCalculator": "",
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
@@ -2147,7 +2147,7 @@ _global_script_class_icons={
 "IosResolutions": "",
 "IsLoggingLowLevelPlayerFrameworkEventsControlRow": "",
 "JsonUtils": "",
-"JumpBackAndForthPlayer": "",
+"JumpBackAndForthBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
