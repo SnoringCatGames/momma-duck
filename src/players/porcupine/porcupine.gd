@@ -13,7 +13,7 @@ var move_back_and_forth_controller: MoveBackAndForthBehaviorController
 
 func _ready() -> void:
     move_back_and_forth_controller = \
-            get_behavior_controller("MoveBackAndForthBehaviorController")
+            get_behavior_controller("move_back_and_forth")
 
 
 func _on_entered_proximity(

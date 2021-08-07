@@ -97,7 +97,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "BehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/behavior_controller.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/behavior_controller.gd"
 }, {
 "base": "CheckboxControlRow",
 "class": "ButtonControlsControlRow",
@@ -183,6 +183,11 @@ _global_script_classes=[ {
 "class": "ClimbOverWallToFloorEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/climb_over_wall_to_floor_edge.gd"
+}, {
+"base": "BehaviorController",
+"class": "CollideBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/collide_behavior_controller.gd"
 }, {
 "base": "Reference",
 "class": "CollisionCalcParams",
@@ -629,6 +634,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/floors_item_controller.gd"
 }, {
+"base": "BehaviorController",
+"class": "FollowBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/follow_behavior_controller.gd"
+}, {
 "base": "TextControlRow",
 "class": "FollowersCountControlRow",
 "language": "GDScript",
@@ -992,7 +1002,7 @@ _global_script_classes=[ {
 "base": "BehaviorController",
 "class": "MoveBackAndForthBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/move_back_and_forth_behavior_controller.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/move_back_and_forth_behavior_controller.gd"
 }, {
 "base": "Node2D",
 "class": "MovementParams",
@@ -1287,7 +1297,12 @@ _global_script_classes=[ {
 "base": "BehaviorController",
 "class": "RestBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/rest_behavior_controller.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/rest_behavior_controller.gd"
+}, {
+"base": "BehaviorController",
+"class": "ReturnBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/return_behavior_controller.gd"
 }, {
 "base": "SurfacesOfSideGroupItemController",
 "class": "RightWallsItemController",
@@ -1308,6 +1323,11 @@ _global_script_classes=[ {
 "class": "RulerAnnotatorControlRow",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/control_rows/ruler_annotator_control_row.gd"
+}, {
+"base": "BehaviorController",
+"class": "RunAwayBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/run_away_behavior_controller.gd"
 }, {
 "base": "SurfacerPlayer",
 "class": "RunAwayDuckling",
@@ -1862,7 +1882,7 @@ _global_script_classes=[ {
 "base": "BehaviorController",
 "class": "UserNavigationBehaviorController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/user_navigation_behavior_controller.gd"
+"path": "res://addons/surfacer/src/player/behavior_controllers/user_navigation_behavior_controller.gd"
 }, {
 "base": "Node",
 "class": "Utils",
@@ -1929,6 +1949,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/wall_walk_action.gd"
 }, {
+"base": "BehaviorController",
+"class": "WanderBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/wander_behavior_controller.gd"
+}, {
 "base": "Reference",
 "class": "Waypoint",
 "language": "GDScript",
@@ -1990,6 +2015,7 @@ _global_script_class_icons={
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
+"CollideBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -2079,6 +2105,7 @@ _global_script_class_icons={
 "FloorJumpAction": "",
 "FloorWalkAction": "",
 "FloorsItemController": "",
+"FollowBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "FollowersCountControlRow": "",
 "FontSize": "",
 "Fox": "",
@@ -2211,10 +2238,12 @@ _global_script_class_icons={
 "RateAppScreen": "",
 "RecentMovementAnnotatorControlRow": "",
 "RestBehaviorController": "",
+"ReturnBehaviorController": "",
 "RightWallsItemController": "",
 "Rope": "",
 "RulerAnnotator": "",
 "RulerAnnotatorControlRow": "",
+"RunAwayBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "RunAwayDuckling": "",
 "SaveState": "",
 "ScaffolderAnnotators": "",
@@ -2339,6 +2368,7 @@ _global_script_class_icons={
 "WallFallAction": "",
 "WallJumpAction": "",
 "WallWalkAction": "",
+"WanderBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "Waypoint": "",
 "WaypointUtils": "",
 "WaypointValidity": "",
