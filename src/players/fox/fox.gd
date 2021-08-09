@@ -35,7 +35,7 @@ func _update_navigator(delta_scaled: float) -> void:
             # -   Update the navigation to point to the current leader
             #     position.
             _pounce_on_duckling(target_duckling)
-    elif navigation_state.reached_destination:
+    elif navigation_state.has_reached_destination:
         _trigger_rest()
     
     if !navigation_state.is_currently_navigating and \
