@@ -2010,12 +2010,12 @@ _global_script_class_icons={
 "CheckboxControlRow": "",
 "Choreographer": "",
 "CircularBuffer": "",
-"ClimbAdjacentSurfacesBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"ClimbAdjacentSurfacesBehaviorController": "res://addons/surfacer/assets/images/editor_icons/climb_adjacent_surfaces_behavior_controller.png",
 "ClimbDownWallToFloorCalculator": "",
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
-"CollideBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"CollideBehaviorController": "res://addons/surfacer/assets/images/editor_icons/collide_behavior_controller.png",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -2105,7 +2105,7 @@ _global_script_class_icons={
 "FloorJumpAction": "",
 "FloorWalkAction": "",
 "FloorsItemController": "",
-"FollowBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"FollowBehaviorController": "res://addons/surfacer/assets/images/editor_icons/follow_behavior_controller.png",
 "FollowersCountControlRow": "",
 "FontSize": "",
 "Fox": "",
@@ -2147,7 +2147,7 @@ _global_script_class_icons={
 "IosResolutions": "",
 "IsLoggingLowLevelPlayerFrameworkEventsControlRow": "",
 "JsonUtils": "",
-"JumpBackAndForthBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"JumpBackAndForthBehaviorController": "res://addons/surfacer/assets/images/editor_icons/jump_back_and_forth_behavior_controller.png",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
@@ -2178,7 +2178,7 @@ _global_script_class_icons={
 "MommaDuckLevel": "",
 "MommaDuckLevelConfig": "",
 "MommaDuckLevelSession": "",
-"MoveBackAndForthBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"MoveBackAndForthBehaviorController": "res://addons/surfacer/assets/images/editor_icons/move_back_and_forth_behavior_controller.png",
 "MovementParams": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
 "MovementUtils": "",
 "MusicControlRow": "",
@@ -2243,7 +2243,7 @@ _global_script_class_icons={
 "Rope": "",
 "RulerAnnotator": "",
 "RulerAnnotatorControlRow": "",
-"RunAwayBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"RunAwayBehaviorController": "res://addons/surfacer/assets/images/editor_icons/run_away_behavior_controller.png",
 "RunAwayDuckling": "",
 "SaveState": "",
 "ScaffolderAnnotators": "",
@@ -2368,7 +2368,7 @@ _global_script_class_icons={
 "WallFallAction": "",
 "WallJumpAction": "",
 "WallWalkAction": "",
-"WanderBehaviorController": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"WanderBehaviorController": "res://addons/surfacer/assets/images/editor_icons/wander_behavior_controller.png",
 "Waypoint": "",
 "WaypointUtils": "",
 "WaypointValidity": "",
@@ -2436,11 +2436,11 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
-2d_physics/layer_1="surfaces_tilemaps"
 2d_render/layer_2="player"
-2d_physics/layer_2="pond"
 2d_render/layer_3="tiles"
 2d_render/layer_4="background"
+2d_physics/layer_1="surfaces_tilemaps"
+2d_physics/layer_2="pond"
 2d_physics/layer_4="momma"
 2d_physics/layer_5="duckling"
 2d_physics/layer_6="enemy"
