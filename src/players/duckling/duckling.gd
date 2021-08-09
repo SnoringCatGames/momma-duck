@@ -30,12 +30,12 @@ func _update_navigator(delta_scaled: float) -> void:
     ._update_navigator(delta_scaled)
     
     if is_attached_to_leader:
-        if navigator.is_currently_navigating:
+        if navigation_state.is_currently_navigating:
             if is_close_enough_to_leader_to_stop_moving and \
                     surface_state.is_grabbing_floor:
                 navigator.stop()
                 behavior = PlayerBehaviorType.REST
-            elif navigator.navigation_state.just_reached_end_of_edge and \
+            elif navigation_state.just_reached_end_of_edge and \
                     surface_state.just_left_air:
                 # -   We are currently navigating, and we just landed on a new
                 #     surface.
@@ -52,7 +52,7 @@ func _trigger_new_navigation() -> bool:
     var position_type: int
     if leader.surface_state.is_grabbing_a_surface:
         position_type = IntendedPositionType.CENTER_POSITION_ALONG_SURFACE
-    elif leader.navigator.is_currently_navigating:
+    elif leader.navigation_state.is_currently_navigating:
         if leader.navigator.edge.get_end_surface() != null:
             position_type = IntendedPositionType.EDGE_DESTINATION
         elif leader.navigator.edge.get_start_surface() != null:

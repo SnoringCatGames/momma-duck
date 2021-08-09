@@ -28,17 +28,17 @@ func _update_navigator(delta_scaled: float) -> void:
     
     if is_pouncing_on_duckling:
         assert(target_duckling != null)
-        if navigator.navigation_state.just_reached_end_of_edge and \
+        if navigation_state.just_reached_end_of_edge and \
                 surface_state.just_left_air:
             # -   We are currently navigating, and we just landed on a new
             #     surface.
             # -   Update the navigation to point to the current leader
             #     position.
             _pounce_on_duckling(target_duckling)
-    elif navigator.just_reached_destination:
+    elif navigation_state.reached_destination:
         _trigger_rest()
     
-    if !navigator.is_currently_navigating and \
+    if !navigation_state.is_currently_navigating and \
             Sc.time.get_scaled_play_time() >= \
             last_navigation_end_time + wander_pause_duration:
         _trigger_wander()
@@ -46,8 +46,8 @@ func _update_navigator(delta_scaled: float) -> void:
 
 func _run_from_momma() -> void:
     if is_running_from_momma:
-        if !navigator.is_currently_navigating or \
-                navigator.navigation_state.just_reached_end_of_edge and \
+        if !navigation_state.is_currently_navigating or \
+                navigation_state.just_reached_end_of_edge and \
                 surface_state.just_left_air:
             _navigate_to_new_position_away_from_momma()
     else:
