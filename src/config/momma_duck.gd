@@ -64,6 +64,7 @@ var _metadata := {
     uses_threads = _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
+    rng_seed = 176,
     uses_level_scores = false,
     must_restart_level_to_change_settings = true,
     overrides_project_settings = true,

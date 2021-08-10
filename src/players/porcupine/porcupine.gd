@@ -36,7 +36,7 @@ func _walk_away_from_momma() -> void:
     
     _log_player_event("Porcupine walk-away-from-momma start")
     
-    move_back_and_forth_controller.trigger_move(
+    move_back_and_forth_controller.move(
             !is_momma_to_the_left,
             RUN_FROM_MOMMA_DESTINATION_DISTANCE,
             PlayerBehaviorType.RUN_AWAY)
