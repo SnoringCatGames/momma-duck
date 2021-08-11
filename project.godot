@@ -154,6 +154,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/choreographer.gd"
 }, {
+"base": "BehaviorController",
+"class": "ChoreographyBehaviorController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behavior_controllers/choreography_behavior_controller.gd"
+}, {
 "base": "Reference",
 "class": "CircularBuffer",
 "language": "GDScript",
@@ -1160,11 +1165,6 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/gui/control_rows/player_annotator_control_row.gd"
 }, {
 "base": "Reference",
-"class": "PlayerBehaviorType",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/player/player_behavior_type.gd"
-}, {
-"base": "Reference",
 "class": "PlayerNavigationState",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player_navigation_state.gd"
@@ -2009,6 +2009,7 @@ _global_script_class_icons={
 "CenteredPanel": "res://addons/scaffolder/assets/images/editor_icons/centered_panel.png",
 "CheckboxControlRow": "",
 "Choreographer": "",
+"ChoreographyBehaviorController": "",
 "CircularBuffer": "",
 "ClimbAdjacentSurfacesBehaviorController": "res://addons/surfacer/assets/images/editor_icons/climb_adjacent_surfaces_behavior_controller.png",
 "ClimbDownWallToFloorCalculator": "",
@@ -2210,7 +2211,6 @@ _global_script_class_icons={
 "PlayerActionType": "",
 "PlayerAnimationState": "",
 "PlayerAnnotatorControlRow": "",
-"PlayerBehaviorType": "",
 "PlayerNavigationState": "",
 "PlayerPointerListener": "",
 "PlayerPositionAnnotatorControlRow": "",

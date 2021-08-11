@@ -34,7 +34,6 @@ func _update_navigator(delta_scaled: float) -> void:
             if is_close_enough_to_leader_to_stop_moving and \
                     surface_state.is_grabbing_floor:
                 navigator.stop()
-                behavior = PlayerBehaviorType.REST
             elif navigation_state.just_reached_end_of_edge and \
                     surface_state.just_left_air:
                 # -   We are currently navigating, and we just landed on a new
@@ -66,7 +65,6 @@ func _trigger_new_navigation() -> bool:
     
     var destination := leader.get_intended_position(position_type)
     navigator.navigate_to_position(destination)
-    behavior = PlayerBehaviorType.FOLLOW
     
     return true
 
@@ -117,6 +115,5 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     leader = null
     is_attached_to_follower = false
     follower = null
-    behavior = PlayerBehaviorType.RUN_AWAY
     
     Sc.level.swap_duckling_with_run_away(self, enemy)

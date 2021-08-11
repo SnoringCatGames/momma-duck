@@ -16,7 +16,6 @@ var reached_end_time := -pause_at_end_duration
 
 
 func _ready() -> void:
-    behavior = PlayerBehaviorType.CUSTOM
     position.y += randf() * range_y * 0.9 - range_y / 2.0
     is_moving_down = randf() > 0.5
 
@@ -46,12 +45,10 @@ func _on_physics_process(delta: float) -> void:
                 just_reached_end = true
 
         if just_reached_end:
-            behavior = PlayerBehaviorType.REST
             is_moving = false
             reached_end_time = current_time
     else:
         if current_time > reached_end_time + pause_at_end_duration:
-            behavior = PlayerBehaviorType.CUSTOM
             is_moving = true
             just_started_moving = true
             is_moving_down = !is_moving_down
@@ -76,7 +73,6 @@ func _climb_away_from_momma() -> void:
     
     _log_player_event("Spider climb-away-from-momma start")
     
-    behavior = PlayerBehaviorType.RUN_AWAY
     is_moving = true
     just_started_moving = true
     is_moving_down = !is_momma_below

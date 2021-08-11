@@ -65,7 +65,6 @@ func _run_from_momma() -> void:
     else:
         _navigate_to_new_position_away_from_momma()
     
-    behavior = PlayerBehaviorType.RUN_AWAY
     is_running_from_momma = true
     is_pouncing_on_duckling = false
     target_duckling = null
@@ -83,7 +82,6 @@ func _trigger_wander() -> void:
     _log_player_event("Fox wander start")
     
     is_wandering = true
-    behavior = PlayerBehaviorType.CUSTOM
     
     wander_controller.trigger(false)
 
@@ -93,7 +91,6 @@ func _trigger_rest() -> void:
     is_pouncing_on_duckling = false
     is_wandering = false
     target_duckling = null
-    behavior = PlayerBehaviorType.REST
     last_navigation_end_time = Sc.time.get_scaled_play_time()
     navigator.stop()
 
@@ -145,7 +142,6 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
     
     show_exclamation_mark()
     
-    behavior = PlayerBehaviorType.COLLIDE
     is_pouncing_on_duckling = true
     target_duckling = duckling
     
