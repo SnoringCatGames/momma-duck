@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/players/fox/fox.gd" type="Script" id=1]
 [ext_resource path="res://src/players/fox/fox_animator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/scaffolder/src/player/proximity_detector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/surfacer/src/player/behavior_controllers/wander_behavior_controller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/surfacer/src/player/behavior_controllers/collide_behavior_controller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/surfacer/src/player/behavior_controllers/run_away_behavior_controller.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22, 16 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 128.0
+radius = 96.0
 
 [node name="Fox" type="KinematicBody2D"]
 collision_layer = 32
@@ -75,9 +78,21 @@ __meta__ = {
 
 [node name="MommaDetector" parent="." instance=ExtResource( 3 )]
 shape = SubResource( 2 )
-radius = 128.0
+radius = 96.0
 layer = 8
 
 [node name="DucklingDetector" parent="." instance=ExtResource( 3 )]
 rotation = 1.5708
 layer = 16
+
+[node name="WanderBehaviorController" parent="." instance=ExtResource( 5 )]
+is_active_at_start = true
+max_distance_from_start_position = 256.0
+
+[node name="CollideBehaviorController" parent="." instance=ExtResource( 6 )]
+max_distance_from_start_position = 512.0
+starts_with_a_jump = true
+
+[node name="RunAwayBehaviorController" parent="." instance=ExtResource( 7 )]
+starts_with_a_jump = true
+returns_to_start_position = true

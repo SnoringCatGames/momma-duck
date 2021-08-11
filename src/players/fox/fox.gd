@@ -19,6 +19,18 @@ var is_wandering := false
 var last_navigation_end_time := 0
 var target_duckling: Duckling
 
+var wander_controller: WanderBehaviorController
+var collide_controller: CollideBehaviorController
+var run_away_controller: RunAwayBehaviorController
+var return_controller: ReturnBehaviorController
+
+
+func _ready() -> void:
+    wander_controller = get_behavior_controller(WanderBehaviorController)
+    collide_controller = get_behavior_controller(CollideBehaviorController)
+    run_away_controller = get_behavior_controller(RunAwayBehaviorController)
+    return_controller = get_behavior_controller(ReturnBehaviorController)
+
 
 func _update_navigator(delta_scaled: float) -> void:
     ._update_navigator(delta_scaled)
@@ -61,31 +73,7 @@ func _run_from_momma() -> void:
 
 func _navigate_to_new_position_away_from_momma() -> void:
     _log_player_event("Fox run-from-momma start")
-    
-    show_exclamation_mark()
-    
-    var direction_away_from_momma: Vector2 = \
-            Sc.level.momma.position.direction_to(position)
-    var naive_target := \
-            position + \
-            direction_away_from_momma * RUN_FROM_MOMMA_DESTINATION_DISTANCE
-    var graph_destination_for_in_air_destination := SurfaceParser \
-            .find_closest_position_on_a_surface(naive_target, self)
-    # Offset the destination a little, and make it in-air, so the fox will jump
-    # to it.
-    var destination_target := \
-            graph_destination_for_in_air_destination.target_point + \
-            Vector2(0.0, -0.1)
-    var destination := \
-            PositionAlongSurfaceFactory.create_position_without_surface(
-                    destination_target)
-    
-    var was_navigation_successful := navigator.navigate_to_position(
-            destination, graph_destination_for_in_air_destination)
-    if !was_navigation_successful:
-        # Try again, but without the in-air destination.
-        navigator.navigate_to_position(
-                graph_destination_for_in_air_destination)
+    run_away_controller.trigger(true)
 
 
 func _trigger_wander() -> void:
@@ -96,20 +84,8 @@ func _trigger_wander() -> void:
     
     is_wandering = true
     behavior = PlayerBehaviorType.CUSTOM
-    var left_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
-            Vector2(start_position.x - wander_radius, 0.0), start_surface)
-    var right_most_point: Vector2 = Sc.geometry.project_point_onto_surface(
-            Vector2(start_position.x + wander_radius, 0.0), start_surface)
-    var target_x := \
-            randf() * (right_most_point.x - left_most_point.x) + \
-            left_most_point.x
-    var destination := PositionAlongSurfaceFactory \
-            .create_position_offset_from_target_point(
-                    Vector2(target_x, 0.0),
-                    start_surface,
-                    movement_params.collider_half_width_height,
-                    true)
-    navigator.navigate_to_position(destination)
+    
+    wander_controller.trigger(false)
 
 
 func _trigger_rest() -> void:
@@ -143,13 +119,9 @@ func _on_entered_proximity(
 
 
 func _on_duckling_entered_proximity(duckling: Duckling) -> void:
-    if _is_destroyed:
-        return
-    
     _log_player_event("Fox is close to duckling")
     
-    if !Sc.level_session.has_started or \
-            is_running_from_momma or \
+    if is_running_from_momma or \
             is_pouncing_on_duckling:
         return
     
@@ -177,43 +149,19 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
     is_pouncing_on_duckling = true
     target_duckling = duckling
     
-    var graph_destination_for_in_air_destination := \
-            duckling.surface_state.center_position_along_surface if \
-            duckling.surface_state.is_grabbing_a_surface else \
-            SurfaceParser.find_closest_position_on_a_surface(
-                    duckling.position,
-                    self)
-    # Offset the destination a little, and make it in-air, so the fox will jump
-    # to it.
-    var destination_target := \
-            graph_destination_for_in_air_destination.target_point + \
-            Vector2(0.0, -0.1)
-    var destination := \
-            PositionAlongSurfaceFactory.create_position_without_surface(
-                    destination_target)
-    
-    navigator.navigate_to_position(
-            destination, graph_destination_for_in_air_destination)
+    run_away_controller.trigger(false)
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
-    if _is_destroyed or \
-            !Sc.level_session.has_started:
-        return
-    
     _log_player_event("Fox collided with duckling")
     
     if is_pouncing_on_duckling and \
             duckling == target_duckling:
         _trigger_rest()
         duckling.on_touched_enemy(self)
+        collide_controller.on_collided()
 
 
 func on_touched_momma(momma: Momma) -> void:
-    if _is_destroyed or \
-            !Sc.level_session.has_started:
-        return
-    
-        _log_player_event("Fox collided with momma")
-    
-        _run_from_momma()
+    _log_player_event("Fox collided with momma")
+    _run_from_momma()

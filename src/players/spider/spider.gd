@@ -97,18 +97,9 @@ func _process_animation() -> void:
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
-    if _is_destroyed or \
-            !Sc.level_session.has_started:
-        return
-    
     _log_player_event("Spider collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
-    if _is_destroyed or \
-            !Sc.level_session.has_started:
-        return
-    
     _log_player_event("Spider collided with momma")
-    
     _climb_away_from_momma()
