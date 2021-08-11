@@ -771,6 +771,7 @@ var _surfacer_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
+    behaviors = Su.DEFAULT_BEHAVIOR_CLASSES,
     default_tile_set = \
             preload("res://src/levels/momma_duck_surfaces_tile_set.tres"),
     path_drag_update_throttle_interval = 0.2,
