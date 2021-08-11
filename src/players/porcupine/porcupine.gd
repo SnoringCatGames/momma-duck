@@ -4,14 +4,14 @@ extends SurfacerPlayer
 # This is a hazard that moves side-to-side along a surface.
 
 
-var move_back_and_forth_controller: MoveBackAndForthBehaviorController
-var run_away_controller: RunAwayBehaviorController
+var move_back_and_forth_controller: MoveBackAndForthBehavior
+var run_away_controller: RunAwayBehavior
 
 
 func _ready() -> void:
     move_back_and_forth_controller = \
-            get_behavior_controller(MoveBackAndForthBehaviorController)
-    run_away_controller = get_behavior_controller(RunAwayBehaviorController)
+            get_behavior(MoveBackAndForthBehavior)
+    run_away_controller = get_behavior(RunAwayBehavior)
     run_away_controller.target_to_run_from = Sc.level.momma
 
 

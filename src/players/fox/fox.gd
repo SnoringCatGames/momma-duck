@@ -19,17 +19,17 @@ var is_wandering := false
 var last_navigation_end_time := 0
 var target_duckling: Duckling
 
-var wander_controller: WanderBehaviorController
-var collide_controller: CollideBehaviorController
-var run_away_controller: RunAwayBehaviorController
-var return_controller: ReturnBehaviorController
+var wander_controller: WanderBehavior
+var collide_controller: CollideBehavior
+var run_away_controller: RunAwayBehavior
+var return_controller: ReturnBehavior
 
 
 func _ready() -> void:
-    wander_controller = get_behavior_controller(WanderBehaviorController)
-    collide_controller = get_behavior_controller(CollideBehaviorController)
-    run_away_controller = get_behavior_controller(RunAwayBehaviorController)
-    return_controller = get_behavior_controller(ReturnBehaviorController)
+    wander_controller = get_behavior(WanderBehavior)
+    collide_controller = get_behavior(CollideBehavior)
+    run_away_controller = get_behavior(RunAwayBehavior)
+    return_controller = get_behavior(ReturnBehavior)
 
 
 func _update_navigator(delta_scaled: float) -> void:
