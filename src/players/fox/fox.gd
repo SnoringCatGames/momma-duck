@@ -29,6 +29,7 @@ func _ready() -> void:
     wander_controller = get_behavior(WanderBehavior)
     collide_controller = get_behavior(CollideBehavior)
     run_away_controller = get_behavior(RunAwayBehavior)
+    run_away_controller.target_to_run_from = Sc.level.momma
     return_controller = get_behavior(ReturnBehavior)
 
 
@@ -145,7 +146,8 @@ func _pounce_on_duckling(duckling: Duckling) -> void:
     is_pouncing_on_duckling = true
     target_duckling = duckling
     
-    run_away_controller.trigger(false)
+    collide_controller.collision_target = duckling
+    collide_controller.trigger(false)
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
