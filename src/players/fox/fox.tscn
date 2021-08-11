@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/players/fox/fox.gd" type="Script" id=1]
 [ext_resource path="res://src/players/fox/fox_animator.tscn" type="PackedScene" id=2]
@@ -13,6 +13,10 @@ extents = Vector2( 22, 16 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 96.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 48.0
+height = 128.0
 
 [node name="Fox" type="KinematicBody2D"]
 collision_layer = 32
@@ -83,16 +87,30 @@ layer = 8
 
 [node name="DucklingDetector" parent="." instance=ExtResource( 3 )]
 rotation = 1.5708
+shape = SubResource( 3 )
 layer = 16
 
 [node name="WanderBehavior" parent="." instance=ExtResource( 5 )]
 is_active_at_start = true
 max_distance_from_start_position = 256.0
+min_pause_between_movements = 1.0
+max_pause_between_movements = 3.0
 
 [node name="CollideBehavior" parent="." instance=ExtResource( 6 )]
 max_distance_from_start_position = 512.0
-starts_with_a_jump = true
+ends_with_a_jump = true
+returns_to_start_position = true
+returns_to_pre_behavior_position = false
+min_pause_between_movements = 0.0
+max_pause_between_movements = 0.0
+min_pause_after_movements = 2.0
+max_pause_after_movements = 4.0
 
 [node name="RunAwayBehavior" parent="." instance=ExtResource( 7 )]
 starts_with_a_jump = true
 returns_to_start_position = true
+returns_to_pre_behavior_position = false
+min_pause_between_movements = 0.0
+max_pause_between_movements = 0.0
+min_pause_after_movements = 2.0
+max_pause_after_movements = 4.0

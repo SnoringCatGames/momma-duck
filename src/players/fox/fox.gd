@@ -4,6 +4,9 @@ extends SurfacerPlayer
 # This is a hazard that jumps at nearby ducklings, if momma isn't nearby.
 
 
+# FIXME: LEFT OFF HERE: ------------------------- Finish refactor for behaviors.
+
+
 const RUN_FROM_MOMMA_DISTANCE_THRESHOLD := 128.0
 const RUN_FROM_MOMMA_DISTANCE_SQUARED_THRESHOLD := \
         RUN_FROM_MOMMA_DISTANCE_THRESHOLD * RUN_FROM_MOMMA_DISTANCE_THRESHOLD
