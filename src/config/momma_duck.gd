@@ -70,6 +70,7 @@ var _metadata := {
     overrides_project_settings = true,
     overrides_input_map = true,
     are_button_controls_enabled_by_default = false,
+    base_path = "",
     
     app_name = "Momma Duck",
     app_id = "games.snoringcat.momma_duck",
