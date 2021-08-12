@@ -75,6 +75,7 @@ __meta__ = {
 [node name="SpawnPosition6" parent="SpiderSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( -160, -32 )
 player_name = "spider"
+surface_attachment = "NONE"
 
 [node name="Pond" parent="." instance=ExtResource( 10 )]
 position = Vector2( -192, -480 )

@@ -2023,6 +2023,31 @@ _global_script_classes=[ {
 "class": "WelcomePanelControlRow",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/control_rows/settings/welcome_panel_control_row.gd"
+}, {
+"base": "Reference",
+"class": "_Debouncer",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/time/_debouncer.gd"
+}, {
+"base": "Reference",
+"class": "_Interval",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/time/_interval.gd"
+}, {
+"base": "Reference",
+"class": "_Throttler",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/time/_throttler.gd"
+}, {
+"base": "Node",
+"class": "_TimeTracker",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/time/_time_tracker.gd"
+}, {
+"base": "Reference",
+"class": "_Timeout",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/time/_timeout.gd"
 } ]
 _global_script_class_icons={
 "AboutScreen": "",
@@ -2427,7 +2452,12 @@ _global_script_class_icons={
 "WaypointUtils": "",
 "WaypointValidity": "",
 "WelcomePanel": "",
-"WelcomePanelControlRow": ""
+"WelcomePanelControlRow": "",
+"_Debouncer": "",
+"_Interval": "",
+"_Throttler": "",
+"_TimeTracker": "",
+"_Timeout": ""
 }
 
 [application]
