@@ -1669,6 +1669,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/squirrel_away/src/config/squirrel_away_level_session.gd"
 }, {
+"base": "ScaffolderConfiguredImage",
+"class": "SquirrelAwayLoadingImage",
+"language": "GDScript",
+"path": "res://addons/squirrel_away/src/gui/squirrel_away_loading_image.gd"
+}, {
+"base": "Node",
+"class": "SquirrelAwayMain",
+"language": "GDScript",
+"path": "res://addons/squirrel_away/src/config/squirrel_away_main.gd"
+}, {
 "base": "Node",
 "class": "SquirrelAwayThirdPartyLicenses",
 "language": "GDScript",
@@ -2382,6 +2392,8 @@ _global_script_class_icons={
 "SquirrelAwayLevel": "",
 "SquirrelAwayLevelConfig": "",
 "SquirrelAwayLevelSession": "",
+"SquirrelAwayLoadingImage": "",
+"SquirrelAwayMain": "res://addons/scaffolder/assets/images/editor_icons/star.png",
 "SquirrelAwayThirdPartyLicenses": "",
 "SquirrelAwayTileMap": "",
 "StaticTextControlRow": "",
