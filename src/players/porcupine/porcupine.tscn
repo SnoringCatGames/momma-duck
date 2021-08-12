@@ -14,7 +14,6 @@ extents = Vector2( 22, 16 )
 radius = 128.0
 
 [node name="Porcupine" type="KinematicBody2D"]
-position = Vector2( 0, 353310 )
 collision_layer = 32
 collision_mask = 3
 script = ExtResource( 1 )
@@ -81,6 +80,15 @@ layer = 8
 
 [node name="MoveBackAndForthBehavior" parent="." instance=ExtResource( 5 )]
 is_active_at_start = true
+min_pause_between_movements = 0.0
+max_pause_between_movements = 0.0
 
 [node name="RunAwayBehavior" parent="." instance=ExtResource( 6 )]
 can_leave_start_surface = false
+keeps_running_until_far_enough_away = false
+returns_to_player_start_position = true
+returns_to_pre_behavior_position = false
+min_pause_between_movements = 0.0
+max_pause_between_movements = 0.0
+min_pause_after_movements = 0.0
+max_pause_after_movements = 0.0

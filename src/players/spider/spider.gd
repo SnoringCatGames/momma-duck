@@ -16,6 +16,8 @@ var reached_end_time := -pause_at_end_duration
 
 
 func _ready() -> void:
+    if Engine.editor_hint:
+        return
     position.y += randf() * range_y * 0.9 - range_y / 2.0
     is_moving_down = randf() > 0.5
 

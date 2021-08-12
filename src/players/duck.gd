@@ -41,10 +41,6 @@ var just_attached_to_follower := false
 var just_detached_from_follower := false
 
 
-func _ready() -> void:
-    start_position = position
-
-
 func _update_surface_state(preserves_just_changed_state := false) -> void:
     ._update_surface_state(preserves_just_changed_state)
     

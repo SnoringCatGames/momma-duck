@@ -11,6 +11,8 @@ var return_controller: ReturnBehavior
 
 
 func _ready() -> void:
+    if Engine.editor_hint:
+        return
     wander_controller = get_behavior(WanderBehavior)
     collide_controller = get_behavior(CollideBehavior)
     run_away_controller = get_behavior(RunAwayBehavior)

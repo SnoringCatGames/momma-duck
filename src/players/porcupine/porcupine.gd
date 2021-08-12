@@ -9,6 +9,8 @@ var run_away_controller: RunAwayBehavior
 
 
 func _ready() -> void:
+    if Engine.editor_hint:
+        return
     move_back_and_forth_controller = \
             get_behavior(MoveBackAndForthBehavior)
     run_away_controller = get_behavior(RunAwayBehavior)
