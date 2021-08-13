@@ -5,6 +5,16 @@ extends Duck
 
 var leash_annotator: LeashAnnotator
 
+var wander_behavior: WanderBehavior
+var follow_behavior: FollowBehavior
+
+
+func _ready() -> void:
+    wander_behavior = get_behavior(WanderBehavior)
+    follow_behavior = get_behavior(FollowBehavior)
+    follow_behavior.connect(
+            "deactivated", self, "_on_follow_behavior_deactivated")
+
 
 func create_leash_annotator() -> void:
     leash_annotator = LeashAnnotator.new(self)
@@ -26,47 +36,8 @@ func _destroy() -> void:
     ._destroy()
 
 
-func _update_navigator(delta_scaled: float) -> void:
-    ._update_navigator(delta_scaled)
-    
-    if is_attached_to_leader:
-        if navigation_state.is_currently_navigating:
-            if is_close_enough_to_leader_to_stop_moving and \
-                    surface_state.is_grabbing_floor:
-                navigator.stop()
-            elif navigation_state.just_reached_end_of_edge and \
-                    surface_state.just_left_air:
-                # -   We are currently navigating, and we just landed on a new
-                #     surface.
-                # -   Update the navigation to point to the current leader
-                #     position.
-                _trigger_new_navigation()
-        elif !is_far_enough_from_leader_to_start_moving:
-            # We weren't yet navigating anywhere, so start navigating to the
-            # leader.
-            _trigger_new_navigation()
-
-
-func _trigger_new_navigation() -> bool:
-    var position_type: int
-    if leader.surface_state.is_grabbing_a_surface:
-        position_type = IntendedPositionType.CENTER_POSITION_ALONG_SURFACE
-    elif leader.navigation_state.is_currently_navigating:
-        if leader.navigator.edge.get_end_surface() != null:
-            position_type = IntendedPositionType.EDGE_DESTINATION
-        elif leader.navigator.edge.get_start_surface() != null:
-            position_type = IntendedPositionType.EDGE_ORIGIN
-        else:
-            return false
-    elif leader.surface_state.last_position_along_surface.surface != null:
-        position_type = IntendedPositionType.LAST_POSITION_ALONG_SURFACE
-    else:
-        return false
-    
-    var destination := leader.get_intended_position(position_type)
-    navigator.navigate_to_position(destination)
-    
-    return true
+#func _update_navigator(delta_scaled: float) -> void:
+#    ._update_navigator(delta_scaled)
 
 
 func _process_sounds() -> void:
@@ -77,14 +48,45 @@ func _process_sounds() -> void:
         Sc.audio.play_sound("duck_land")
 
 
+func _on_follow_behavior_deactivated() -> void:
+    follow_behavior.follow_target = null
+    
+    Sc.audio.play_sound("duckling_quack")
+    
+    var was_attached_to_leader := is_attached_to_leader
+    is_attached_to_leader = false
+    
+    just_detached_from_leader = \
+            was_attached_to_leader and \
+            !is_attached_to_leader
+    
+    if just_detached_from_leader:
+        leader.is_attached_to_follower = false
+        leader.just_attached_to_follower = false
+        leader.just_detached_from_follower = true
+        leader.follower = null
+        Sc.level.last_attached_duck = leader
+        leader = null
+        if is_attached_to_follower:
+            follower.on_leader_detached()
+        
+        on_detached_from_leader()
+        
+        Sc.audio.play_sound("lost_duck")
+
+
 func on_attached_to_leader() -> void:
-    show_exclamation_mark()
+    follow_behavior.follow_target = leader
+    follow_behavior.trigger(true)
     Sc.audio.play_sound("duckling_quack")
 
 
 func on_detached_from_leader() -> void:
-    show_exclamation_mark()
-    Sc.audio.play_sound("duckling_quack")
+    if follow_behavior.is_active:
+        follow_behavior.on_detached()
+    else:
+        show_exclamation_mark()
+        Sc.audio.play_sound("duckling_quack")
 
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:

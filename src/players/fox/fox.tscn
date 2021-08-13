@@ -91,12 +91,12 @@ layer = 16
 
 [node name="WanderBehavior" parent="." instance=ExtResource( 5 )]
 is_active_at_start = true
-max_distance_from_start_position = 256.0
+max_distance_from_behavior_start_position = 256.0
 min_pause_between_movements = 1.0
 max_pause_between_movements = 3.0
 
 [node name="CollideBehavior" parent="." instance=ExtResource( 6 )]
-max_distance_from_start_position = 512.0
+max_distance_from_behavior_start_position = 512.0
 ends_with_a_jump = true
 returns_to_player_start_position = true
 returns_to_pre_behavior_position = false
