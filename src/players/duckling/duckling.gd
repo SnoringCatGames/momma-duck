@@ -10,6 +10,8 @@ var follow_behavior: FollowBehavior
 
 
 func _ready() -> void:
+    if Engine.editor_hint:
+        return
     wander_behavior = get_behavior(WanderBehavior)
     follow_behavior = get_behavior(FollowBehavior)
     follow_behavior.connect(
