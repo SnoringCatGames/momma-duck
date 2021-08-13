@@ -20,7 +20,7 @@ script = ExtResource( 1 )
 player_name = "porcupine"
 primary_annotation_color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
-[node name="MovementParams" parent="." instance=ExtResource( 4 )]
+[node name="MovementParameters" parent="." instance=ExtResource( 4 )]
 collider_shape = SubResource( 1 )
 player_name = "porcupine"
 can_jump = false

@@ -1020,9 +1020,9 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/player/behaviors/move_back_and_forth_behavior.gd"
 }, {
 "base": "Node2D",
-"class": "MovementParams",
+"class": "MovementParameters",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/models/movement_params.gd"
+"path": "res://addons/surfacer/src/platform_graph/edge/models/movement_parameters.gd"
 }, {
 "base": "Reference",
 "class": "MovementUtils",
@@ -2262,7 +2262,7 @@ _global_script_class_icons={
 "MommaDuckLevelConfig": "",
 "MommaDuckLevelSession": "",
 "MoveBackAndForthBehavior": "res://addons/surfacer/assets/images/editor_icons/move_back_and_forth_behavior.png",
-"MovementParams": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
+"MovementParameters": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
 "MovementUtils": "",
 "MusicControlRow": "",
 "NavBar": "res://addons/scaffolder/assets/images/editor_icons/nav_bar.png",
