@@ -25,7 +25,7 @@ func run_away(
     navigator.connect("destination_reached", self, "_on_destination_reached")
     var did_navigation_succeed := navigator.navigate_to_position(destination)
     if !did_navigation_succeed:
-        Sc.logger.print("Run-away navigation path-finding was not successful")
+        Sc.logger.warning("Run-away navigation path-finding was not successful")
         Sc.level.swap_run_away_with_duckling(self)
     
     show_exclamation_mark()
