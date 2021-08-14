@@ -849,11 +849,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/ios_resolutions.gd"
 }, {
-"base": "CheckboxControlRow",
-"class": "IsLoggingLowLevelPlayerFrameworkEventsControlRow",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/control_rows/settings/is_logging_low_level_player_framework_events_control_row.gd"
-}, {
 "base": "Node",
 "class": "JsonUtils",
 "language": "GDScript",
@@ -1173,6 +1168,11 @@ _global_script_classes=[ {
 "class": "PlayerAnnotatorControlRow",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/control_rows/player_annotator_control_row.gd"
+}, {
+"base": "Reference",
+"class": "PlayerLogType",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/player/player_log_type.gd"
 }, {
 "base": "Reference",
 "class": "PlayerNavigationState",
@@ -2228,7 +2228,6 @@ _global_script_class_icons={
 "IntroChoreographyControlRow": "",
 "IosModelNames": "",
 "IosResolutions": "",
-"IsLoggingLowLevelPlayerFrameworkEventsControlRow": "",
 "JsonUtils": "",
 "JumpBackAndForthBehavior": "res://addons/surfacer/assets/images/editor_icons/jump_back_and_forth_behavior.png",
 "JumpFromSurfaceCalculator": "",
@@ -2293,6 +2292,7 @@ _global_script_class_icons={
 "PlayerActionType": "",
 "PlayerAnimationState": "",
 "PlayerAnnotatorControlRow": "",
+"PlayerLogType": "",
 "PlayerNavigationState": "",
 "PlayerPointerListener": "",
 "PlayerPositionAnnotatorControlRow": "",

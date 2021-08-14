@@ -34,9 +34,9 @@ func _walk_away_from_momma() -> void:
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
-    _log_player_event("Porcupine collided with duckling")
+    _log_custom("Porcupine collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
-    _log_player_event("Porcupine collided with momma")
+    _log_custom("Porcupine collided with momma")
     _walk_away_from_momma()
