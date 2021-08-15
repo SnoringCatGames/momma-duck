@@ -34,8 +34,8 @@ func _add_human_character() -> void:
     last_attached_duck = momma
 
 
-func _add_computer_characters() -> void:
-    ._add_computer_characters()
+func _add_npcs() -> void:
+    ._add_npcs()
     for duckling in characters["duckling"]:
         duckling.call_deferred("create_leash_annotator")
 
