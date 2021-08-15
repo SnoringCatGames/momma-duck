@@ -5,7 +5,7 @@
 [ext_resource path="res://src/levels/momma_duck_level.gd" type="Script" id=3]
 [ext_resource path="res://addons/surfacer/src/platform_graph/surfaces_tile_map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/momma_duck_surfaces_tile_set.tres" type="TileSet" id=7]
-[ext_resource path="res://addons/scaffolder/src/player/spawn_position.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/scaffolder/src/character/spawn_position.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/levels/pond.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/decoration_tile_map.tscn" type="PackedScene" id=11]
 
@@ -28,7 +28,7 @@ __meta__ = {
 
 [node name="SpawnPosition" parent="MommaSpawnPositions" instance=ExtResource( 8 )]
 position = Vector2( -928, 0 )
-player_name = "momma"
+character_name = "momma"
 
 [node name="MommaChoreographyDestination" parent="MommaSpawnPositions" instance=ExtResource( 2 )]
 position = Vector2( -528, 0 )
@@ -40,19 +40,19 @@ __meta__ = {
 
 [node name="SpawnPosition1" parent="DucklingSpawnPositions" instance=ExtResource( 8 )]
 position = Vector2( -448, 96 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="SpawnPosition2" parent="DucklingSpawnPositions" instance=ExtResource( 8 )]
 position = Vector2( -928, -632 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="SpawnPosition3" parent="DucklingSpawnPositions" instance=ExtResource( 8 )]
 position = Vector2( -464, -832 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="SpawnPosition4" parent="DucklingSpawnPositions" instance=ExtResource( 8 )]
 position = Vector2( -96, -352 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="FoxSpawnPositions" type="Node2D" parent="."]
 __meta__ = {

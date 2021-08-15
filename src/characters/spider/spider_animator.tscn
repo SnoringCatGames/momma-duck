@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/characters/spider/spider_animator.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/character/spider_up.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/character/spider_down.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ClimbDown"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ClimbDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ClimbUp"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ClimbUp:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "RestDown"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RestDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "RestUp"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RestUp:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="SpiderAnimator" type="Node2D"]
+script = ExtResource( 1 )
+animations = {
+"JumpFall": {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": ""
+},
+"JumpRise": {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": ""
+},
+"Rest": {
+"name": "Rest",
+"speed": 1.0,
+"sprite_name": ""
+},
+"Swim": {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": ""
+},
+"Walk": {
+"name": "Walk",
+"speed": 1.0,
+"sprite_name": ""
+}
+}
+
+[node name="ClimbUp" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 2 )
+
+[node name="ClimbDown" type="Sprite" parent="."]
+light_mask = 2
+texture = ExtResource( 3 )
+
+[node name="RestUp" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 2 )
+
+[node name="RestDown" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ClimbDown = SubResource( 1 )
+anims/ClimbUp = SubResource( 2 )
+anims/RestDown = SubResource( 3 )
+anims/RestUp = SubResource( 4 )

@@ -5,7 +5,7 @@
 [ext_resource path="res://src/levels/momma_duck_level.gd" type="Script" id=3]
 [ext_resource path="res://addons/surfacer/src/platform_graph/surfaces_tile_map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/momma_duck_surfaces_tile_set.tres" type="TileSet" id=8]
-[ext_resource path="res://addons/scaffolder/src/player/spawn_position.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/scaffolder/src/character/spawn_position.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/levels/pond.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/decoration_tile_map.tscn" type="PackedScene" id=11]
 
@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="SpawnPosition" parent="MommaSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 0, -64 )
-player_name = "momma"
+character_name = "momma"
 
 [node name="MommaChoreographyDestination" parent="MommaSpawnPositions" instance=ExtResource( 2 )]
 position = Vector2( 0, -64 )
@@ -43,11 +43,11 @@ __meta__ = {
 
 [node name="SpawnPosition2" parent="DucklingSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 96, 160 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="SpawnPosition3" parent="DucklingSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( -96, 160 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="FoxSpawnPositions" type="Node2D" parent="."]
 __meta__ = {
@@ -56,35 +56,35 @@ __meta__ = {
 
 [node name="SpawnPosition5" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 256, -88 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition6" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( -256, -96 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition7" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( -128, -320 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition8" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 128, -320 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition9" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 0, -704 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition10" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 928, -608 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition11" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 704, -480 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="SpawnPosition12" parent="FoxSpawnPositions" instance=ExtResource( 9 )]
 position = Vector2( 1280, -160 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="PorcupineSpawnPositions" type="Node2D" parent="."]
 __meta__ = {

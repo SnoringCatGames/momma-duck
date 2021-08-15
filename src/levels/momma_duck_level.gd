@@ -3,8 +3,8 @@ class_name MommaDuckLevel
 extends SurfacerLevel
 
 
-const SPIDER_PLAYER_SCENE := \
-        preload("res://src/players/spider/spider.tscn")
+const SPIDER_CHARACTER_SCENE := \
+        preload("res://src/characters/spider/spider.tscn")
 
 const LEVEL_END_ZOOM_OUT_FACTOR := 2.0
 const LEVEL_END_ZOOM_OUT_DURATION := 1.5
@@ -28,15 +28,15 @@ func _start() -> void:
 #    ._on_started()
 
 
-func _add_human_player() -> void:
-    ._add_human_player()
-    momma = Sc.level.human_player
+func _add_human_character() -> void:
+    ._add_human_character()
+    momma = Sc.level.human_character
     last_attached_duck = momma
 
 
-func _add_computer_players() -> void:
-    ._add_computer_players()
-    for duckling in players["duckling"]:
+func _add_computer_characters() -> void:
+    ._add_computer_characters()
+    for duckling in characters["duckling"]:
         duckling.call_deferred("create_leash_annotator")
 
 
@@ -74,7 +74,7 @@ func _physics_process(_delta: float) -> void:
         return
     
     momma.clear_just_changed_attachment()
-    for duckling in players["duckling"]:
+    for duckling in characters["duckling"]:
         duckling.clear_just_changed_attachment()
 
 
@@ -91,9 +91,9 @@ func swap_duckling_with_run_away(
                     duckling.movement_params.collider_half_width_height,
                     true)
     
-    remove_player(duckling)
+    remove_character(duckling)
     
-    var run_away_duckling: RunAwayDuckling = add_player(
+    var run_away_duckling: RunAwayDuckling = add_character(
             "run_away_duckling",
             run_away_origin,
             false)
@@ -106,9 +106,9 @@ func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
     
     var position := run_away_duckling.position
     
-    remove_player(run_away_duckling)
+    remove_character(run_away_duckling)
     
-    var duckling: Duckling = add_player(
+    var duckling: Duckling = add_character(
             "duckling",
             position,
             false)
@@ -119,11 +119,11 @@ func check_if_all_ducks_are_in_pond() -> void:
     if !momma.is_in_pond:
         return
     
-    if players.has("run_away_ducklings") and \
-            !players["run_away_ducklings"].empty():
+    if characters.has("run_away_ducklings") and \
+            !characters["run_away_ducklings"].empty():
         return
     
-    for duckling in players["duckling"]:
+    for duckling in characters["duckling"]:
         if !duckling.is_in_pond:
             return
     
@@ -166,7 +166,7 @@ func get_ducklings_in_tow_count() -> int:
 
 
 func get_ducklings_count() -> int:
-    return players["duckling"].size() + \
-            (players["run_away_duckling"].size() if \
-            players.has("run_away_duckling") else \
+    return characters["duckling"].size() + \
+            (characters["run_away_duckling"].size() if \
+            characters.has("run_away_duckling") else \
             0)

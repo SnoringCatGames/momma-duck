@@ -7,7 +7,7 @@
 [ext_resource path="res://src/levels/pond.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/decoration_tile_map.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/levels/momma_duck_surfaces_tile_set.tres" type="TileSet" id=12]
-[ext_resource path="res://addons/scaffolder/src/player/spawn_position.tscn" type="PackedScene" id=13]
+[ext_resource path="res://addons/scaffolder/src/character/spawn_position.tscn" type="PackedScene" id=13]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="SpawnPosition" parent="MommaSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( -320, -64 )
-player_name = "momma"
+character_name = "momma"
 
 [node name="MommaChoreographyDestination" parent="MommaSpawnPositions" instance=ExtResource( 2 )]
 position = Vector2( 32, 0 )
@@ -43,11 +43,11 @@ __meta__ = {
 
 [node name="SpawnPosition2" parent="DucklingSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( 0, 192 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="SpawnPosition3" parent="DucklingSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( 192, 320 )
-player_name = "duckling"
+character_name = "duckling"
 
 [node name="FoxSpawnPositions" type="Node2D" parent="."]
 __meta__ = {
@@ -56,7 +56,7 @@ __meta__ = {
 
 [node name="SpawnPosition4" parent="FoxSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( 128, -224 )
-player_name = "fox"
+character_name = "fox"
 
 [node name="PorcupineSpawnPositions" type="Node2D" parent="."]
 __meta__ = {
@@ -65,7 +65,7 @@ __meta__ = {
 
 [node name="SpawnPosition5" parent="PorcupineSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( 256, 96 )
-player_name = "porcupine"
+character_name = "porcupine"
 
 [node name="SpiderSpawnPositions" type="Node2D" parent="."]
 __meta__ = {
@@ -74,7 +74,7 @@ __meta__ = {
 
 [node name="SpawnPosition6" parent="SpiderSpawnPositions" instance=ExtResource( 13 )]
 position = Vector2( -160, -32 )
-player_name = "spider"
+character_name = "spider"
 surface_attachment = "NONE"
 
 [node name="Pond" parent="." instance=ExtResource( 10 )]

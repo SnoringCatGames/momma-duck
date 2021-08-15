@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/characters/duckling/duckling.gd" type="Script" id=1]
+[ext_resource path="res://src/characters/duckling/duckling_animator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/surfacer/src/character/behaviors/wander_behavior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/surfacer/src/character/behaviors/follow_behavior.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="Duckling" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 1 )
+character_name = "duckling"
+collision_detection_layers = 34
+primary_annotation_color = Color( 0.870588, 0.772549, 0.207843, 1 )
+logs_action_events = false
+logs_surface_events = false
+logs_behavior_events = true
+logs_navigator_events = true
+logs_custom_events = true
+logs_low_level_framework_events = false
+
+[node name="MovementParameters" parent="." instance=ExtResource( 4 )]
+collider_shape = SubResource( 1 )
+character_name = "duckling"
+gravity_multiplier = 0.8
+walk_acceleration_multiplier = 0.8
+in_air_horizontal_acceleration_multiplier = 0.67
+jump_boost_multiplier = 0.7
+max_horizontal_speed_default_multiplier = 0.7
+max_vertical_speed_multiplier = 0.51
+
+[node name="DucklingAnimator" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 3 )
+scale = Vector2( -1, 1 )
+animations = {
+"JumpFall": {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+},
+"JumpRise": {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+},
+"Rest": {
+"name": "Rest",
+"speed": 0.8,
+"sprite_name": "Rest"
+},
+"Swim": {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": "Swim"
+},
+"Walk": {
+"name": "Walk",
+"speed": 20.0,
+"sprite_name": "Walk"
+}
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WanderBehavior" parent="." instance=ExtResource( 3 )]
+is_active_at_start = true
+can_leave_start_surface = false
+max_distance_from_behavior_start_position = 32.0
+min_pause_between_movements = 1.0
+max_pause_between_movements = 3.0
+
+[node name="FollowBehavior" parent="." instance=ExtResource( 5 )]
+close_enough_to_stop_moving_distance = 64.0
+far_enough_to_start_moving_distance = 96.0
+detach_distance = 320.0
+shows_exclamation_mark_on_detached = true
+returns_to_character_start_position = false
+returns_to_pre_behavior_position = true
+min_pause_between_movements = 0.0
+max_pause_between_movements = 0.0
+min_pause_after_movements = 0.0
+max_pause_after_movements = 0.0

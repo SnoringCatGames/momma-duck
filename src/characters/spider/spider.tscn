@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/characters/spider/spider.gd" type="Script" id=1]
+[ext_resource path="res://src/characters/spider/spider_animator.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[node name="Spider" type="KinematicBody2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource( 1 )
+character_name = "spider"
+primary_annotation_color = Color( 0.470588, 0.211765, 0.156863, 1 )
+
+[node name="SpiderAnimator" parent="." instance=ExtResource( 2 )]
+animations = {
+"ClimbDown": {
+"name": "ClimbDown",
+"speed": 1.0,
+"sprite_name": "ClimbDown"
+},
+"ClimbUp": {
+"name": "ClimbUp",
+"speed": 1.0,
+"sprite_name": "ClimbUp"
+},
+"RestDown": {
+"name": "RestDown",
+"speed": 1.0,
+"sprite_name": "RestDown"
+},
+"RestUp": {
+"name": "RestUp",
+"speed": 1.0,
+"sprite_name": "RestUp"
+}
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

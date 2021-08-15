@@ -1,0 +1,190 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/scaffolder/src/character/scaffolder_character_animator.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/character/momma_swim.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/character/momma_standing.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/character/momma_jump_rise.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/character/momma_quacking.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/character/momma_walking.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "JumpFall"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("JumpFall:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "JumpRise"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("JumpRise:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Quack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Quack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Rest"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rest:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Swim"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Swim:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[node name="MommaAnimator" type="Node2D"]
+script = ExtResource( 1 )
+faces_right_by_default = false
+animations = {
+"JumpFall": {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+},
+"JumpRise": {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+},
+"Quack": {
+"name": "Quack",
+"speed": 1.6,
+"sprite_name": "Quack"
+},
+"Rest": {
+"name": "Rest",
+"speed": 0.8,
+"sprite_name": "Rest"
+},
+"Swim": {
+"name": "Swim",
+"speed": 1.0,
+"sprite_name": "Swim"
+},
+"Walk": {
+"name": "Walk",
+"speed": 20.0,
+"sprite_name": "Walk"
+}
+}
+
+[node name="Walk" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 6 )
+hframes = 8
+frame = 1
+
+[node name="Rest" type="Sprite" parent="."]
+light_mask = 2
+texture = ExtResource( 3 )
+hframes = 8
+frame = 7
+
+[node name="JumpFall" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+position = Vector2( -8, -6 )
+texture = ExtResource( 4 )
+
+[node name="JumpRise" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+position = Vector2( -8, -6 )
+texture = ExtResource( 4 )
+
+[node name="Quack" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 5 )
+hframes = 4
+frame = 1
+
+[node name="Swim" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+texture = ExtResource( 2 )
+hframes = 8
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/JumpFall = SubResource( 1 )
+anims/JumpRise = SubResource( 2 )
+anims/Quack = SubResource( 3 )
+anims/Rest = SubResource( 4 )
+anims/Swim = SubResource( 5 )
+anims/Walk = SubResource( 6 )
