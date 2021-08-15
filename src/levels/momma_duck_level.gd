@@ -28,9 +28,9 @@ func _start() -> void:
 #    ._on_started()
 
 
-func _add_human_character() -> void:
-    ._add_human_character()
-    momma = Sc.level.human_character
+func _add_player_character() -> void:
+    ._add_player_character()
+    momma = Sc.level.player_character
     last_attached_duck = momma
 
 
