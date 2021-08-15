@@ -180,6 +180,8 @@ func _on_stopped_colliding(
     match layer_names[0]:
         "pond":
             is_in_pond = false
+        "enemy":
+            return
         _:
             Sc.logger.error()
 
