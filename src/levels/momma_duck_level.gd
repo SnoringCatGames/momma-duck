@@ -90,13 +90,19 @@ func swap_duckling_with_run_away(
                     duckling.start_surface,
                     duckling.movement_params.collider_half_width_height,
                     true)
+    var start_surface_attachment := PositionAlongSurface.new(
+            duckling.surface_state.last_position_along_surface)
     
     remove_character(duckling)
     
     var run_away_duckling: RunAwayDuckling = add_character(
             "run_away_duckling",
             run_away_origin,
+            false,
             false)
+    run_away_duckling.set_start_attachment_surface_side_or_position(
+            start_surface_attachment)
+    add_child(run_away_duckling)
     run_away_duckling.run_away(run_away_destination, enemy)
 
 
@@ -105,13 +111,19 @@ func swap_run_away_with_duckling(run_away_duckling: RunAwayDuckling) -> void:
         return
     
     var position := run_away_duckling.position
+    var start_surface_attachment := PositionAlongSurface.new(
+            run_away_duckling.surface_state.last_position_along_surface)
     
     remove_character(run_away_duckling)
     
     var duckling: Duckling = add_character(
             "duckling",
             position,
+            false,
             false)
+    duckling.set_start_attachment_surface_side_or_position(
+            start_surface_attachment)
+    add_child(duckling)
     duckling.call_deferred("create_leash_annotator")
 
 

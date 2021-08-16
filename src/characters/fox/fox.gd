@@ -63,7 +63,6 @@ func on_touched_duckling(duckling: Duckling) -> void:
     _log_custom("Fox collided with duckling")
     if collide_controller.is_active and \
             duckling == collide_controller.collision_target:
-        duckling.on_touched_enemy(self)
         collide_controller.on_collided()
 
 
