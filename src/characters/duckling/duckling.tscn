@@ -35,6 +35,7 @@ logs_low_level_navigator_events = false
 [node name="MovementParameters" parent="." instance=ExtResource( 4 )]
 collider_shape = SubResource( 1 )
 character_name = "duckling"
+__movement_params_identifier__ = "_"
 gravity_multiplier = 0.8
 walk_acceleration_multiplier = 0.8
 in_air_horizontal_acceleration_multiplier = 0.67

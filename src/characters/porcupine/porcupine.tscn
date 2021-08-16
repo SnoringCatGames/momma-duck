@@ -19,10 +19,27 @@ collision_mask = 3
 script = ExtResource( 1 )
 character_name = "porcupine"
 primary_annotation_color = Color( 0.14902, 0.14902, 0.14902, 1 )
+secondary_annotation_color = Color( 1, 1, 1, 1 )
+navigation_annotation_color_override = Color( 0, 0, 0, 1 )
+exclamation_mark_width_start = 4.0
+exclamation_mark_length_start = 24.0
+exclamation_mark_stroke_width_start = 1.2
+exclamation_mark_duration = 1.8
+exclamation_mark_throttle_interval = 1.0
+logs_common_debugging_events = false
+logs_custom_events = true
+logs_behavior_events = false
+logs_navigator_events = false
+logs_collision_events = false
+logs_surface_events = false
+logs_action_events = false
+logs_low_level_framework_events = false
+logs_low_level_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 4 )]
 collider_shape = SubResource( 1 )
 character_name = "porcupine"
+__movement_params_identifier__ = "_"
 can_jump = false
 walk_acceleration_multiplier = 0.01
 in_air_horizontal_acceleration_multiplier = 0.84
@@ -86,9 +103,3 @@ max_pause_between_movements = 0.0
 [node name="RunAwayBehavior" parent="." instance=ExtResource( 6 )]
 can_leave_start_surface = false
 keeps_running_until_far_enough_away = false
-returns_to_character_start_position = true
-returns_to_pre_behavior_position = false
-min_pause_between_movements = 0.0
-max_pause_between_movements = 0.0
-min_pause_after_movements = 0.0
-max_pause_after_movements = 0.0
