@@ -25,5 +25,11 @@ func _process_sounds() -> void:
         Sc.audio.play_sound("duck_land")
 
 
+func on_defended_duckling(
+        duckling: Duckling,
+        enemy: KinematicBody2D) -> void:
+    _quack()
+
+
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
     _quack()

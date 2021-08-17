@@ -3,6 +3,8 @@ class_name Duckling
 extends Duck
 
 
+const SAFE_DISTANCE_FROM_MOMMA := 32.0
+
 var leash_annotator: LeashAnnotator
 
 var wander_behavior: WanderBehavior
@@ -93,6 +95,11 @@ func on_detached_from_leader() -> void:
 
 func on_touched_enemy(enemy: KinematicBody2D) -> void:
     if start_surface == null:
+        return
+    
+    if position.distance_squared_to(Sc.level.momma.position) <= \
+            SAFE_DISTANCE_FROM_MOMMA * SAFE_DISTANCE_FROM_MOMMA:
+        Sc.level.momma.on_defended_duckling(self, enemy)
         return
     
     show_exclamation_mark()
