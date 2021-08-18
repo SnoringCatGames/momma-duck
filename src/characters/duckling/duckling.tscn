@@ -42,6 +42,7 @@ in_air_horizontal_acceleration_multiplier = 0.67
 jump_boost_multiplier = 0.7
 max_horizontal_speed_default_multiplier = 0.7
 max_vertical_speed_multiplier = 0.51
+max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="DucklingAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 3 )
@@ -88,6 +89,7 @@ min_pause_between_movements = 1.0
 max_pause_between_movements = 3.0
 
 [node name="FollowBehavior" parent="." instance=ExtResource( 5 )]
+starts_with_a_jump = true
 close_enough_to_stop_moving_distance = 64.0
 far_enough_to_start_moving_distance = 96.0
 detach_distance = 320.0
