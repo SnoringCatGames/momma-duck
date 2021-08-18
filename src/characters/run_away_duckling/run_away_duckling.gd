@@ -23,7 +23,8 @@ func run_away(
         velocity.x *= -1
     
     navigator.connect("destination_reached", self, "_on_destination_reached")
-    var did_navigation_succeed := navigator.navigate_to_position(destination)
+    var did_navigation_succeed := navigator.navigate_to_position(
+            destination, false)
     if !did_navigation_succeed:
         Sc.logger.warning(
                 "Run-away navigation path-finding was not successful")

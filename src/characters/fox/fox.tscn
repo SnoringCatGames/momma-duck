@@ -48,6 +48,7 @@ walk_acceleration_multiplier = 0.88
 in_air_horizontal_acceleration_multiplier = 1.28
 jump_boost_multiplier = 1.11
 max_horizontal_speed_default_multiplier = 1.25
+max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="FoxAnimator" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -5 )
