@@ -115,7 +115,6 @@ max_pause_between_movements = 3.0
 
 [node name="CollideBehavior" parent="." instance=ExtResource( 6 )]
 max_distance_from_behavior_start_position = 512.0
-ends_with_a_jump = true
 returns_to_character_start_position = true
 returns_to_pre_behavior_position = false
 min_pause_between_movements = 0.0
