@@ -48,6 +48,7 @@ walk_acceleration_multiplier = 0.88
 in_air_horizontal_acceleration_multiplier = 1.28
 jump_boost_multiplier = 1.11
 max_horizontal_speed_default_multiplier = 1.25
+always_tries_to_face_direction_of_motion = true
 max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="FoxAnimator" parent="." instance=ExtResource( 2 )]
@@ -115,6 +116,7 @@ max_pause_between_movements = 3.0
 
 [node name="CollideBehavior" parent="." instance=ExtResource( 6 )]
 max_distance_from_behavior_start_position = 512.0
+ends_with_a_jump = true
 returns_to_character_start_position = true
 returns_to_pre_behavior_position = false
 min_pause_between_movements = 0.0

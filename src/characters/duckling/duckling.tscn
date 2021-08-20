@@ -39,9 +39,10 @@ __movement_params_identifier__ = "_"
 gravity_multiplier = 0.8
 walk_acceleration_multiplier = 0.8
 in_air_horizontal_acceleration_multiplier = 0.67
-jump_boost_multiplier = 0.7
+jump_boost_multiplier = 0.75
 max_horizontal_speed_default_multiplier = 0.7
 max_vertical_speed_multiplier = 0.51
+always_tries_to_face_direction_of_motion = true
 max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="DucklingAnimator" parent="." instance=ExtResource( 2 )]
