@@ -929,11 +929,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/json_utils.gd"
 }, {
-"base": "MoveBackAndForthBehavior",
-"class": "JumpBackAndForthBehavior",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/character/behaviors/jump_back_and_forth_behavior.gd"
-}, {
 "base": "EdgeCalculator",
 "class": "JumpFromSurfaceCalculator",
 "language": "GDScript",
@@ -2254,7 +2249,6 @@ _global_script_class_icons={
 "IosModelNames": "",
 "IosResolutions": "",
 "JsonUtils": "",
-"JumpBackAndForthBehavior": "res://addons/surfacer/assets/images/editor_icons/jump_back_and_forth_behavior.png",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
