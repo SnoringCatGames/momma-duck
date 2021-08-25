@@ -44,8 +44,11 @@ func _override_configs_for_current_run() -> void:
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
+#    _colors_manifest.background = Color("20222A")
+    
     _gui_manifest.debug_window_size = debug_window_size
     _gui_manifest.hud_manifest.is_inspector_enabled_default = false
+    _gui_manifest.hud_manifest.is_hud_visible_by_default = true
     
     _derive_overrides_according_to_debug_or_playtest(app_manifest)
 
@@ -422,7 +425,7 @@ var _styles_manifest_pixel := {
     scroll_grabber_nine_patch_scale = 3.0,
     
     slider_track_nine_patch = \
-            preload("res://addons/scaffolder/assets/images/gui/nine_patch/slider_track.png"),
+            preload("res://assets/images/nine_patch/slider_track.png"),
     slider_track_nine_patch_margin_left = 1.5,
     slider_track_nine_patch_margin_top = 1.5,
     slider_track_nine_patch_margin_right = 1.5,
@@ -432,7 +435,7 @@ var _styles_manifest_pixel := {
     overlay_panel_border_width = 2,
     
     overlay_panel_nine_patch = \
-            preload("res://addons/scaffolder/assets/images/gui/nine_patch/overlay_panel.png"),
+            preload("res://assets/images/nine_patch/overlay_panel.png"),
     overlay_panel_nine_patch_margin_left = 3.5,
     overlay_panel_nine_patch_margin_top = 3.5,
     overlay_panel_nine_patch_margin_right = 3.5,
@@ -449,7 +452,7 @@ var _styles_manifest_pixel := {
     header_panel_content_margin_bottom = 0.0,
     
     hud_panel_nine_patch = \
-            preload("res://addons/scaffolder/assets/images/gui/nine_patch/overlay_panel.png"),
+            preload("res://assets/images/nine_patch/overlay_panel.png"),
     hud_panel_nine_patch_margin_left = 3.5,
     hud_panel_nine_patch_margin_top = 3.5,
     hud_panel_nine_patch_margin_right = 3.5,
@@ -482,11 +485,15 @@ var _settings_item_manifest := {
             is_collapsible = true,
             item_classes = [
                 RulerAnnotatorControlRow,
-                PreselectionTrajectoryAnnotatorControlRow,
-                NpcCharacterTrajectoryAnnotatorControlRow,
-                ActiveTrajectoryAnnotatorControlRow,
-                PreviousTrajectoryAnnotatorControlRow,
-                NavigationDestinationAnnotatorControlRow,
+                PlayerPreselectionTrajectoryAnnotatorControlRow,
+                PlayerSlowMoTrajectoryAnnotatorControlRow,
+                PlayerNonSlowMoTrajectoryAnnotatorControlRow,
+                PlayerPreviousTrajectoryAnnotatorControlRow,
+                PlayerNavigationDestinationAnnotatorControlRow,
+                NpcSlowMoTrajectoryAnnotatorControlRow,
+                NpcNonSlowMoTrajectoryAnnotatorControlRow,
+                NpcPreviousTrajectoryAnnotatorControlRow,
+                NpcNavigationDestinationAnnotatorControlRow,
                 RecentMovementAnnotatorControlRow,
                 SurfacesAnnotatorControlRow,
                 CharacterPositionAnnotatorControlRow,
@@ -564,6 +571,7 @@ var _hud_manifest := {
     ],
     is_inspector_enabled_default = false,
     inspector_panel_starts_open = false,
+    is_hud_visible_by_default = true,
 }
 
 var _welcome_panel_manifest := {
@@ -712,17 +720,24 @@ var _surfacer_debug_params := {
 }
 
 var _annotations_manifest := {
-    is_player_current_nav_trajectory_shown_with_slow_mo = false,
-    is_npc_current_nav_trajectory_shown_with_slow_mo = true,
-    is_player_current_nav_trajectory_shown_without_slow_mo = true,
-    is_npc_current_nav_trajectory_shown_without_slow_mo = false,
-    is_player_nav_pulse_shown_with_slow_mo = false,
-    is_npc_nav_pulse_shown_with_slow_mo = true,
-    is_player_nav_pulse_shown_without_slow_mo = true,
-    is_npc_nav_pulse_shown_without_slow_mo = false,
+    is_player_preselection_trajectory_shown = true,
+    
+    is_player_slow_mo_trajectory_shown = false,
+    is_player_non_slow_mo_trajectory_shown = true,
+    is_player_previous_trajectory_shown = false,
+    is_player_navigation_destination_shown = true,
+    is_player_nav_pulse_shown = false,
+    
+    is_npc_slow_mo_trajectory_shown = true,
+    is_npc_non_slow_mo_trajectory_shown = false,
+    is_npc_previous_trajectory_shown = false,
+    is_npc_navigation_destination_shown = false,
+    is_npc_nav_pulse_shown = true,
+    
     does_player_nav_pulse_grow = false,
-    does_npc_nav_pulse_grow = true,
     is_player_prediction_shown = true,
+    
+    does_npc_nav_pulse_grow = true,
     is_npc_prediction_shown = true,
     
     nav_selection_prediction_opacity = 0.5,
