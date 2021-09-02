@@ -56,9 +56,9 @@ func _on_physics_process(delta: float) -> void:
             is_moving_down = !is_moving_down
     
     if just_reached_end:
-        _log_custom("Spider just reached end")
+        _log("Spider just reached end")
     if just_started_moving:
-        _log_custom("Spider just started moving")
+        _log("Spider just started moving")
     
     _process_animation()
 
@@ -73,7 +73,7 @@ func _climb_away_from_momma() -> void:
         # Already moving away.
         return
     
-    _log_custom("Spider climb-away-from-momma start")
+    _log("Spider climb-away-from-momma start")
     
     is_moving = true
     just_started_moving = true
@@ -95,9 +95,9 @@ func _process_animation() -> void:
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
-    _log_custom("Spider collided with duckling")
+    _log("Spider collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
-    _log_custom("Spider collided with momma")
+    _log("Spider collided with momma")
     _climb_away_from_momma()

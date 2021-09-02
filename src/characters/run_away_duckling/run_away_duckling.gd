@@ -34,7 +34,7 @@ func run_away(
 
 
 func _on_destination_reached() -> void:
-    _log_custom("Run-away reached spawn position")
+    _log("Run-away reached spawn position")
     Sc.level.swap_run_away_with_duckling(self)
 
 

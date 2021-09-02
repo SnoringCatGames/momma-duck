@@ -25,6 +25,7 @@ character_name = "fox"
 primary_annotation_color = Color( 1, 0.376471, 0.32549, 1 )
 secondary_annotation_color = Color( 1, 1, 1, 1 )
 navigation_annotation_color_override = Color( 0, 0, 0, 1 )
+position_annotation_color_override = Color( 0, 0, 0, 1 )
 exclamation_mark_width_start = 4.0
 exclamation_mark_length_start = 24.0
 exclamation_mark_stroke_width_start = 1.2
@@ -37,8 +38,8 @@ logs_navigator_events = false
 logs_collision_events = false
 logs_surface_events = false
 logs_action_events = false
-logs_low_level_framework_events = false
-logs_low_level_navigator_events = false
+logs_verbose_events = false
+logs_verbose_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 4 )]
 collider_shape = SubResource( 1 )
@@ -46,8 +47,11 @@ character_name = "fox"
 __movement_params_identifier__ = "_"
 walk_acceleration_multiplier = 0.88
 in_air_horizontal_acceleration_multiplier = 1.28
+ceiling_crawl_speed_multiplier = 1.0
 jump_boost_multiplier = 1.11
+ceiling_fall_velocity_boost = 100.0
 max_horizontal_speed_default_multiplier = 1.25
+ceiling_crawling_edge_weight_multiplier_override = -1.0
 always_tries_to_face_direction_of_motion = true
 max_distance_for_reachable_surface_tracking = 1024.0
 

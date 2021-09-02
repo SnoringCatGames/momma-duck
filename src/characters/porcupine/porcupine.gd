@@ -14,7 +14,7 @@ func _ready() -> void:
     move_back_and_forth_controller = \
             get_behavior(MoveBackAndForthBehavior)
     run_away_controller = get_behavior(RunAwayBehavior)
-    run_away_controller.target_to_run_from = Sc.level.momma
+    run_away_controller.move_target = Sc.level.momma
 
 
 func _on_entered_proximity(
@@ -34,9 +34,9 @@ func _walk_away_from_momma() -> void:
 
 
 func on_touched_duckling(duckling: Duckling) -> void:
-    _log_custom("Porcupine collided with duckling")
+    _log("Porcupine collided with duckling")
 
 
 func on_touched_momma(momma: Momma) -> void:
-    _log_custom("Porcupine collided with momma")
+    _log("Porcupine collided with momma")
     _walk_away_from_momma()

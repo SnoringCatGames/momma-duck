@@ -41,9 +41,8 @@ var just_attached_to_follower := false
 var just_detached_from_follower := false
 
 
-func _update_surface_state(preserves_just_changed_state := false) -> void:
-    ._update_surface_state(preserves_just_changed_state)
-    
+func _update_surface_state() -> void:
+    ._update_surface_state()
     _update_attachment()
 
 

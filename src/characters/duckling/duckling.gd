@@ -53,7 +53,7 @@ func _process_sounds() -> void:
 
 
 func _on_follow_behavior_deactivated() -> void:
-    follow_behavior.follow_target = null
+    follow_behavior.move_target = null
     
     Sc.audio.play_sound("duckling_quack")
     
@@ -80,7 +80,7 @@ func _on_follow_behavior_deactivated() -> void:
 
 
 func on_attached_to_leader() -> void:
-    follow_behavior.follow_target = leader
+    follow_behavior.move_target = leader
     follow_behavior.trigger(true)
     Sc.audio.play_sound("duckling_quack")
 
@@ -107,7 +107,7 @@ func on_touched_enemy(enemy: KinematicBody2D) -> void:
     
     Sc.level_session.duckling_scare_count += 1
     
-    _log_custom("Duckling touched an enemy")
+    _log("Duckling touched an enemy")
     
     if is_attached_to_leader:
         Sc.level.last_attached_duck = leader
